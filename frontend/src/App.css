@@ -45,7 +45,6 @@
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  sticky: true;
   position: sticky;
   top: 2rem;
 }

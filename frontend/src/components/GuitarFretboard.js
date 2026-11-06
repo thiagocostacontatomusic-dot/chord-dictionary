@@ -1,75 +1,83 @@
 import React from 'react';
 import '../styles/GuitarFretboard.css';
 
-function GuitarFretboard({ positions }) {
-  const strings = 6; // Guitar has 6 strings
-  const frets = 5; // Show first 5 frets
-  const stringNames = ['E', 'B', 'G', 'D', 'A', 'E'];
+// SVG chord diagram. Strings run left (6, low E) -> right (1, high E).
+const STRINGS = 6;
+const FRETS = 5;
+const X0 = 44;
+const Y0 = 46;
+const GAP_X = 28;
+const GAP_Y = 36;
+const WIDTH = X0 + GAP_X * (STRINGS - 1) + 30;
+const HEIGHT = Y0 + GAP_Y * FRETS + 20;
 
-  // Helper function to get the position for a string
-  const getPositionForString = (stringNum) => {
-    return positions.find((pos) => pos.string === stringNum);
-  };
+const xOf = (stringNum) => X0 + (6 - stringNum) * GAP_X;
+const yOfFret = (fret, baseFret) => Y0 + (fret - baseFret + 0.5) * GAP_Y;
 
+function GuitarFretboard({ positions, baseFret = 1, barre }) {
+  const nut = baseFret === 1;
   return (
     <div className="guitar-fretboard">
-      <div className="fretboard-diagram">
-        {/* Fret numbers */}
-        <div className="fret-numbers">
-          <div className="string-label"></div>
-          {Array.from({ length: frets }).map((_, i) => (
-            <div key={`fret-${i}`} className="fret-number">
-              {i === 0 ? '0' : i}
-            </div>
-          ))}
-        </div>
+      <svg
+        className="chord-diagram"
+        viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
+        role="img"
+        aria-label="Guitar chord diagram"
+      >
+        {/* nut or fret position label */}
+        {nut ? (
+          <rect x={X0 - 2} y={Y0 - 5} width={GAP_X * 5 + 4} height="6" className="nut" />
+        ) : (
+          <text x={X0 - 14} y={Y0 + GAP_Y / 2 + 5} className="base-fret-label" textAnchor="end">
+            {baseFret}fr
+          </text>
+        )}
 
-        {/* Strings */}
-        {Array.from({ length: strings }).map((_, stringIdx) => {
-          const stringNum = stringIdx + 1;
-          const position = getPositionForString(stringNum);
+        {/* frets */}
+        {Array.from({ length: FRETS + 1 }).map((_, i) => (
+          <line key={`f${i}`} x1={X0} x2={X0 + GAP_X * 5} y1={Y0 + i * GAP_Y} y2={Y0 + i * GAP_Y} className="fret-line" />
+        ))}
 
-          return (
-            <div key={`string-${stringNum}`} className="string-row">
-              <div className="string-label">{stringNames[stringIdx]}</div>
+        {/* strings */}
+        {Array.from({ length: STRINGS }).map((_, i) => (
+          <line key={`s${i}`} x1={X0 + i * GAP_X} x2={X0 + i * GAP_X} y1={Y0} y2={Y0 + FRETS * GAP_Y} className="string-line" />
+        ))}
 
-              {/* Frets for this string */}
-              {Array.from({ length: frets }).map((_, fretIdx) => {
-                const isOpen = position?.fret === 0 && fretIdx === 0;
-                const isFretted =
-                  position?.fret !== null &&
-                  position?.fret !== undefined &&
-                  position.fret === fretIdx;
-                const isMuted = position?.fret === null && fretIdx === 0;
+        {/* barre */}
+        {barre && (
+          <rect
+            x={xOf(barre.fromString) - 9}
+            y={yOfFret(barre.fret, baseFret) - 9}
+            width={xOf(barre.toString) - xOf(barre.fromString) + 18}
+            height="18"
+            rx="9"
+            className="barre"
+          />
+        )}
 
-                return (
-                  <div
-                    key={`${stringNum}-${fretIdx}`}
-                    className={`fret-cell ${
-                      isOpen ? 'open' : ''
-                    } ${isFretted ? 'fretted' : ''} ${isMuted ? 'muted' : ''}`}
-                  >
-                    {isOpen && <span className="marker open-marker">O</span>}
-                    {isFretted && <span className="marker fret-marker">●</span>}
-                    {isMuted && <span className="marker muted-marker">✕</span>}
-                  </div>
-                );
-              })}
-            </div>
-          );
+        {/* markers */}
+        {positions.map((p) => {
+          const x = xOf(p.string);
+          if (p.fret === null) {
+            return (
+              <text key={p.string} x={x} y={Y0 - 14} textAnchor="middle" className="muted-mark">
+                ×
+              </text>
+            );
+          }
+          if (p.fret === 0) {
+            return <circle key={p.string} cx={x} cy={Y0 - 18} r="6" className="open-mark" />;
+          }
+          const row = p.fret - baseFret;
+          if (row < 0 || row >= FRETS) return null;
+          return <circle key={p.string} cx={x} cy={yOfFret(p.fret, baseFret)} r="9" className="dot" />;
         })}
-      </div>
+      </svg>
 
       <div className="fretboard-legend">
-        <div className="legend-item">
-          <span className="legend-marker open">O</span> Open String
-        </div>
-        <div className="legend-item">
-          <span className="legend-marker fretted">●</span> Fretted
-        </div>
-        <div className="legend-item">
-          <span className="legend-marker muted">✕</span> Muted
-        </div>
+        <span><i className="legend-dot" /> Fretted</span>
+        <span><i className="legend-open" /> Open</span>
+        <span><b className="legend-x">×</b> Muted</span>
       </div>
     </div>
   );

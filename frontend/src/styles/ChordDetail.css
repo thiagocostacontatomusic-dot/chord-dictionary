@@ -108,3 +108,38 @@
   font-weight: bold;
   margin-right: 0.5rem;
 }
+
+.chord-symbol {
+  margin-left: auto;
+  font-family: Menlo, Consolas, monospace;
+  font-size: 1.2rem;
+  color: #667eea;
+  font-weight: 700;
+}
+
+.voicing-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.voicing-tab {
+  border: 2px solid #e0e0e0;
+  background: white;
+  color: #444;
+  padding: 0.5rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.voicing-tab:hover { border-color: #667eea; }
+
+.voicing-tab.active {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+}

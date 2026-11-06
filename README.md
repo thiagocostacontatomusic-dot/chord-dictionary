@@ -1,172 +1,100 @@
-# 🎸 Chord Dictionary
+# Chord Dictionary
 
-A complete, interactive guitar chord reference web application. Browse, search, and learn how to play any guitar chord with a visual fretboard diagram.
+An open-source, interactive **guitar chord dictionary**. Search any chord, see it drawn on the fretboard, and switch between voicings (open shapes and movable barre shapes up the neck).
 
-## Features
+- **180 chords**: all 12 keys x 15 chord types
+- **331 voicings**: open-position shapes where they exist, plus E-shape and A-shape barre chords
+- **Every voicing is machine-checked**: tests compute the notes each string actually sounds in standard tuning (E A D G B E) and fail if a shape does not spell its chord
+- Search by name or symbol (`Am`, `C#m7`, `Bb`, `sus4`), filter by key and type
+- Responsive React UI with SVG chord diagrams (nut, fret position, barres, open and muted strings)
 
-- **Complete Chord Database**: 100+ guitar chords including major, minor, diminished, augmented, suspended, and 7th variations
-- **Interactive Fretboard**: Visual representation of chord positions on a guitar neck
-- **Search & Filter**: Find chords by name, note, or chord type
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
-- **Open Source**: Contribute and improve the chord database
+## Chord types
 
-## Getting Started
+Major, Minor, Power (5), Diminished, Augmented, Suspended 2, Suspended 4, Major 6, Minor 6, Dominant 7, Major 7, Minor 7, Diminished 7, Half-diminished (m7b5), Add9.
 
-### Prerequisites
+Roots are spelled with sharps (C#, D#, F#, G#, A#). Flat names work in search (`Db`, `Eb`, `Gb`, `Ab`, `Bb`).
 
-- Node.js (v14 or higher)
-- npm or yarn
+## Getting started
 
-### Installation
+Requires Node.js 18+.
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/chord-dictionary.git
-   cd chord-dictionary
-   ```
+```bash
+git clone https://github.com/thiagocostacontatomusic-dot/chord-dictionary.git
+cd chord-dictionary
 
-2. **Install backend dependencies**
-   ```bash
-   cd backend
-   npm install
-   ```
+# terminal 1 - API on http://localhost:8000
+cd backend
+npm install
+npm start
 
-3. **Install frontend dependencies**
-   ```bash
-   cd ../frontend
-   npm install
-   ```
-
-### Running the Application
-
-1. **Start the backend server** (from `backend/` directory)
-   ```bash
-   npm start
-   ```
-   The API will be available at `http://localhost:8000`
-
-2. **Start the frontend** (from `frontend/` directory, in a new terminal)
-   ```bash
-   npm start
-   ```
-   The app will open at `http://localhost:3000`
-
-## API Endpoints
-
-### Get All Chords
-```
-GET /api/chords
+# terminal 2 - web app on http://localhost:3000
+cd frontend
+npm install
+npm start
 ```
 
-### Get Chord by ID
-```
-GET /api/chords/:id
-```
+To point the frontend at another API, set `REACT_APP_API_URL` (default `http://localhost:8000/api`).
 
-### Search Chords
-```
-GET /api/chords?search=Am&note=A&type=Minor
-```
+## API
 
-### Get All Notes
-```
-GET /api/notes
-```
+| Endpoint | Description |
+| --- | --- |
+| `GET /api/chords` | All chords. Query: `search`, `note`, `type` |
+| `GET /api/chords/:id` | One chord, e.g. `C_major`, `Fsharp_min7` |
+| `GET /api/notes` | Available roots |
+| `GET /api/types` | Available chord types |
+| `GET /api/stats` | Counts of chords and voicings |
 
-### Get All Chord Types
-```
-GET /api/types
-```
+A chord looks like:
 
-### Get Statistics
-```
-GET /api/stats
-```
-
-## Project Structure
-
-```
-chord-dictionary/
-├── backend/
-│   ├── server.js          # Express server
-│   ├── chords-db.js       # Chord database
-│   └── package.json
-├── frontend/
-│   ├── src/
-│   │   ├── components/    # React components
-│   │   ├── styles/        # CSS files
-│   │   ├── App.js         # Main app component
-│   │   ├── index.js       # Entry point
-│   │   └── index.css      # Global styles
-│   ├── public/
-│   │   └── index.html
-│   └── package.json
-├── .gitignore
-└── README.md
+```json
+{
+  "id": "C_major",
+  "name": "C Major",
+  "symbol": "C",
+  "note": "C",
+  "type": "Major",
+  "notes": ["C", "E", "G"],
+  "voicings": [
+    {
+      "label": "Open position",
+      "baseFret": 1,
+      "positions": [
+        { "string": 6, "fret": null },
+        { "string": 5, "fret": 3 },
+        { "string": 4, "fret": 2 },
+        { "string": 3, "fret": 0 },
+        { "string": 2, "fret": 1 },
+        { "string": 1, "fret": 0 }
+      ]
+    }
+  ]
+}
 ```
 
-## Available Chords
+Strings are numbered 6 (low E) to 1 (high E). `fret: null` means muted, `0` means open. A voicing may include a `barre` (`fret`, `fromString`, `toString`).
 
-The database includes chords for all 12 notes with multiple variations:
+## How the data is made
 
-### Chord Types
-- **Major** - Bright, happy sound
-- **Minor** - Dark, sad sound
-- **Diminished** - Tense, dissonant
-- **Augmented** - Raised, unstable
-- **Suspended 2** - Open, ringing
-- **Suspended 4** - Open, ringing
-- **Major 7** - Jazzy major
-- **Minor 7** - Jazzy minor
-- **Dominant 7** - Blues-y, bluesy
+`backend/chords.json` is generated by `backend/scripts/generate-chords.js` from chord formulas and shapes in `backend/scripts/chord-theory.js`. Every voicing must pass `validateVoicing` (root in the bass, every chord tone present, nothing foreign, a playable stretch) or generation fails.
 
-### Notes
-C, C#, D, D#, E, F, F#, G, G#, A, A#, B
-
-## How to Read the Fretboard
-
-- **O** - Open string (play without pressing)
-- **●** - Fretted note (press your finger on the fret)
-- **✕** - Muted string (don't play)
+```bash
+cd backend
+npm run generate   # rebuild chords.json
+npm test           # re-verify every shipped voicing
+```
 
 ## Contributing
 
-Contributions are welcome! To add more chords or improve the app:
+Contributions are welcome, especially:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+- more voicings (alternate shapes, higher inversions, 9th/11th/13th chords)
+- alt tunings (Drop D, DADGAD, open G)
+- finger numbers on the diagrams
+- piano and ukulele views
+
+To add a shape, edit `chord-theory.js` (movable shapes) or the `OPEN` table in `generate-chords.js` (open shapes), run `npm run generate && npm test`, and open a pull request.
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
-
-## Author
-
-Created as a community contribution to help musicians learn guitar chords.
-
----
-
-🎸 Happy strumming! 🎸
-
-## Deployment
-
-### Deploy Frontend to GitHub Pages
-```bash
-cd frontend
-npm run build
-# Follow GitHub Pages setup instructions
-```
-
-### Deploy Backend to Heroku/Vercel
-The backend can be deployed to any Node.js hosting provider:
-- Heroku
-- Vercel
-- Railway
-- Render
-
-## Support
-
-If you find any issues or have suggestions, please open an issue on GitHub.
+[MIT](LICENSE)

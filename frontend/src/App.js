@@ -6,7 +6,7 @@ import ChordDetail from './components/ChordDetail';
 import SearchBar from './components/SearchBar';
 import FilterBar from './components/FilterBar';
 
-const API_URL = 'http://localhost:8000/api';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
 
 function App() {
   const [chords, setChords] = useState([]);
@@ -19,16 +19,17 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch all chords on mount
+  // Load filter options once
   useEffect(() => {
-    fetchChords();
     fetchNotes();
     fetchTypes();
   }, []);
 
-  // Fetch chords with filters
+  // Fetch chords whenever a filter changes (search is debounced)
   useEffect(() => {
-    fetchChords();
+    const timer = setTimeout(fetchChords, 200);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchTerm, selectedNote, selectedType]);
 
   const fetchChords = async () => {
@@ -83,7 +84,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>🎸 Chord Dictionary</h1>
-        <p>Complete guitar chord reference</p>
+        <p>Guitar chord reference: 12 keys, 15 chord types, every voicing checked</p>
       </header>
 
       <main className="App-main">
@@ -118,7 +119,7 @@ function App() {
 
         <div className="right-panel">
           {selectedChord ? (
-            <ChordDetail chord={selectedChord} />
+            <ChordDetail key={selectedChord.id} chord={selectedChord} />
           ) : (
             <div className="no-selection">
               <p>Select a chord to view details</p>

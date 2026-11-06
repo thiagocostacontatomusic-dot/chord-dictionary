@@ -1,186 +1,58 @@
 .guitar-fretboard {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-}
-
-.fretboard-diagram {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  background: #fafafa;
-  border: 2px solid #333;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.fret-numbers {
-  display: flex;
-  gap: 0;
-}
-
-.string-label {
-  width: 50px;
-  height: 40px;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  color: #333;
-  background: #e8e8e8;
-  border-right: 2px solid #999;
-  font-size: 0.9rem;
+  gap: 1rem;
 }
 
-.fret-number {
-  flex: 1;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #e8e8e8;
-  border-right: 1px solid #999;
-  font-weight: 600;
-  color: #666;
-  font-size: 0.85rem;
+.chord-diagram {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
 }
 
-.fret-number:last-child {
-  border-right: none;
-}
-
-.string-row {
-  display: flex;
-  gap: 0;
-  border-bottom: 1px solid #999;
-  background: linear-gradient(90deg, #fafafa 50px, #fff 50px);
-}
-
-.string-row:last-child {
-  border-bottom: none;
-}
-
-.fret-cell {
-  flex: 1;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-right: 1px solid #ddd;
-  position: relative;
-  background: white;
-  transition: background 0.2s;
-}
-
-.fret-cell:last-child {
-  border-right: none;
-}
-
-.fret-cell:hover {
-  background: #f5f5f5;
-}
-
-.marker {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 1.3rem;
-  font-weight: bold;
-  transition: all 0.2s;
-}
-
-.open-marker {
-  background: #fff;
-  border: 3px solid #4caf50;
-  color: #4caf50;
-}
-
-.fretted-marker {
-  background: #667eea;
-  color: white;
-}
-
-.fret-marker {
-  background: #667eea;
-  color: white;
-  font-size: 1.8rem;
-}
-
-.muted-marker {
-  background: #f0f0f0;
-  border: 2px solid #999;
-  color: #999;
-  font-size: 1.4rem;
-}
+.nut { fill: #222; }
+.fret-line { stroke: #888; stroke-width: 1.5; }
+.string-line { stroke: #555; stroke-width: 1.4; }
+.dot { fill: #667eea; }
+.barre { fill: #667eea; opacity: 0.9; }
+.open-mark { fill: none; stroke: #2e9e4f; stroke-width: 2; }
+.muted-mark { fill: #999; font-size: 20px; font-weight: 700; }
+.base-fret-label { fill: #555; font-size: 14px; font-weight: 700; }
 
 .fretboard-legend {
   display: flex;
-  gap: 2rem;
-  justify-content: center;
-  padding: 1rem;
-  background: #f9f9f9;
-  border-radius: 6px;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
+  gap: 1.25rem;
+  font-size: 0.85rem;
   color: #666;
-}
-
-.legend-marker {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+}
+
+.fretboard-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legend-dot {
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-.legend-marker.open {
-  background: #fff;
-  border: 2px solid #4caf50;
-  color: #4caf50;
-}
-
-.legend-marker.fretted {
   background: #667eea;
-  color: white;
-  font-size: 1.2rem;
+  display: inline-block;
 }
 
-.legend-marker.muted {
-  background: #f0f0f0;
-  border: 2px solid #999;
+.legend-open {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #2e9e4f;
+  display: inline-block;
+}
+
+.legend-x {
   color: #999;
-}
-
-@media (max-width: 768px) {
-  .fret-cell {
-    height: 45px;
-  }
-
-  .fret-number,
-  .string-label {
-    height: 30px;
-    font-size: 0.8rem;
-  }
-
-  .marker {
-    width: 30px;
-    height: 30px;
-    font-size: 1rem;
-  }
-
-  .fretboard-legend {
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
+  font-size: 1.1rem;
+  line-height: 1;
 }
