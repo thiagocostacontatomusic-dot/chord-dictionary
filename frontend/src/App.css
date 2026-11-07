@@ -48,3 +48,7 @@
 .foot a { color: var(--violet-dark); text-underline-offset: 3px; }
 
 .lefty.is-on { background: var(--violet-dark); color: var(--on-ink); }
+
+.lefty { background: transparent; color: var(--violet-dark); border: 1px solid var(--violet-dark); }
+.lefty:hover { background: var(--violet-tint); }
+.lefty.is-on, .lefty.is-on:hover { background: var(--violet-dark); color: var(--on-ink); }

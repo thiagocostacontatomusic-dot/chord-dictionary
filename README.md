@@ -10,7 +10,7 @@ An open-source, interactive **guitar chord dictionary**. Search any chord, see i
 
 - **312 chords**: all 12 keys x 26 chord types, from triads to 9ths, 11ths and 13ths
 - **559 voicings**: open-position shapes where they exist, plus E-shape and A-shape barre chords
-- **Inversions and compact jazz voicings**: over 2,000 voicings on four adjacent strings, one per string set and bass note, for every chord of four or more notes
+- **Inversions and compact voicings**: over 12,000 voicings, every one machine-checked. Closed and open triads, closed, drop 2 and drop 3 four-note chords, shells (root, third, seventh) and rootless voicings, each in every inversion on several string sets and positions, with a filter by kind and by note in the bass
 - **Arpeggios**: the notes of the chord on screen across the neck, in five positions tied to the CAGED shapes
 - **Progression builder**: build a sequence, hear it, move it to another key and see the Roman numerals
 - **Practice tools**: metronome with quarter, eighth, triplet and sixteenth subdivisions, a chord quiz (by sight or by ear) and a left-handed mirror mode

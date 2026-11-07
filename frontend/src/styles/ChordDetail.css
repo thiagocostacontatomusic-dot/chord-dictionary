@@ -48,3 +48,8 @@ tr.is-muted th, tr.is-muted .how-fret { color: var(--ink-soft); }
 
 .group-switch { display: inline-flex; margin: 0 0 10px; }
 .inv-note { margin: 0 0 12px; max-width: 70ch; color: var(--ink-soft); font-size: 0.9rem; line-height: 1.5; }
+
+.inv-panel { display: grid; gap: 8px; margin: 0 0 12px; }
+.inv-panel .seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.inv-panel .inv-note { margin: 0; }
+.inv-now { color: var(--ink); }

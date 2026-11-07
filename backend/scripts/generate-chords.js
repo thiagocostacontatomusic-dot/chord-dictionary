@@ -85,6 +85,109 @@ function placeShape(offsets, rootFret) {
   return frets;
 }
 
+
+// ---------------------------------------------------------------------------
+// Inversions and compact voicings. Each one is described by a list of pitches (semitones above the
+// chord root) and a set of strings; we find every place on the neck where that pitch list lands
+// on those strings. Categories: triad (closed triad), open (spread triad), closed, drop2, drop3,
+// shell (root, third, seventh) and the rootless forms (rl-closed, rl-drop2, rl-drop3).
+// Each result is stored as the string "category|bass tone index|f.f.f.f.f.f" (x = muted).
+// ---------------------------------------------------------------------------
+const OPEN_MIDI = [40, 45, 50, 55, 59, 64];
+const ADJ3 = [[0, 1, 2], [1, 2, 3], [2, 3, 4], [3, 4, 5]];
+const SKIP3 = [[0, 2, 3], [1, 3, 4], [2, 4, 5], [0, 1, 3], [1, 2, 4], [2, 3, 5]];
+const ADJ4 = [[0, 1, 2, 3], [1, 2, 3, 4], [2, 3, 4, 5]];
+const SKIP4 = [[0, 2, 3, 4], [1, 3, 4, 5]];
+
+// all closed-position rotations of a tone list: [{pitches, bassTone}] with pitches ascending
+function rotations(tones) {
+  const sorted = tones.map((x) => ({ off: x[0], ti: x[3] })).sort((a, b) => a.off - b.off);
+  return sorted.map((_, k) => {
+    const list = [];
+    for (let j = 0; j < sorted.length; j += 1) {
+      const e = sorted[(k + j) % sorted.length];
+      list.push({ pitch: e.off + (k + j >= sorted.length ? 12 : 0), ti: e.ti });
+    }
+    return list;
+  });
+}
+const lowered = (list, pos) => list.map((e, i) => (i === pos ? { ...e, pitch: e.pitch - 12 } : e)).sort((a, b) => a.pitch - b.pitch);
+const raised = (list, pos) => list.map((e, i) => (i === pos ? { ...e, pitch: e.pitch + 12 } : e)).sort((a, b) => a.pitch - b.pitch);
+
+// frets for each placement of `list` on `strings` (ascending string indexes), lowest position first
+function placements(rootPc, list, strings) {
+  const out = [];
+  for (let q = 2; q <= 6; q += 1) {
+    const R = rootPc + 12 * q;
+    const fr = list.map((e, i) => R + e.pitch - OPEN_MIDI[strings[i]]);
+    if (fr.some((f) => f < 0 || f > 15)) continue;
+    const fretted = fr.filter((f) => f > 0);
+    const span = fretted.length ? Math.max(...fretted) - Math.min(...fretted) : 0;
+    if (span > 3) continue;
+    if (fr.includes(0) && Math.max(...fr) > 5) continue;
+    const frets = [null, null, null, null, null, null];
+    strings.forEach((si, i) => { frets[si] = fr[i]; });
+    out.push(frets);
+  }
+  return out.sort((a, b) => Math.min(...a.filter((f) => f !== null)) - Math.min(...b.filter((f) => f !== null)));
+}
+
+function buildInversions(rootPc, t) {
+  const tones = t.tones;
+  const out = [];
+  const seen = new Set();
+  const push = (cat, list, sets, keep) => {
+    for (const strings of sets) {
+      if (strings.length !== list.length) continue;
+      placements(rootPc, list, strings).slice(0, keep).forEach((frets) => {
+        const key = frets.join('.');
+        if (seen.has(key)) return;
+        seen.add(key);
+        out.push(`${cat}|${list[0].ti}|${frets.map((f) => (f === null ? 'x' : f)).join('.')}`);
+      });
+    }
+  };
+  const forms = (toneList, prefix, keep) => {
+    const n = toneList.length;
+    if (n === 3) {
+      for (const r of rotations(toneList)) {
+        push(prefix + 'triad', r, ADJ3, keep);
+        push(prefix + 'open', raised(r, 1), SKIP3, 1);
+      }
+    } else if (n === 4) {
+      for (const r of rotations(toneList)) {
+        push(prefix + 'closed', r, ADJ4, keep);
+        push(prefix + 'drop2', lowered(r, 2), ADJ4, keep);
+        push(prefix + 'drop3', lowered(r, 1), SKIP4, keep);
+      }
+    }
+  };
+  // tones carry their original index so the bass note can be named later
+  const indexed = tones.map((x, i) => [x[0], x[1], x[2], i]); // [semitones, degree, step, index in the chord]
+  if (indexed.length === 3 && t.key !== 'power5') forms(indexed, '', 2);
+  if (indexed.length === 4) forms(indexed, '', 2);
+  if (indexed.length === 5) {
+    forms(indexed.filter((x) => x[1] !== '5'), '', 2); // leave out the fifth
+    forms(indexed.filter((x) => x[0] !== 0), 'rl-', 2); // rootless: third, fifth, seventh, extension
+  }
+  if (indexed.length === 4) {
+    // rootless four-note chords (no root) are only the three upper tones, handled as triads
+    const upper = indexed.filter((x) => x[0] !== 0);
+    if (upper.length === 3 && !['dim', 'aug', 'sus2', 'sus4'].includes(t.key)) forms(upper, 'rl-', 1);
+  }
+  // shells: root, third and seventh (or sixth) only
+  const third = tones.findIndex((x) => x[1] === '3' || x[1] === '♭3');
+  const guide = tones.findIndex((x) => ['♭♭7', '♭7', '7', '6'].includes(x[1]));
+  if (third !== -1 && guide !== -1) {
+    const T3 = tones[third][0];
+    const G = tones[guide][0];
+    const a = [{ pitch: 0, ti: 0 }, { pitch: G, ti: guide }, { pitch: T3 + 12, ti: third }];
+    const b = [{ pitch: 0, ti: 0 }, { pitch: T3, ti: third }, { pitch: G, ti: guide }];
+    [a, b].forEach((list) => push('shell', list, [...ADJ3, ...SKIP3], 1));
+  }
+  return out;
+}
+
 const chords = [];
 const errors = [];
 
@@ -151,50 +254,7 @@ for (const rootPc of SHARP.map((_, i) => i)) {
         .map((entry, i) => ({ ...entry, order: i + 1 }));
     }
 
-    // Inversions on four adjacent strings (the "drop" family of jazz voicings): one voicing per
-    // string set and per bass note, at the lowest comfortable position. Chords of five notes
-    // leave out the fifth; triads and two-note chords have none.
-    const quartet = t.tones.length === 5 ? t.tones.filter((x) => x[1] !== '5') : t.tones;
-    const inversions = [];
-    if (quartet.length === 4) {
-      const qPcs = quartet.map((x) => mod12(rootPc + x[0]));
-      const { primary: sp } = spellChord(rootPc, t.tones);
-      const noteOfPc = (pc) => { const i = t.tones.findIndex((x) => mod12(rootPc + x[0]) === pc); return sp.notes[i]; };
-      for (const first of [0, 1, 2]) {
-        const set = [first, first + 1, first + 2, first + 3];
-        for (let inv = 0; inv < 4; inv += 1) {
-          let best = null;
-          // each string takes the fret that sounds one of the four tones; try all assignments
-          const tryFrets = (k, cur) => {
-            if (k === 4) {
-              const pcs = cur.map((f, i) => mod12(TUNING[set[i]] + f));
-              if (new Set(pcs).size !== 4 || !pcs.every((pc) => qPcs.includes(pc))) return;
-              if (pcs[0] !== qPcs[inv]) return;
-              const fr = cur.filter((f) => f > 0);
-              const span = fr.length ? Math.max(...fr) - Math.min(...fr) : 0;
-              if (span > 3) return;
-              if (cur.includes(0) && Math.max(...cur) > 5) return; // open strings only near the nut
-              const score = Math.max(...cur) * 10 + span;
-              if (!best || score < best.score) best = { score, cur: cur.slice() };
-              return;
-            }
-            for (let f = 0; f <= 14; f += 1) { cur[k] = f; tryFrets(k + 1, cur); }
-          };
-          tryFrets(0, []);
-          if (!best) continue;
-          const frets = [null, null, null, null, null, null];
-          set.forEach((si, i) => { frets[si] = best.cur[i]; });
-          inversions.push({
-            inversion: inv,
-            bass: noteOfPc(qPcs[inv]),
-            strings: [6 - set[0], 6 - set[3]],
-            frets,
-            baseFret: baseFretOf(frets),
-          });
-        }
-      }
-      inversions.sort((a, b) => a.inversion - b.inversion || b.strings[0] - a.strings[0]);
-    }
+    const inversions = buildInversions(rootPc, t);
 
     const { primary, alt } = spellChord(rootPc, t.tones);
     const symbol = primary.root + t.suffix;

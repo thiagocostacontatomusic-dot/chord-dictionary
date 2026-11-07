@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import GuitarFretboard from './GuitarFretboard';
 import CagedSection from './CagedSection';
 import { useI18n, pretty } from '../i18n';
 import { strum, audioSupported } from '../audio';
 import { chordFor } from '../chordData';
+import { GROUPS, parseInversions } from '../inversions';
 import '../styles/ChordDetail.css';
 
 const TUNING = { 6: 4, 5: 9, 4: 2, 3: 7, 2: 11, 1: 4 };
@@ -13,17 +14,33 @@ function ChordDetail({ chord, onSelect }) {
   const [index, setIndex] = useState(0);
   const [group, setGroup] = useState('shapes');
 
-  // Inversions come as plain fret arrays (string 6 to 1); turn them into the same shape as voicings.
-  const inversions = (chord.inversions || []).map((inv) => ({
-    label: `inv-${inv.inversion}-${inv.strings.join('')}`,
-    inv,
-    positions: inv.frets.map((fret, i) => ({ string: 6 - i, fret })),
-    baseFret: inv.baseFret,
-  }));
-  const list = group === 'inversions' && inversions.length ? inversions : chord.voicings;
+  // Inversions and compact voicings, grouped by kind and filtered by the note in the bass.
+  const inversions = useMemo(() => parseInversions(chord), [chord]);
+  const groups = GROUPS.filter((g) => inversions.some((v) => v.group === g));
+  const defaultGroup = groups.includes('drop2') ? 'drop2' : groups[0];
+  const [cat, setCat] = useState(defaultGroup);
+  const [bass, setBass] = useState('all');
+  const shown = useMemo(
+    () => (group === 'inversions' ? inversions.filter((v) => v.group === cat && (bass === 'all' || v.bassIndex === bass)).sort((a, b) => a.lowest - b.lowest || b.strings[0] - a.strings[0] || a.bassIndex - b.bassIndex) : []),
+    [group, inversions, cat, bass]
+  );
+  const bassOptions = useMemo(
+    () => [...new Set(inversions.filter((v) => v.group === cat).map((v) => v.bassIndex))].sort((a, b) => a - b),
+    [inversions, cat]
+  );
+  const list = group === 'inversions' && shown.length ? shown : chord.voicings;
   const voicing = list[index] || list[0];
   const switchGroup = (g) => {
     setGroup(g);
+    setIndex(0);
+  };
+  const pickCat = (g) => {
+    setCat(g);
+    setBass('all');
+    setIndex(0);
+  };
+  const pickBass = (b) => {
+    setBass(b);
     setIndex(0);
   };
 
@@ -65,9 +82,9 @@ function ChordDetail({ chord, onSelect }) {
   }
 
   const voicingLabel = (v) => {
-    if (v.inv) {
-      const name = v.inv.inversion === 0 ? t('rootPosition') : t('inversionN', v.inv.inversion);
-      return `${name} · ${v.inv.strings[0]}–${v.inv.strings[1]}`;
+    if (v.cat) {
+      const where = v.lowest === 0 ? t('openShort') : t('fretShort', v.lowest);
+      return `${v.strings[0]}–${v.strings[1]} · ${where}`;
     }
     return v.shape ? t('shapeTab', v.shape, v.fret) : t('openPosition');
   };
@@ -114,12 +131,35 @@ function ChordDetail({ chord, onSelect }) {
         </div>
       )}
 
-      {group === 'inversions' && voicing.inv && (
-        <p className="inv-note">
-          {voicing.inv.inversion === 0
-            ? t('invRootNote', pretty(chord.symbol))
-            : t('invNote', pretty(`${chord.symbol}/${voicing.inv.bass}`), pretty(voicing.inv.bass))}
-        </p>
+      {group === 'inversions' && groups.length > 0 && (
+        <div className="inv-panel">
+          <div className="seg" role="group" aria-label={t('invKind')}>
+            {groups.map((g) => (
+              <button key={g} type="button" className={cat === g ? 'is-active' : ''} aria-pressed={cat === g} onClick={() => pickCat(g)}>
+                {t('invGroup', g)}
+              </button>
+            ))}
+          </div>
+          <p className="inv-note">{t('invGroupHelp', cat)}</p>
+          <div className="seg" role="group" aria-label={t('invBass')}>
+            <button type="button" className={bass === 'all' ? 'is-active' : ''} aria-pressed={bass === 'all'} onClick={() => pickBass('all')}>
+              {t('invAll')}
+            </button>
+            {bassOptions.map((b) => (
+              <button key={b} type="button" className={bass === b ? 'is-active' : ''} aria-pressed={bass === b} onClick={() => pickBass(b)}>
+                {b === 0 ? t('invRoot') : t('invBassDeg', chord.degrees[b])}
+              </button>
+            ))}
+          </div>
+          {voicing.cat && (
+            <p className="inv-note inv-now">
+              {voicing.bassIndex === 0
+                ? t('invRootNote', pretty(chord.symbol))
+                : t('invNote', pretty(`${chord.symbol}/${chord.notes[voicing.bassIndex]}`), pretty(chord.notes[voicing.bassIndex]))}
+              {voicing.group === 'rootless' ? ` ${t('invRootless')}` : ''}
+            </p>
+          )}
+        </div>
       )}
 
       {list.length > 1 && (

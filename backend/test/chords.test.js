@@ -130,28 +130,44 @@ test('barres are marked where one finger covers several strings', () => {
 
 
 // ---------------------------------------------------------------------------
-// Inversions on four adjacent strings
+// Inversions and compact voicings: "category|bass tone index|f.f.f.f.f.f"
 // ---------------------------------------------------------------------------
-test('inversions sound exactly the chord tones, bass note as promised', () => {
-  let count = 0;
+test('inversions sound exactly the tones of their category, with the promised bass', () => {
+  const counts = {};
   for (const c of chords) {
-    if (!c.inversions.length) continue;
     const t = TYPES.find((x) => x.key === c.typeKey);
     const rootPc = SHARP.indexOf(c.note);
-    const tones = t.tones.length === 5 ? t.tones.filter((x) => x[1] !== '5') : t.tones;
-    const need = tones.map((x) => (rootPc + x[0]) % 12);
-    for (const inv of c.inversions) {
-      count += 1;
-      const sounded = inv.frets
-        .map((f, i) => (f === null ? null : { i, pc: (TUNING[i] + f) % 12 }))
+    const tones = t.tones;
+    const pcOf = (x) => (rootPc + x[0]) % 12;
+    const third = tones.find((x) => x[1] === '3' || x[1] === '♭3');
+    const guide = tones.find((x) => ['♭♭7', '♭7', '7', '6'].includes(x[1]));
+    const expected = (cat) => {
+      if (cat === 'shell') return [tones[0], third, guide];
+      const rootless = cat.startsWith('rl-');
+      let list = rootless ? tones.filter((x) => x[0] !== 0) : tones;
+      if (!rootless && tones.length === 5) list = tones.filter((x) => x[1] !== '5');
+      return list;
+    };
+    for (const entry of c.inversions) {
+      const [cat, bi, f] = entry.split('|');
+      counts[cat] = (counts[cat] || 0) + 1;
+      const frets = f.split('.').map((x) => (x === 'x' ? null : Number(x)));
+      assert.strictEqual(frets.length, 6);
+      const sounded = frets
+        .map((fr, i) => (fr === null ? null : { i, pc: (TUNING[i] + fr) % 12 }))
         .filter(Boolean);
-      assert.strictEqual(sounded.length, 4, `${c.id} inversion needs 4 strings`);
-      assert.deepStrictEqual(sounded.map((x) => x.pc).sort((a, b) => a - b), [...need].sort((a, b) => a - b), `${c.id} ${JSON.stringify(inv.frets)}`);
-      assert.strictEqual(sounded[0].pc, need[inv.inversion], `${c.id} bass note`);
-      assert.strictEqual(c.notes[c.pcs.indexOf(need[inv.inversion])], inv.bass);
-      const fretted = inv.frets.filter((f) => f > 0);
-      assert.ok(!fretted.length || Math.max(...fretted) - Math.min(...fretted) <= 3, `${c.id} stretch`);
+      const need = expected(cat).map(pcOf).sort((a, b) => a - b);
+      assert.deepStrictEqual(sounded.map((x) => x.pc).sort((a, b) => a - b), need, `${c.id} ${entry}`);
+      assert.strictEqual(sounded[0].pc, pcOf(tones[Number(bi)]), `${c.id} ${entry} bass`);
+      const fretted = frets.filter((x) => x > 0);
+      assert.ok(!fretted.length || Math.max(...fretted) - Math.min(...fretted) <= 3, `${c.id} ${entry} stretch`);
+      // strings are contiguous or skip at most one string
+      const idx = sounded.map((x) => x.i);
+      assert.ok(idx[idx.length - 1] - idx[0] <= idx.length, `${c.id} ${entry} string gap`);
     }
   }
-  assert.ok(count > 1500, 'plenty of inversions generated');
+  for (const cat of ['triad', 'open', 'closed', 'drop2', 'drop3', 'shell']) {
+    assert.ok(counts[cat] > 100, `${cat} is well covered`);
+  }
+  assert.ok(Object.keys(counts).some((k) => k.startsWith('rl-')), 'rootless voicings exist');
 });
