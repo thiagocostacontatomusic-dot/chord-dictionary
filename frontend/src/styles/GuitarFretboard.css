@@ -56,3 +56,7 @@
   font-size: 1.1rem;
   line-height: 1;
 }
+
+.guitar-fretboard.compact .chord-diagram {
+  max-width: 150px;
+}

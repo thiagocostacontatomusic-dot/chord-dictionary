@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import GuitarFretboard from './GuitarFretboard';
+import CagedSection from './CagedSection';
 import '../styles/ChordDetail.css';
 
 const STRING_NAMES = { 6: 'Low E', 5: 'A', 4: 'D', 3: 'G', 2: 'B', 1: 'High E' };
@@ -67,6 +68,8 @@ function ChordDetail({ chord }) {
           ))}
         </ul>
       </div>
+
+      <CagedSection chord={chord} />
     </div>
   );
 }

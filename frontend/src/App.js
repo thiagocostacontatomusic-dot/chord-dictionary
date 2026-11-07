@@ -84,7 +84,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>🎸 Chord Dictionary</h1>
-        <p>Guitar chord reference: 12 keys, 15 chord types, every voicing checked</p>
+        <p>Guitar chord reference: 12 keys, 15 chord types, CAGED shapes, every voicing checked</p>
       </header>
 
       <main className="App-main">

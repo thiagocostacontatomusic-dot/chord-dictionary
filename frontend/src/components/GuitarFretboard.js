@@ -14,10 +14,10 @@ const HEIGHT = Y0 + GAP_Y * FRETS + 20;
 const xOf = (stringNum) => X0 + (6 - stringNum) * GAP_X;
 const yOfFret = (fret, baseFret) => Y0 + (fret - baseFret + 0.5) * GAP_Y;
 
-function GuitarFretboard({ positions, baseFret = 1, barre }) {
+function GuitarFretboard({ positions, baseFret = 1, barre, compact = false }) {
   const nut = baseFret === 1;
   return (
-    <div className="guitar-fretboard">
+    <div className={`guitar-fretboard ${compact ? 'compact' : ''}`}>
       <svg
         className="chord-diagram"
         viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
@@ -74,11 +74,13 @@ function GuitarFretboard({ positions, baseFret = 1, barre }) {
         })}
       </svg>
 
-      <div className="fretboard-legend">
-        <span><i className="legend-dot" /> Fretted</span>
-        <span><i className="legend-open" /> Open</span>
-        <span><b className="legend-x">×</b> Muted</span>
-      </div>
+      {!compact && (
+        <div className="fretboard-legend">
+          <span><i className="legend-dot" /> Fretted</span>
+          <span><i className="legend-open" /> Open</span>
+          <span><b className="legend-x">×</b> Muted</span>
+        </div>
+      )}
     </div>
   );
 }

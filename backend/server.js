@@ -50,6 +50,7 @@ app.get('/api/stats', (req, res) => {
   res.json({
     totalChords: chords.length,
     totalVoicings: chords.reduce((n, c) => n + c.voicings.length, 0),
+    cagedChords: chords.filter((c) => c.caged.length).length,
     notes: noteOrder.length,
     types: typeOrder.length,
   });

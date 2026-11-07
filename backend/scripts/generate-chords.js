@@ -1,9 +1,13 @@
 // Generates backend/chords.json: 12 roots x 15 chord types, each with real, validated
-// guitar voicings (open shapes where they exist + movable E-shape / A-shape barres).
+// guitar voicings (open shapes where they exist + movable E-shape / A-shape barres),
+// plus the five CAGED forms for the chord types that have them.
 // Usage: npm run generate
 const fs = require('fs');
 const path = require('path');
-const { SHARP, FLAT_ALIAS, TYPES, mod12, validateVoicing } = require('./chord-theory');
+const {
+  SHARP, FLAT_ALIAS, TYPES, mod12, validateVoicing,
+  CAGED_FORMS, CAGED_ROOT_PC, CAGED_SHAPES,
+} = require('./chord-theory');
 
 // Hand-written open-position shapes (string 6 -> string 1, null = muted).
 const OPEN = {
@@ -107,6 +111,33 @@ for (const rootPc of SHARP.map((_, i) => i)) {
 
     if (!voicings.length) { errors.push(`${root} ${t.key}: no valid voicing`); continue; }
 
+
+    // CAGED: the same chord as five shapes (C, A, G, E, D forms) ordered up the neck.
+    let caged = [];
+    const cagedShapes = CAGED_SHAPES[t.key];
+    if (cagedShapes) {
+      caged = CAGED_FORMS.map((form) => {
+        const shift = mod12(rootPc - CAGED_ROOT_PC[form]);
+        const frets = cagedShapes[form].map((f) => (f === null ? null : f + shift));
+        const err = validateVoicing(rootPc, t.intervals, frets);
+        if (err) errors.push(`${root} ${t.key} CAGED ${form}-form ${JSON.stringify(frets)}: ${err}`);
+        const sounded = frets.filter((f) => f !== null);
+        const lowest = Math.min(...sounded);
+        const entry = {
+          form,
+          label: `${form} form`,
+          lowestFret: lowest,
+          positions: toPositions(frets),
+          baseFret: baseFretOf(frets),
+        };
+        const b = shift > 0 ? barreOf(frets) : null;
+        if (b) entry.barre = b;
+        return entry;
+      })
+        .sort((a, b) => a.lowestFret - b.lowestFret || CAGED_FORMS.indexOf(a.form) - CAGED_FORMS.indexOf(b.form))
+        .map((entry, i) => ({ ...entry, order: i + 1 }));
+    }
+
     const symbol = root + t.suffix;
     const aliases = flat ? [`${flat} ${t.type}`, flat + t.suffix] : [];
     chords.push({
@@ -120,6 +151,7 @@ for (const rootPc of SHARP.map((_, i) => i)) {
       positions: voicings[0].positions,
       baseFret: voicings[0].baseFret,
       voicings,
+      caged,
     });
   }
 }
@@ -131,4 +163,5 @@ if (errors.length) {
 
 fs.writeFileSync(path.join(__dirname, '..', 'chords.json'), JSON.stringify(chords, null, 1) + '\n');
 const total = chords.reduce((n, c) => n + c.voicings.length, 0);
-console.log(`Generated ${chords.length} chords (${total} voicings)`);
+const cagedChords = chords.filter((c) => c.caged.length).length;
+console.log(`Generated ${chords.length} chords (${total} voicings, ${cagedChords} with CAGED forms)`);

@@ -4,9 +4,16 @@ An open-source, interactive **guitar chord dictionary**. Search any chord, see i
 
 - **180 chords**: all 12 keys x 15 chord types
 - **331 voicings**: open-position shapes where they exist, plus E-shape and A-shape barre chords
+- **CAGED system**: 108 chords (9 chord types x 12 keys) with all five CAGED shapes, ordered from the nut up the neck
 - **Every voicing is machine-checked**: tests compute the notes each string actually sounds in standard tuning (E A D G B E) and fail if a shape does not spell its chord
 - Search by name or symbol (`Am`, `C#m7`, `Bb`, `sus4`), filter by key and type
 - Responsive React UI with SVG chord diagrams (nut, fret position, barres, open and muted strings)
+
+## CAGED system
+
+Every major, minor, 7, maj7, m7, sus2, sus4, 6 and m6 chord shows the five CAGED forms: the same chord played with the shapes of the open **C, A, G, E and D** chords, moved up the neck so the root lands on the right note. The forms are listed from the lowest fret upward, so for C major you get C (open), A (fret 3), G (fret 5), E (fret 8) and D (fret 10). Each diagram marks the barre, open and muted strings.
+
+The data is in the `caged` array of each chord (`form`, `order`, `lowestFret`, `positions`, `baseFret`, optional `barre`). Diminished, augmented, power, add9 and half-diminished chords are symmetrical or have no standard CAGED family, so they only have the regular voicings.
 
 ## Chord types
 
@@ -43,7 +50,7 @@ To point the frontend at another API, set `REACT_APP_API_URL` (default `http://l
 | `GET /api/chords/:id` | One chord, e.g. `C_major`, `Fsharp_min7` |
 | `GET /api/notes` | Available roots |
 | `GET /api/types` | Available chord types |
-| `GET /api/stats` | Counts of chords and voicings |
+| `GET /api/stats` | Counts of chords, voicings and CAGED chords |
 
 A chord looks like:
 
@@ -89,11 +96,12 @@ npm test           # re-verify every shipped voicing
 Contributions are welcome, especially:
 
 - more voicings (alternate shapes, higher inversions, 9th/11th/13th chords)
+- CAGED forms for more chord types (add the five parent shapes to `CAGED_SHAPES` in `chord-theory.js`)
 - alt tunings (Drop D, DADGAD, open G)
 - finger numbers on the diagrams
 - piano and ukulele views
 
-To add a shape, edit `chord-theory.js` (movable shapes) or the `OPEN` table in `generate-chords.js` (open shapes), run `npm run generate && npm test`, and open a pull request.
+To add a shape, edit `chord-theory.js` (movable and CAGED shapes) or the `OPEN` table in `generate-chords.js` (open shapes), run `npm run generate && npm test`, and open a pull request.
 
 ## License
 

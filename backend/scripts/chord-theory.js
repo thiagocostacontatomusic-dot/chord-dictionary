@@ -74,4 +74,27 @@ function validateVoicing(rootPc, intervals, frets) {
   return null;
 }
 
-module.exports = { SHARP, FLAT_ALIAS, TUNING, TYPES, mod12, soundedPitchClasses, validateVoicing };
+
+// ---------------------------------------------------------------------------
+// CAGED system: every chord type below has five open "parent" shapes (the open
+// C, A, G, E and D chord families). Shifting a shape up the neck by the distance
+// from its parent root to the target root gives the same chord in five places.
+// Frets are listed string 6 -> string 1 (null = muted).
+// ---------------------------------------------------------------------------
+const CAGED_FORMS = ['C', 'A', 'G', 'E', 'D'];
+const CAGED_ROOT_PC = { C: 0, A: 9, G: 7, E: 4, D: 2 }; // pitch class of each parent root
+
+const CAGED_SHAPES = {
+  major:  { C: [null, 3, 2, 0, 1, 0], A: [null, 0, 2, 2, 2, 0], G: [3, 2, 0, 0, 0, 3], E: [0, 2, 2, 1, 0, 0], D: [null, null, 0, 2, 3, 2] },
+  minor:  { C: [null, 3, 1, 0, 1, null], A: [null, 0, 2, 2, 1, 0], G: [3, 1, 0, 0, 3, 3], E: [0, 2, 2, 0, 0, 0], D: [null, null, 0, 2, 3, 1] },
+  dom7:   { C: [null, 3, 2, 3, 1, 0], A: [null, 0, 2, 0, 2, 0], G: [3, 2, 0, 0, 0, 1], E: [0, 2, 0, 1, 0, 0], D: [null, null, 0, 2, 1, 2] },
+  maj7:   { C: [null, 3, 2, 0, 0, 0], A: [null, 0, 2, 1, 2, 0], G: [3, 2, 0, 0, 0, 2], E: [0, 2, 1, 1, 0, 0], D: [null, null, 0, 2, 2, 2] },
+  min7:   { C: [null, 3, 1, 3, 1, null], A: [null, 0, 2, 0, 1, 0], G: [3, 1, 3, 3, 3, 3], E: [0, 2, 0, 0, 0, 0], D: [null, null, 0, 2, 1, 1] },
+  sus2:   { C: [null, 3, 0, 0, 3, 3], A: [null, 0, 2, 2, 0, 0], G: [3, 0, 0, 0, 3, 3], E: [0, 2, 4, 4, 0, 0], D: [null, null, 0, 2, 3, 0] },
+  sus4:   { C: [null, 3, 3, 0, 1, 1], A: [null, 0, 2, 2, 3, 0], G: [3, 3, 0, 0, 1, 3], E: [0, 2, 2, 2, 0, 0], D: [null, null, 0, 2, 3, 3] },
+  six:    { C: [null, 3, 2, 2, 1, 0], A: [null, 0, 2, 2, 2, 2], G: [3, 2, 0, 0, 0, 0], E: [0, 2, 2, 1, 2, 0], D: [null, null, 0, 2, 0, 2] },
+  minor6: { C: [null, 3, 1, 2, 1, null], A: [null, 0, 2, 2, 1, 2], G: [3, 1, 2, 0, 3, 0], E: [0, 2, 2, 0, 2, 0], D: [null, null, 0, 2, 0, 1] },
+};
+
+module.exports = {
+  CAGED_FORMS, CAGED_ROOT_PC, CAGED_SHAPES, SHARP, FLAT_ALIAS, TUNING, TYPES, mod12, soundedPitchClasses, validateVoicing };
