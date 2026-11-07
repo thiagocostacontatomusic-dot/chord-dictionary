@@ -23,16 +23,16 @@
 .nh-board { fill: var(--board); }
 .nh-inlay { fill: #e9e2d0; opacity: 0.2; }
 .nh-fret { stroke: #c9ccd6; stroke-width: 2; }
-.nh-nut { stroke: #f2ecda; stroke-width: 6; }
+.nh-nut { stroke: #e6e6e6; stroke-width: 6; }
 .nh-string { stroke: #e6e8ef; }
-.nh-string-wound { stroke: #d2a86a; }
+.nh-string-wound { stroke: #a9a9a9; }
 .nh-fretnum { font: 600 12px var(--font-body); fill: var(--ink-soft); }
 .nh-dot circle { fill: var(--dot); stroke: #0c0c0c; stroke-width: 1.2; transition: opacity 0.2s; }
 .nh-dot text { font: 700 11.5px var(--font-display); fill: #0c0c0c; pointer-events: none; }
 .nh-dot.is-root circle { fill: var(--dot-root); stroke: #0c0c0c; stroke-width: 1.6; }
 .nh-dot.is-root text { fill: #0c0c0c; }
 .nh-dot.is-chord circle { stroke: var(--dot-ring); stroke-width: 3.4; }
-.nh-dot.is-chord.is-root circle { stroke: var(--dot-ring); stroke-width: 3.4; }
+.nh-dot.is-chord.is-root circle { stroke: #b5b5b5; stroke-width: 3.4; }
 .nh-dot.is-off { opacity: 0.16; }
 
 .scales-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 10px 0 0; font-size: 0.8rem; color: var(--ink-soft); }

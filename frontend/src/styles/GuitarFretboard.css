@@ -3,7 +3,7 @@
 .inlay { fill: var(--pearl); opacity: 0.22; }
 .fret-wire { stroke: #c9ccd6; stroke-width: 2.2; }
 .fret-shadow { stroke: rgba(0, 0, 0, 0.45); stroke-width: 2; }
-.string-wound { stroke: #d2a86a; }
+.string-wound { stroke: #a9a9a9; }
 .string-plain { stroke: #e6e8ef; }
 .base-label { font: 700 14px var(--font-display); fill: var(--ink); }
 .mark-open { fill: none; stroke: var(--ink); stroke-width: 2.2; }
