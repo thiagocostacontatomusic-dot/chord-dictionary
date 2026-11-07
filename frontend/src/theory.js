@@ -24,8 +24,8 @@ export const MODES = [
 ].map((m, i) => ({ ...m, qual: DEGREES[i].q }));
 
 export const FAMILY = {
-  major: ['major', 'six', 'dom7', 'maj7', 'add9', 'sus2', 'sus4', 'power5', 'aug'],
-  minor: ['minor', 'minor6', 'min7'],
+  major: ['major', 'six', 'dom7', 'maj7', 'add9', 'sus2', 'sus4', 'power5', 'aug', 'dom9', 'maj9', 'dom13', 'sus7', 'dom7b9', 'dom7s9', 'aug7', 'six9'],
+  minor: ['minor', 'minor6', 'min7', 'min9', 'min11', 'mmaj7'],
   dim: ['dim', 'dim7', 'halfdim'],
 };
 

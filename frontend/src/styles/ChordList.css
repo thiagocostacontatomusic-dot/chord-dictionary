@@ -5,9 +5,9 @@
   padding: 11px 14px; border: 0; background: transparent; text-align: left;
 }
 .row:hover { background: var(--violet-tint); }
-.row.is-active { background: var(--violet); color: #fff; }
+.row.is-active { background: var(--violet); color: var(--on-violet); }
 .row-symbol { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; }
 .row-type { font-size: 0.85rem; color: var(--ink-soft); }
-.row.is-active .row-type { color: #e4defe; }
+.row.is-active .row-type { color: var(--on-violet); }
 .list-empty { margin: 0; padding: 16px; border: 1px dashed var(--line); border-radius: 12px; color: var(--ink-soft); }
 @media (max-width: 900px) { .list { max-height: 40vh; } }

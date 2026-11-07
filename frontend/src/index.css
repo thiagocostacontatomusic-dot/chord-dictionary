@@ -11,6 +11,7 @@
   --violet: #6b4eff;
   --violet-dark: #4b32d6;
   --violet-tint: #ebe7ff;
+  --on-violet: #ffffff;
   --error-bg: #fff0f0;
   --error-line: #f1b8b8;
   --error-ink: #8a1f1f;
@@ -36,6 +37,7 @@
   --violet: #8a73ff;
   --violet-dark: #b8a9ff;
   --violet-tint: #2b2554;
+  --on-violet: #131020;
   --error-bg: #3a1620;
   --error-line: #7a2b3b;
   --error-ink: #ffc2cc;

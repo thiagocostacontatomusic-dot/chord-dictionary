@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { useI18n, pretty } from '../i18n';
 import { SCALES, SCALE_GROUPS, scaleByKey, spellScale, positionWindows, TUNING, MAX_FRET, mod12 } from '../theory';
+import { playNotes, audioSupported } from '../audio';
 import '../styles/ScaleNeck.css';
 
 // A full-length neck, low E at the bottom, with the notes of any scale. A position keeps one
@@ -93,6 +94,19 @@ function ScaleNeck({ scaleKey, onScaleChange, rootPc, rootName, chord }) {
             {t('showDegrees')}
           </button>
         </div>
+        {audioSupported() && (
+          <button
+            type="button"
+            className="act"
+            onClick={() => {
+              const base = 48 + mod12(rootPc);
+              const up = [...scale.semis, 12].map((x) => base + x);
+              playNotes([...up, ...up.slice(0, -1).reverse()]);
+            }}
+          >
+            ▶ {t('playScale')}
+          </button>
+        )}
         <div className="positions" role="group" aria-label={t('allPositions')}>
           <button type="button" className={pos === null ? 'is-active' : ''} aria-pressed={pos === null} onClick={() => setPosition(null)}>
             {t('allPositions')}
@@ -105,7 +119,7 @@ function ScaleNeck({ scaleKey, onScaleChange, rootPc, rootName, chord }) {
         </div>
       </div>
 
-      <div className="neck-scroll">
+      <div className="neck-scroll" tabIndex={0} role="region" aria-label={t("neckLabel", title)}>
         <svg viewBox={`0 0 ${W} ${H}`} className="neck-h" role="img" aria-label={t('neckLabel', title)}>
           <rect x={X0} y={Y0 - 14} width={MAX_FRET * FRET_W} height={STRING_GAP * 5 + 28} rx="4" className="nh-board" />
           {MARKS.map((f) => (

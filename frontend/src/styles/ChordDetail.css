@@ -30,3 +30,10 @@ tr.is-muted th, tr.is-muted .how-fret { opacity: 0.5; }
   .detail { padding: 18px; border-radius: 16px; }
   .stage { grid-template-columns: 1fr; }
 }
+
+.detail-actions { display: flex; gap: 8px; margin-left: auto; flex-wrap: wrap; }
+.act { font: inherit; font-weight: 600; font-size: 0.9rem; padding: 8px 16px; border-radius: 999px; cursor: pointer; border: 1px solid var(--violet-dark); background: transparent; color: var(--violet-dark); }
+.act:hover { background: var(--violet-tint); }
+.act-primary { background: var(--violet-dark); color: var(--on-ink); }
+.act-primary:hover { background: var(--violet-dark); opacity: .88; }
+.act:focus-visible { outline: 3px solid var(--violet-dark); outline-offset: 2px; }

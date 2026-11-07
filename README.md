@@ -4,10 +4,15 @@
 
 **Install it like an app:** open the site in Chrome, Edge or Safari and use *Install app* (or *Add to Home Screen* on iPhone). After the first visit it also works offline.
 
+![Light and dark themes](docs/screenshot-light.png)
+
 An open-source, interactive **guitar chord dictionary**. Search any chord, see it drawn on the fretboard, and switch between voicings (open shapes and movable barre shapes up the neck).
 
-- **180 chords**: all 12 keys x 15 chord types
-- **331 voicings**: open-position shapes where they exist, plus E-shape and A-shape barre chords
+- **312 chords**: all 12 keys x 26 chord types, from triads to 9ths, 11ths and 13ths
+- **559 voicings**: open-position shapes where they exist, plus E-shape and A-shape barre chords
+- **Listen**: play any voicing as a strum, or any scale up and down (Web Audio, no files)
+- **Share**: copy a link that opens straight on the chord
+- **Circle of fifths, modes and 20 scales**, light and dark themes, installable and offline
 - **CAGED system**: 108 chords (9 chord types x 12 keys) with all five CAGED shapes, ordered from the nut up the neck
 - **Every voicing is machine-checked**: tests compute the notes each string actually sounds in standard tuning (E A D G B E) and fail if a shape does not spell its chord
 - Search by name or symbol (`Am`, `C#m7`, `Bb`, `sus4`), filter by key and type
@@ -25,7 +30,7 @@ The data is in the `caged` array of each chord (`form`, `order`, `lowestFret`, `
 
 ## Chord types
 
-Major, Minor, Power (5), Diminished, Augmented, Suspended 2, Suspended 4, Major 6, Minor 6, Dominant 7, Major 7, Minor 7, Diminished 7, Half-diminished (m7b5), Add9.
+Major, Minor, Power (5), Diminished, Augmented, Suspended 2, Suspended 4, Major 6, Minor 6, Dominant 7, Major 7, Minor 7, Diminished 7, Half-diminished (m7b5), Add9, Dominant 9, Major 9, Minor 9, Minor 11, Dominant 13, 7sus4, 7b9, 7#9, Minor-major 7, Augmented 7, 6/9.
 
 Each chord is spelled the way a musician would write it (Bb major is Bb D F, not A# D F). Both spellings work in search (`Db` or `C#`).
 

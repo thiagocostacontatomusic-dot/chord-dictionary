@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import GuitarFretboard from './GuitarFretboard';
 import CagedSection from './CagedSection';
 import { useI18n, pretty } from '../i18n';
+import { strum, audioSupported } from '../audio';
 import '../styles/ChordDetail.css';
 
 const TUNING = { 6: 4, 5: 9, 4: 2, 3: 7, 2: 11, 1: 4 };
@@ -25,6 +26,19 @@ function ChordDetail({ chord }) {
     };
   });
 
+  const [copied, setCopied] = useState(false);
+  const share = async () => {
+    const url = window.location.href;
+    try {
+      if (navigator.share) await navigator.share({ title: `${chord.symbol} · Chord Dictionary`, url });
+      else {
+        await navigator.clipboard.writeText(url);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1800);
+      }
+    } catch (e) { /* user cancelled */ }
+  };
+
   const voicingLabel = (v) =>
     v.shape ? t('shapeTab', v.shape, v.fret) : t('openPosition');
 
@@ -37,6 +51,16 @@ function ChordDetail({ chord }) {
           {chord.altName && (
             <p className="detail-alt">{t('also')}: {pretty(chord.altSymbol)}</p>
           )}
+        </div>
+        <div className="detail-actions">
+          {audioSupported() && (
+            <button type="button" className="act act-primary" onClick={() => strum(voicing.positions)}>
+              ▶ {t('play')}
+            </button>
+          )}
+          <button type="button" className="act" onClick={share}>
+            {copied ? t('copied') : t('share')}
+          </button>
         </div>
       </header>
 

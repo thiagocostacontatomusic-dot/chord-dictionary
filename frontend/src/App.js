@@ -214,6 +214,14 @@ function App() {
             <ChordList chords={chords} selectedChord={selectedChord} onSelectChord={selectChord} />
           </aside>
         </main>
+
+        <footer className="foot">
+          <p>{t('footer')}</p>
+          <p>
+            <a href="https://github.com/thiagocostacontatomusic-dot/chord-dictionary" target="_blank" rel="noreferrer">{t('source')}</a>
+            {' · '}{t('madeBy')}
+          </p>
+        </footer>
       </div>
     </I18nContext.Provider>
   );
