@@ -65,7 +65,7 @@ function App() {
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', theme === 'dark' ? '#09090a' : '#101010');
+    if (meta) meta.setAttribute('content', ({ dark: '#09090a', stage: '#050404', light: '#101010' })[theme]);
     saveTheme(theme);
   }, [theme]);
 
@@ -150,10 +150,10 @@ function App() {
               <button type="button" className="install" onClick={install}>{t('install')}</button>
             )}
             <div className="lang" role="group" aria-label={t('themeLabel')}>
-              {['light', 'dark'].map((th) => (
+              {['light', 'dark', 'stage'].map((th) => (
                 <button key={th} type="button" className={theme === th ? 'is-active' : ''} aria-pressed={theme === th} onClick={() => setTheme(th)}>
-                  {th === 'light' ? '☀' : '☾'}
-                  <span className="sr-only">{t(th === 'light' ? 'themeLight' : 'themeDark')}</span>
+                  {({ light: '☀', dark: '☾', stage: '✦' })[th]}
+                  <span className="sr-only">{t({ light: 'themeLight', dark: 'themeDark', stage: 'themeStage' }[th])}</span>
                 </button>
               ))}
             </div>

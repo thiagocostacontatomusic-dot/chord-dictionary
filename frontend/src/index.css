@@ -76,6 +76,44 @@
   --c5: #2a2a2b; --c5t: #ecebe7;
 }
 
+/* Stage: the house lights go down. Near-black with a warm tint, one stage-red accent, and a faint
+   spot of light from above. The shades for the notes stay neutral, only the root is red. */
+:root[data-theme='stage'] {
+  color-scheme: dark;
+  --paper: #050404;
+  --surface: #0e0c0c;
+  --ink: #f2ece7;
+  --on-ink: #050404;
+  --ink-soft: #ab9f99;
+  --ink-2: #ddd4cf;
+  --ink-3: #ab9f99;
+  --line: #2c2424;
+  --accent: #c92f34;
+  --accent-dark: #ff6a6e;
+  --accent-tint: #1d1616;
+  --on-accent: #ffffff;
+  --error-bg: #2b1518;
+  --error-line: #6b2b33;
+  --error-ink: #ffc2cc;
+  --wheel-s2: 8%; --wheel-l2: 21%;
+  --wheel-s1: 6%; --wheel-l1: 16%;
+  --wheel-s0: 5%; --wheel-l0: 12%;
+  --wheel-stroke: #050404;
+  --wheel-dot: #4d4343;
+  --board: #0a0808;
+  --r1: #ff6a6e; --r1t: #0c0c0c;
+  --c1: #c92f34; --c1t: #ffffff;
+  --c2: #ddd4cf; --c2t: #0c0c0c;
+  --c3: #a89d98; --c3t: #0c0c0c;
+  --c4: #6f6563; --c4t: #ffffff;
+  --c5: #231b1b; --c5t: #f2ece7;
+}
+:root[data-theme='stage'] body {
+  background: radial-gradient(900px 420px at 50% -80px, rgba(201, 47, 52, 0.16), transparent 70%), var(--paper);
+  background-attachment: fixed;
+}
+:root[data-theme='stage'] :focus-visible { outline-color: var(--accent-dark); }
+
 * { box-sizing: border-box; }
 
 html, body { margin: 0; }
@@ -108,11 +146,11 @@ button, select, .row, .tab, .chip {
 }
 button:active:not(:disabled) { transform: translateY(1px); }
 .detail, .scales, .prog, .study, .pt { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5); }
-:root[data-theme='dark'] .detail,
-:root[data-theme='dark'] .scales,
-:root[data-theme='dark'] .prog,
-:root[data-theme='dark'] .study,
-:root[data-theme='dark'] .pt { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05); }
+:root:not([data-theme='light']) .detail,
+:root:not([data-theme='light']) .scales,
+:root:not([data-theme='light']) .prog,
+:root:not([data-theme='light']) .study,
+:root:not([data-theme='light']) .pt { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05); }
 ::selection { background: var(--ink); color: var(--paper); }
 @keyframes settle { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .detail { animation: settle 0.28s ease-out; }

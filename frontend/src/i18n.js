@@ -131,6 +131,7 @@ export const DICT = {
     themeLabel: 'Theme',
     themeLight: 'Light',
     themeDark: 'Dark',
+    themeStage: 'Stage',
     install: 'Install app',
     play: 'Play', share: 'Copy link', copied: 'Link copied',
     footer: 'Free and open source (MIT).', source: 'Source code on GitHub', madeBy: 'Made by Thiago Costa',
@@ -281,6 +282,7 @@ export const DICT = {
     themeLabel: 'Tema',
     themeLight: 'Claro',
     themeDark: 'Escuro',
+    themeStage: 'Palco',
     install: 'Instalar app',
     play: 'Ouvir', share: 'Copiar link', copied: 'Link copiado',
     footer: 'Gratuito e de código aberto (MIT).', source: 'Código no GitHub', madeBy: 'Feito por Thiago Costa',
@@ -424,7 +426,7 @@ export function saveLefty(on) {
 export function readTheme() {
   try {
     const saved = window.localStorage.getItem('chord-dictionary-theme');
-    if (saved === 'light' || saved === 'dark') return saved;
+    if (saved === 'light' || saved === 'dark' || saved === 'stage') return saved;
   } catch (e) {
     /* storage can be blocked */
   }

@@ -4,7 +4,11 @@
 
 **Install it like an app:** open the site in Chrome, Edge or Safari and use *Install app* (or *Add to Home Screen* on iPhone). After the first visit it also works offline.
 
-![Light and dark themes](docs/screenshot-light.png)
+![Light theme](docs/screenshot-light.png)
+
+| Dark | Stage |
+| --- | --- |
+| ![Dark theme](docs/screenshot-dark.png) | ![Stage theme](docs/screenshot-stage.png) |
 
 An open-source, interactive **guitar chord dictionary**. Search any chord, see it drawn on the fretboard, and switch between voicings (open shapes and movable barre shapes up the neck).
 
@@ -17,7 +21,7 @@ An open-source, interactive **guitar chord dictionary**. Search any chord, see i
 - **Notes shaded by their job**: root, third, fifth, seventh and extensions get their own shade (white to dark) on the chord diagrams, the note chips, the *How to play* table and the scale neck, with the degree written on each finger
 - **Listen**: play any voicing as a strum, or any scale up and down (Web Audio, no files)
 - **Share**: copy a link that opens straight on the chord
-- **Circle of fifths, modes and 20 scales**, light and dark themes, installable and offline
+- **Circle of fifths, modes and 20 scales**, three themes (Light, Dark and Stage), installable and offline
 - **CAGED system**: 240 chords (20 types x 12 keys), every one with all five shapes (C, A, G, E, D), derived from the parent triad shapes and machine-checked, including 9ths, 11th, 13th, 7sus4, 7b9, 7#9, mMaj7, aug7 and 6/9
 - **Study guide**: tension and rest, cadences, chords of a key, dominants and tritone substitution, borrowed chords and modes, jazz-standard patterns and practice tips, with every example shown in the key you are in and playable
 - **Scales meet CAGED**: for major, minor and pentatonic scales, each position shows which CAGED shape of the tonic chord it holds
@@ -26,7 +30,7 @@ An open-source, interactive **guitar chord dictionary**. Search any chord, see i
 - **Circle of fifths wheel** with a fixed window: turn the wheel (drag, arrow keys or the side buttons) and the window always frames the seven chords of that key, with Roman numerals
 - **Modes**: Ionian to Locrian on the same wheel (D Dorian turns the wheel to C major and relabels the degrees)
 - **20 scales on a full 22-fret neck**, with a metronome right under it: the seven modes, major and minor pentatonic, blues, harmonic and melodic minor, Phrygian dominant, Lydian dominant, altered, double harmonic, whole tone and both diminished scales. Notes are spelled correctly (F# major has E#), shown as names or degrees, with five-fret positions and the tones of the chord you are viewing ringed
-- Light and dark themes (follows your system, switchable), English and Portuguese
+- Three themes: Light, Dark and Stage (near-black with a single stage-red accent). Follows your system on first visit, switchable. English and Portuguese
 - Responsive React UI with SVG chord diagrams (nut, fret position, barres, open and muted strings)
 
 ## CAGED system
