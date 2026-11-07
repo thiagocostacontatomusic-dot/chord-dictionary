@@ -62,3 +62,12 @@ tr.is-muted th, tr.is-muted .how-fret { color: var(--ink-soft); }
 .step:disabled { opacity: 0.4; cursor: default; }
 .step:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 2px; }
 .step-count { font-weight: 600; font-size: 0.92rem; }
+
+.tone.r1 { background: var(--c1); color: var(--c1t); } .tone.r2 { background: var(--c2); color: var(--c2t); }
+.tone.r3 { background: var(--c3); color: var(--c3t); } .tone.r4 { background: var(--c4); color: var(--c4t); }
+.tone.r5 { background: var(--c5); color: var(--c5t); box-shadow: inset 0 0 0 1px var(--ink-soft); }
+.tone span { color: inherit; opacity: 1; font-weight: 500; }
+.how-note b.rn { padding: 1px 9px; border-radius: 999px; }
+.how-note b.r1 { background: var(--c1); color: var(--c1t); } .how-note b.r2 { background: var(--c2); color: var(--c2t); }
+.how-note b.r3 { background: var(--c3); color: var(--c3t); } .how-note b.r4 { background: var(--c4); color: var(--c4t); }
+.how-note b.r5 { background: var(--c5); color: var(--c5t); box-shadow: inset 0 0 0 1px var(--ink-soft); }

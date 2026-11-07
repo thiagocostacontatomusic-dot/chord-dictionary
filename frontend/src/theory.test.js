@@ -67,3 +67,10 @@ test('English and Portuguese dictionaries have the same keys', () => {
 test('the neck runs to fret 22', () => {
   expect(require('./theory').MAX_FRET).toBe(22);
 });
+
+test('tone roles: root, third, fifth, seventh, extension', () => {
+  const { toneRole } = require('./theory');
+  expect(['1', '3', '♭3', '5', '♭5', '♯5', '♭7', '7', '6', '9', '♯11', '13', '♭13'].map((d) => toneRole(d, ['1', '3', '5']))).toEqual([1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 5]);
+  expect(toneRole('4', ['1', '4', '5'])).toBe(2);
+  expect(toneRole('4', ['1', '3', '5', '4'])).toBe(5);
+});

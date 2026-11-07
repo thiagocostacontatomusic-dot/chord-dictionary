@@ -29,16 +29,17 @@
 .nh-fretnum { font: 600 12px var(--font-body); fill: var(--ink-soft); }
 .nh-dot circle { fill: var(--dot); stroke: #0c0c0c; stroke-width: 1.2; transition: opacity 0.2s; }
 .nh-dot text { font: 700 11.5px var(--font-display); fill: #0c0c0c; pointer-events: none; }
-.nh-dot.is-root circle { fill: var(--dot-root); stroke: #0c0c0c; stroke-width: 1.6; }
-.nh-dot.is-root text { fill: #0c0c0c; }
+.nh-dot.r1 circle { fill: var(--r1); } .nh-dot.r2 circle { fill: var(--r2); } .nh-dot.r3 circle { fill: var(--r3); }
+.nh-dot.r4 circle { fill: var(--r4); stroke: #d0d0d0; } .nh-dot.r5 circle { fill: var(--r5); stroke: #d0d0d0; }
+.nh-dot.r1 text { fill: var(--r1t); } .nh-dot.r2 text { fill: var(--r2t); } .nh-dot.r3 text { fill: var(--r3t); }
+.nh-dot.r4 text { fill: var(--r4t); } .nh-dot.r5 text { fill: var(--r5t); }
 .nh-dot.is-chord circle { stroke: var(--dot-ring); stroke-width: 3.4; }
 .nh-dot.is-chord.is-root circle { stroke: #b5b5b5; stroke-width: 3.4; }
 .nh-dot.is-off { opacity: 0.16; }
 
 .scales-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 10px 0 0; font-size: 0.8rem; color: var(--ink-soft); }
 .scales-legend span { display: inline-flex; align-items: center; gap: 6px; }
-.lg-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--dot); border: 1.5px solid #0c0c0c; display: inline-block; }
-.lg-dot.is-root { background: var(--dot-root); border-color: #0c0c0c; }
+.lg-dot { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid var(--ink); display: inline-block; }
 .lg-dot.is-chord { border: 3px solid var(--ink); }
 
 @media (max-width: 700px) { .scales { padding: 18px; border-radius: 16px; } }

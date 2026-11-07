@@ -1,5 +1,6 @@
 import React from 'react';
 import GuitarFretboard from './GuitarFretboard';
+import { rolesFor } from '../theory';
 import { useI18n, pretty } from '../i18n';
 import '../styles/CagedSection.css';
 
@@ -29,6 +30,7 @@ function CagedSection({ chord }) {
               positions={form.positions}
               baseFret={form.baseFret}
               barre={form.barre}
+              roles={rolesFor(chord, form.positions)}
             />
           </li>
         ))}

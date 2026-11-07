@@ -128,3 +128,25 @@ export function positionWindows(rootPc, scale) {
 const PARENT_LETTER = ['C', 'G', 'D', 'A', 'E', 'B', 'F', 'D', 'A', 'E', 'B', 'F'];
 export const keyNames = (parentPc) => spellScale(PARENT_LETTER[fifthsIndex(parentPc)], parentPc, SCALES[0]);
 export const QUAL_SUFFIX = { major: '', minor: 'm', dim: 'dim' };
+
+// The job a note does in a chord: 1 root, 2 third (or the sus note that replaces it), 3 fifth,
+// 4 seventh (or sixth), 5 any extension. Used to shade notes from white to dark.
+export function toneRole(degree, degrees = []) {
+  if (degree === '1') return 1;
+  if (/^[♭♯]?3$/.test(degree)) return 2;
+  if ((degree === "2" || degree === "4") && !degrees.some((d) => /^[♭♯]?3$/.test(d))) return 2;
+  if (/^[♭♯]?5$/.test(degree)) return 3;
+  if (['7', '♭7', '♭♭7', '6'].includes(degree)) return 4;
+  return 5;
+}
+
+// role of each sounded string of a voicing: { [string]: role }
+export function rolesFor(chord, positions) {
+  const out = {};
+  positions.forEach((p) => {
+    if (p.fret === null) return;
+    const i = chord.pcs.indexOf(mod12(TUNING[p.string] + p.fret));
+    if (i !== -1) out[p.string] = { role: toneRole(chord.degrees[i], chord.degrees), degree: chord.degrees[i] };
+  });
+  return out;
+}

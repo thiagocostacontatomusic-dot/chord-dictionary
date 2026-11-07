@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useI18n, pretty } from '../i18n';
-import { SCALES, SCALE_GROUPS, scaleByKey, spellScale, positionWindows, TUNING, MAX_FRET, mod12 } from '../theory';
+import { toneRole, SCALES, SCALE_GROUPS, scaleByKey, spellScale, positionWindows, TUNING, MAX_FRET, mod12 } from '../theory';
 import { playNotes, audioSupported } from '../audio';
 import { chordFor } from '../chordData';
 import { Metronome } from './PracticeTools';
@@ -96,7 +96,7 @@ function ScaleNeck({ scaleKey, onScaleChange, rootPc: keyPc, rootName: keyName, 
       const pc = mod12(TUNING[s] + f);
       const i = idxOfPc[pc];
       if (i === undefined) continue;
-      dots.push({ s, f, i, root: i === 0, chord: chordPcs.has(pc), on: lit(f) });
+      dots.push({ s, f, i, root: i === 0, chord: chordPcs.has(pc), on: lit(f), role: toneRole(scale.degs[i], scale.degs) });
     }
   });
 
@@ -214,7 +214,7 @@ function ScaleNeck({ scaleKey, onScaleChange, rootPc: keyPc, rootName: keyName, 
               </text>
             ))}
           {dots.map((d) => (
-            <g key={`${d.s}-${d.f}`} className={`nh-dot ${d.root ? 'is-root' : ''} ${d.chord ? 'is-chord' : ''} ${d.on ? '' : 'is-off'}`}>
+            <g key={`${d.s}-${d.f}`} className={`nh-dot r${d.role} ${d.root ? 'is-root' : ''} ${d.chord ? 'is-chord' : ''} ${d.on ? '' : 'is-off'}`}>
               <circle cx={fretX(d.f)} cy={stringY(d.s)} r={d.f === 0 ? 11 : 12.5} />
               <text x={fretX(d.f)} y={stringY(d.s) + 4} textAnchor="middle">
                 {labelMode === 'names' ? pretty(spelled[d.i]) : scale.degs[d.i]}
@@ -225,9 +225,10 @@ function ScaleNeck({ scaleKey, onScaleChange, rootPc: keyPc, rootName: keyName, 
       </div>
 
       <p className="scales-legend">
-        <span><i className="lg-dot is-root" />{t('legendRoot')}</span>
-        <span><i className="lg-dot" />{t('legendScale')}</span>
-        <span><i className="lg-dot is-chord" />{t('legendChord')}</span>
+        {[1, 2, 3, 4, 5].map((n) => (
+          <span key={n}><i className={`lg-dot r${n}`} />{n === 5 ? t('legendScale') : t('toneRole', n)}</span>
+        ))}
+        <span><i className="lg-dot r5 is-chord" />{t('legendChord')}</span>
       </p>
 
       {audioSupported() && (

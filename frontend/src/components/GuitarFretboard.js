@@ -23,7 +23,7 @@ const DOUBLE_INLAY = [12, 24];
 const xOfFor = (lefty) => (stringNum) => X0 + (lefty ? stringNum - 1 : 6 - stringNum) * GAP_X;
 const rowY = (fret, base) => Y0 + (fret - base + 0.5) * GAP_Y;
 
-function GuitarFretboard({ positions, baseFret = 1, barre, compact = false, showLegend = true }) {
+function GuitarFretboard({ positions, baseFret = 1, barre, compact = false, showLegend = true, roles = null }) {
   const { t } = useI18n();
   const lefty = useContext(LeftyContext);
   const xOf = xOfFor(lefty);
@@ -163,10 +163,32 @@ function GuitarFretboard({ positions, baseFret = 1, barre, compact = false, show
           if (row < 0 || row >= FRETS) return null;
           const cx = xOf(p.string);
           const cy = rowY(p.fret, baseFret);
+          const r = roles && roles[p.string];
           return (
             <g key={`f${p.string}`}>
               <circle cx={cx} cy={cy + 2} r="12" className="finger-shadow" />
-              <circle cx={cx} cy={cy} r="12" fill={`url(#finger${uid})`} className="finger" />
+              {r ? (
+                <>
+                  <circle cx={cx} cy={cy} r="12" className={`finger role r${r.role}`} />
+                  <text x={cx} y={cy + 4} textAnchor="middle" className={`role-text r${r.role}`}>{r.degree}</text>
+                </>
+              ) : (
+                <circle cx={cx} cy={cy} r="12" fill={`url(#finger${uid})`} className="finger" />
+              )}
+            </g>
+          );
+        })}
+
+        {/* notes under a barre keep their own shade */}
+        {roles && barreStrings && [...barreStrings].map((s) => {
+          const r = roles[s];
+          if (!r) return null;
+          const cx = xOf(s);
+          const cy = rowY(barre.fret, baseFret);
+          return (
+            <g key={`b${s}`}>
+              <circle cx={cx} cy={cy} r="9.5" className={`finger role r${r.role}`} />
+              <text x={cx} y={cy + 3.6} textAnchor="middle" className={`role-text small r${r.role}`}>{r.degree}</text>
             </g>
           );
         })}
@@ -174,7 +196,11 @@ function GuitarFretboard({ positions, baseFret = 1, barre, compact = false, show
 
       {showLegend && !compact && (
         <figcaption className="neck-legend">
-          <span><i className="lg lg-finger" />{t('legendFinger')}</span>
+          {roles
+            ? [...new Set(Object.values(roles).map((r) => r.role))].sort().map((n) => (
+              <span key={n}><i className={`lg lg-role r${n}`} />{t('toneRole', n)}</span>
+            ))
+            : <span><i className="lg lg-finger" />{t('legendFinger')}</span>}
           <span><i className="lg lg-barre" />{t('legendBarre')}</span>
           <span><i className="lg lg-open" />{t('legendOpen')}</span>
           <span><i className="lg lg-muted">×</i>{t('legendMuted')}</span>

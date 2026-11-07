@@ -14,6 +14,7 @@ An open-source, interactive **guitar chord dictionary**. Search any chord, see i
 - **Arpeggios**: the notes of the chord on screen across the neck, in five positions tied to the CAGED shapes
 - **Progression builder**: build a sequence, hear it, move it to another key and see the Roman numerals
 - **Practice tools**: metronome with quarter, eighth, triplet and sixteenth subdivisions, a chord quiz (by sight or by ear) and a left-handed mirror mode
+- **Notes shaded by their job**: root, third, fifth, seventh and extensions get their own shade (white to dark) on the chord diagrams, the note chips, the *How to play* table and the scale neck, with the degree written on each finger
 - **Listen**: play any voicing as a strum, or any scale up and down (Web Audio, no files)
 - **Share**: copy a link that opens straight on the chord
 - **Circle of fifths, modes and 20 scales**, light and dark themes, installable and offline

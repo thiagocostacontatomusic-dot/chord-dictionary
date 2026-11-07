@@ -22,6 +22,18 @@
   --wheel-dot: #b4b2ad;
   --board: #151517;
   --pearl: #ffffff;
+  /* Shades by job in the chord, on the dark board: root, third, fifth, seventh, extension. */
+  --r1: #ffffff; --r1t: #0c0c0c;
+  --r2: #d9d6ce; --r2t: #0c0c0c;
+  --r3: #a3a19b; --r3t: #0c0c0c;
+  --r4: #6e6c68; --r4t: #ffffff;
+  --r5: #3f3e3b; --r5t: #ffffff;
+  /* The same five shades on the page itself. */
+  --c1: #111111; --c1t: #ffffff;
+  --c2: #4b4a47; --c2t: #ffffff;
+  --c3: #9a9892; --c3t: #0c0c0c;
+  --c4: #cbc9c3; --c4t: #111111;
+  --c5: #e8e6e1; --c5t: #111111;
   --focus-halo: #ffffff;
   --finger-a: #ffffff;
   --finger-b: #bdbdbd;
@@ -57,6 +69,11 @@
   --wheel-stroke: #09090a;
   --wheel-dot: #4a4946;
   --board: #0d0d0e;
+  --c1: #ffffff; --c1t: #0c0c0c;
+  --c2: #d9d6ce; --c2t: #0c0c0c;
+  --c3: #a3a19b; --c3t: #0c0c0c;
+  --c4: #6e6c68; --c4t: #ffffff;
+  --c5: #2a2a2b; --c5t: #ecebe7;
 }
 
 * { box-sizing: border-box; }
@@ -99,3 +116,17 @@ button:active:not(:disabled) { transform: translateY(1px); }
 ::selection { background: var(--ink); color: var(--paper); }
 @keyframes settle { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .detail { animation: settle 0.28s ease-out; }
+
+/* Notes shaded by their job in the chord */
+.finger.role { stroke: #0c0c0c; }
+.finger.role.r4, .finger.role.r5 { stroke: #d0d0d0; }
+.finger.role.r1 { fill: var(--r1); } .finger.role.r2 { fill: var(--r2); } .finger.role.r3 { fill: var(--r3); }
+.finger.role.r4 { fill: var(--r4); } .finger.role.r5 { fill: var(--r5); }
+.role-text { font: 700 11px var(--font-display); pointer-events: none; }
+.role-text.small { font-size: 9px; }
+.role-text.r1 { fill: var(--r1t); } .role-text.r2 { fill: var(--r2t); } .role-text.r3 { fill: var(--r3t); }
+.role-text.r4 { fill: var(--r4t); } .role-text.r5 { fill: var(--r5t); }
+.lg-role { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid var(--ink); display: inline-block; }
+.lg-role.r1, .lg-dot.r1 { background: var(--r1); } .lg-role.r2, .lg-dot.r2 { background: var(--r2); }
+.lg-role.r3, .lg-dot.r3 { background: var(--r3); } .lg-role.r4, .lg-dot.r4 { background: var(--r4); }
+.lg-role.r5, .lg-dot.r5 { background: var(--r5); }

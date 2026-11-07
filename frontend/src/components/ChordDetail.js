@@ -4,6 +4,7 @@ import CagedSection from './CagedSection';
 import { useI18n, pretty } from '../i18n';
 import { strum, audioSupported } from '../audio';
 import { chordFor } from '../chordData';
+import { toneRole, rolesFor } from '../theory';
 import { GROUPS, parseInversions, loadInversions, loadedInversions } from '../inversions';
 import '../styles/ChordDetail.css';
 
@@ -135,7 +136,7 @@ function ChordDetail({ chord, onSelect }) {
 
       <ul className="tones" aria-label={t('notes')}>
         {chord.notes.map((n, i) => (
-          <li className="tone" key={n + i}>
+          <li className={`tone r${toneRole(chord.degrees[i], chord.degrees)}`} key={n + i}>
             <b>{pretty(n)}</b>
             <span>{chord.degrees[i]}</span>
           </li>
@@ -226,6 +227,7 @@ function ChordDetail({ chord, onSelect }) {
           positions={voicing.positions}
           baseFret={voicing.baseFret}
           barre={voicing.barre}
+          roles={rolesFor(chord, voicing.positions)}
         />
 
         <div className="how">
@@ -244,7 +246,7 @@ function ChordDetail({ chord, onSelect }) {
                   <td className="how-note">
                     {r.note && (
                       <>
-                        <b>{pretty(r.note.name)}</b>
+                        <b className={`rn r${toneRole(r.note.degree, chord.degrees)}`}>{pretty(r.note.name)}</b>
                         <span>{r.note.degree}</span>
                       </>
                     )}
