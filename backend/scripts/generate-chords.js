@@ -5,7 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 const {
-  SHARP, TYPES, mod12, validateVoicing, spellChord,
+  SHARP, TYPES, TUNING, mod12, validateVoicing, spellChord,
   CAGED_FORMS, CAGED_ROOT_PC, CAGED_SHAPES, shapeSpan,
 } = require('./chord-theory');
 
@@ -151,6 +151,51 @@ for (const rootPc of SHARP.map((_, i) => i)) {
         .map((entry, i) => ({ ...entry, order: i + 1 }));
     }
 
+    // Inversions on four adjacent strings (the "drop" family of jazz voicings): one voicing per
+    // string set and per bass note, at the lowest comfortable position. Chords of five notes
+    // leave out the fifth; triads and two-note chords have none.
+    const quartet = t.tones.length === 5 ? t.tones.filter((x) => x[1] !== '5') : t.tones;
+    const inversions = [];
+    if (quartet.length === 4) {
+      const qPcs = quartet.map((x) => mod12(rootPc + x[0]));
+      const { primary: sp } = spellChord(rootPc, t.tones);
+      const noteOfPc = (pc) => { const i = t.tones.findIndex((x) => mod12(rootPc + x[0]) === pc); return sp.notes[i]; };
+      for (const first of [0, 1, 2]) {
+        const set = [first, first + 1, first + 2, first + 3];
+        for (let inv = 0; inv < 4; inv += 1) {
+          let best = null;
+          // each string takes the fret that sounds one of the four tones; try all assignments
+          const tryFrets = (k, cur) => {
+            if (k === 4) {
+              const pcs = cur.map((f, i) => mod12(TUNING[set[i]] + f));
+              if (new Set(pcs).size !== 4 || !pcs.every((pc) => qPcs.includes(pc))) return;
+              if (pcs[0] !== qPcs[inv]) return;
+              const fr = cur.filter((f) => f > 0);
+              const span = fr.length ? Math.max(...fr) - Math.min(...fr) : 0;
+              if (span > 3) return;
+              if (cur.includes(0) && Math.max(...cur) > 5) return; // open strings only near the nut
+              const score = Math.max(...cur) * 10 + span;
+              if (!best || score < best.score) best = { score, cur: cur.slice() };
+              return;
+            }
+            for (let f = 0; f <= 14; f += 1) { cur[k] = f; tryFrets(k + 1, cur); }
+          };
+          tryFrets(0, []);
+          if (!best) continue;
+          const frets = [null, null, null, null, null, null];
+          set.forEach((si, i) => { frets[si] = best.cur[i]; });
+          inversions.push({
+            inversion: inv,
+            bass: noteOfPc(qPcs[inv]),
+            strings: [6 - set[0], 6 - set[3]],
+            frets,
+            baseFret: baseFretOf(frets),
+          });
+        }
+      }
+      inversions.sort((a, b) => a.inversion - b.inversion || b.strings[0] - a.strings[0]);
+    }
+
     const { primary, alt } = spellChord(rootPc, t.tones);
     const symbol = primary.root + t.suffix;
     const aliases = [];
@@ -175,6 +220,7 @@ for (const rootPc of SHARP.map((_, i) => i)) {
       baseFret: voicings[0].baseFret,
       voicings,
       caged,
+      inversions,
     });
   }
 }
@@ -186,5 +232,6 @@ if (errors.length) {
 
 fs.writeFileSync(path.join(__dirname, '..', 'chords.json'), JSON.stringify(chords, null, 1) + '\n');
 const total = chords.reduce((n, c) => n + c.voicings.length, 0);
+const invTotal = chords.reduce((n, c) => n + c.inversions.length, 0);
 const cagedChords = chords.filter((c) => c.caged.length).length;
-console.log(`Generated ${chords.length} chords (${total} voicings, ${cagedChords} with CAGED forms)`);
+console.log(`Generated ${chords.length} chords (${total} voicings, ${cagedChords} with CAGED forms, ${invTotal} inversions)`);

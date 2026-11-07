@@ -1,0 +1,22 @@
+.prog { margin-top: 28px; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+.prog h3 { margin: 0; font-family: var(--font-display); font-size: 1.3rem; }
+.prog-help { margin: 4px 0 14px; color: var(--ink-soft); font-size: 0.92rem; max-width: 70ch; }
+.prog-add, .prog-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.prog-sep { margin-left: 6px; color: var(--ink-soft); font-size: 0.85rem; }
+.prog-btn { padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); font: inherit; font-size: 0.88rem; font-weight: 600; cursor: pointer; color: var(--ink); }
+.prog-btn:hover:not(:disabled) { border-color: var(--violet); }
+.prog-btn:disabled { opacity: 0.55; cursor: default; }
+.prog-btn-soft { background: var(--surface); font-family: var(--font-display); }
+.prog-primary { background: var(--violet-dark); border-color: var(--violet-dark); color: var(--on-ink); }
+.prog-empty { margin: 16px 0; color: var(--ink-soft); }
+.prog-list { list-style: none; margin: 16px 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.prog-list li { display: flex; align-items: stretch; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); overflow: hidden; }
+.prog-chord { display: flex; flex-direction: column; align-items: center; gap: 1px; min-width: 64px; padding: 8px 12px; background: none; border: 0; cursor: pointer; color: var(--ink); }
+.prog-chord b { font-family: var(--font-display); font-size: 1.1rem; }
+.prog-chord span { font-size: 0.78rem; color: var(--ink-soft); }
+.prog-chord.is-selected { background: var(--violet); color: var(--on-violet); }
+.prog-chord.is-selected span { color: var(--on-violet); }
+.prog-x { width: 28px; border: 0; border-left: 1px solid var(--line); background: none; color: var(--ink-soft); font-size: 1.1rem; cursor: pointer; }
+.prog-x:hover { color: var(--ink); background: var(--violet-tint); }
+.prog button:focus-visible { outline: 3px solid var(--violet-dark); outline-offset: 2px; }
+@media (max-width: 600px) { .prog { padding: 16px; } }

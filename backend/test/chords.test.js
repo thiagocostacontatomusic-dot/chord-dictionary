@@ -3,7 +3,7 @@
 const test = require('node:test');
 const assert = require('node:assert');
 const chords = require('../chords-db');
-const { TYPES, SHARP, TONES, validateVoicing, mod12 } = require('../scripts/chord-theory');
+const { TYPES, SHARP, TONES, validateVoicing, mod12, TUNING } = require('../scripts/chord-theory');
 
 test('database covers 12 roots x every chord type', () => {
   assert.strictEqual(chords.length, 12 * TYPES.length);
@@ -126,4 +126,32 @@ test('barres are marked where one finger covers several strings', () => {
       assert.ok(at.length >= 2, `${c.id} barre needs 2+ strings`);
     }
   }
+});
+
+
+// ---------------------------------------------------------------------------
+// Inversions on four adjacent strings
+// ---------------------------------------------------------------------------
+test('inversions sound exactly the chord tones, bass note as promised', () => {
+  let count = 0;
+  for (const c of chords) {
+    if (!c.inversions.length) continue;
+    const t = TYPES.find((x) => x.key === c.typeKey);
+    const rootPc = SHARP.indexOf(c.note);
+    const tones = t.tones.length === 5 ? t.tones.filter((x) => x[1] !== '5') : t.tones;
+    const need = tones.map((x) => (rootPc + x[0]) % 12);
+    for (const inv of c.inversions) {
+      count += 1;
+      const sounded = inv.frets
+        .map((f, i) => (f === null ? null : { i, pc: (TUNING[i] + f) % 12 }))
+        .filter(Boolean);
+      assert.strictEqual(sounded.length, 4, `${c.id} inversion needs 4 strings`);
+      assert.deepStrictEqual(sounded.map((x) => x.pc).sort((a, b) => a - b), [...need].sort((a, b) => a - b), `${c.id} ${JSON.stringify(inv.frets)}`);
+      assert.strictEqual(sounded[0].pc, need[inv.inversion], `${c.id} bass note`);
+      assert.strictEqual(c.notes[c.pcs.indexOf(need[inv.inversion])], inv.bass);
+      const fretted = inv.frets.filter((f) => f > 0);
+      assert.ok(!fretted.length || Math.max(...fretted) - Math.min(...fretted) <= 3, `${c.id} stretch`);
+    }
+  }
+  assert.ok(count > 1500, 'plenty of inversions generated');
 });

@@ -22,13 +22,31 @@ const STRINGS = [1, 2, 3, 4, 5, 6]; // top to bottom: high e ... low E
 const fretX = (f) => (f === 0 ? X0 - 24 : X0 + (f - 0.5) * FRET_W);
 const stringY = (s) => Y0 + (s - 1) * STRING_GAP;
 
-function ScaleNeck({ scaleKey, onScaleChange, rootPc, rootName, chord }) {
+function ScaleNeck({ scaleKey, onScaleChange, rootPc: keyPc, rootName: keyName, chord }) {
   const { t, scaleName } = useI18n();
+  const [arp, setArp] = useState(false);
   const [labelMode, setLabelMode] = useState('names');
   const [position, setPosition] = useState(null);
 
-  const scale = scaleByKey(scaleKey);
-  const spelled = useMemo(() => spellScale(rootName, rootPc, scale), [rootName, rootPc, scale]);
+  // Arpeggio mode: the notes of the chord on screen, in order of pitch from its root.
+  const arpeggio = useMemo(() => {
+    if (!chord) return null;
+    const order = chord.pcs
+      .map((pc, i) => ({ semi: (pc - chord.pcs[0] + 12) % 12, name: chord.notes[i], deg: chord.degrees[i] }))
+      .sort((a, b) => a.semi - b.semi);
+    return {
+      scale: { key: 'arpeggio', group: 'arpeggio', degs: order.map((o) => o.deg), semis: order.map((o) => o.semi) },
+      names: order.map((o) => o.name),
+    };
+  }, [chord]);
+  const useArp = arp && !!arpeggio;
+  const rootPc = useArp ? chord.pcs[0] : keyPc;
+  const rootName = useArp ? chord.notes[0] : keyName;
+  const scale = useArp ? arpeggio.scale : scaleByKey(scaleKey);
+  const spelled = useMemo(
+    () => (useArp ? arpeggio.names : spellScale(rootName, rootPc, scale)),
+    [useArp, arpeggio, rootName, rootPc, scale]
+  );
   const windows = useMemo(() => positionWindows(rootPc, scale), [rootPc, scale]);
   const idxOfPc = useMemo(() => {
     const m = {};
@@ -40,7 +58,7 @@ function ScaleNeck({ scaleKey, onScaleChange, rootPc, rootName, chord }) {
   const chordPcs = useMemo(() => new Set(chord ? chord.pcs : []), [chord]);
 
   // CAGED shapes of the tonic chord, matched to the position window they overlap most.
-  const tonicChord = SCALE_CHORD[scaleKey] ? chordFor(rootPc, SCALE_CHORD[scaleKey]) : null;
+  const tonicChord = useArp ? chord : SCALE_CHORD[scaleKey] ? chordFor(rootPc, SCALE_CHORD[scaleKey]) : null;
   const cagedByPosition = useMemo(() => {
     const out = scale.semis.map(() => []);
     if (!tonicChord || !tonicChord.caged) return out;
@@ -65,7 +83,7 @@ function ScaleNeck({ scaleKey, onScaleChange, rootPc, rootName, chord }) {
   }, [tonicChord, windows, scale]);
 
   const lit = (fret) => position === null || windows[position].some(([lo, hi]) => fret >= lo && fret <= hi);
-  const title = t('scaleIn', pretty(rootName), scaleName(scaleKey));
+  const title = useArp ? t('arpeggioOf', pretty(chord.symbol)) : t('scaleIn', pretty(rootName), scaleName(scaleKey));
 
   // reset the position if the new scale has fewer notes
   const pos = position !== null && position >= scale.semis.length ? null : position;
@@ -86,9 +104,18 @@ function ScaleNeck({ scaleKey, onScaleChange, rootPc, rootName, chord }) {
       <div className="scales-head">
         <div>
           <h3 id="scales-title">{t('scaleTitle')}</h3>
-          <p className="scales-help">{t('scaleHelp')}</p>
+          <p className="scales-help">{useArp ? t('arpHelp') : t('scaleHelp')}</p>
         </div>
-        <label className="scales-select">
+        <div className="seg" role="group" aria-label={t('scaleTitle')}>
+          <button type="button" className={!useArp ? 'is-active' : ''} aria-pressed={!useArp} onClick={() => { setArp(false); setPosition(null); }}>
+            {t('modeScale')}
+          </button>
+          <button type="button" className={useArp ? 'is-active' : ''} aria-pressed={useArp} onClick={() => { setArp(true); setPosition(null); }}>
+            {t('modeArpeggio')}
+          </button>
+        </div>
+        {!useArp && (
+          <label className="scales-select">
           <span>{t('scaleSelect')}</span>
           <select value={scaleKey} onChange={(e) => onScaleChange(e.target.value)}>
             {SCALE_GROUPS.map((g) => (
@@ -102,6 +129,7 @@ function ScaleNeck({ scaleKey, onScaleChange, rootPc, rootName, chord }) {
             ))}
           </select>
         </label>
+        )}
       </div>
 
       <p className="scales-name">{title}</p>

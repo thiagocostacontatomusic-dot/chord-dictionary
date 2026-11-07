@@ -37,7 +37,7 @@
   .layout { grid-template-columns: 1fr; grid-template-areas: "wheel" "detail" "list"; grid-template-rows: none; gap: 24px; }
 }
 
-.install { border: 0; border-radius: 999px; padding: 7px 16px; background: var(--violet); color: #fff; font-weight: 600; font-size: 0.85rem; }
+.install { border: 0; border-radius: 999px; padding: 7px 16px; background: var(--violet); color: var(--on-violet); font-weight: 600; font-size: 0.85rem; }
 .install:hover { background: var(--violet-dark); }
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
@@ -46,3 +46,5 @@
 .foot { margin: 40px 0 24px; padding-top: 20px; border-top: 1px solid var(--line, rgba(127,127,127,.25)); text-align: center; color: var(--ink-soft); font-size: 0.85rem; }
 .foot p { margin: 4px 0; }
 .foot a { color: var(--violet-dark); text-underline-offset: 3px; }
+
+.lefty.is-on { background: var(--violet-dark); color: var(--on-ink); }

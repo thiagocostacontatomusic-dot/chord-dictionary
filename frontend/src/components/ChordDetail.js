@@ -11,7 +11,21 @@ const TUNING = { 6: 4, 5: 9, 4: 2, 3: 7, 2: 11, 1: 4 };
 function ChordDetail({ chord, onSelect }) {
   const { t, typeLabel, stringName } = useI18n();
   const [index, setIndex] = useState(0);
-  const voicing = chord.voicings[index] || chord.voicings[0];
+  const [group, setGroup] = useState('shapes');
+
+  // Inversions come as plain fret arrays (string 6 to 1); turn them into the same shape as voicings.
+  const inversions = (chord.inversions || []).map((inv) => ({
+    label: `inv-${inv.inversion}-${inv.strings.join('')}`,
+    inv,
+    positions: inv.frets.map((fret, i) => ({ string: 6 - i, fret })),
+    baseFret: inv.baseFret,
+  }));
+  const list = group === 'inversions' && inversions.length ? inversions : chord.voicings;
+  const voicing = list[index] || list[0];
+  const switchGroup = (g) => {
+    setGroup(g);
+    setIndex(0);
+  };
 
   const noteOf = (pc) => {
     const i = chord.pcs.indexOf(pc);
@@ -50,8 +64,13 @@ function ChordDetail({ chord, onSelect }) {
     if (target && sub) tritone = { third: chord.notes[iThird], sev: chord.notes[iSev], target, sub };
   }
 
-  const voicingLabel = (v) =>
-    v.shape ? t('shapeTab', v.shape, v.fret) : t('openPosition');
+  const voicingLabel = (v) => {
+    if (v.inv) {
+      const name = v.inv.inversion === 0 ? t('rootPosition') : t('inversionN', v.inv.inversion);
+      return `${name} · ${v.inv.strings[0]}–${v.inv.strings[1]}`;
+    }
+    return v.shape ? t('shapeTab', v.shape, v.fret) : t('openPosition');
+  };
 
   return (
     <article className="detail">
@@ -84,9 +103,28 @@ function ChordDetail({ chord, onSelect }) {
         ))}
       </ul>
 
-      {chord.voicings.length > 1 && (
+      {inversions.length > 0 && (
+        <div className="seg group-switch" role="group" aria-label={t('voicings')}>
+          <button type="button" className={group === 'shapes' ? 'is-active' : ''} aria-pressed={group === 'shapes'} onClick={() => switchGroup('shapes')}>
+            {t('groupShapes')}
+          </button>
+          <button type="button" className={group === 'inversions' ? 'is-active' : ''} aria-pressed={group === 'inversions'} onClick={() => switchGroup('inversions')}>
+            {t('groupInversions', inversions.length)}
+          </button>
+        </div>
+      )}
+
+      {group === 'inversions' && voicing.inv && (
+        <p className="inv-note">
+          {voicing.inv.inversion === 0
+            ? t('invRootNote', pretty(chord.symbol))
+            : t('invNote', pretty(`${chord.symbol}/${voicing.inv.bass}`), pretty(voicing.inv.bass))}
+        </p>
+      )}
+
+      {list.length > 1 && (
         <div className="tabs" role="tablist" aria-label={t('voicings')}>
-          {chord.voicings.map((v, i) => (
+          {list.map((v, i) => (
             <button
               key={v.label}
               role="tab"

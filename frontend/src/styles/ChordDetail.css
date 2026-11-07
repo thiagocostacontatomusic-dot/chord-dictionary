@@ -45,3 +45,6 @@ tr.is-muted th, tr.is-muted .how-fret { color: var(--ink-soft); }
 .tritone-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.9rem; }
 .tritone-links button { padding: 4px 12px; border: 1px solid var(--violet-dark); border-radius: 999px; background: var(--surface); color: var(--violet-dark); font-family: var(--font-display); font-weight: 700; cursor: pointer; }
 .tritone-links button:hover { background: var(--violet-dark); color: var(--on-ink); }
+
+.group-switch { display: inline-flex; margin: 0 0 10px; }
+.inv-note { margin: 0 0 12px; max-width: 70ch; color: var(--ink-soft); font-size: 0.9rem; line-height: 1.5; }

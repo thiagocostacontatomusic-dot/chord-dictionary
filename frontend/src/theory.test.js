@@ -49,3 +49,9 @@ test('extended chords carry CAGED forms', () => {
   expect(getChord('C_dom9').caged.length).toBe(5);
   expect(getChord('F_min11').caged.length).toBe(5);
 });
+
+test('inversions are available and countable', () => {
+  const { getChord, stats } = require('./chordData');
+  expect(getChord('C_maj7').inversions.length).toBeGreaterThanOrEqual(10);
+  expect(stats.totalVoicings).toBeGreaterThan(2500);
+});

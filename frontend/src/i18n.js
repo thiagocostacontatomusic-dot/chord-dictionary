@@ -133,6 +133,40 @@ const DICT = {
     play: 'Play', share: 'Copy link', copied: 'Link copied',
     footer: 'Free and open source (MIT).', source: 'Source code on GitHub', madeBy: 'Made by Thiago Costa',
     playScale: 'Play scale',
+    practiceTitle: 'Practice tools',
+    metroTitle: 'Metronome',
+    metroHelp: 'Practise any scale or chord change in quarter notes, eighths, triplets or sixteenths. The first click of each bar is higher.',
+    start: 'Start', stop: 'Stop', bpm: 'Tempo (BPM)', subdivision: 'Subdivision',
+    subName: (n) => ({ 1: 'Quarters', 2: 'Eighths', 3: 'Triplets', 4: 'Sixteenths' })[n],
+    quizTitle: 'Chord quiz',
+    quizHelp: 'Name the chord from its diagram, or by ear.',
+    quizExtended: 'Include extended chords',
+    quizHear: 'By ear',
+    quizListen: 'Press play and listen.',
+    quizScore: (r, n) => `Score: ${r} of ${n}`,
+    quizNext: 'Next chord',
+    quizRight: 'Right.',
+    quizWrong: (c) => `Not quite. It was ${c}.`,
+    leftyLabel: 'Left-handed',
+    leftyHelp: 'Mirror the chord diagrams for left-handed players',
+    progTitle: 'Progression builder',
+    progHelp: (k) => `Build a chord sequence, hear it, and move it to another key. Roman numerals are counted from ${k} major, the key of the wheel.`,
+    progKeyChords: (k) => `Chords of ${k}:`,
+    progEmpty: 'Add the chord you are viewing or a chord of the key to start.',
+    progRemove: (c) => `Remove ${c}`,
+    progSemitone: 'semitone',
+    progCopy: 'Copy chords',
+    progClear: 'Clear',
+    modeScale: 'Scale',
+    modeArpeggio: 'Arpeggio',
+    arpeggioOf: (c) => `Arpeggio of ${c}`,
+    arpHelp: 'The notes of the chord you are viewing, one at a time, in five positions. Each position holds one CAGED shape. Play it slowly with strict alternate picking, then as a sweep.',
+    groupShapes: 'Shapes',
+    groupInversions: (n) => `Inversions (${n})`,
+    rootPosition: 'Root position',
+    inversionN: (n) => ['', '1st inversion', '2nd inversion', '3rd inversion'][n],
+    invRootNote: (sym) => `${sym} with the root in the bass, on four neighbouring strings.`,
+    invNote: (slash, bass) => `${slash}: the same chord with ${bass} in the bass. Inversions on neighbouring strings are the compact jazz voicings, and they make smooth bass lines when chords change.`,
     funcShort: (f) => ({ T: 'tonic', S: 'sub', D: 'dom' })[f],
     funcName: (f) => ({ T: 'Tonic: rest', S: 'Subdominant: a step away from home', D: 'Dominant: tension that asks for the tonic' })[f],
     funcNote: 'Tonic is rest, subdominant leaves home, dominant pulls back. In the other modes the labels are a rough guide.',
@@ -223,6 +257,40 @@ const DICT = {
     play: 'Ouvir', share: 'Copiar link', copied: 'Link copiado',
     footer: 'Gratuito e de código aberto (MIT).', source: 'Código no GitHub', madeBy: 'Feito por Thiago Costa',
     playScale: 'Ouvir escala',
+    practiceTitle: 'Ferramentas de estudo',
+    metroTitle: 'Metrônomo',
+    metroHelp: 'Estude qualquer escala ou troca de acordes em semínimas, colcheias, tercinas ou semicolcheias. O primeiro clique de cada compasso é mais agudo.',
+    start: 'Iniciar', stop: 'Parar', bpm: 'Andamento (BPM)', subdivision: 'Subdivisão',
+    subName: (n) => ({ 1: 'Semínimas', 2: 'Colcheias', 3: 'Tercinas', 4: 'Semicolcheias' })[n],
+    quizTitle: 'Quiz de acordes',
+    quizHelp: 'Diga qual é o acorde pelo diagrama, ou de ouvido.',
+    quizExtended: 'Incluir acordes estendidos',
+    quizHear: 'De ouvido',
+    quizListen: 'Toque em ouvir e escute.',
+    quizScore: (r, n) => `Pontos: ${r} de ${n}`,
+    quizNext: 'Próximo acorde',
+    quizRight: 'Certo.',
+    quizWrong: (c) => `Quase. Era ${c}.`,
+    leftyLabel: 'Canhoto',
+    leftyHelp: 'Espelha os diagramas de acordes para quem toca com a mão esquerda',
+    progTitle: 'Montador de progressões',
+    progHelp: (k) => `Monte uma sequência de acordes, ouça e leve para outro tom. Os graus em algarismos romanos contam a partir de ${k} maior, o tom da roda.`,
+    progKeyChords: (k) => `Acordes de ${k}:`,
+    progEmpty: 'Adicione o acorde que você está vendo ou um acorde do tom para começar.',
+    progRemove: (c) => `Remover ${c}`,
+    progSemitone: 'semitom',
+    progCopy: 'Copiar acordes',
+    progClear: 'Limpar',
+    modeScale: 'Escala',
+    modeArpeggio: 'Arpejo',
+    arpeggioOf: (c) => `Arpejo de ${c}`,
+    arpHelp: 'As notas do acorde que você está vendo, uma de cada vez, em cinco posições. Cada posição guarda uma forma do CAGED. Toque devagar com palhetada alternada e depois como sweep.',
+    groupShapes: 'Formas',
+    groupInversions: (n) => `Inversões (${n})`,
+    rootPosition: 'Estado fundamental',
+    inversionN: (n) => ['', '1ª inversão', '2ª inversão', '3ª inversão'][n],
+    invRootNote: (sym) => `${sym} com a fundamental no baixo, em quatro cordas vizinhas.`,
+    invNote: (slash, bass) => `${slash}: o mesmo acorde com ${bass} no baixo. Inversões em cordas vizinhas são as vozes compactas do jazz, e fazem linhas de baixo suaves quando os acordes mudam.`,
     funcShort: (f) => ({ T: 'tônica', S: 'sub', D: 'dom' })[f],
     funcName: (f) => ({ T: 'Tônica: repouso', S: 'Subdominante: um passo para longe de casa', D: 'Dominante: tensão que pede a tônica' })[f],
     funcNote: 'Tônica é repouso, subdominante sai de casa, dominante puxa de volta. Nos outros modos os rótulos são só um guia.',
@@ -255,6 +323,7 @@ export function makeI18n(lang) {
   };
 }
 
+export const LeftyContext = createContext(false);
 export const I18nContext = createContext(makeI18n('en'));
 export const useI18n = () => useContext(I18nContext);
 
@@ -282,6 +351,22 @@ export function pretty(text) {
     .replace(/([A-G])(bb|b)/g, (m, letter, flats) => letter + (flats === 'bb' ? '♭♭' : '♭'))
     .replace(/(\d)b(\d)/g, '$1♭$2')
     .replace(/#/g, '♯');
+}
+
+export function readLefty() {
+  try {
+    return window.localStorage.getItem('chord-dictionary-lefty') === '1';
+  } catch (e) {
+    return false;
+  }
+}
+
+export function saveLefty(on) {
+  try {
+    window.localStorage.setItem('chord-dictionary-lefty', on ? '1' : '0');
+  } catch (e) {
+    /* ignore */
+  }
 }
 
 export function readTheme() {

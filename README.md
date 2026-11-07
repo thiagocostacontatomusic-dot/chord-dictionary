@@ -10,6 +10,10 @@ An open-source, interactive **guitar chord dictionary**. Search any chord, see i
 
 - **312 chords**: all 12 keys x 26 chord types, from triads to 9ths, 11ths and 13ths
 - **559 voicings**: open-position shapes where they exist, plus E-shape and A-shape barre chords
+- **Inversions and compact jazz voicings**: over 2,000 voicings on four adjacent strings, one per string set and bass note, for every chord of four or more notes
+- **Arpeggios**: the notes of the chord on screen across the neck, in five positions tied to the CAGED shapes
+- **Progression builder**: build a sequence, hear it, move it to another key and see the Roman numerals
+- **Practice tools**: metronome with quarter, eighth, triplet and sixteenth subdivisions, a chord quiz (by sight or by ear) and a left-handed mirror mode
 - **Listen**: play any voicing as a strum, or any scale up and down (Web Audio, no files)
 - **Share**: copy a link that opens straight on the chord
 - **Circle of fifths, modes and 20 scales**, light and dark themes, installable and offline
@@ -39,6 +43,10 @@ Each chord is spelled the way a musician would write it (Bb major is Bb D F, not
 ## Sources of the study material
 
 The concepts in the study guide are summaries, in our own words, of ideas taught in *Segredos da Harmonia* (course and e-book) and the *Toolbox* sheets by Kiko Loureiro, and *Standards do Jazz* by Ted Gioia. Exercises and tablature from those materials are not reproduced; use the originals for the full lessons.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Getting started
 

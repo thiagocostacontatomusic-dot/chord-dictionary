@@ -67,3 +67,50 @@ export function strumSequence(list, spacing = 1.15) {
       .forEach((p, i) => pluck(ac, TUNING_MIDI[6 - p.string] + p.fret, t0 + i * 0.045, 1.8));
   });
 }
+
+// Metronome with a look-ahead scheduler so the clicks stay steady. `sub` is clicks per beat
+// (1 quarter, 2 eighths, 3 triplets, 4 sixteenths), `beats` per bar, accent on the first click.
+export function createMetronome() {
+  let timer = null;
+  let next = 0;
+  let count = 0;
+  let cfg = { bpm: 80, sub: 1, beats: 4 };
+
+  const click = (ac, when, accent, strong) => {
+    const o = ac.createOscillator();
+    const g = ac.createGain();
+    o.frequency.value = accent ? 1600 : strong ? 1100 : 800;
+    g.gain.setValueAtTime(accent ? 0.35 : strong ? 0.25 : 0.14, when);
+    g.gain.exponentialRampToValueAtTime(0.0001, when + 0.05);
+    o.connect(g).connect(ac.destination);
+    o.start(when);
+    o.stop(when + 0.06);
+  };
+
+  const tick = () => {
+    const ac = getCtx();
+    while (next < ac.currentTime + 0.15) {
+      const perBar = cfg.beats * cfg.sub;
+      const i = count % perBar;
+      click(ac, next, i === 0, i % cfg.sub === 0);
+      next += 60 / cfg.bpm / cfg.sub;
+      count += 1;
+    }
+  };
+
+  return {
+    set(next_) { cfg = { ...cfg, ...next_ }; },
+    start() {
+      const ac = getCtx();
+      if (!ac || timer) return;
+      next = ac.currentTime + 0.05;
+      count = 0;
+      timer = setInterval(tick, 25);
+    },
+    stop() {
+      clearInterval(timer);
+      timer = null;
+    },
+    running: () => timer !== null,
+  };
+}

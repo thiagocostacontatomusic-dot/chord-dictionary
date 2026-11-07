@@ -1,0 +1,26 @@
+.pt { margin-top: 28px; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+.pt h3 { margin: 0 0 14px; font-family: var(--font-display); font-size: 1.3rem; }
+.pt-grid { display: grid; gap: 16px; }
+.pt-card { padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); }
+.pt-card h4 { margin: 0 0 4px; font-family: var(--font-display); font-size: 1.05rem; }
+.pt-help { margin: 0 0 12px; color: var(--ink-soft); font-size: 0.9rem; max-width: 70ch; line-height: 1.5; }
+.pt-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 10px; }
+.pt-btn { padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font: inherit; font-size: 0.88rem; font-weight: 600; cursor: pointer; color: var(--ink); }
+.pt-btn:hover { border-color: var(--violet); }
+.pt-btn.is-active { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
+.pt-primary { background: var(--violet-dark); border-color: var(--violet-dark); color: var(--on-ink); }
+.pt-field { display: flex; flex-direction: column; gap: 2px; font-size: 0.88rem; min-width: 200px; }
+.pt-field input { accent-color: var(--violet-dark); }
+.pt-check { display: flex; align-items: center; gap: 6px; font-size: 0.88rem; }
+.pt-score { margin-left: auto; font-weight: 600; font-size: 0.9rem; }
+.pt-quiz { display: grid; grid-template-columns: minmax(180px, 220px) 1fr; gap: 18px; align-items: start; }
+.pt-diagram { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.pt-hear { margin: 40px 0; color: var(--ink-soft); text-align: center; }
+.pt-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; align-content: start; }
+.pt-opt { padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; cursor: pointer; color: var(--ink); }
+.pt-opt:hover { border-color: var(--violet); }
+.pt-opt.is-right { background: #1f7a4a; border-color: #1f7a4a; color: #fff; }
+.pt-opt.is-wrong { background: #a1323f; border-color: #a1323f; color: #fff; }
+.pt-result { grid-column: 1 / -1; margin: 4px 0 0; font-weight: 600; }
+.pt button:focus-visible, .pt input:focus-visible { outline: 3px solid var(--violet-dark); outline-offset: 2px; }
+@media (max-width: 600px) { .pt { padding: 16px; } .pt-quiz { grid-template-columns: 1fr; } }

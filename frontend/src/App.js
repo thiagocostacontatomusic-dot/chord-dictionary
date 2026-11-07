@@ -6,11 +6,13 @@ import SearchBar from './components/SearchBar';
 import CircleOfFifths from './components/CircleOfFifths';
 import KeyChords from './components/KeyChords';
 import FamilyChips from './components/FamilyChips';
+import ProgressionBuilder from './components/ProgressionBuilder';
+import PracticeTools from './components/PracticeTools';
 import StudyGuide from './components/StudyGuide';
 import ScaleNeck from './components/ScaleNeck';
 import { searchChords, stats, getChord, chordFor, chordsOfRoot } from './chordData';
 import { DEGREES, MODES, FAMILY, familyOf, mod12, fifthsIndex, keyNames } from './theory';
-import { I18nContext, makeI18n, readLang, saveLang, readTheme, saveTheme } from './i18n';
+import { I18nContext, LeftyContext, makeI18n, readLang, saveLang, readTheme, saveTheme, readLefty, saveLefty } from './i18n';
 
 function useDebounced(value, ms) {
   const [v, setV] = useState(value);
@@ -27,6 +29,8 @@ function App() {
   const { t } = i18n;
 
   const [theme, setTheme] = useState(readTheme);
+  const [lefty, setLefty] = useState(readLefty);
+  useEffect(() => saveLefty(lefty), [lefty]);
   const [searchTerm, setSearchTerm] = useState('');
   // The wheel: a tonic and a mode. The wheel itself always shows the parent major key.
   const initial = getChord(window.location.hash.slice(1));
@@ -133,6 +137,7 @@ function App() {
 
   return (
     <I18nContext.Provider value={i18n}>
+      <LeftyContext.Provider value={lefty}>
       <div className="app" onKeyDown={onKeyDown}>
         <header className="top">
           <div className="brand">
@@ -152,6 +157,9 @@ function App() {
                 </button>
               ))}
             </div>
+            <button type="button" className={`install lefty ${lefty ? 'is-on' : ''}`} aria-pressed={lefty} title={t('leftyHelp')} onClick={() => setLefty((v) => !v)}>
+              {t('leftyLabel')}
+            </button>
             <div className="lang" role="group" aria-label={t('language')}>
               {['en', 'pt'].map((l) => (
                 <button
@@ -202,7 +210,9 @@ function App() {
                   rootName={keyNames(parentPc)[modeIdx]}
                   chord={selectedChord}
                 />
+                <ProgressionBuilder parentPc={parentPc} selectedChord={selectedChord} onSelect={choose} />
                 <StudyGuide parentPc={parentPc} selectedId={selectedChord.id} onSelect={choose} />
+                <PracticeTools />
               </>
             )}
           </section>
@@ -225,6 +235,7 @@ function App() {
           </p>
         </footer>
       </div>
+      </LeftyContext.Provider>
     </I18nContext.Provider>
   );
 }

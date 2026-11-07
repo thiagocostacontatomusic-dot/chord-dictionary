@@ -1,5 +1,5 @@
-import React, { useId } from 'react';
-import { useI18n } from '../i18n';
+import React, { useContext, useId } from 'react';
+import { useI18n, LeftyContext } from '../i18n';
 import '../styles/GuitarFretboard.css';
 
 // Chord diagram drawn as a rosewood neck: bone nut, nickel frets, pearl inlays,
@@ -19,11 +19,14 @@ const STRING_WIDTH = [2.6, 2.2, 1.8, 1.4, 1.1, 0.9];
 const SINGLE_INLAY = [3, 5, 7, 9, 15, 17, 19, 21];
 const DOUBLE_INLAY = [12, 24];
 
-const xOf = (stringNum) => X0 + (6 - stringNum) * GAP_X;
+// Right-handed: low E on the left. Left-handed: the diagram is mirrored, low E on the right.
+const xOfFor = (lefty) => (stringNum) => X0 + (lefty ? stringNum - 1 : 6 - stringNum) * GAP_X;
 const rowY = (fret, base) => Y0 + (fret - base + 0.5) * GAP_Y;
 
 function GuitarFretboard({ positions, baseFret = 1, barre, compact = false, showLegend = true }) {
   const { t } = useI18n();
+  const lefty = useContext(LeftyContext);
+  const xOf = xOfFor(lefty);
   const uid = useId().replace(/:/g, '');
   const nut = baseFret === 1;
   const byString = Object.fromEntries(positions.map((p) => [p.string, p.fret]));
@@ -100,8 +103,8 @@ function GuitarFretboard({ positions, baseFret = 1, barre, compact = false, show
             x2={X0 + i * GAP_X}
             y1={Y0}
             y2={Y0 + BOARD_H}
-            className={i < 3 ? 'string-wound' : 'string-plain'}
-            strokeWidth={STRING_WIDTH[i]}
+            className={(lefty ? 5 - i : i) < 3 ? 'string-wound' : 'string-plain'}
+            strokeWidth={STRING_WIDTH[lefty ? 5 - i : i]}
           />
         ))}
 
@@ -133,17 +136,17 @@ function GuitarFretboard({ positions, baseFret = 1, barre, compact = false, show
         {barre && (
           <g className="barre">
             <rect
-              x={xOf(barre.fromString) - 15}
+              x={Math.min(xOf(barre.fromString), xOf(barre.toString)) - 15}
               y={rowY(barre.fret, baseFret) - 11}
-              width={xOf(barre.toString) - xOf(barre.fromString) + 30}
+              width={Math.abs(xOf(barre.toString) - xOf(barre.fromString)) + 30}
               height="26"
               rx="13"
               className="barre-shadow"
             />
             <rect
-              x={xOf(barre.fromString) - 15}
+              x={Math.min(xOf(barre.fromString), xOf(barre.toString)) - 15}
               y={rowY(barre.fret, baseFret) - 13}
-              width={xOf(barre.toString) - xOf(barre.fromString) + 30}
+              width={Math.abs(xOf(barre.toString) - xOf(barre.fromString)) + 30}
               height="26"
               rx="13"
               fill={`url(#finger${uid})`}
