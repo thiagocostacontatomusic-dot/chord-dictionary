@@ -26,6 +26,26 @@ function App() {
   const [selectedNote, setSelectedNote] = useState('');
   const [selectedType, setSelectedType] = useState('');
 
+  const [installEvent, setInstallEvent] = useState(null);
+  useEffect(() => {
+    const onPrompt = (e) => {
+      e.preventDefault();
+      setInstallEvent(e);
+    };
+    const onInstalled = () => setInstallEvent(null);
+    window.addEventListener('beforeinstallprompt', onPrompt);
+    window.addEventListener('appinstalled', onInstalled);
+    return () => {
+      window.removeEventListener('beforeinstallprompt', onPrompt);
+      window.removeEventListener('appinstalled', onInstalled);
+    };
+  }, []);
+  const install = async () => {
+    installEvent.prompt();
+    await installEvent.userChoice;
+    setInstallEvent(null);
+  };
+
   const search = useDebounced(searchTerm.trim(), 150);
 
   useEffect(() => {
@@ -77,6 +97,9 @@ function App() {
           </div>
           <div className="top-side">
             <p className="stats">{t('stats', stats.totalChords, stats.totalVoicings)}</p>
+            {installEvent && (
+              <button type="button" className="install" onClick={install}>{t('install')}</button>
+            )}
             <div className="lang" role="group" aria-label={t('language')}>
               {['en', 'pt'].map((l) => (
                 <button

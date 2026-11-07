@@ -1,6 +1,8 @@
 # Chord Dictionary
 
-**Live site:** https://thiagocostacontatomusic-dot.github.io/chord-dictionary/ (English and Portuguese, works on phones, nothing to install)
+**Live site:** https://chord-dictionary-sooty.vercel.app (English and Portuguese, works on phones, nothing to install)
+
+**Install it like an app:** open the site in Chrome, Edge or Safari and use *Install app* (or *Add to Home Screen* on iPhone). After the first visit it also works offline.
 
 An open-source, interactive **guitar chord dictionary**. Search any chord, see it drawn on the fretboard, and switch between voicings (open shapes and movable barre shapes up the neck).
 
@@ -47,7 +49,7 @@ npm test           # checks every voicing note by note
 
 ## Publishing your own copy
 
-Fork the repository, then in **Settings > Pages** set the source to **GitHub Actions**. Every push to `main` builds `frontend/` and publishes it.
+The site is a static React build in `frontend/`. Import the repository on [Vercel](https://vercel.com) or Netlify, set the root directory to `frontend` and deploy; every push to `main` republishes it. Any static host works (`npm run build` produces `frontend/build`).
 
 ## Optional API
 
