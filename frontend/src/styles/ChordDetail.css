@@ -23,7 +23,7 @@
 .how-fret { color: var(--ink-soft); }
 .how-note b { margin-right: 6px; font-family: var(--font-display); }
 .how-note span { font-size: 0.8rem; color: var(--ink-soft); }
-tr.is-muted th, tr.is-muted .how-fret { opacity: 0.5; }
+tr.is-muted th, tr.is-muted .how-fret { color: var(--ink-soft); }
 .how-barre { margin: 14px 0 0; padding: 10px 14px; border-radius: 10px; background: var(--violet-tint); font-size: 0.9rem; }
 
 @media (max-width: 700px) {
@@ -37,3 +37,11 @@ tr.is-muted th, tr.is-muted .how-fret { opacity: 0.5; }
 .act-primary { background: var(--violet-dark); color: var(--on-ink); }
 .act-primary:hover { background: var(--violet-dark); opacity: .88; }
 .act:focus-visible { outline: 3px solid var(--violet-dark); outline-offset: 2px; }
+
+.tritone { margin: 22px 0 0; padding: 14px 16px; border-radius: 14px; background: var(--violet-tint); }
+.tritone h3 { margin: 0 0 6px; font-family: var(--font-display); font-size: 1.05rem; }
+.tritone p { margin: 0 0 8px; line-height: 1.55; }
+.tritone-note { color: var(--ink-soft); font-size: 0.88rem; margin-bottom: 0 !important; }
+.tritone-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.9rem; }
+.tritone-links button { padding: 4px 12px; border: 1px solid var(--violet-dark); border-radius: 999px; background: var(--surface); color: var(--violet-dark); font-family: var(--font-display); font-weight: 700; cursor: pointer; }
+.tritone-links button:hover { background: var(--violet-dark); color: var(--on-ink); }

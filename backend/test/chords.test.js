@@ -42,14 +42,22 @@ const cagedFrets = (id) => {
   );
 };
 
-test('CAGED chords have five forms (C, A, G, E, D) ordered up the neck', () => {
+test('CAGED chords: the 9 core types have five forms, extended types three to five, ordered up the neck', () => {
   const withCaged = chords.filter((c) => c.caged.length);
-  assert.strictEqual(withCaged.length, 12 * 9, '9 chord types x 12 keys');
+  const full = withCaged.filter((c) => c.caged.length === 5);
+  assert.ok(full.length >= 12 * 9, 'at least the 9 core types x 12 keys have all five forms');
   for (const c of withCaged) {
-    assert.deepStrictEqual(c.caged.map((f) => f.form).sort(), ['A', 'C', 'D', 'E', 'G']);
+    assert.ok(c.caged.length >= 3, `${c.id} has too few CAGED forms`);
+    const forms = c.caged.map((f) => f.form);
+    assert.strictEqual(new Set(forms).size, forms.length, `${c.id} repeats a form`);
     const lows = c.caged.map((f) => f.lowestFret);
     assert.deepStrictEqual(lows, [...lows].sort((a, b) => a - b), `${c.id} not ordered up the neck`);
-    assert.deepStrictEqual(c.caged.map((f) => f.order), [1, 2, 3, 4, 5]);
+    assert.deepStrictEqual(c.caged.map((f) => f.order), c.caged.map((_, i) => i + 1));
+  }
+  for (const key of ['major', 'minor', 'dom7', 'maj7', 'min7', 'sus2', 'sus4', 'six', 'minor6']) {
+    for (const c of chords.filter((x) => x.typeKey === key)) {
+      assert.deepStrictEqual(c.caged.map((f) => f.form).sort(), ['A', 'C', 'D', 'E', 'G'], c.id);
+    }
   }
 });
 

@@ -13,7 +13,9 @@ An open-source, interactive **guitar chord dictionary**. Search any chord, see i
 - **Listen**: play any voicing as a strum, or any scale up and down (Web Audio, no files)
 - **Share**: copy a link that opens straight on the chord
 - **Circle of fifths, modes and 20 scales**, light and dark themes, installable and offline
-- **CAGED system**: 108 chords (9 chord types x 12 keys) with all five CAGED shapes, ordered from the nut up the neck
+- **CAGED system**: 240 chords. The 9 core types have all five shapes; the extended chords (9ths, 11th, 13th, 7sus4, 7b9, 7#9, mMaj7, aug7, 6/9) have the three to five shapes that fit, each derived from its parent triad and machine-checked
+- **Study guide**: tension and rest, cadences, chords of a key, dominants and tritone substitution, borrowed chords and modes, jazz-standard patterns and practice tips, with every example shown in the key you are in and playable
+- **Scales meet CAGED**: for major, minor and pentatonic scales, each position shows which CAGED shape of the tonic chord it holds
 - **Every voicing is machine-checked**: tests compute the notes each string actually sounds in standard tuning (E A D G B E) and fail if a shape does not spell its chord
 - Search by name or symbol (`Am`, `C#m7`, `Bb`, `sus4`), filter by key and type
 - **Circle of fifths wheel** with a fixed window: turn the wheel (drag, arrow keys or the side buttons) and the window always frames the seven chords of that key, with Roman numerals
@@ -33,6 +35,10 @@ The data is in the `caged` array of each chord (`form`, `order`, `lowestFret`, `
 Major, Minor, Power (5), Diminished, Augmented, Suspended 2, Suspended 4, Major 6, Minor 6, Dominant 7, Major 7, Minor 7, Diminished 7, Half-diminished (m7b5), Add9, Dominant 9, Major 9, Minor 9, Minor 11, Dominant 13, 7sus4, 7b9, 7#9, Minor-major 7, Augmented 7, 6/9.
 
 Each chord is spelled the way a musician would write it (Bb major is Bb D F, not A# D F). Both spellings work in search (`Db` or `C#`).
+
+## Sources of the study material
+
+The concepts in the study guide are summaries, in our own words, of ideas taught in *Segredos da Harmonia* (course and e-book) and the *Toolbox* sheets by Kiko Loureiro, and *Standards do Jazz* by Ted Gioia. Exercises and tablature from those materials are not reproduced; use the originals for the full lessons.
 
 ## Getting started
 

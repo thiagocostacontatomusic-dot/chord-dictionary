@@ -6,6 +6,7 @@ import SearchBar from './components/SearchBar';
 import CircleOfFifths from './components/CircleOfFifths';
 import KeyChords from './components/KeyChords';
 import FamilyChips from './components/FamilyChips';
+import StudyGuide from './components/StudyGuide';
 import ScaleNeck from './components/ScaleNeck';
 import { searchChords, stats, getChord, chordFor, chordsOfRoot } from './chordData';
 import { DEGREES, MODES, FAMILY, familyOf, mod12, fifthsIndex, keyNames } from './theory';
@@ -193,7 +194,7 @@ function App() {
             {selectedChord && (
               <>
                 <FamilyChips chords={family} selectedId={selectedChord.id} onSelect={selectChord} />
-                <ChordDetail key={selectedChord.id} chord={selectedChord} />
+                <ChordDetail key={selectedChord.id} chord={selectedChord} onSelect={choose} />
                 <ScaleNeck
                   scaleKey={scaleKey}
                   onScaleChange={setScaleKey}
@@ -201,6 +202,7 @@ function App() {
                   rootName={keyNames(parentPc)[modeIdx]}
                   chord={selectedChord}
                 />
+                <StudyGuide parentPc={parentPc} selectedId={selectedChord.id} onSelect={choose} />
               </>
             )}
           </section>

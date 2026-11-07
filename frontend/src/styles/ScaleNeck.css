@@ -44,3 +44,9 @@
 @media (max-width: 700px) { .scales { padding: 18px; border-radius: 16px; } }
 .scales .act { font: inherit; font-weight: 600; font-size: 0.85rem; padding: 6px 14px; border-radius: 999px; cursor: pointer; border: 1px solid var(--violet-dark); background: transparent; color: var(--violet-dark); }
 .scales .act:hover { background: var(--violet-tint); }
+
+.scales-caged { margin: 10px 0; font-size: 0.9rem; }
+.scales-caged summary { cursor: pointer; font-weight: 600; color: var(--violet-dark); }
+.scales-caged ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 4px; }
+.scales-caged button { background: none; border: 0; padding: 2px 0; font: inherit; color: var(--ink); text-align: left; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.scales-caged summary:focus-visible, .scales-caged button:focus-visible { outline: 3px solid var(--violet-dark); outline-offset: 2px; }

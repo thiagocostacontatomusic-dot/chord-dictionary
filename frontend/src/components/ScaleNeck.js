@@ -2,7 +2,11 @@ import React, { useMemo, useState } from 'react';
 import { useI18n, pretty } from '../i18n';
 import { SCALES, SCALE_GROUPS, scaleByKey, spellScale, positionWindows, TUNING, MAX_FRET, mod12 } from '../theory';
 import { playNotes, audioSupported } from '../audio';
+import { chordFor } from '../chordData';
+
 import '../styles/ScaleNeck.css';
+// Which chord quality each scale sits on, so its CAGED shapes can be matched to the positions.
+const SCALE_CHORD = { ionian: 'major', majorPent: 'major', majorBlues: 'major', aeolian: 'minor', minorPent: 'minor', blues: 'minor' };
 
 // A full-length neck, low E at the bottom, with the notes of any scale. A position keeps one
 // five-fret window lit; the chord on screen has its tones ringed.
@@ -34,6 +38,31 @@ function ScaleNeck({ scaleKey, onScaleChange, rootPc, rootName, chord }) {
     return m;
   }, [rootPc, scale]);
   const chordPcs = useMemo(() => new Set(chord ? chord.pcs : []), [chord]);
+
+  // CAGED shapes of the tonic chord, matched to the position window they overlap most.
+  const tonicChord = SCALE_CHORD[scaleKey] ? chordFor(rootPc, SCALE_CHORD[scaleKey]) : null;
+  const cagedByPosition = useMemo(() => {
+    const out = scale.semis.map(() => []);
+    if (!tonicChord || !tonicChord.caged) return out;
+    tonicChord.caged.forEach((form) => {
+      const frets = form.positions.map((p) => p.fret).filter((f) => f !== null);
+      const lo = Math.min(...frets);
+      const hi = Math.max(...frets);
+      let best = -1;
+      let bestOverlap = 0;
+      windows.forEach((wins, i) => {
+        let ov = 0;
+        wins.forEach(([a, b]) => {
+          [0, 12].forEach((add) => {
+            ov += Math.max(0, Math.min(b, hi + add) - Math.max(a, lo + add) + 1);
+          });
+        });
+        if (ov > bestOverlap) { bestOverlap = ov; best = i; }
+      });
+      if (best !== -1) out[best].push(form.form);
+    });
+    return out;
+  }, [tonicChord, windows, scale]);
 
   const lit = (fret) => position === null || windows[position].some(([lo, hi]) => fret >= lo && fret <= hi);
   const title = t('scaleIn', pretty(rootName), scaleName(scaleKey));
@@ -112,12 +141,27 @@ function ScaleNeck({ scaleKey, onScaleChange, rootPc, rootName, chord }) {
             {t('allPositions')}
           </button>
           {scale.semis.map((_, i) => (
-            <button key={i} type="button" className={pos === i ? 'is-active' : ''} aria-pressed={pos === i} title={t('positionN', i + 1)} onClick={() => setPosition(i)}>
+            <button key={i} type="button" className={pos === i ? 'is-active' : ''} aria-pressed={pos === i} title={t('positionN', i + 1) + (cagedByPosition[i].length ? ' · ' + cagedByPosition[i].join(', ') : '')} onClick={() => setPosition(i)}>
               {i + 1}
             </button>
           ))}
         </div>
       </div>
+
+      {tonicChord && cagedByPosition.some((a) => a.length) && (
+        <details className="scales-caged">
+          <summary>{t('pentCagedTitle')}</summary>
+          <ul>
+            {cagedByPosition.map((forms, i) => forms.length ? (
+              <li key={i}>
+                <button type="button" onClick={() => setPosition(i)}>
+                  {t('pentCaged', i + 1, forms.join(', '), pretty(tonicChord.symbol))}
+                </button>
+              </li>
+            ) : null)}
+          </ul>
+        </details>
+      )}
 
       <div className="neck-scroll" tabIndex={0} role="region" aria-label={t("neckLabel", title)}>
         <svg viewBox={`0 0 ${W} ${H}`} className="neck-h" role="img" aria-label={t('neckLabel', title)}>

@@ -54,3 +54,16 @@ export function playNotes(midis, step = 0.28) {
   const t0 = ac.currentTime + 0.02;
   midis.forEach((m, i) => pluck(ac, m, t0 + i * step, 1.4, 0.3));
 }
+
+// A list of chords (each a positions array), strummed one after another.
+export function strumSequence(list, spacing = 1.15) {
+  const ac = getCtx();
+  if (!ac) return;
+  list.forEach((positions, k) => {
+    const t0 = ac.currentTime + 0.02 + k * spacing;
+    positions
+      .filter((p) => p.fret !== null)
+      .sort((a, b) => b.string - a.string)
+      .forEach((p, i) => pluck(ac, TUNING_MIDI[6 - p.string] + p.fret, t0 + i * 0.045, 1.8));
+  });
+}

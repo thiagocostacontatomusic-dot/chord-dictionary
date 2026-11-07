@@ -3,11 +3,12 @@ import GuitarFretboard from './GuitarFretboard';
 import CagedSection from './CagedSection';
 import { useI18n, pretty } from '../i18n';
 import { strum, audioSupported } from '../audio';
+import { chordFor } from '../chordData';
 import '../styles/ChordDetail.css';
 
 const TUNING = { 6: 4, 5: 9, 4: 2, 3: 7, 2: 11, 1: 4 };
 
-function ChordDetail({ chord }) {
+function ChordDetail({ chord, onSelect }) {
   const { t, typeLabel, stringName } = useI18n();
   const [index, setIndex] = useState(0);
   const voicing = chord.voicings[index] || chord.voicings[0];
@@ -38,6 +39,16 @@ function ChordDetail({ chord }) {
       }
     } catch (e) { /* user cancelled */ }
   };
+
+  // Dominant-type chords carry a tritone (third and flat seventh) that resolves a fourth up.
+  const iThird = chord.degrees.indexOf('3');
+  const iSev = chord.degrees.indexOf('♭7');
+  let tritone = null;
+  if (iThird !== -1 && iSev !== -1) {
+    const target = chordFor((chord.pcs[0] + 5) % 12, 'major');
+    const sub = chordFor((chord.pcs[0] + 6) % 12, 'dom7');
+    if (target && sub) tritone = { third: chord.notes[iThird], sev: chord.notes[iSev], target, sub };
+  }
 
   const voicingLabel = (v) =>
     v.shape ? t('shapeTab', v.shape, v.fret) : t('openPosition');
@@ -129,6 +140,22 @@ function ChordDetail({ chord }) {
           </p>
         </div>
       </div>
+
+      {tritone && (
+        <section className="tritone" aria-labelledby="tritone-title">
+          <h3 id="tritone-title">{t('tritoneTitle')}</h3>
+          <p>{t('tritoneText', pretty(tritone.third), pretty(tritone.sev), pretty(tritone.target.notes[0]), pretty(tritone.target.notes[1]))}</p>
+          {onSelect && (
+            <div className="tritone-links">
+              <span>{t('resolvesTo')}</span>
+              <button type="button" onClick={() => onSelect(tritone.target)}>{pretty(tritone.target.symbol)}</button>
+              <span>{t('tritoneSub')}</span>
+              <button type="button" onClick={() => onSelect(tritone.sub)}>{pretty(tritone.sub.symbol)}</button>
+            </div>
+          )}
+          <p className="tritone-note">{t('tritoneSubText')}</p>
+        </section>
+      )}
 
       <CagedSection chord={chord} />
     </article>

@@ -9,8 +9,11 @@
 .degree { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 2px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
 .degree:hover { border-color: var(--violet); }
 .degree.is-tonic { background: var(--violet-tint); }
-.degree.is-selected { background: var(--violet); border-color: var(--violet); color: #fff; }
+.degree.is-selected { background: var(--violet); border-color: var(--violet); color: var(--on-violet); }
 .degree-roman { font-size: 0.75rem; color: var(--ink-soft); }
 .degree-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; }
-.degree.is-selected .degree-roman { color: #e4defe; }
+.degree.is-selected .degree-roman, .degree.is-selected .degree-func { color: var(--on-violet); }
 @media (max-width: 420px) { .degree-name { font-size: 0.85rem; } .degrees { gap: 4px; } }
+
+.degree-func { font-size: 0.7rem; color: var(--ink-soft); }
+.keychords-note { margin: 10px 0 0; text-align: center; color: var(--ink-soft); font-size: 0.8rem; }

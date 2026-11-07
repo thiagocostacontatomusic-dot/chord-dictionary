@@ -127,7 +127,7 @@ for (const rootPc of SHARP.map((_, i) => i)) {
     let caged = [];
     const cagedShapes = CAGED_SHAPES[t.key];
     if (cagedShapes) {
-      caged = CAGED_FORMS.map((form) => {
+      caged = CAGED_FORMS.filter((form) => cagedShapes[form]).map((form) => {
         const shift = mod12(rootPc - CAGED_ROOT_PC[form]);
         const frets = cagedShapes[form].map((f) => (f === null ? null : f + shift));
         const err = validateVoicing(rootPc, t.intervals, frets);

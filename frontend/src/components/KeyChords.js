@@ -4,6 +4,10 @@ import { chordFor } from '../chordData';
 import { DEGREES, MODES, romanFor, mod12, keyNames, QUAL_SUFFIX } from '../theory';
 import '../styles/KeyChords.css';
 
+// Harmonic function of a scale degree counted from the tonic of the mode: tonic family I iii vi,
+// subdominant ii IV, dominant V vii.
+const FUNC = { 1: 'T', 2: 'S', 3: 'T', 4: 'S', 5: 'D', 6: 'T', 7: 'D' };
+
 // The seven chords of the key as a plain row of buttons, with their Roman numerals.
 function KeyChords({ parentPc, modeIdx, selectedId, onPickDegree, onPickMode }) {
   const { t } = useI18n();
@@ -43,11 +47,13 @@ function KeyChords({ parentPc, modeIdx, selectedId, onPickDegree, onPickMode }) 
               >
                 <span className="degree-roman">{romanFor(d, modeIdx)}</span>
                 <span className="degree-name">{pretty(names[d] + QUAL_SUFFIX[deg.q])}</span>
+                <span className="degree-func" title={t('funcName', FUNC[((d - modeIdx + 7) % 7) + 1])}>{t('funcShort', FUNC[((d - modeIdx + 7) % 7) + 1])}</span>
               </button>
             </li>
           );
         })}
       </ol>
+      <p className="keychords-note">{t('funcNote')}</p>
     </section>
   );
 }

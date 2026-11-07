@@ -13,12 +13,12 @@ function CagedSection({ chord }) {
   return (
     <section className="caged" aria-labelledby="caged-title">
       <h3 id="caged-title">{t('caged')}</h3>
-      <p className="caged-intro">{t('cagedIntro', name)}</p>
+      <p className="caged-intro">{t('cagedIntro', name, chord.caged.length)}</p>
       <ol className="caged-row">
         {chord.caged.map((form) => (
           <li className="caged-item" key={form.form}>
             <div className="caged-head">
-              <span className="caged-letter" aria-hidden="true">{form.form}</span>
+              <span className="caged-letter">{t('cagedShape', form.form)}</span>
               <span className="caged-where">{t('cagedWhere', form.lowestFret)}</span>
             </div>
             <GuitarFretboard
@@ -30,6 +30,7 @@ function CagedSection({ chord }) {
           </li>
         ))}
       </ol>
+      {chord.caged.length < 5 && <p className="caged-intro">{t('cagedPartial')}</p>}
     </section>
   );
 }

@@ -29,3 +29,23 @@ test('chord data: lookups and search', () => {
 test('roman numerals exist', () => {
   expect(typeof romanFor).toBe('function');
 });
+
+test('study examples resolve to real chords in any key', () => {
+  const { TOPICS, examplesFor } = require('./study');
+  const { chordFor } = require('./chordData');
+  for (let pc = 0; pc < 12; pc += 1) {
+    TOPICS.forEach((topic) => {
+      ['en', 'pt'].forEach((lang) => {
+        examplesFor(topic, pc, lang).forEach((ex) =>
+          ex.chords.forEach((x) => expect(chordFor(x.pc, x.type)).toBeTruthy())
+        );
+      });
+    });
+  }
+});
+
+test('extended chords carry CAGED forms', () => {
+  const { getChord } = require('./chordData');
+  expect(getChord('C_dom9').caged.length).toBeGreaterThanOrEqual(3);
+  expect(getChord('F_min11').caged.length).toBe(5);
+});
