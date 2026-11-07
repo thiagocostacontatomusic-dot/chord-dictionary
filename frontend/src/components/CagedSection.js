@@ -1,27 +1,25 @@
 import React from 'react';
 import GuitarFretboard from './GuitarFretboard';
+import { useI18n, pretty } from '../i18n';
 import '../styles/CagedSection.css';
 
-// The CAGED system: the same chord played with the C, A, G, E and D open-chord
-// shapes, moved up the neck. Forms arrive already ordered from the nut upward.
+// The CAGED system: the chord played with the C, A, G, E and D open shapes moved up the
+// neck. Forms arrive from the API already ordered from the nut upward.
 function CagedSection({ chord }) {
+  const { t, typeLabel } = useI18n();
   if (!chord.caged || chord.caged.length === 0) return null;
+  const name = `${pretty(chord.rootName)} ${typeLabel(chord.typeKey, chord.type)}`;
 
   return (
-    <section className="caged-section">
-      <h3>CAGED system</h3>
-      <p className="caged-intro">
-        Five shapes for {chord.name}, from the nut up the neck. Each one is the open
-        C, A, G, E or D chord moved to this key, so they all play the same notes.
-      </p>
-      <div className="caged-grid">
+    <section className="caged" aria-labelledby="caged-title">
+      <h3 id="caged-title">{t('caged')}</h3>
+      <p className="caged-intro">{t('cagedIntro', name)}</p>
+      <ol className="caged-row">
         {chord.caged.map((form) => (
-          <div className="caged-card" key={form.form}>
-            <div className="caged-card-head">
-              <span className="caged-badge">{form.form}</span>
-              <span className="caged-meta">
-                {form.lowestFret === 0 ? 'open' : `fret ${form.lowestFret}`}
-              </span>
+          <li className="caged-item" key={form.form}>
+            <div className="caged-head">
+              <span className="caged-letter" aria-hidden="true">{form.form}</span>
+              <span className="caged-where">{t('cagedWhere', form.lowestFret)}</span>
             </div>
             <GuitarFretboard
               compact
@@ -29,9 +27,9 @@ function CagedSection({ chord }) {
               baseFret={form.baseFret}
               barre={form.barre}
             />
-          </div>
+          </li>
         ))}
-      </div>
+      </ol>
     </section>
   );
 }

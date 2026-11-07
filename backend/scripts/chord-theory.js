@@ -76,6 +76,75 @@ function validateVoicing(rootPc, intervals, frets) {
 
 
 // ---------------------------------------------------------------------------
+// Chord tones: [semitones, degree label, letter-name step]. The letter step lets us
+// spell every note correctly (Db major is Db F Ab, never Db E# Ab).
+// ---------------------------------------------------------------------------
+const TONES = {
+  major:   [[0, '1', 0], [4, '3', 2], [7, '5', 4]],
+  minor:   [[0, '1', 0], [3, '♭3', 2], [7, '5', 4]],
+  power5:  [[0, '1', 0], [7, '5', 4]],
+  dim:     [[0, '1', 0], [3, '♭3', 2], [6, '♭5', 4]],
+  aug:     [[0, '1', 0], [4, '3', 2], [8, '♯5', 4]],
+  sus2:    [[0, '1', 0], [2, '2', 1], [7, '5', 4]],
+  sus4:    [[0, '1', 0], [5, '4', 3], [7, '5', 4]],
+  six:     [[0, '1', 0], [4, '3', 2], [7, '5', 4], [9, '6', 5]],
+  minor6:  [[0, '1', 0], [3, '♭3', 2], [7, '5', 4], [9, '6', 5]],
+  dom7:    [[0, '1', 0], [4, '3', 2], [7, '5', 4], [10, '♭7', 6]],
+  maj7:    [[0, '1', 0], [4, '3', 2], [7, '5', 4], [11, '7', 6]],
+  min7:    [[0, '1', 0], [3, '♭3', 2], [7, '5', 4], [10, '♭7', 6]],
+  dim7:    [[0, '1', 0], [3, '♭3', 2], [6, '♭5', 4], [9, '♭♭7', 6]],
+  halfdim: [[0, '1', 0], [3, '♭3', 2], [6, '♭5', 4], [10, '♭7', 6]],
+  add9:    [[0, '1', 0], [4, '3', 2], [7, '5', 4], [2, '9', 1]],
+};
+const NAMES_PT = {
+  major: 'Maior', minor: 'Menor', power5: 'Power chord', dim: 'Diminuto', aug: 'Aumentado',
+  sus2: 'Suspenso 2', sus4: 'Suspenso 4', six: 'Maior com 6', minor6: 'Menor com 6',
+  dom7: 'Dominante 7', maj7: 'Maior 7M', min7: 'Menor 7', dim7: 'Diminuto 7',
+  halfdim: 'Meio-diminuto', add9: 'Add9',
+};
+TYPES.forEach((t) => {
+  t.tones = TONES[t.key];
+  t.intervals = t.tones.map((x) => x[0]);
+  t.namePt = NAMES_PT[t.key];
+});
+
+const LETTERS = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+const LETTER_PC = [0, 2, 4, 5, 7, 9, 11];
+const ACC = { '-2': 'bb', '-1': 'b', '0': '', '1': '#', '2': '##' };
+
+function spellFrom(letterIdx, rootPc, tones) {
+  let cost = 0;
+  const notes = tones.map(([iv, , step]) => {
+    const li = (letterIdx + step) % 7;
+    let d = mod12(mod12(rootPc + iv) - LETTER_PC[li]);
+    if (d > 6) d -= 12;
+    if (ACC[d] === undefined) throw new Error(`cannot spell ${LETTERS[li]} ${d}`);
+    cost += Math.abs(d);
+    return LETTERS[li] + ACC[d];
+  });
+  return { notes, cost };
+}
+
+// Spell a chord from its root pitch class. Black keys have two roots (C#/Db): pick the one
+// that needs fewer accidentals (Db major, C# minor); on a tie prefer the sharp name, except
+// for Eb. Returns { primary, alt } where alt is the enharmonic spelling (or null).
+function spellChord(rootPc, tones) {
+  const natural = LETTER_PC.indexOf(rootPc);
+  if (natural !== -1) {
+    const one = spellFrom(natural, rootPc, tones);
+    return { primary: { root: one.notes[0], notes: one.notes }, alt: null };
+  }
+  const sharp = spellFrom(LETTER_PC.indexOf(rootPc - 1), rootPc, tones);
+  const flat = spellFrom(LETTER_PC.indexOf(rootPc + 1), rootPc, tones);
+  const flatWins = flat.cost < sharp.cost || (flat.cost === sharp.cost && rootPc === 3);
+  const [first, second] = flatWins ? [flat, sharp] : [sharp, flat];
+  return {
+    primary: { root: first.notes[0], notes: first.notes },
+    alt: { root: second.notes[0], notes: second.notes },
+  };
+}
+
+// ---------------------------------------------------------------------------
 // CAGED system: every chord type below has five open "parent" shapes (the open
 // C, A, G, E and D chord families). Shifting a shape up the neck by the distance
 // from its parent root to the target root gives the same chord in five places.
@@ -97,4 +166,5 @@ const CAGED_SHAPES = {
 };
 
 module.exports = {
+  TONES, spellChord, LETTERS,
   CAGED_FORMS, CAGED_ROOT_PC, CAGED_SHAPES, SHARP, FLAT_ALIAS, TUNING, TYPES, mod12, soundedPitchClasses, validateVoicing };

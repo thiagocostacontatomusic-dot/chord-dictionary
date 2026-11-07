@@ -1,87 +1,183 @@
-import React from 'react';
+import React, { useId } from 'react';
+import { useI18n } from '../i18n';
 import '../styles/GuitarFretboard.css';
 
-// SVG chord diagram. Strings run left (6, low E) -> right (1, high E).
-const STRINGS = 6;
+// Chord diagram drawn as a rosewood neck: bone nut, nickel frets, pearl inlays,
+// bronze wound strings. Strings run left (6, low E) to right (1, high E).
 const FRETS = 5;
-const X0 = 44;
-const Y0 = 46;
+const X0 = 55;
 const GAP_X = 28;
-const GAP_Y = 36;
-const WIDTH = X0 + GAP_X * (STRINGS - 1) + 30;
-const HEIGHT = Y0 + GAP_Y * FRETS + 20;
+const Y0 = 70;
+const GAP_Y = 46;
+const BOARD_L = 40;
+const BOARD_W = GAP_X * 5 + 30;
+const BOARD_H = GAP_Y * FRETS + 6;
+const VIEW_W = 250;
+const VIEW_H = Y0 + BOARD_H + 14;
+
+const STRING_WIDTH = [2.6, 2.2, 1.8, 1.4, 1.1, 0.9];
+const SINGLE_INLAY = [3, 5, 7, 9, 15, 17, 19, 21];
+const DOUBLE_INLAY = [12, 24];
 
 const xOf = (stringNum) => X0 + (6 - stringNum) * GAP_X;
-const yOfFret = (fret, baseFret) => Y0 + (fret - baseFret + 0.5) * GAP_Y;
+const rowY = (fret, base) => Y0 + (fret - base + 0.5) * GAP_Y;
 
-function GuitarFretboard({ positions, baseFret = 1, barre, compact = false }) {
+function GuitarFretboard({ positions, baseFret = 1, barre, compact = false, showLegend = true }) {
+  const { t } = useI18n();
+  const uid = useId().replace(/:/g, '');
   const nut = baseFret === 1;
+  const byString = Object.fromEntries(positions.map((p) => [p.string, p.fret]));
+  const summary = [6, 5, 4, 3, 2, 1]
+    .map((s) => (byString[s] === null ? 'x' : byString[s]))
+    .join(' ');
+
+  const rows = Array.from({ length: FRETS }, (_, i) => baseFret + i);
+  const inlays = rows.flatMap((fret) => {
+    const y = rowY(fret, baseFret);
+    if (SINGLE_INLAY.includes(fret)) return [{ key: fret, x: X0 + GAP_X * 2.5, y }];
+    if (DOUBLE_INLAY.includes(fret)) {
+      return [
+        { key: `${fret}a`, x: X0 + GAP_X * 1.5, y },
+        { key: `${fret}b`, x: X0 + GAP_X * 3.5, y },
+      ];
+    }
+    return [];
+  });
+
+  const barreStrings = barre ? new Set() : null;
+  if (barre) {
+    positions.forEach((p) => {
+      if (p.fret === barre.fret && p.string <= barre.fromString && p.string >= barre.toString) {
+        barreStrings.add(p.string);
+      }
+    });
+  }
+
   return (
-    <div className={`guitar-fretboard ${compact ? 'compact' : ''}`}>
-      <svg
-        className="chord-diagram"
-        viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
-        role="img"
-        aria-label="Guitar chord diagram"
-      >
-        {/* nut or fret position label */}
+    <figure className={`neck ${compact ? 'neck-compact' : ''}`}>
+      <svg viewBox={`0 ${Y0 - 38} ${VIEW_W} ${VIEW_H - Y0 + 38}`} role="img" aria-label={t('diagram', summary)}>
+        <defs>
+          <linearGradient id={`wood${uid}`} x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stopColor="#2b1a12" />
+            <stop offset="0.5" stopColor="#3d2519" />
+            <stop offset="1" stopColor="#2b1a12" />
+          </linearGradient>
+          <linearGradient id={`bone${uid}`} x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stopColor="#f6f1e3" />
+            <stop offset="1" stopColor="#d9d1bb" />
+          </linearGradient>
+          <linearGradient id={`finger${uid}`} x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stopColor="#a08bff" />
+            <stop offset="1" stopColor="#6b4eff" />
+          </linearGradient>
+        </defs>
+
+        {/* board */}
+        <rect x={BOARD_L} y={Y0} width={BOARD_W} height={BOARD_H} rx="3" fill={`url(#wood${uid})`} />
+
+        {/* inlays */}
+        {inlays.map((i) => (
+          <circle key={i.key} cx={i.x} cy={i.y} r="6" className="inlay" />
+        ))}
+
+        {/* fret wires */}
+        {Array.from({ length: FRETS + 1 }, (_, i) => i).map((i) => {
+          if (i === 0 && nut) return null;
+          const y = Y0 + i * GAP_Y;
+          return (
+            <g key={`fw${i}`}>
+              <line x1={BOARD_L} x2={BOARD_L + BOARD_W} y1={y + 2} y2={y + 2} className="fret-shadow" />
+              <line x1={BOARD_L} x2={BOARD_L + BOARD_W} y1={y} y2={y} className="fret-wire" />
+            </g>
+          );
+        })}
+
+        {/* strings */}
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <line
+            key={`st${i}`}
+            x1={X0 + i * GAP_X}
+            x2={X0 + i * GAP_X}
+            y1={Y0}
+            y2={Y0 + BOARD_H}
+            className={i < 3 ? 'string-wound' : 'string-plain'}
+            strokeWidth={STRING_WIDTH[i]}
+          />
+        ))}
+
+        {/* nut or position label */}
         {nut ? (
-          <rect x={X0 - 2} y={Y0 - 5} width={GAP_X * 5 + 4} height="6" className="nut" />
+          <rect x={BOARD_L - 2} y={Y0 - 9} width={BOARD_W + 4} height="10" rx="2" fill={`url(#bone${uid})`} />
         ) : (
-          <text x={X0 - 14} y={Y0 + GAP_Y / 2 + 5} className="base-fret-label" textAnchor="end">
+          <text x={BOARD_L - 8} y={Y0 + GAP_Y / 2 + 7} className="base-label" textAnchor="end">
             {baseFret}fr
           </text>
         )}
 
-        {/* frets */}
-        {Array.from({ length: FRETS + 1 }).map((_, i) => (
-          <line key={`f${i}`} x1={X0} x2={X0 + GAP_X * 5} y1={Y0 + i * GAP_Y} y2={Y0 + i * GAP_Y} className="fret-line" />
-        ))}
-
-        {/* strings */}
-        {Array.from({ length: STRINGS }).map((_, i) => (
-          <line key={`s${i}`} x1={X0 + i * GAP_X} x2={X0 + i * GAP_X} y1={Y0} y2={Y0 + FRETS * GAP_Y} className="string-line" />
-        ))}
+        {/* open and muted markers above the nut */}
+        {[6, 5, 4, 3, 2, 1].map((s) => {
+          const fret = byString[s];
+          if (fret === null) {
+            return (
+              <g key={`m${s}`} className="mark-muted">
+                <line x1={xOf(s) - 5} x2={xOf(s) + 5} y1={Y0 - 28} y2={Y0 - 18} />
+                <line x1={xOf(s) + 5} x2={xOf(s) - 5} y1={Y0 - 28} y2={Y0 - 18} />
+              </g>
+            );
+          }
+          if (fret === 0) return <circle key={`o${s}`} cx={xOf(s)} cy={Y0 - 23} r="6" className="mark-open" />;
+          return null;
+        })}
 
         {/* barre */}
         {barre && (
-          <rect
-            x={xOf(barre.fromString) - 9}
-            y={yOfFret(barre.fret, baseFret) - 9}
-            width={xOf(barre.toString) - xOf(barre.fromString) + 18}
-            height="18"
-            rx="9"
-            className="barre"
-          />
+          <g className="barre">
+            <rect
+              x={xOf(barre.fromString) - 15}
+              y={rowY(barre.fret, baseFret) - 11}
+              width={xOf(barre.toString) - xOf(barre.fromString) + 30}
+              height="26"
+              rx="13"
+              className="barre-shadow"
+            />
+            <rect
+              x={xOf(barre.fromString) - 15}
+              y={rowY(barre.fret, baseFret) - 13}
+              width={xOf(barre.toString) - xOf(barre.fromString) + 30}
+              height="26"
+              rx="13"
+              fill={`url(#finger${uid})`}
+              className="barre-bar"
+            />
+          </g>
         )}
 
-        {/* markers */}
+        {/* fingers */}
         {positions.map((p) => {
-          const x = xOf(p.string);
-          if (p.fret === null) {
-            return (
-              <text key={p.string} x={x} y={Y0 - 14} textAnchor="middle" className="muted-mark">
-                ×
-              </text>
-            );
-          }
-          if (p.fret === 0) {
-            return <circle key={p.string} cx={x} cy={Y0 - 18} r="6" className="open-mark" />;
-          }
+          if (p.fret === null || p.fret === 0) return null;
+          if (barreStrings && barreStrings.has(p.string)) return null;
           const row = p.fret - baseFret;
           if (row < 0 || row >= FRETS) return null;
-          return <circle key={p.string} cx={x} cy={yOfFret(p.fret, baseFret)} r="9" className="dot" />;
+          const cx = xOf(p.string);
+          const cy = rowY(p.fret, baseFret);
+          return (
+            <g key={`f${p.string}`}>
+              <circle cx={cx} cy={cy + 2} r="12" className="finger-shadow" />
+              <circle cx={cx} cy={cy} r="12" fill={`url(#finger${uid})`} className="finger" />
+            </g>
+          );
         })}
       </svg>
 
-      {!compact && (
-        <div className="fretboard-legend">
-          <span><i className="legend-dot" /> Fretted</span>
-          <span><i className="legend-open" /> Open</span>
-          <span><b className="legend-x">×</b> Muted</span>
-        </div>
+      {showLegend && !compact && (
+        <figcaption className="neck-legend">
+          <span><i className="lg lg-finger" />{t('legendFinger')}</span>
+          <span><i className="lg lg-barre" />{t('legendBarre')}</span>
+          <span><i className="lg lg-open" />{t('legendOpen')}</span>
+          <span><i className="lg lg-muted">×</i>{t('legendMuted')}</span>
+        </figcaption>
       )}
-    </div>
+    </figure>
   );
 }
 

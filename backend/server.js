@@ -9,8 +9,15 @@ const PORT = process.env.PORT || 8000;
 app.use(cors());
 app.use(express.json());
 
-const typeOrder = [...new Set(chords.map((c) => c.type))];
-const noteOrder = SHARP.filter((n) => chords.some((c) => c.note === n));
+const FLAT_NAME = { 'C#': 'Db', 'D#': 'Eb', 'F#': 'Gb', 'G#': 'Ab', 'A#': 'Bb' };
+const typeList = [];
+chords.forEach((c) => {
+  if (!typeList.some((t) => t.key === c.typeKey)) typeList.push({ key: c.typeKey, name: c.type });
+});
+const noteList = SHARP.filter((n) => chords.some((c) => c.note === n)).map((n) => ({
+  value: n,
+  label: FLAT_NAME[n] ? `${n}/${FLAT_NAME[n]}` : n,
+}));
 
 // GET /api/chords?search=Am&note=A&type=Minor
 app.get('/api/chords', (req, res) => {
@@ -19,7 +26,7 @@ app.get('/api/chords', (req, res) => {
   let result = chords;
 
   if (note) result = result.filter((c) => c.note === note);
-  if (type) result = result.filter((c) => c.type === type);
+  if (type) result = result.filter((c) => c.typeKey === type || c.type === type);
   if (q) {
     // match at the start of a field or of a word inside it ("b minor" must not hit "Db Minor")
     const fields = (c) => [c.name, c.symbol, ...c.aliases].map((s) => s.toLowerCase());
@@ -43,16 +50,16 @@ app.get('/api/chords/:id', (req, res) => {
   res.json(chord);
 });
 
-app.get('/api/notes', (req, res) => res.json(noteOrder));
-app.get('/api/types', (req, res) => res.json(typeOrder));
+app.get('/api/notes', (req, res) => res.json(noteList));
+app.get('/api/types', (req, res) => res.json(typeList));
 
 app.get('/api/stats', (req, res) => {
   res.json({
     totalChords: chords.length,
     totalVoicings: chords.reduce((n, c) => n + c.voicings.length, 0),
     cagedChords: chords.filter((c) => c.caged.length).length,
-    notes: noteOrder.length,
-    types: typeOrder.length,
+    notes: noteList.length,
+    types: typeList.length,
   });
 });
 

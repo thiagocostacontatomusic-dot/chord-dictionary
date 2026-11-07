@@ -1,61 +1,45 @@
 import React from 'react';
+import { useI18n, pretty } from '../i18n';
 import '../styles/FilterBar.css';
 
-function FilterBar({
-  notes,
-  types,
-  selectedNote,
-  selectedType,
-  onNoteChange,
-  onTypeChange,
-  onClearFilters,
-}) {
-  const hasFilters = selectedNote || selectedType;
+function FilterBar({ notes, types, selectedNote, selectedType, onNoteChange, onTypeChange }) {
+  const { t, typeLabel } = useI18n();
 
   return (
-    <div className="filter-bar">
-      <div className="filter-group">
-        <label htmlFor="note-select">Note:</label>
-        <select
-          id="note-select"
-          value={selectedNote}
-          onChange={(e) => onNoteChange(e.target.value)}
-          className="filter-select"
-        >
-          <option value="">All Notes</option>
-          {notes.map((note) => (
-            <option key={note} value={note}>
-              {note}
+    <div className="filters">
+      <fieldset className="keys">
+        <legend>{t('key')}</legend>
+        <div className="keys-grid">
+          {notes.map((n) => {
+            const [sharp, flat] = n.label.split('/');
+            const active = selectedNote === n.value;
+            return (
+              <button
+                key={n.value}
+                type="button"
+                className={`key ${active ? 'is-active' : ''}`}
+                aria-pressed={active}
+                onClick={() => onNoteChange(active ? '' : n.value)}
+              >
+                <span>{pretty(sharp)}</span>
+                {flat && <small>{pretty(flat)}</small>}
+              </button>
+            );
+          })}
+        </div>
+      </fieldset>
+
+      <label className="type-select">
+        <span>{t('type')}</span>
+        <select value={selectedType} onChange={(e) => onTypeChange(e.target.value)}>
+          <option value="">{t('allTypes')}</option>
+          {types.map((ty) => (
+            <option key={ty.key} value={ty.key}>
+              {typeLabel(ty.key, ty.name)}
             </option>
           ))}
         </select>
-      </div>
-
-      <div className="filter-group">
-        <label htmlFor="type-select">Type:</label>
-        <select
-          id="type-select"
-          value={selectedType}
-          onChange={(e) => onTypeChange(e.target.value)}
-          className="filter-select"
-        >
-          <option value="">All Types</option>
-          {types.map((type) => (
-            <option key={type} value={type}>
-              {type}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      {hasFilters && (
-        <button
-          className="clear-filters-btn"
-          onClick={onClearFilters}
-        >
-          Clear Filters
-        </button>
-      )}
+      </label>
     </div>
   );
 }

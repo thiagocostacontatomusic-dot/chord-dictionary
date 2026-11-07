@@ -5,7 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 const {
-  SHARP, FLAT_ALIAS, TYPES, mod12, validateVoicing,
+  SHARP, TYPES, mod12, validateVoicing, spellChord,
   CAGED_FORMS, CAGED_ROOT_PC, CAGED_SHAPES,
 } = require('./chord-theory');
 
@@ -53,13 +53,24 @@ function toPositions(frets) {
   return frets.map((fret, i) => ({ string: STRING_OF_INDEX(i), fret }));
 }
 
+// A barre is one finger flattened across several strings at the lowest fretted fret.
+// It counts when 2+ strings share that fret, every string between its ends is sounded at
+// or above it, and it reaches an outer string (1 or 6). Partial three-string shapes
+// (like open A) are fingered one note at a time, so they get no bar.
 function barreOf(frets) {
-  const fretted = frets.map((f, i) => ({ f, s: STRING_OF_INDEX(i) })).filter((x) => x.f !== null && x.f > 0);
-  if (!fretted.length) return null;
+  const entries = frets.map((f, i) => ({ f, s: STRING_OF_INDEX(i) }));
+  const fretted = entries.filter((x) => x.f !== null && x.f > 0);
+  if (fretted.length < 2) return null;
   const min = Math.min(...fretted.map((x) => x.f));
-  const at = fretted.filter((x) => x.f === min);
+  const at = fretted.filter((x) => x.f === min).map((x) => x.s);
   if (at.length < 2) return null;
-  return { fret: min, fromString: Math.max(...at.map((x) => x.s)), toString: Math.min(...at.map((x) => x.s)) };
+  const hi = Math.max(...at);
+  const lo = Math.min(...at);
+  for (const x of entries) {
+    if (x.s >= lo && x.s <= hi && (x.f === null || x.f < min)) return null;
+  }
+  if (lo !== 1 && hi !== 6) return null;
+  return { fret: min, fromString: hi, toString: lo };
 }
 
 function baseFretOf(frets) {
@@ -79,23 +90,23 @@ const errors = [];
 
 for (const rootPc of SHARP.map((_, i) => i)) {
   const root = SHARP[rootPc];
-  const flat = FLAT_ALIAS[root];
   for (const t of TYPES) {
     const voicings = [];
     const seen = new Set();
-    const add = (label, frets, kind) => {
+    const add = (label, frets, kind, shape = null, fret = 0) => {
       const err = validateVoicing(rootPc, t.intervals, frets);
       if (err) { errors.push(`${root} ${t.key} [${label}] ${JSON.stringify(frets)}: ${err}`); return; }
       const sig = JSON.stringify(frets);
       if (seen.has(sig)) return;
       seen.add(sig);
-      const v = { label, kind, positions: toPositions(frets), baseFret: baseFretOf(frets) };
-      if (kind === 'barre') { const b = barreOf(frets); if (b) v.barre = b; }
+      const v = { label, kind, shape, fret, positions: toPositions(frets), baseFret: baseFretOf(frets) };
+      const b = barreOf(frets);
+      if (b) v.barre = b;
       voicings.push(v);
     };
 
     const open = OPEN[`${root}:${t.key}`];
-    if (open) add('Open position', open, 'open');
+    if (open) add('Open position', open, 'open', null, 0);
 
     const barres = [];
     if (t.E) barres.push({ name: 'E-shape', root: mod12(rootPc - 4), shape: t.E });
@@ -106,7 +117,7 @@ for (const rootPc of SHARP.map((_, i) => i)) {
       .sort((a, b) => Math.min(...a.frets.filter((f) => f > 0)) - Math.min(...b.frets.filter((f) => f > 0)));
     for (const b of placed) {
       const f = Math.min(...b.frets.filter((x) => x !== null && x > 0));
-      add(`${b.name} (${b.root === 0 ? 'open' : 'fret ' + f})`, b.frets, b.root === 0 ? 'open' : 'barre');
+      add(`${b.name} (${b.root === 0 ? 'open' : 'fret ' + f})`, b.frets, b.root === 0 ? 'open' : 'barre', b.name[0], b.root === 0 ? 0 : f);
     }
 
     if (!voicings.length) { errors.push(`${root} ${t.key}: no valid voicing`); continue; }
@@ -130,7 +141,7 @@ for (const rootPc of SHARP.map((_, i) => i)) {
           positions: toPositions(frets),
           baseFret: baseFretOf(frets),
         };
-        const b = shift > 0 ? barreOf(frets) : null;
+        const b = barreOf(frets);
         if (b) entry.barre = b;
         return entry;
       })
@@ -138,16 +149,26 @@ for (const rootPc of SHARP.map((_, i) => i)) {
         .map((entry, i) => ({ ...entry, order: i + 1 }));
     }
 
-    const symbol = root + t.suffix;
-    const aliases = flat ? [`${flat} ${t.type}`, flat + t.suffix] : [];
+    const { primary, alt } = spellChord(rootPc, t.tones);
+    const symbol = primary.root + t.suffix;
+    const aliases = [];
+    for (const r of [primary.root, alt && alt.root].filter(Boolean)) {
+      aliases.push(`${r} ${t.type}`, `${r} ${t.namePt}`, r + t.suffix);
+    }
     chords.push({
       id: `${root.replace('#', 'sharp')}_${t.key}`,
-      name: `${root}${flat ? '/' + flat : ''} ${t.type}`,
+      typeKey: t.key,
+      name: `${primary.root} ${t.type}`,
+      altName: alt ? `${alt.root} ${t.type}` : null,
       symbol,
+      altSymbol: alt ? alt.root + t.suffix : null,
       aliases,
       note: root,
+      rootName: primary.root,
       type: t.type,
-      notes: t.intervals.map((iv) => SHARP[mod12(rootPc + iv)]),
+      notes: primary.notes,
+      degrees: t.tones.map((x) => x[1]),
+      pcs: t.tones.map((x) => mod12(rootPc + x[0])),
       positions: voicings[0].positions,
       baseFret: voicings[0].baseFret,
       voicings,

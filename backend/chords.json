@@ -1,15 +1,33 @@
 [
  {
   "id": "C_major",
+  "typeKey": "major",
   "name": "C Major",
+  "altName": null,
   "symbol": "C",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "C Major",
+   "C Maior",
+   "C"
+  ],
   "note": "C",
+  "rootName": "C",
   "type": "Major",
   "notes": [
    "C",
    "E",
    "G"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5"
+  ],
+  "pcs": [
+   0,
+   4,
+   7
   ],
   "positions": [
    {
@@ -42,6 +60,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -73,6 +93,8 @@
    {
     "label": "A-shape (fret 3)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -109,6 +131,8 @@
    {
     "label": "E-shape (fret 8)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -246,11 +270,6 @@
      }
     ],
     "baseFret": 5,
-    "barre": {
-     "fret": 5,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 3
    },
    {
@@ -328,15 +347,33 @@
  },
  {
   "id": "C_minor",
+  "typeKey": "minor",
   "name": "C Minor",
+  "altName": null,
   "symbol": "Cm",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "C Minor",
+   "C Menor",
+   "Cm"
+  ],
   "note": "C",
+  "rootName": "C",
   "type": "Minor",
   "notes": [
    "C",
-   "D#",
+   "Eb",
    "G"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5"
+  ],
+  "pcs": [
+   0,
+   3,
+   7
   ],
   "positions": [
    {
@@ -369,6 +406,8 @@
    {
     "label": "A-shape (fret 3)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -405,6 +444,8 @@
    {
     "label": "E-shape (fret 8)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -542,11 +583,6 @@
      }
     ],
     "baseFret": 5,
-    "barre": {
-     "fret": 5,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 3
    },
    {
@@ -624,14 +660,30 @@
  },
  {
   "id": "C_power5",
+  "typeKey": "power5",
   "name": "C Power (5)",
+  "altName": null,
   "symbol": "C5",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "C Power (5)",
+   "C Power chord",
+   "C5"
+  ],
   "note": "C",
+  "rootName": "C",
   "type": "Power (5)",
   "notes": [
    "C",
    "G"
+  ],
+  "degrees": [
+   "1",
+   "5"
+  ],
+  "pcs": [
+   0,
+   7
   ],
   "positions": [
    {
@@ -664,6 +716,8 @@
    {
     "label": "A-shape (fret 3)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -695,6 +749,8 @@
    {
     "label": "E-shape (fret 8)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -728,15 +784,33 @@
  },
  {
   "id": "C_dim",
+  "typeKey": "dim",
   "name": "C Diminished",
+  "altName": null,
   "symbol": "Cdim",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "C Diminished",
+   "C Diminuto",
+   "Cdim"
+  ],
   "note": "C",
+  "rootName": "C",
   "type": "Diminished",
   "notes": [
    "C",
-   "D#",
-   "F#"
+   "Eb",
+   "Gb"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5"
+  ],
+  "pcs": [
+   0,
+   3,
+   6
   ],
   "positions": [
    {
@@ -769,6 +843,8 @@
    {
     "label": "A-shape (fret 3)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -802,15 +878,33 @@
  },
  {
   "id": "C_aug",
+  "typeKey": "aug",
   "name": "C Augmented",
+  "altName": null,
   "symbol": "Caug",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "C Augmented",
+   "C Aumentado",
+   "Caug"
+  ],
   "note": "C",
+  "rootName": "C",
   "type": "Augmented",
   "notes": [
    "C",
    "E",
    "G#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "♯5"
+  ],
+  "pcs": [
+   0,
+   4,
+   8
   ],
   "positions": [
    {
@@ -843,6 +937,8 @@
    {
     "label": "A-shape (fret 3)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -874,6 +970,8 @@
    {
     "label": "E-shape (fret 8)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -912,15 +1010,33 @@
  },
  {
   "id": "C_sus2",
+  "typeKey": "sus2",
   "name": "C Suspended 2",
+  "altName": null,
   "symbol": "Csus2",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "C Suspended 2",
+   "C Suspenso 2",
+   "Csus2"
+  ],
   "note": "C",
+  "rootName": "C",
   "type": "Suspended 2",
   "notes": [
    "C",
    "D",
    "G"
+  ],
+  "degrees": [
+   "1",
+   "2",
+   "5"
+  ],
+  "pcs": [
+   0,
+   2,
+   7
   ],
   "positions": [
    {
@@ -953,6 +1069,8 @@
    {
     "label": "A-shape (fret 3)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -989,6 +1107,8 @@
    {
     "label": "E-shape (fret 8)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -1126,11 +1246,6 @@
      }
     ],
     "baseFret": 5,
-    "barre": {
-     "fret": 5,
-     "fromString": 5,
-     "toString": 3
-    },
     "order": 3
    },
    {
@@ -1213,15 +1328,33 @@
  },
  {
   "id": "C_sus4",
+  "typeKey": "sus4",
   "name": "C Suspended 4",
+  "altName": null,
   "symbol": "Csus4",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "C Suspended 4",
+   "C Suspenso 4",
+   "Csus4"
+  ],
   "note": "C",
+  "rootName": "C",
   "type": "Suspended 4",
   "notes": [
    "C",
    "F",
    "G"
+  ],
+  "degrees": [
+   "1",
+   "4",
+   "5"
+  ],
+  "pcs": [
+   0,
+   5,
+   7
   ],
   "positions": [
    {
@@ -1254,6 +1387,8 @@
    {
     "label": "A-shape (fret 3)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -1290,6 +1425,8 @@
    {
     "label": "E-shape (fret 8)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -1356,6 +1493,11 @@
      }
     ],
     "baseFret": 1,
+    "barre": {
+     "fret": 1,
+     "fromString": 2,
+     "toString": 1
+    },
     "order": 1
    },
    {
@@ -1427,11 +1569,6 @@
      }
     ],
     "baseFret": 5,
-    "barre": {
-     "fret": 5,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 3
    },
    {
@@ -1509,16 +1646,36 @@
  },
  {
   "id": "C_six",
+  "typeKey": "six",
   "name": "C Major 6",
+  "altName": null,
   "symbol": "C6",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "C Major 6",
+   "C Maior com 6",
+   "C6"
+  ],
   "note": "C",
+  "rootName": "C",
   "type": "Major 6",
   "notes": [
    "C",
    "E",
    "G",
    "A"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   0,
+   4,
+   7,
+   9
   ],
   "positions": [
    {
@@ -1551,6 +1708,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -1582,6 +1741,8 @@
    {
     "label": "A-shape (fret 3)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -1613,6 +1774,8 @@
    {
     "label": "E-shape (fret 8)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -1821,27 +1984,42 @@
      }
     ],
     "baseFret": 10,
-    "barre": {
-     "fret": 10,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "C_minor6",
+  "typeKey": "minor6",
   "name": "C Minor 6",
+  "altName": null,
   "symbol": "Cm6",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "C Minor 6",
+   "C Menor com 6",
+   "Cm6"
+  ],
   "note": "C",
+  "rootName": "C",
   "type": "Minor 6",
   "notes": [
    "C",
-   "D#",
+   "Eb",
    "G",
    "A"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   0,
+   3,
+   7,
+   9
   ],
   "positions": [
    {
@@ -1874,6 +2052,8 @@
    {
     "label": "A-shape (fret 3)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -1905,6 +2085,8 @@
    {
     "label": "E-shape (fret 8)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -2113,27 +2295,42 @@
      }
     ],
     "baseFret": 10,
-    "barre": {
-     "fret": 10,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "C_dom7",
+  "typeKey": "dom7",
   "name": "C Dominant 7",
+  "altName": null,
   "symbol": "C7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "C Dominant 7",
+   "C Dominante 7",
+   "C7"
+  ],
   "note": "C",
+  "rootName": "C",
   "type": "Dominant 7",
   "notes": [
    "C",
    "E",
    "G",
-   "A#"
+   "Bb"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   0,
+   4,
+   7,
+   10
   ],
   "positions": [
    {
@@ -2166,6 +2363,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -2197,6 +2396,8 @@
    {
     "label": "A-shape (fret 3)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -2233,6 +2434,8 @@
    {
     "label": "E-shape (fret 8)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -2370,11 +2573,6 @@
      }
     ],
     "baseFret": 5,
-    "barre": {
-     "fret": 5,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 3
    },
    {
@@ -2452,16 +2650,36 @@
  },
  {
   "id": "C_maj7",
+  "typeKey": "maj7",
   "name": "C Major 7",
+  "altName": null,
   "symbol": "Cmaj7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "C Major 7",
+   "C Maior 7M",
+   "Cmaj7"
+  ],
   "note": "C",
+  "rootName": "C",
   "type": "Major 7",
   "notes": [
    "C",
    "E",
    "G",
    "B"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "7"
+  ],
+  "pcs": [
+   0,
+   4,
+   7,
+   11
   ],
   "positions": [
    {
@@ -2494,6 +2712,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -2525,6 +2745,8 @@
    {
     "label": "A-shape (fret 3)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -2561,6 +2783,8 @@
    {
     "label": "E-shape (fret 8)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -2698,11 +2922,6 @@
      }
     ],
     "baseFret": 5,
-    "barre": {
-     "fret": 5,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 3
    },
    {
@@ -2780,16 +2999,36 @@
  },
  {
   "id": "C_min7",
+  "typeKey": "min7",
   "name": "C Minor 7",
+  "altName": null,
   "symbol": "Cm7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "C Minor 7",
+   "C Menor 7",
+   "Cm7"
+  ],
   "note": "C",
+  "rootName": "C",
   "type": "Minor 7",
   "notes": [
    "C",
-   "D#",
+   "Eb",
    "G",
-   "A#"
+   "Bb"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   0,
+   3,
+   7,
+   10
   ],
   "positions": [
    {
@@ -2822,6 +3061,8 @@
    {
     "label": "A-shape (fret 3)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -2858,6 +3099,8 @@
    {
     "label": "E-shape (fret 8)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -3072,16 +3315,36 @@
  },
  {
   "id": "C_dim7",
+  "typeKey": "dim7",
   "name": "C Diminished 7",
+  "altName": null,
   "symbol": "Cdim7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "C Diminished 7",
+   "C Diminuto 7",
+   "Cdim7"
+  ],
   "note": "C",
+  "rootName": "C",
   "type": "Diminished 7",
   "notes": [
    "C",
-   "D#",
-   "F#",
-   "A"
+   "Eb",
+   "Gb",
+   "Bbb"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭♭7"
+  ],
+  "pcs": [
+   0,
+   3,
+   6,
+   9
   ],
   "positions": [
    {
@@ -3114,6 +3377,8 @@
    {
     "label": "A-shape (fret 3)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -3147,16 +3412,36 @@
  },
  {
   "id": "C_halfdim",
+  "typeKey": "halfdim",
   "name": "C Half-diminished (m7b5)",
+  "altName": null,
   "symbol": "Cm7b5",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "C Half-diminished (m7b5)",
+   "C Meio-diminuto",
+   "Cm7b5"
+  ],
   "note": "C",
+  "rootName": "C",
   "type": "Half-diminished (m7b5)",
   "notes": [
    "C",
-   "D#",
-   "F#",
-   "A#"
+   "Eb",
+   "Gb",
+   "Bb"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭7"
+  ],
+  "pcs": [
+   0,
+   3,
+   6,
+   10
   ],
   "positions": [
    {
@@ -3189,6 +3474,8 @@
    {
     "label": "A-shape (fret 3)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -3215,28 +3502,43 @@
       "fret": null
      }
     ],
-    "baseFret": 1,
-    "barre": {
-     "fret": 3,
-     "fromString": 5,
-     "toString": 3
-    }
+    "baseFret": 1
    }
   ],
   "caged": []
  },
  {
   "id": "C_add9",
+  "typeKey": "add9",
   "name": "C Add9",
+  "altName": null,
   "symbol": "Cadd9",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "C Add9",
+   "C Add9",
+   "Cadd9"
+  ],
   "note": "C",
+  "rootName": "C",
   "type": "Add9",
   "notes": [
    "C",
-   "D",
    "E",
-   "G"
+   "G",
+   "D"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "9"
+  ],
+  "pcs": [
+   0,
+   4,
+   7,
+   2
   ],
   "positions": [
    {
@@ -3269,6 +3571,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -3300,6 +3604,8 @@
    {
     "label": "A-shape (fret 3)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -3338,18 +3644,36 @@
  },
  {
   "id": "Csharp_major",
-  "name": "C#/Db Major",
-  "symbol": "C#",
+  "typeKey": "major",
+  "name": "Db Major",
+  "altName": "C# Major",
+  "symbol": "Db",
+  "altSymbol": "C#",
   "aliases": [
    "Db Major",
-   "Db"
+   "Db Maior",
+   "Db",
+   "C# Major",
+   "C# Maior",
+   "C#"
   ],
   "note": "C#",
+  "rootName": "Db",
   "type": "Major",
   "notes": [
-   "C#",
+   "Db",
    "F",
-   "G#"
+   "Ab"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5"
+  ],
+  "pcs": [
+   1,
+   5,
+   8
   ],
   "positions": [
    {
@@ -3382,6 +3706,8 @@
    {
     "label": "A-shape (fret 4)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -3418,6 +3744,8 @@
    {
     "label": "E-shape (fret 9)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -3560,11 +3888,6 @@
      }
     ],
     "baseFret": 6,
-    "barre": {
-     "fret": 6,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 3
    },
    {
@@ -3642,18 +3965,36 @@
  },
  {
   "id": "Csharp_minor",
-  "name": "C#/Db Minor",
+  "typeKey": "minor",
+  "name": "C# Minor",
+  "altName": "Db Minor",
   "symbol": "C#m",
+  "altSymbol": "Dbm",
   "aliases": [
+   "C# Minor",
+   "C# Menor",
+   "C#m",
    "Db Minor",
+   "Db Menor",
    "Dbm"
   ],
   "note": "C#",
+  "rootName": "C#",
   "type": "Minor",
   "notes": [
    "C#",
    "E",
    "G#"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5"
+  ],
+  "pcs": [
+   1,
+   4,
+   8
   ],
   "positions": [
    {
@@ -3686,6 +4027,8 @@
    {
     "label": "A-shape (fret 4)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -3722,6 +4065,8 @@
    {
     "label": "E-shape (fret 9)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -3859,11 +4204,6 @@
      }
     ],
     "baseFret": 6,
-    "barre": {
-     "fret": 6,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 3
    },
    {
@@ -3941,17 +4281,33 @@
  },
  {
   "id": "Csharp_power5",
-  "name": "C#/Db Power (5)",
+  "typeKey": "power5",
+  "name": "C# Power (5)",
+  "altName": "Db Power (5)",
   "symbol": "C#5",
+  "altSymbol": "Db5",
   "aliases": [
+   "C# Power (5)",
+   "C# Power chord",
+   "C#5",
    "Db Power (5)",
+   "Db Power chord",
    "Db5"
   ],
   "note": "C#",
+  "rootName": "C#",
   "type": "Power (5)",
   "notes": [
    "C#",
    "G#"
+  ],
+  "degrees": [
+   "1",
+   "5"
+  ],
+  "pcs": [
+   1,
+   8
   ],
   "positions": [
    {
@@ -3984,6 +4340,8 @@
    {
     "label": "A-shape (fret 4)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -4015,6 +4373,8 @@
    {
     "label": "E-shape (fret 9)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -4048,18 +4408,36 @@
  },
  {
   "id": "Csharp_dim",
-  "name": "C#/Db Diminished",
+  "typeKey": "dim",
+  "name": "C# Diminished",
+  "altName": "Db Diminished",
   "symbol": "C#dim",
+  "altSymbol": "Dbdim",
   "aliases": [
+   "C# Diminished",
+   "C# Diminuto",
+   "C#dim",
    "Db Diminished",
+   "Db Diminuto",
    "Dbdim"
   ],
   "note": "C#",
+  "rootName": "C#",
   "type": "Diminished",
   "notes": [
    "C#",
    "E",
    "G"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5"
+  ],
+  "pcs": [
+   1,
+   4,
+   7
   ],
   "positions": [
    {
@@ -4092,6 +4470,8 @@
    {
     "label": "A-shape (fret 4)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -4125,18 +4505,36 @@
  },
  {
   "id": "Csharp_aug",
-  "name": "C#/Db Augmented",
-  "symbol": "C#aug",
+  "typeKey": "aug",
+  "name": "Db Augmented",
+  "altName": "C# Augmented",
+  "symbol": "Dbaug",
+  "altSymbol": "C#aug",
   "aliases": [
    "Db Augmented",
-   "Dbaug"
+   "Db Aumentado",
+   "Dbaug",
+   "C# Augmented",
+   "C# Aumentado",
+   "C#aug"
   ],
   "note": "C#",
+  "rootName": "Db",
   "type": "Augmented",
   "notes": [
-   "C#",
+   "Db",
    "F",
    "A"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "♯5"
+  ],
+  "pcs": [
+   1,
+   5,
+   9
   ],
   "positions": [
    {
@@ -4169,6 +4567,8 @@
    {
     "label": "A-shape (fret 4)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -4200,6 +4600,8 @@
    {
     "label": "E-shape (fret 9)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -4238,18 +4640,36 @@
  },
  {
   "id": "Csharp_sus2",
-  "name": "C#/Db Suspended 2",
+  "typeKey": "sus2",
+  "name": "C# Suspended 2",
+  "altName": "Db Suspended 2",
   "symbol": "C#sus2",
+  "altSymbol": "Dbsus2",
   "aliases": [
+   "C# Suspended 2",
+   "C# Suspenso 2",
+   "C#sus2",
    "Db Suspended 2",
+   "Db Suspenso 2",
    "Dbsus2"
   ],
   "note": "C#",
+  "rootName": "C#",
   "type": "Suspended 2",
   "notes": [
    "C#",
    "D#",
    "G#"
+  ],
+  "degrees": [
+   "1",
+   "2",
+   "5"
+  ],
+  "pcs": [
+   1,
+   3,
+   8
   ],
   "positions": [
    {
@@ -4282,6 +4702,8 @@
    {
     "label": "A-shape (fret 4)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -4318,6 +4740,8 @@
    {
     "label": "E-shape (fret 9)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -4384,11 +4808,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 1,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 1
    },
    {
@@ -4460,11 +4879,6 @@
      }
     ],
     "baseFret": 6,
-    "barre": {
-     "fret": 6,
-     "fromString": 5,
-     "toString": 3
-    },
     "order": 3
    },
    {
@@ -4547,18 +4961,36 @@
  },
  {
   "id": "Csharp_sus4",
-  "name": "C#/Db Suspended 4",
+  "typeKey": "sus4",
+  "name": "C# Suspended 4",
+  "altName": "Db Suspended 4",
   "symbol": "C#sus4",
+  "altSymbol": "Dbsus4",
   "aliases": [
+   "C# Suspended 4",
+   "C# Suspenso 4",
+   "C#sus4",
    "Db Suspended 4",
+   "Db Suspenso 4",
    "Dbsus4"
   ],
   "note": "C#",
+  "rootName": "C#",
   "type": "Suspended 4",
   "notes": [
    "C#",
    "F#",
    "G#"
+  ],
+  "degrees": [
+   "1",
+   "4",
+   "5"
+  ],
+  "pcs": [
+   1,
+   6,
+   8
   ],
   "positions": [
    {
@@ -4591,6 +5023,8 @@
    {
     "label": "A-shape (fret 4)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -4627,6 +5061,8 @@
    {
     "label": "E-shape (fret 9)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -4764,11 +5200,6 @@
      }
     ],
     "baseFret": 6,
-    "barre": {
-     "fret": 6,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 3
    },
    {
@@ -4846,19 +5277,39 @@
  },
  {
   "id": "Csharp_six",
-  "name": "C#/Db Major 6",
-  "symbol": "C#6",
+  "typeKey": "six",
+  "name": "Db Major 6",
+  "altName": "C# Major 6",
+  "symbol": "Db6",
+  "altSymbol": "C#6",
   "aliases": [
    "Db Major 6",
-   "Db6"
+   "Db Maior com 6",
+   "Db6",
+   "C# Major 6",
+   "C# Maior com 6",
+   "C#6"
   ],
   "note": "C#",
+  "rootName": "Db",
   "type": "Major 6",
   "notes": [
-   "C#",
+   "Db",
    "F",
-   "G#",
-   "A#"
+   "Ab",
+   "Bb"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   1,
+   5,
+   8,
+   10
   ],
   "positions": [
    {
@@ -4891,6 +5342,8 @@
    {
     "label": "A-shape (fret 4)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -4922,6 +5375,8 @@
    {
     "label": "E-shape (fret 9)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -5130,30 +5585,45 @@
      }
     ],
     "baseFret": 11,
-    "barre": {
-     "fret": 11,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "Csharp_minor6",
-  "name": "C#/Db Minor 6",
+  "typeKey": "minor6",
+  "name": "C# Minor 6",
+  "altName": "Db Minor 6",
   "symbol": "C#m6",
+  "altSymbol": "Dbm6",
   "aliases": [
+   "C# Minor 6",
+   "C# Menor com 6",
+   "C#m6",
    "Db Minor 6",
+   "Db Menor com 6",
    "Dbm6"
   ],
   "note": "C#",
+  "rootName": "C#",
   "type": "Minor 6",
   "notes": [
    "C#",
    "E",
    "G#",
    "A#"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   1,
+   4,
+   8,
+   10
   ],
   "positions": [
    {
@@ -5186,6 +5656,8 @@
    {
     "label": "A-shape (fret 4)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -5217,6 +5689,8 @@
    {
     "label": "E-shape (fret 9)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -5283,11 +5757,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 2,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 1
    },
    {
@@ -5430,30 +5899,45 @@
      }
     ],
     "baseFret": 11,
-    "barre": {
-     "fret": 11,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "Csharp_dom7",
-  "name": "C#/Db Dominant 7",
+  "typeKey": "dom7",
+  "name": "C# Dominant 7",
+  "altName": "Db Dominant 7",
   "symbol": "C#7",
+  "altSymbol": "Db7",
   "aliases": [
+   "C# Dominant 7",
+   "C# Dominante 7",
+   "C#7",
    "Db Dominant 7",
+   "Db Dominante 7",
    "Db7"
   ],
   "note": "C#",
+  "rootName": "C#",
   "type": "Dominant 7",
   "notes": [
    "C#",
-   "F",
+   "E#",
    "G#",
    "B"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   1,
+   5,
+   8,
+   11
   ],
   "positions": [
    {
@@ -5486,6 +5970,8 @@
    {
     "label": "A-shape (fret 4)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -5522,6 +6008,8 @@
    {
     "label": "E-shape (fret 9)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -5659,11 +6147,6 @@
      }
     ],
     "baseFret": 6,
-    "barre": {
-     "fret": 6,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 3
    },
    {
@@ -5741,19 +6224,39 @@
  },
  {
   "id": "Csharp_maj7",
-  "name": "C#/Db Major 7",
-  "symbol": "C#maj7",
+  "typeKey": "maj7",
+  "name": "Db Major 7",
+  "altName": "C# Major 7",
+  "symbol": "Dbmaj7",
+  "altSymbol": "C#maj7",
   "aliases": [
    "Db Major 7",
-   "Dbmaj7"
+   "Db Maior 7M",
+   "Dbmaj7",
+   "C# Major 7",
+   "C# Maior 7M",
+   "C#maj7"
   ],
   "note": "C#",
+  "rootName": "Db",
   "type": "Major 7",
   "notes": [
-   "C#",
+   "Db",
    "F",
-   "G#",
+   "Ab",
    "C"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "7"
+  ],
+  "pcs": [
+   1,
+   5,
+   8,
+   0
   ],
   "positions": [
    {
@@ -5786,6 +6289,8 @@
    {
     "label": "A-shape (fret 4)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -5822,6 +6327,8 @@
    {
     "label": "E-shape (fret 9)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -5964,11 +6471,6 @@
      }
     ],
     "baseFret": 6,
-    "barre": {
-     "fret": 6,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 3
    },
    {
@@ -6046,19 +6548,39 @@
  },
  {
   "id": "Csharp_min7",
-  "name": "C#/Db Minor 7",
+  "typeKey": "min7",
+  "name": "C# Minor 7",
+  "altName": "Db Minor 7",
   "symbol": "C#m7",
+  "altSymbol": "Dbm7",
   "aliases": [
+   "C# Minor 7",
+   "C# Menor 7",
+   "C#m7",
    "Db Minor 7",
+   "Db Menor 7",
    "Dbm7"
   ],
   "note": "C#",
+  "rootName": "C#",
   "type": "Minor 7",
   "notes": [
    "C#",
    "E",
    "G#",
    "B"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   1,
+   4,
+   8,
+   11
   ],
   "positions": [
    {
@@ -6091,6 +6613,8 @@
    {
     "label": "A-shape (fret 4)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -6127,6 +6651,8 @@
    {
     "label": "E-shape (fret 9)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -6193,11 +6719,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 2,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 1
    },
    {
@@ -6346,19 +6867,39 @@
  },
  {
   "id": "Csharp_dim7",
-  "name": "C#/Db Diminished 7",
+  "typeKey": "dim7",
+  "name": "C# Diminished 7",
+  "altName": "Db Diminished 7",
   "symbol": "C#dim7",
+  "altSymbol": "Dbdim7",
   "aliases": [
+   "C# Diminished 7",
+   "C# Diminuto 7",
+   "C#dim7",
    "Db Diminished 7",
+   "Db Diminuto 7",
    "Dbdim7"
   ],
   "note": "C#",
+  "rootName": "C#",
   "type": "Diminished 7",
   "notes": [
    "C#",
    "E",
    "G",
-   "A#"
+   "Bb"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭♭7"
+  ],
+  "pcs": [
+   1,
+   4,
+   7,
+   10
   ],
   "positions": [
    {
@@ -6391,6 +6932,8 @@
    {
     "label": "A-shape (fret 4)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -6424,19 +6967,39 @@
  },
  {
   "id": "Csharp_halfdim",
-  "name": "C#/Db Half-diminished (m7b5)",
+  "typeKey": "halfdim",
+  "name": "C# Half-diminished (m7b5)",
+  "altName": "Db Half-diminished (m7b5)",
   "symbol": "C#m7b5",
+  "altSymbol": "Dbm7b5",
   "aliases": [
+   "C# Half-diminished (m7b5)",
+   "C# Meio-diminuto",
+   "C#m7b5",
    "Db Half-diminished (m7b5)",
+   "Db Meio-diminuto",
    "Dbm7b5"
   ],
   "note": "C#",
+  "rootName": "C#",
   "type": "Half-diminished (m7b5)",
   "notes": [
    "C#",
    "E",
    "G",
    "B"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭7"
+  ],
+  "pcs": [
+   1,
+   4,
+   7,
+   11
   ],
   "positions": [
    {
@@ -6469,6 +7032,8 @@
    {
     "label": "A-shape (fret 4)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -6495,31 +7060,46 @@
       "fret": null
      }
     ],
-    "baseFret": 1,
-    "barre": {
-     "fret": 4,
-     "fromString": 5,
-     "toString": 3
-    }
+    "baseFret": 1
    }
   ],
   "caged": []
  },
  {
   "id": "Csharp_add9",
-  "name": "C#/Db Add9",
-  "symbol": "C#add9",
+  "typeKey": "add9",
+  "name": "Db Add9",
+  "altName": "C# Add9",
+  "symbol": "Dbadd9",
+  "altSymbol": "C#add9",
   "aliases": [
    "Db Add9",
-   "Dbadd9"
+   "Db Add9",
+   "Dbadd9",
+   "C# Add9",
+   "C# Add9",
+   "C#add9"
   ],
   "note": "C#",
+  "rootName": "Db",
   "type": "Add9",
   "notes": [
-   "C#",
-   "D#",
+   "Db",
    "F",
-   "G#"
+   "Ab",
+   "Eb"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "9"
+  ],
+  "pcs": [
+   1,
+   5,
+   8,
+   3
   ],
   "positions": [
    {
@@ -6552,6 +7132,8 @@
    {
     "label": "A-shape (fret 4)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -6590,15 +7172,33 @@
  },
  {
   "id": "D_major",
+  "typeKey": "major",
   "name": "D Major",
+  "altName": null,
   "symbol": "D",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "D Major",
+   "D Maior",
+   "D"
+  ],
   "note": "D",
+  "rootName": "D",
   "type": "Major",
   "notes": [
    "D",
    "F#",
    "A"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5"
+  ],
+  "pcs": [
+   2,
+   6,
+   9
   ],
   "positions": [
    {
@@ -6631,6 +7231,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -6657,11 +7259,18 @@
       "fret": 2
      }
     ],
-    "baseFret": 1
+    "baseFret": 1,
+    "barre": {
+     "fret": 2,
+     "fromString": 3,
+     "toString": 1
+    }
    },
    {
     "label": "A-shape (fret 5)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -6698,6 +7307,8 @@
    {
     "label": "E-shape (fret 10)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -6764,6 +7375,11 @@
      }
     ],
     "baseFret": 1,
+    "barre": {
+     "fret": 2,
+     "fromString": 3,
+     "toString": 1
+    },
     "order": 1
    },
    {
@@ -6873,11 +7489,6 @@
      }
     ],
     "baseFret": 7,
-    "barre": {
-     "fret": 7,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 4
    },
    {
@@ -6922,15 +7533,33 @@
  },
  {
   "id": "D_minor",
+  "typeKey": "minor",
   "name": "D Minor",
+  "altName": null,
   "symbol": "Dm",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "D Minor",
+   "D Menor",
+   "Dm"
+  ],
   "note": "D",
+  "rootName": "D",
   "type": "Minor",
   "notes": [
    "D",
    "F",
    "A"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5"
+  ],
+  "pcs": [
+   2,
+   5,
+   9
   ],
   "positions": [
    {
@@ -6963,6 +7592,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -6994,6 +7625,8 @@
    {
     "label": "A-shape (fret 5)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -7030,6 +7663,8 @@
    {
     "label": "E-shape (fret 10)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -7200,11 +7835,6 @@
      }
     ],
     "baseFret": 7,
-    "barre": {
-     "fret": 7,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 4
    },
    {
@@ -7249,14 +7879,30 @@
  },
  {
   "id": "D_power5",
+  "typeKey": "power5",
   "name": "D Power (5)",
+  "altName": null,
   "symbol": "D5",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "D Power (5)",
+   "D Power chord",
+   "D5"
+  ],
   "note": "D",
+  "rootName": "D",
   "type": "Power (5)",
   "notes": [
    "D",
    "A"
+  ],
+  "degrees": [
+   "1",
+   "5"
+  ],
+  "pcs": [
+   2,
+   9
   ],
   "positions": [
    {
@@ -7289,6 +7935,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -7320,6 +7968,8 @@
    {
     "label": "A-shape (fret 5)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -7351,6 +8001,8 @@
    {
     "label": "E-shape (fret 10)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -7384,15 +8036,33 @@
  },
  {
   "id": "D_dim",
+  "typeKey": "dim",
   "name": "D Diminished",
+  "altName": null,
   "symbol": "Ddim",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "D Diminished",
+   "D Diminuto",
+   "Ddim"
+  ],
   "note": "D",
+  "rootName": "D",
   "type": "Diminished",
   "notes": [
    "D",
    "F",
-   "G#"
+   "Ab"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5"
+  ],
+  "pcs": [
+   2,
+   5,
+   8
   ],
   "positions": [
    {
@@ -7425,6 +8095,8 @@
    {
     "label": "A-shape (fret 5)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -7458,15 +8130,33 @@
  },
  {
   "id": "D_aug",
+  "typeKey": "aug",
   "name": "D Augmented",
+  "altName": null,
   "symbol": "Daug",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "D Augmented",
+   "D Aumentado",
+   "Daug"
+  ],
   "note": "D",
+  "rootName": "D",
   "type": "Augmented",
   "notes": [
    "D",
    "F#",
    "A#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "♯5"
+  ],
+  "pcs": [
+   2,
+   6,
+   10
   ],
   "positions": [
    {
@@ -7499,6 +8189,8 @@
    {
     "label": "A-shape (fret 5)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -7530,6 +8222,8 @@
    {
     "label": "E-shape (fret 10)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -7568,15 +8262,33 @@
  },
  {
   "id": "D_sus2",
+  "typeKey": "sus2",
   "name": "D Suspended 2",
+  "altName": null,
   "symbol": "Dsus2",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "D Suspended 2",
+   "D Suspenso 2",
+   "Dsus2"
+  ],
   "note": "D",
+  "rootName": "D",
   "type": "Suspended 2",
   "notes": [
    "D",
    "E",
    "A"
+  ],
+  "degrees": [
+   "1",
+   "2",
+   "5"
+  ],
+  "pcs": [
+   2,
+   4,
+   9
   ],
   "positions": [
    {
@@ -7609,6 +8321,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -7640,6 +8354,8 @@
    {
     "label": "A-shape (fret 5)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -7676,6 +8392,8 @@
    {
     "label": "E-shape (fret 10)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -7775,11 +8493,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 2,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 2
    },
    {
@@ -7851,11 +8564,6 @@
      }
     ],
     "baseFret": 7,
-    "barre": {
-     "fret": 7,
-     "fromString": 5,
-     "toString": 3
-    },
     "order": 4
    },
    {
@@ -7900,15 +8608,33 @@
  },
  {
   "id": "D_sus4",
+  "typeKey": "sus4",
   "name": "D Suspended 4",
+  "altName": null,
   "symbol": "Dsus4",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "D Suspended 4",
+   "D Suspenso 4",
+   "Dsus4"
+  ],
   "note": "D",
+  "rootName": "D",
   "type": "Suspended 4",
   "notes": [
    "D",
    "G",
    "A"
+  ],
+  "degrees": [
+   "1",
+   "4",
+   "5"
+  ],
+  "pcs": [
+   2,
+   7,
+   9
   ],
   "positions": [
    {
@@ -7941,6 +8667,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -7972,6 +8700,8 @@
    {
     "label": "A-shape (fret 5)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -8008,6 +8738,8 @@
    {
     "label": "E-shape (fret 10)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -8178,11 +8910,6 @@
      }
     ],
     "baseFret": 7,
-    "barre": {
-     "fret": 7,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 4
    },
    {
@@ -8227,16 +8954,36 @@
  },
  {
   "id": "D_six",
+  "typeKey": "six",
   "name": "D Major 6",
+  "altName": null,
   "symbol": "D6",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "D Major 6",
+   "D Maior com 6",
+   "D6"
+  ],
   "note": "D",
+  "rootName": "D",
   "type": "Major 6",
   "notes": [
    "D",
    "F#",
    "A",
    "B"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   2,
+   6,
+   9,
+   11
   ],
   "positions": [
    {
@@ -8269,6 +9016,8 @@
    {
     "label": "A-shape (fret 5)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -8300,6 +9049,8 @@
    {
     "label": "E-shape (fret 10)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -8514,16 +9265,36 @@
  },
  {
   "id": "D_minor6",
+  "typeKey": "minor6",
   "name": "D Minor 6",
+  "altName": null,
   "symbol": "Dm6",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "D Minor 6",
+   "D Menor com 6",
+   "Dm6"
+  ],
   "note": "D",
+  "rootName": "D",
   "type": "Minor 6",
   "notes": [
    "D",
    "F",
    "A",
    "B"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   2,
+   5,
+   9,
+   11
   ],
   "positions": [
    {
@@ -8556,6 +9327,8 @@
    {
     "label": "A-shape (fret 5)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -8587,6 +9360,8 @@
    {
     "label": "E-shape (fret 10)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -8686,11 +9461,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 3,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -8806,16 +9576,36 @@
  },
  {
   "id": "D_dom7",
+  "typeKey": "dom7",
   "name": "D Dominant 7",
+  "altName": null,
   "symbol": "D7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "D Dominant 7",
+   "D Dominante 7",
+   "D7"
+  ],
   "note": "D",
+  "rootName": "D",
   "type": "Dominant 7",
   "notes": [
    "D",
    "F#",
    "A",
    "C"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   2,
+   6,
+   9,
+   0
   ],
   "positions": [
    {
@@ -8848,6 +9638,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -8879,6 +9671,8 @@
    {
     "label": "A-shape (fret 5)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -8915,6 +9709,8 @@
    {
     "label": "E-shape (fret 10)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -9085,11 +9881,6 @@
      }
     ],
     "baseFret": 7,
-    "barre": {
-     "fret": 7,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 4
    },
    {
@@ -9134,16 +9925,36 @@
  },
  {
   "id": "D_maj7",
+  "typeKey": "maj7",
   "name": "D Major 7",
+  "altName": null,
   "symbol": "Dmaj7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "D Major 7",
+   "D Maior 7M",
+   "Dmaj7"
+  ],
   "note": "D",
+  "rootName": "D",
   "type": "Major 7",
   "notes": [
    "D",
    "F#",
    "A",
    "C#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "7"
+  ],
+  "pcs": [
+   2,
+   6,
+   9,
+   1
   ],
   "positions": [
    {
@@ -9176,6 +9987,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -9202,11 +10015,18 @@
       "fret": 2
      }
     ],
-    "baseFret": 1
+    "baseFret": 1,
+    "barre": {
+     "fret": 2,
+     "fromString": 3,
+     "toString": 1
+    }
    },
    {
     "label": "A-shape (fret 5)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -9243,6 +10063,8 @@
    {
     "label": "E-shape (fret 10)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -9309,6 +10131,11 @@
      }
     ],
     "baseFret": 1,
+    "barre": {
+     "fret": 2,
+     "fromString": 3,
+     "toString": 1
+    },
     "order": 1
    },
    {
@@ -9418,11 +10245,6 @@
      }
     ],
     "baseFret": 7,
-    "barre": {
-     "fret": 7,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 4
    },
    {
@@ -9467,16 +10289,36 @@
  },
  {
   "id": "D_min7",
+  "typeKey": "min7",
   "name": "D Minor 7",
+  "altName": null,
   "symbol": "Dm7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "D Minor 7",
+   "D Menor 7",
+   "Dm7"
+  ],
   "note": "D",
+  "rootName": "D",
   "type": "Minor 7",
   "notes": [
    "D",
    "F",
    "A",
    "C"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   2,
+   5,
+   9,
+   0
   ],
   "positions": [
    {
@@ -9509,6 +10351,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -9535,11 +10379,18 @@
       "fret": 1
      }
     ],
-    "baseFret": 1
+    "baseFret": 1,
+    "barre": {
+     "fret": 1,
+     "fromString": 2,
+     "toString": 1
+    }
    },
    {
     "label": "A-shape (fret 5)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -9576,6 +10427,8 @@
    {
     "label": "E-shape (fret 10)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -9642,6 +10495,11 @@
      }
     ],
     "baseFret": 1,
+    "barre": {
+     "fret": 1,
+     "fromString": 2,
+     "toString": 1
+    },
     "order": 1
    },
    {
@@ -9675,11 +10533,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 3,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -9795,16 +10648,36 @@
  },
  {
   "id": "D_dim7",
+  "typeKey": "dim7",
   "name": "D Diminished 7",
+  "altName": null,
   "symbol": "Ddim7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "D Diminished 7",
+   "D Diminuto 7",
+   "Ddim7"
+  ],
   "note": "D",
+  "rootName": "D",
   "type": "Diminished 7",
   "notes": [
    "D",
    "F",
-   "G#",
-   "B"
+   "Ab",
+   "Cb"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭♭7"
+  ],
+  "pcs": [
+   2,
+   5,
+   8,
+   11
   ],
   "positions": [
    {
@@ -9837,6 +10710,8 @@
    {
     "label": "A-shape (fret 5)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -9870,16 +10745,36 @@
  },
  {
   "id": "D_halfdim",
+  "typeKey": "halfdim",
   "name": "D Half-diminished (m7b5)",
+  "altName": null,
   "symbol": "Dm7b5",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "D Half-diminished (m7b5)",
+   "D Meio-diminuto",
+   "Dm7b5"
+  ],
   "note": "D",
+  "rootName": "D",
   "type": "Half-diminished (m7b5)",
   "notes": [
    "D",
    "F",
-   "G#",
+   "Ab",
    "C"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭7"
+  ],
+  "pcs": [
+   2,
+   5,
+   8,
+   0
   ],
   "positions": [
    {
@@ -9912,6 +10807,8 @@
    {
     "label": "A-shape (fret 5)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -9938,28 +10835,43 @@
       "fret": null
      }
     ],
-    "baseFret": 5,
-    "barre": {
-     "fret": 5,
-     "fromString": 5,
-     "toString": 3
-    }
+    "baseFret": 5
    }
   ],
   "caged": []
  },
  {
   "id": "D_add9",
+  "typeKey": "add9",
   "name": "D Add9",
+  "altName": null,
   "symbol": "Dadd9",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "D Add9",
+   "D Add9",
+   "Dadd9"
+  ],
   "note": "D",
+  "rootName": "D",
   "type": "Add9",
   "notes": [
    "D",
-   "E",
    "F#",
-   "A"
+   "A",
+   "E"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "9"
+  ],
+  "pcs": [
+   2,
+   6,
+   9,
+   4
   ],
   "positions": [
    {
@@ -9992,6 +10904,8 @@
    {
     "label": "A-shape (fret 5)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -10030,18 +10944,36 @@
  },
  {
   "id": "Dsharp_major",
-  "name": "D#/Eb Major",
-  "symbol": "D#",
+  "typeKey": "major",
+  "name": "Eb Major",
+  "altName": "D# Major",
+  "symbol": "Eb",
+  "altSymbol": "D#",
   "aliases": [
    "Eb Major",
-   "Eb"
+   "Eb Maior",
+   "Eb",
+   "D# Major",
+   "D# Maior",
+   "D#"
   ],
   "note": "D#",
+  "rootName": "Eb",
   "type": "Major",
   "notes": [
-   "D#",
+   "Eb",
    "G",
-   "A#"
+   "Bb"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5"
+  ],
+  "pcs": [
+   3,
+   7,
+   10
   ],
   "positions": [
    {
@@ -10074,6 +11006,8 @@
    {
     "label": "A-shape (fret 6)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -10110,6 +11044,8 @@
    {
     "label": "E-shape (fret 11)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -10285,11 +11221,6 @@
      }
     ],
     "baseFret": 8,
-    "barre": {
-     "fret": 8,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 4
    },
    {
@@ -10334,18 +11265,36 @@
  },
  {
   "id": "Dsharp_minor",
-  "name": "D#/Eb Minor",
-  "symbol": "D#m",
+  "typeKey": "minor",
+  "name": "Eb Minor",
+  "altName": "D# Minor",
+  "symbol": "Ebm",
+  "altSymbol": "D#m",
   "aliases": [
    "Eb Minor",
-   "Ebm"
+   "Eb Menor",
+   "Ebm",
+   "D# Minor",
+   "D# Menor",
+   "D#m"
   ],
   "note": "D#",
+  "rootName": "Eb",
   "type": "Minor",
   "notes": [
-   "D#",
-   "F#",
-   "A#"
+   "Eb",
+   "Gb",
+   "Bb"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5"
+  ],
+  "pcs": [
+   3,
+   6,
+   10
   ],
   "positions": [
    {
@@ -10378,6 +11327,8 @@
    {
     "label": "A-shape (fret 6)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -10414,6 +11365,8 @@
    {
     "label": "E-shape (fret 11)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -10584,11 +11537,6 @@
      }
     ],
     "baseFret": 8,
-    "barre": {
-     "fret": 8,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 4
    },
    {
@@ -10633,17 +11581,33 @@
  },
  {
   "id": "Dsharp_power5",
-  "name": "D#/Eb Power (5)",
-  "symbol": "D#5",
+  "typeKey": "power5",
+  "name": "Eb Power (5)",
+  "altName": "D# Power (5)",
+  "symbol": "Eb5",
+  "altSymbol": "D#5",
   "aliases": [
    "Eb Power (5)",
-   "Eb5"
+   "Eb Power chord",
+   "Eb5",
+   "D# Power (5)",
+   "D# Power chord",
+   "D#5"
   ],
   "note": "D#",
+  "rootName": "Eb",
   "type": "Power (5)",
   "notes": [
-   "D#",
-   "A#"
+   "Eb",
+   "Bb"
+  ],
+  "degrees": [
+   "1",
+   "5"
+  ],
+  "pcs": [
+   3,
+   10
   ],
   "positions": [
    {
@@ -10676,6 +11640,8 @@
    {
     "label": "A-shape (fret 6)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -10707,6 +11673,8 @@
    {
     "label": "E-shape (fret 11)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -10740,18 +11708,36 @@
  },
  {
   "id": "Dsharp_dim",
-  "name": "D#/Eb Diminished",
+  "typeKey": "dim",
+  "name": "D# Diminished",
+  "altName": "Eb Diminished",
   "symbol": "D#dim",
+  "altSymbol": "Ebdim",
   "aliases": [
+   "D# Diminished",
+   "D# Diminuto",
+   "D#dim",
    "Eb Diminished",
+   "Eb Diminuto",
    "Ebdim"
   ],
   "note": "D#",
+  "rootName": "D#",
   "type": "Diminished",
   "notes": [
    "D#",
    "F#",
    "A"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5"
+  ],
+  "pcs": [
+   3,
+   6,
+   9
   ],
   "positions": [
    {
@@ -10784,6 +11770,8 @@
    {
     "label": "A-shape (fret 6)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -10817,18 +11805,36 @@
  },
  {
   "id": "Dsharp_aug",
-  "name": "D#/Eb Augmented",
-  "symbol": "D#aug",
+  "typeKey": "aug",
+  "name": "Eb Augmented",
+  "altName": "D# Augmented",
+  "symbol": "Ebaug",
+  "altSymbol": "D#aug",
   "aliases": [
    "Eb Augmented",
-   "Ebaug"
+   "Eb Aumentado",
+   "Ebaug",
+   "D# Augmented",
+   "D# Aumentado",
+   "D#aug"
   ],
   "note": "D#",
+  "rootName": "Eb",
   "type": "Augmented",
   "notes": [
-   "D#",
+   "Eb",
    "G",
    "B"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "♯5"
+  ],
+  "pcs": [
+   3,
+   7,
+   11
   ],
   "positions": [
    {
@@ -10861,6 +11867,8 @@
    {
     "label": "A-shape (fret 6)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -10892,6 +11900,8 @@
    {
     "label": "E-shape (fret 11)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -10930,18 +11940,36 @@
  },
  {
   "id": "Dsharp_sus2",
-  "name": "D#/Eb Suspended 2",
-  "symbol": "D#sus2",
+  "typeKey": "sus2",
+  "name": "Eb Suspended 2",
+  "altName": "D# Suspended 2",
+  "symbol": "Ebsus2",
+  "altSymbol": "D#sus2",
   "aliases": [
    "Eb Suspended 2",
-   "Ebsus2"
+   "Eb Suspenso 2",
+   "Ebsus2",
+   "D# Suspended 2",
+   "D# Suspenso 2",
+   "D#sus2"
   ],
   "note": "D#",
+  "rootName": "Eb",
   "type": "Suspended 2",
   "notes": [
-   "D#",
+   "Eb",
    "F",
-   "A#"
+   "Bb"
+  ],
+  "degrees": [
+   "1",
+   "2",
+   "5"
+  ],
+  "pcs": [
+   3,
+   5,
+   10
   ],
   "positions": [
    {
@@ -10974,6 +12002,8 @@
    {
     "label": "A-shape (fret 6)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -11010,6 +12040,8 @@
    {
     "label": "E-shape (fret 11)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -11114,11 +12146,6 @@
      }
     ],
     "baseFret": 3,
-    "barre": {
-     "fret": 3,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 2
    },
    {
@@ -11190,11 +12217,6 @@
      }
     ],
     "baseFret": 8,
-    "barre": {
-     "fret": 8,
-     "fromString": 5,
-     "toString": 3
-    },
     "order": 4
    },
    {
@@ -11239,18 +12261,36 @@
  },
  {
   "id": "Dsharp_sus4",
-  "name": "D#/Eb Suspended 4",
-  "symbol": "D#sus4",
+  "typeKey": "sus4",
+  "name": "Eb Suspended 4",
+  "altName": "D# Suspended 4",
+  "symbol": "Ebsus4",
+  "altSymbol": "D#sus4",
   "aliases": [
    "Eb Suspended 4",
-   "Ebsus4"
+   "Eb Suspenso 4",
+   "Ebsus4",
+   "D# Suspended 4",
+   "D# Suspenso 4",
+   "D#sus4"
   ],
   "note": "D#",
+  "rootName": "Eb",
   "type": "Suspended 4",
   "notes": [
-   "D#",
-   "G#",
-   "A#"
+   "Eb",
+   "Ab",
+   "Bb"
+  ],
+  "degrees": [
+   "1",
+   "4",
+   "5"
+  ],
+  "pcs": [
+   3,
+   8,
+   10
   ],
   "positions": [
    {
@@ -11283,6 +12323,8 @@
    {
     "label": "A-shape (fret 6)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -11319,6 +12361,8 @@
    {
     "label": "E-shape (fret 11)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -11489,11 +12533,6 @@
      }
     ],
     "baseFret": 8,
-    "barre": {
-     "fret": 8,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 4
    },
    {
@@ -11538,19 +12577,39 @@
  },
  {
   "id": "Dsharp_six",
-  "name": "D#/Eb Major 6",
-  "symbol": "D#6",
+  "typeKey": "six",
+  "name": "Eb Major 6",
+  "altName": "D# Major 6",
+  "symbol": "Eb6",
+  "altSymbol": "D#6",
   "aliases": [
    "Eb Major 6",
-   "Eb6"
+   "Eb Maior com 6",
+   "Eb6",
+   "D# Major 6",
+   "D# Maior com 6",
+   "D#6"
   ],
   "note": "D#",
+  "rootName": "Eb",
   "type": "Major 6",
   "notes": [
-   "D#",
+   "Eb",
    "G",
-   "A#",
+   "Bb",
    "C"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   3,
+   7,
+   10,
+   0
   ],
   "positions": [
    {
@@ -11583,6 +12642,8 @@
    {
     "label": "A-shape (fret 6)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -11614,6 +12675,8 @@
    {
     "label": "E-shape (fret 11)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -11680,11 +12743,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 1,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 1
    },
    {
@@ -11833,19 +12891,39 @@
  },
  {
   "id": "Dsharp_minor6",
-  "name": "D#/Eb Minor 6",
-  "symbol": "D#m6",
+  "typeKey": "minor6",
+  "name": "Eb Minor 6",
+  "altName": "D# Minor 6",
+  "symbol": "Ebm6",
+  "altSymbol": "D#m6",
   "aliases": [
    "Eb Minor 6",
-   "Ebm6"
+   "Eb Menor com 6",
+   "Ebm6",
+   "D# Minor 6",
+   "D# Menor com 6",
+   "D#m6"
   ],
   "note": "D#",
+  "rootName": "Eb",
   "type": "Minor 6",
   "notes": [
-   "D#",
-   "F#",
-   "A#",
+   "Eb",
+   "Gb",
+   "Bb",
    "C"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   3,
+   6,
+   10,
+   0
   ],
   "positions": [
    {
@@ -11878,6 +12956,8 @@
    {
     "label": "A-shape (fret 6)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -11909,6 +12989,8 @@
    {
     "label": "E-shape (fret 11)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -11975,11 +13057,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 1,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 1
    },
    {
@@ -12013,11 +13090,6 @@
      }
     ],
     "baseFret": 4,
-    "barre": {
-     "fret": 4,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -12133,19 +13205,39 @@
  },
  {
   "id": "Dsharp_dom7",
-  "name": "D#/Eb Dominant 7",
-  "symbol": "D#7",
+  "typeKey": "dom7",
+  "name": "Eb Dominant 7",
+  "altName": "D# Dominant 7",
+  "symbol": "Eb7",
+  "altSymbol": "D#7",
   "aliases": [
    "Eb Dominant 7",
-   "Eb7"
+   "Eb Dominante 7",
+   "Eb7",
+   "D# Dominant 7",
+   "D# Dominante 7",
+   "D#7"
   ],
   "note": "D#",
+  "rootName": "Eb",
   "type": "Dominant 7",
   "notes": [
-   "D#",
+   "Eb",
    "G",
-   "A#",
-   "C#"
+   "Bb",
+   "Db"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   3,
+   7,
+   10,
+   1
   ],
   "positions": [
    {
@@ -12178,6 +13270,8 @@
    {
     "label": "A-shape (fret 6)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -12214,6 +13308,8 @@
    {
     "label": "E-shape (fret 11)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -12384,11 +13480,6 @@
      }
     ],
     "baseFret": 8,
-    "barre": {
-     "fret": 8,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 4
    },
    {
@@ -12433,19 +13524,39 @@
  },
  {
   "id": "Dsharp_maj7",
-  "name": "D#/Eb Major 7",
-  "symbol": "D#maj7",
+  "typeKey": "maj7",
+  "name": "Eb Major 7",
+  "altName": "D# Major 7",
+  "symbol": "Ebmaj7",
+  "altSymbol": "D#maj7",
   "aliases": [
    "Eb Major 7",
-   "Ebmaj7"
+   "Eb Maior 7M",
+   "Ebmaj7",
+   "D# Major 7",
+   "D# Maior 7M",
+   "D#maj7"
   ],
   "note": "D#",
+  "rootName": "Eb",
   "type": "Major 7",
   "notes": [
-   "D#",
+   "Eb",
    "G",
-   "A#",
+   "Bb",
    "D"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "7"
+  ],
+  "pcs": [
+   3,
+   7,
+   10,
+   2
   ],
   "positions": [
    {
@@ -12478,6 +13589,8 @@
    {
     "label": "A-shape (fret 6)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -12514,6 +13627,8 @@
    {
     "label": "E-shape (fret 11)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -12689,11 +13804,6 @@
      }
     ],
     "baseFret": 8,
-    "barre": {
-     "fret": 8,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 4
    },
    {
@@ -12738,19 +13848,39 @@
  },
  {
   "id": "Dsharp_min7",
-  "name": "D#/Eb Minor 7",
-  "symbol": "D#m7",
+  "typeKey": "min7",
+  "name": "Eb Minor 7",
+  "altName": "D# Minor 7",
+  "symbol": "Ebm7",
+  "altSymbol": "D#m7",
   "aliases": [
    "Eb Minor 7",
-   "Ebm7"
+   "Eb Menor 7",
+   "Ebm7",
+   "D# Minor 7",
+   "D# Menor 7",
+   "D#m7"
   ],
   "note": "D#",
+  "rootName": "Eb",
   "type": "Minor 7",
   "notes": [
-   "D#",
-   "F#",
-   "A#",
-   "C#"
+   "Eb",
+   "Gb",
+   "Bb",
+   "Db"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   3,
+   6,
+   10,
+   1
   ],
   "positions": [
    {
@@ -12783,6 +13913,8 @@
    {
     "label": "A-shape (fret 6)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -12819,6 +13951,8 @@
    {
     "label": "E-shape (fret 11)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -12918,11 +14052,6 @@
      }
     ],
     "baseFret": 4,
-    "barre": {
-     "fret": 4,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -13038,19 +14167,39 @@
  },
  {
   "id": "Dsharp_dim7",
-  "name": "D#/Eb Diminished 7",
+  "typeKey": "dim7",
+  "name": "D# Diminished 7",
+  "altName": "Eb Diminished 7",
   "symbol": "D#dim7",
+  "altSymbol": "Ebdim7",
   "aliases": [
+   "D# Diminished 7",
+   "D# Diminuto 7",
+   "D#dim7",
    "Eb Diminished 7",
+   "Eb Diminuto 7",
    "Ebdim7"
   ],
   "note": "D#",
+  "rootName": "D#",
   "type": "Diminished 7",
   "notes": [
    "D#",
    "F#",
    "A",
    "C"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭♭7"
+  ],
+  "pcs": [
+   3,
+   6,
+   9,
+   0
   ],
   "positions": [
    {
@@ -13083,6 +14232,8 @@
    {
     "label": "A-shape (fret 6)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -13116,19 +14267,39 @@
  },
  {
   "id": "Dsharp_halfdim",
-  "name": "D#/Eb Half-diminished (m7b5)",
+  "typeKey": "halfdim",
+  "name": "D# Half-diminished (m7b5)",
+  "altName": "Eb Half-diminished (m7b5)",
   "symbol": "D#m7b5",
+  "altSymbol": "Ebm7b5",
   "aliases": [
+   "D# Half-diminished (m7b5)",
+   "D# Meio-diminuto",
+   "D#m7b5",
    "Eb Half-diminished (m7b5)",
+   "Eb Meio-diminuto",
    "Ebm7b5"
   ],
   "note": "D#",
+  "rootName": "D#",
   "type": "Half-diminished (m7b5)",
   "notes": [
    "D#",
    "F#",
    "A",
    "C#"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭7"
+  ],
+  "pcs": [
+   3,
+   6,
+   9,
+   1
   ],
   "positions": [
    {
@@ -13161,6 +14332,8 @@
    {
     "label": "A-shape (fret 6)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -13187,31 +14360,46 @@
       "fret": null
      }
     ],
-    "baseFret": 6,
-    "barre": {
-     "fret": 6,
-     "fromString": 5,
-     "toString": 3
-    }
+    "baseFret": 6
    }
   ],
   "caged": []
  },
  {
   "id": "Dsharp_add9",
-  "name": "D#/Eb Add9",
-  "symbol": "D#add9",
+  "typeKey": "add9",
+  "name": "Eb Add9",
+  "altName": "D# Add9",
+  "symbol": "Ebadd9",
+  "altSymbol": "D#add9",
   "aliases": [
    "Eb Add9",
-   "Ebadd9"
+   "Eb Add9",
+   "Ebadd9",
+   "D# Add9",
+   "D# Add9",
+   "D#add9"
   ],
   "note": "D#",
+  "rootName": "Eb",
   "type": "Add9",
   "notes": [
-   "D#",
-   "F",
+   "Eb",
    "G",
-   "A#"
+   "Bb",
+   "F"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "9"
+  ],
+  "pcs": [
+   3,
+   7,
+   10,
+   5
   ],
   "positions": [
    {
@@ -13244,6 +14432,8 @@
    {
     "label": "A-shape (fret 6)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -13282,15 +14472,33 @@
  },
  {
   "id": "E_major",
+  "typeKey": "major",
   "name": "E Major",
+  "altName": null,
   "symbol": "E",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "E Major",
+   "E Maior",
+   "E"
+  ],
   "note": "E",
+  "rootName": "E",
   "type": "Major",
   "notes": [
    "E",
    "G#",
    "B"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5"
+  ],
+  "pcs": [
+   4,
+   8,
+   11
   ],
   "positions": [
    {
@@ -13323,6 +14531,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -13354,6 +14564,8 @@
    {
     "label": "A-shape (fret 7)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -13562,26 +14774,39 @@
      }
     ],
     "baseFret": 9,
-    "barre": {
-     "fret": 9,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "E_minor",
+  "typeKey": "minor",
   "name": "E Minor",
+  "altName": null,
   "symbol": "Em",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "E Minor",
+   "E Menor",
+   "Em"
+  ],
   "note": "E",
+  "rootName": "E",
   "type": "Minor",
   "notes": [
    "E",
    "G",
    "B"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5"
+  ],
+  "pcs": [
+   4,
+   7,
+   11
   ],
   "positions": [
    {
@@ -13614,6 +14839,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -13645,6 +14872,8 @@
    {
     "label": "A-shape (fret 7)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -13848,25 +15077,36 @@
      }
     ],
     "baseFret": 9,
-    "barre": {
-     "fret": 9,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "E_power5",
+  "typeKey": "power5",
   "name": "E Power (5)",
+  "altName": null,
   "symbol": "E5",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "E Power (5)",
+   "E Power chord",
+   "E5"
+  ],
   "note": "E",
+  "rootName": "E",
   "type": "Power (5)",
   "notes": [
    "E",
    "B"
+  ],
+  "degrees": [
+   "1",
+   "5"
+  ],
+  "pcs": [
+   4,
+   11
   ],
   "positions": [
    {
@@ -13899,6 +15139,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -13930,6 +15172,8 @@
    {
     "label": "A-shape (fret 7)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -13963,15 +15207,33 @@
  },
  {
   "id": "E_dim",
+  "typeKey": "dim",
   "name": "E Diminished",
+  "altName": null,
   "symbol": "Edim",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "E Diminished",
+   "E Diminuto",
+   "Edim"
+  ],
   "note": "E",
+  "rootName": "E",
   "type": "Diminished",
   "notes": [
    "E",
    "G",
-   "A#"
+   "Bb"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5"
+  ],
+  "pcs": [
+   4,
+   7,
+   10
   ],
   "positions": [
    {
@@ -14004,6 +15266,8 @@
    {
     "label": "A-shape (fret 7)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -14037,15 +15301,33 @@
  },
  {
   "id": "E_aug",
+  "typeKey": "aug",
   "name": "E Augmented",
+  "altName": null,
   "symbol": "Eaug",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "E Augmented",
+   "E Aumentado",
+   "Eaug"
+  ],
   "note": "E",
+  "rootName": "E",
   "type": "Augmented",
   "notes": [
    "E",
    "G#",
-   "C"
+   "B#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "♯5"
+  ],
+  "pcs": [
+   4,
+   8,
+   0
   ],
   "positions": [
    {
@@ -14078,6 +15360,8 @@
    {
     "label": "E-shape (open)",
     "kind": "open",
+    "shape": "E",
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -14109,6 +15393,8 @@
    {
     "label": "A-shape (fret 7)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -14142,15 +15428,33 @@
  },
  {
   "id": "E_sus2",
+  "typeKey": "sus2",
   "name": "E Suspended 2",
+  "altName": null,
   "symbol": "Esus2",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "E Suspended 2",
+   "E Suspenso 2",
+   "Esus2"
+  ],
   "note": "E",
+  "rootName": "E",
   "type": "Suspended 2",
   "notes": [
    "E",
    "F#",
    "B"
+  ],
+  "degrees": [
+   "1",
+   "2",
+   "5"
+  ],
+  "pcs": [
+   4,
+   6,
+   11
   ],
   "positions": [
    {
@@ -14183,6 +15487,8 @@
    {
     "label": "E-shape (open)",
     "kind": "open",
+    "shape": "E",
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -14214,6 +15520,8 @@
    {
     "label": "A-shape (fret 7)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -14351,11 +15659,6 @@
      }
     ],
     "baseFret": 4,
-    "barre": {
-     "fret": 4,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 3
    },
    {
@@ -14427,26 +15730,39 @@
      }
     ],
     "baseFret": 9,
-    "barre": {
-     "fret": 9,
-     "fromString": 5,
-     "toString": 3
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "E_sus4",
+  "typeKey": "sus4",
   "name": "E Suspended 4",
+  "altName": null,
   "symbol": "Esus4",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "E Suspended 4",
+   "E Suspenso 4",
+   "Esus4"
+  ],
   "note": "E",
+  "rootName": "E",
   "type": "Suspended 4",
   "notes": [
    "E",
    "A",
    "B"
+  ],
+  "degrees": [
+   "1",
+   "4",
+   "5"
+  ],
+  "pcs": [
+   4,
+   9,
+   11
   ],
   "positions": [
    {
@@ -14479,6 +15795,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -14510,6 +15828,8 @@
    {
     "label": "A-shape (fret 7)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -14713,27 +16033,42 @@
      }
     ],
     "baseFret": 9,
-    "barre": {
-     "fret": 9,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "E_six",
+  "typeKey": "six",
   "name": "E Major 6",
+  "altName": null,
   "symbol": "E6",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "E Major 6",
+   "E Maior com 6",
+   "E6"
+  ],
   "note": "E",
+  "rootName": "E",
   "type": "Major 6",
   "notes": [
    "E",
    "G#",
    "B",
    "C#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   4,
+   8,
+   11,
+   1
   ],
   "positions": [
    {
@@ -14766,6 +16101,8 @@
    {
     "label": "E-shape (open)",
     "kind": "open",
+    "shape": "E",
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -14797,6 +16134,8 @@
    {
     "label": "A-shape (fret 7)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -14891,11 +16230,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 2,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -15006,16 +16340,36 @@
  },
  {
   "id": "E_minor6",
+  "typeKey": "minor6",
   "name": "E Minor 6",
+  "altName": null,
   "symbol": "Em6",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "E Minor 6",
+   "E Menor com 6",
+   "Em6"
+  ],
   "note": "E",
+  "rootName": "E",
   "type": "Minor 6",
   "notes": [
    "E",
    "G",
    "B",
    "C#"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   4,
+   7,
+   11,
+   1
   ],
   "positions": [
    {
@@ -15048,6 +16402,8 @@
    {
     "label": "E-shape (open)",
     "kind": "open",
+    "shape": "E",
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -15079,6 +16435,8 @@
    {
     "label": "A-shape (fret 7)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -15173,11 +16531,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 2,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -15211,11 +16564,6 @@
      }
     ],
     "baseFret": 5,
-    "barre": {
-     "fret": 5,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 3
    },
    {
@@ -15293,16 +16641,36 @@
  },
  {
   "id": "E_dom7",
+  "typeKey": "dom7",
   "name": "E Dominant 7",
+  "altName": null,
   "symbol": "E7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "E Dominant 7",
+   "E Dominante 7",
+   "E7"
+  ],
   "note": "E",
+  "rootName": "E",
   "type": "Dominant 7",
   "notes": [
    "E",
    "G#",
    "B",
    "D"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   4,
+   8,
+   11,
+   2
   ],
   "positions": [
    {
@@ -15335,6 +16703,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -15366,6 +16736,8 @@
    {
     "label": "A-shape (fret 7)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -15569,27 +16941,42 @@
      }
     ],
     "baseFret": 9,
-    "barre": {
-     "fret": 9,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "E_maj7",
+  "typeKey": "maj7",
   "name": "E Major 7",
+  "altName": null,
   "symbol": "Emaj7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "E Major 7",
+   "E Maior 7M",
+   "Emaj7"
+  ],
   "note": "E",
+  "rootName": "E",
   "type": "Major 7",
   "notes": [
    "E",
    "G#",
    "B",
    "D#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "7"
+  ],
+  "pcs": [
+   4,
+   8,
+   11,
+   3
   ],
   "positions": [
    {
@@ -15622,6 +17009,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -15653,6 +17042,8 @@
    {
     "label": "A-shape (fret 7)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -15861,27 +17252,42 @@
      }
     ],
     "baseFret": 9,
-    "barre": {
-     "fret": 9,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "E_min7",
+  "typeKey": "min7",
   "name": "E Minor 7",
+  "altName": null,
   "symbol": "Em7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "E Minor 7",
+   "E Menor 7",
+   "Em7"
+  ],
   "note": "E",
+  "rootName": "E",
   "type": "Minor 7",
   "notes": [
    "E",
    "G",
    "B",
    "D"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   4,
+   7,
+   11,
+   2
   ],
   "positions": [
    {
@@ -15914,6 +17320,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -15945,6 +17353,8 @@
    {
     "label": "A-shape (fret 7)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -16077,11 +17487,6 @@
      }
     ],
     "baseFret": 5,
-    "barre": {
-     "fret": 5,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 3
    },
    {
@@ -16159,16 +17564,36 @@
  },
  {
   "id": "E_dim7",
+  "typeKey": "dim7",
   "name": "E Diminished 7",
+  "altName": null,
   "symbol": "Edim7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "E Diminished 7",
+   "E Diminuto 7",
+   "Edim7"
+  ],
   "note": "E",
+  "rootName": "E",
   "type": "Diminished 7",
   "notes": [
    "E",
    "G",
-   "A#",
-   "C#"
+   "Bb",
+   "Db"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭♭7"
+  ],
+  "pcs": [
+   4,
+   7,
+   10,
+   1
   ],
   "positions": [
    {
@@ -16201,6 +17626,8 @@
    {
     "label": "A-shape (fret 7)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -16234,16 +17661,36 @@
  },
  {
   "id": "E_halfdim",
+  "typeKey": "halfdim",
   "name": "E Half-diminished (m7b5)",
+  "altName": null,
   "symbol": "Em7b5",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "E Half-diminished (m7b5)",
+   "E Meio-diminuto",
+   "Em7b5"
+  ],
   "note": "E",
+  "rootName": "E",
   "type": "Half-diminished (m7b5)",
   "notes": [
    "E",
    "G",
-   "A#",
+   "Bb",
    "D"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭7"
+  ],
+  "pcs": [
+   4,
+   7,
+   10,
+   2
   ],
   "positions": [
    {
@@ -16276,6 +17723,8 @@
    {
     "label": "A-shape (fret 7)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -16302,28 +17751,43 @@
       "fret": null
      }
     ],
-    "baseFret": 7,
-    "barre": {
-     "fret": 7,
-     "fromString": 5,
-     "toString": 3
-    }
+    "baseFret": 7
    }
   ],
   "caged": []
  },
  {
   "id": "E_add9",
+  "typeKey": "add9",
   "name": "E Add9",
+  "altName": null,
   "symbol": "Eadd9",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "E Add9",
+   "E Add9",
+   "Eadd9"
+  ],
   "note": "E",
+  "rootName": "E",
   "type": "Add9",
   "notes": [
    "E",
-   "F#",
    "G#",
-   "B"
+   "B",
+   "F#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "9"
+  ],
+  "pcs": [
+   4,
+   8,
+   11,
+   6
   ],
   "positions": [
    {
@@ -16356,6 +17820,8 @@
    {
     "label": "A-shape (fret 7)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -16394,15 +17860,33 @@
  },
  {
   "id": "F_major",
+  "typeKey": "major",
   "name": "F Major",
+  "altName": null,
   "symbol": "F",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "F Major",
+   "F Maior",
+   "F"
+  ],
   "note": "F",
+  "rootName": "F",
   "type": "Major",
   "notes": [
    "F",
    "A",
    "C"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5"
+  ],
+  "pcs": [
+   5,
+   9,
+   0
   ],
   "positions": [
    {
@@ -16435,6 +17919,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -16461,11 +17947,18 @@
       "fret": 1
      }
     ],
-    "baseFret": 1
+    "baseFret": 1,
+    "barre": {
+     "fret": 1,
+     "fromString": 2,
+     "toString": 1
+    }
    },
    {
     "label": "E-shape (fret 1)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -16502,6 +17995,8 @@
    {
     "label": "A-shape (fret 8)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -16715,26 +18210,39 @@
      }
     ],
     "baseFret": 10,
-    "barre": {
-     "fret": 10,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "F_minor",
+  "typeKey": "minor",
   "name": "F Minor",
+  "altName": null,
   "symbol": "Fm",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "F Minor",
+   "F Menor",
+   "Fm"
+  ],
   "note": "F",
+  "rootName": "F",
   "type": "Minor",
   "notes": [
    "F",
-   "G#",
+   "Ab",
    "C"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5"
+  ],
+  "pcs": [
+   5,
+   8,
+   0
   ],
   "positions": [
    {
@@ -16767,6 +18275,8 @@
    {
     "label": "E-shape (fret 1)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -16803,6 +18313,8 @@
    {
     "label": "A-shape (fret 8)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -17011,25 +18523,36 @@
      }
     ],
     "baseFret": 10,
-    "barre": {
-     "fret": 10,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "F_power5",
+  "typeKey": "power5",
   "name": "F Power (5)",
+  "altName": null,
   "symbol": "F5",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "F Power (5)",
+   "F Power chord",
+   "F5"
+  ],
   "note": "F",
+  "rootName": "F",
   "type": "Power (5)",
   "notes": [
    "F",
    "C"
+  ],
+  "degrees": [
+   "1",
+   "5"
+  ],
+  "pcs": [
+   5,
+   0
   ],
   "positions": [
    {
@@ -17062,6 +18585,8 @@
    {
     "label": "E-shape (fret 1)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -17093,6 +18618,8 @@
    {
     "label": "A-shape (fret 8)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -17126,15 +18653,33 @@
  },
  {
   "id": "F_dim",
+  "typeKey": "dim",
   "name": "F Diminished",
+  "altName": null,
   "symbol": "Fdim",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "F Diminished",
+   "F Diminuto",
+   "Fdim"
+  ],
   "note": "F",
+  "rootName": "F",
   "type": "Diminished",
   "notes": [
    "F",
-   "G#",
-   "B"
+   "Ab",
+   "Cb"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5"
+  ],
+  "pcs": [
+   5,
+   8,
+   11
   ],
   "positions": [
    {
@@ -17167,6 +18712,8 @@
    {
     "label": "A-shape (fret 8)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -17200,15 +18747,33 @@
  },
  {
   "id": "F_aug",
+  "typeKey": "aug",
   "name": "F Augmented",
+  "altName": null,
   "symbol": "Faug",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "F Augmented",
+   "F Aumentado",
+   "Faug"
+  ],
   "note": "F",
+  "rootName": "F",
   "type": "Augmented",
   "notes": [
    "F",
    "A",
    "C#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "♯5"
+  ],
+  "pcs": [
+   5,
+   9,
+   1
   ],
   "positions": [
    {
@@ -17241,6 +18806,8 @@
    {
     "label": "E-shape (fret 1)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -17277,6 +18844,8 @@
    {
     "label": "A-shape (fret 8)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -17310,15 +18879,33 @@
  },
  {
   "id": "F_sus2",
+  "typeKey": "sus2",
   "name": "F Suspended 2",
+  "altName": null,
   "symbol": "Fsus2",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "F Suspended 2",
+   "F Suspenso 2",
+   "Fsus2"
+  ],
   "note": "F",
+  "rootName": "F",
   "type": "Suspended 2",
   "notes": [
    "F",
    "G",
    "C"
+  ],
+  "degrees": [
+   "1",
+   "2",
+   "5"
+  ],
+  "pcs": [
+   5,
+   7,
+   0
   ],
   "positions": [
    {
@@ -17351,6 +18938,8 @@
    {
     "label": "E-shape (fret 1)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -17387,6 +18976,8 @@
    {
     "label": "A-shape (fret 8)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -17529,11 +19120,6 @@
      }
     ],
     "baseFret": 5,
-    "barre": {
-     "fret": 5,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 3
    },
    {
@@ -17605,26 +19191,39 @@
      }
     ],
     "baseFret": 10,
-    "barre": {
-     "fret": 10,
-     "fromString": 5,
-     "toString": 3
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "F_sus4",
+  "typeKey": "sus4",
   "name": "F Suspended 4",
+  "altName": null,
   "symbol": "Fsus4",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "F Suspended 4",
+   "F Suspenso 4",
+   "Fsus4"
+  ],
   "note": "F",
+  "rootName": "F",
   "type": "Suspended 4",
   "notes": [
    "F",
-   "A#",
+   "Bb",
    "C"
+  ],
+  "degrees": [
+   "1",
+   "4",
+   "5"
+  ],
+  "pcs": [
+   5,
+   10,
+   0
   ],
   "positions": [
    {
@@ -17657,6 +19256,8 @@
    {
     "label": "E-shape (fret 1)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -17693,6 +19294,8 @@
    {
     "label": "A-shape (fret 8)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -17901,27 +19504,42 @@
      }
     ],
     "baseFret": 10,
-    "barre": {
-     "fret": 10,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "F_six",
+  "typeKey": "six",
   "name": "F Major 6",
+  "altName": null,
   "symbol": "F6",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "F Major 6",
+   "F Maior com 6",
+   "F6"
+  ],
   "note": "F",
+  "rootName": "F",
   "type": "Major 6",
   "notes": [
    "F",
    "A",
    "C",
    "D"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   5,
+   9,
+   0,
+   2
   ],
   "positions": [
    {
@@ -17954,6 +19572,8 @@
    {
     "label": "E-shape (fret 1)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -17990,6 +19610,8 @@
    {
     "label": "A-shape (fret 8)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -18089,11 +19711,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 3,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -18204,16 +19821,36 @@
  },
  {
   "id": "F_minor6",
+  "typeKey": "minor6",
   "name": "F Minor 6",
+  "altName": null,
   "symbol": "Fm6",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "F Minor 6",
+   "F Menor com 6",
+   "Fm6"
+  ],
   "note": "F",
+  "rootName": "F",
   "type": "Minor 6",
   "notes": [
    "F",
-   "G#",
+   "Ab",
    "C",
    "D"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   5,
+   8,
+   0,
+   2
   ],
   "positions": [
    {
@@ -18246,6 +19883,8 @@
    {
     "label": "E-shape (fret 1)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -18282,6 +19921,8 @@
    {
     "label": "A-shape (fret 8)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -18381,11 +20022,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 3,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -18419,11 +20055,6 @@
      }
     ],
     "baseFret": 6,
-    "barre": {
-     "fret": 6,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 3
    },
    {
@@ -18501,16 +20132,36 @@
  },
  {
   "id": "F_dom7",
+  "typeKey": "dom7",
   "name": "F Dominant 7",
+  "altName": null,
   "symbol": "F7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "F Dominant 7",
+   "F Dominante 7",
+   "F7"
+  ],
   "note": "F",
+  "rootName": "F",
   "type": "Dominant 7",
   "notes": [
    "F",
    "A",
    "C",
-   "D#"
+   "Eb"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   5,
+   9,
+   0,
+   3
   ],
   "positions": [
    {
@@ -18543,6 +20194,8 @@
    {
     "label": "E-shape (fret 1)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -18579,6 +20232,8 @@
    {
     "label": "A-shape (fret 8)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -18787,27 +20442,42 @@
      }
     ],
     "baseFret": 10,
-    "barre": {
-     "fret": 10,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "F_maj7",
+  "typeKey": "maj7",
   "name": "F Major 7",
+  "altName": null,
   "symbol": "Fmaj7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "F Major 7",
+   "F Maior 7M",
+   "Fmaj7"
+  ],
   "note": "F",
+  "rootName": "F",
   "type": "Major 7",
   "notes": [
    "F",
    "A",
    "C",
    "E"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "7"
+  ],
+  "pcs": [
+   5,
+   9,
+   0,
+   4
   ],
   "positions": [
    {
@@ -18840,6 +20510,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -18871,6 +20543,8 @@
    {
     "label": "E-shape (fret 1)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -18907,6 +20581,8 @@
    {
     "label": "A-shape (fret 8)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -19120,27 +20796,42 @@
      }
     ],
     "baseFret": 10,
-    "barre": {
-     "fret": 10,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "F_min7",
+  "typeKey": "min7",
   "name": "F Minor 7",
+  "altName": null,
   "symbol": "Fm7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "F Minor 7",
+   "F Menor 7",
+   "Fm7"
+  ],
   "note": "F",
+  "rootName": "F",
   "type": "Minor 7",
   "notes": [
    "F",
-   "G#",
+   "Ab",
    "C",
-   "D#"
+   "Eb"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   5,
+   8,
+   0,
+   3
   ],
   "positions": [
    {
@@ -19173,6 +20864,8 @@
    {
     "label": "E-shape (fret 1)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -19209,6 +20902,8 @@
    {
     "label": "A-shape (fret 8)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -19346,11 +21041,6 @@
      }
     ],
     "baseFret": 6,
-    "barre": {
-     "fret": 6,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 3
    },
    {
@@ -19428,16 +21118,36 @@
  },
  {
   "id": "F_dim7",
+  "typeKey": "dim7",
   "name": "F Diminished 7",
+  "altName": null,
   "symbol": "Fdim7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "F Diminished 7",
+   "F Diminuto 7",
+   "Fdim7"
+  ],
   "note": "F",
+  "rootName": "F",
   "type": "Diminished 7",
   "notes": [
    "F",
-   "G#",
-   "B",
-   "D"
+   "Ab",
+   "Cb",
+   "Ebb"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭♭7"
+  ],
+  "pcs": [
+   5,
+   8,
+   11,
+   2
   ],
   "positions": [
    {
@@ -19470,6 +21180,8 @@
    {
     "label": "A-shape (fret 8)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -19503,16 +21215,36 @@
  },
  {
   "id": "F_halfdim",
+  "typeKey": "halfdim",
   "name": "F Half-diminished (m7b5)",
+  "altName": null,
   "symbol": "Fm7b5",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "F Half-diminished (m7b5)",
+   "F Meio-diminuto",
+   "Fm7b5"
+  ],
   "note": "F",
+  "rootName": "F",
   "type": "Half-diminished (m7b5)",
   "notes": [
    "F",
-   "G#",
-   "B",
-   "D#"
+   "Ab",
+   "Cb",
+   "Eb"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭7"
+  ],
+  "pcs": [
+   5,
+   8,
+   11,
+   3
   ],
   "positions": [
    {
@@ -19545,6 +21277,8 @@
    {
     "label": "A-shape (fret 8)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -19571,28 +21305,43 @@
       "fret": null
      }
     ],
-    "baseFret": 8,
-    "barre": {
-     "fret": 8,
-     "fromString": 5,
-     "toString": 3
-    }
+    "baseFret": 8
    }
   ],
   "caged": []
  },
  {
   "id": "F_add9",
+  "typeKey": "add9",
   "name": "F Add9",
+  "altName": null,
   "symbol": "Fadd9",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "F Add9",
+   "F Add9",
+   "Fadd9"
+  ],
   "note": "F",
+  "rootName": "F",
   "type": "Add9",
   "notes": [
    "F",
-   "G",
    "A",
-   "C"
+   "C",
+   "G"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "9"
+  ],
+  "pcs": [
+   5,
+   9,
+   0,
+   7
   ],
   "positions": [
    {
@@ -19625,6 +21374,8 @@
    {
     "label": "A-shape (fret 8)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 8,
     "positions": [
      {
       "string": 6,
@@ -19663,18 +21414,36 @@
  },
  {
   "id": "Fsharp_major",
-  "name": "F#/Gb Major",
+  "typeKey": "major",
+  "name": "F# Major",
+  "altName": "Gb Major",
   "symbol": "F#",
+  "altSymbol": "Gb",
   "aliases": [
+   "F# Major",
+   "F# Maior",
+   "F#",
    "Gb Major",
+   "Gb Maior",
    "Gb"
   ],
   "note": "F#",
+  "rootName": "F#",
   "type": "Major",
   "notes": [
    "F#",
    "A#",
    "C#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5"
+  ],
+  "pcs": [
+   6,
+   10,
+   1
   ],
   "positions": [
    {
@@ -19707,6 +21476,8 @@
    {
     "label": "E-shape (fret 2)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -19743,6 +21514,8 @@
    {
     "label": "A-shape (fret 9)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -19956,29 +21729,42 @@
      }
     ],
     "baseFret": 11,
-    "barre": {
-     "fret": 11,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "Fsharp_minor",
-  "name": "F#/Gb Minor",
+  "typeKey": "minor",
+  "name": "F# Minor",
+  "altName": "Gb Minor",
   "symbol": "F#m",
+  "altSymbol": "Gbm",
   "aliases": [
+   "F# Minor",
+   "F# Menor",
+   "F#m",
    "Gb Minor",
+   "Gb Menor",
    "Gbm"
   ],
   "note": "F#",
+  "rootName": "F#",
   "type": "Minor",
   "notes": [
    "F#",
    "A",
    "C#"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5"
+  ],
+  "pcs": [
+   6,
+   9,
+   1
   ],
   "positions": [
    {
@@ -20011,6 +21797,8 @@
    {
     "label": "E-shape (fret 2)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -20047,6 +21835,8 @@
    {
     "label": "A-shape (fret 9)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -20255,28 +22045,39 @@
      }
     ],
     "baseFret": 11,
-    "barre": {
-     "fret": 11,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "Fsharp_power5",
-  "name": "F#/Gb Power (5)",
+  "typeKey": "power5",
+  "name": "F# Power (5)",
+  "altName": "Gb Power (5)",
   "symbol": "F#5",
+  "altSymbol": "Gb5",
   "aliases": [
+   "F# Power (5)",
+   "F# Power chord",
+   "F#5",
    "Gb Power (5)",
+   "Gb Power chord",
    "Gb5"
   ],
   "note": "F#",
+  "rootName": "F#",
   "type": "Power (5)",
   "notes": [
    "F#",
    "C#"
+  ],
+  "degrees": [
+   "1",
+   "5"
+  ],
+  "pcs": [
+   6,
+   1
   ],
   "positions": [
    {
@@ -20309,6 +22110,8 @@
    {
     "label": "E-shape (fret 2)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -20340,6 +22143,8 @@
    {
     "label": "A-shape (fret 9)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -20373,18 +22178,36 @@
  },
  {
   "id": "Fsharp_dim",
-  "name": "F#/Gb Diminished",
+  "typeKey": "dim",
+  "name": "F# Diminished",
+  "altName": "Gb Diminished",
   "symbol": "F#dim",
+  "altSymbol": "Gbdim",
   "aliases": [
+   "F# Diminished",
+   "F# Diminuto",
+   "F#dim",
    "Gb Diminished",
+   "Gb Diminuto",
    "Gbdim"
   ],
   "note": "F#",
+  "rootName": "F#",
   "type": "Diminished",
   "notes": [
    "F#",
    "A",
    "C"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5"
+  ],
+  "pcs": [
+   6,
+   9,
+   0
   ],
   "positions": [
    {
@@ -20417,6 +22240,8 @@
    {
     "label": "A-shape (fret 9)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -20450,18 +22275,36 @@
  },
  {
   "id": "Fsharp_aug",
-  "name": "F#/Gb Augmented",
-  "symbol": "F#aug",
+  "typeKey": "aug",
+  "name": "Gb Augmented",
+  "altName": "F# Augmented",
+  "symbol": "Gbaug",
+  "altSymbol": "F#aug",
   "aliases": [
    "Gb Augmented",
-   "Gbaug"
+   "Gb Aumentado",
+   "Gbaug",
+   "F# Augmented",
+   "F# Aumentado",
+   "F#aug"
   ],
   "note": "F#",
+  "rootName": "Gb",
   "type": "Augmented",
   "notes": [
-   "F#",
-   "A#",
+   "Gb",
+   "Bb",
    "D"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "♯5"
+  ],
+  "pcs": [
+   6,
+   10,
+   2
   ],
   "positions": [
    {
@@ -20494,6 +22337,8 @@
    {
     "label": "E-shape (fret 2)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -20530,6 +22375,8 @@
    {
     "label": "A-shape (fret 9)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -20563,18 +22410,36 @@
  },
  {
   "id": "Fsharp_sus2",
-  "name": "F#/Gb Suspended 2",
+  "typeKey": "sus2",
+  "name": "F# Suspended 2",
+  "altName": "Gb Suspended 2",
   "symbol": "F#sus2",
+  "altSymbol": "Gbsus2",
   "aliases": [
+   "F# Suspended 2",
+   "F# Suspenso 2",
+   "F#sus2",
    "Gb Suspended 2",
+   "Gb Suspenso 2",
    "Gbsus2"
   ],
   "note": "F#",
+  "rootName": "F#",
   "type": "Suspended 2",
   "notes": [
    "F#",
    "G#",
    "C#"
+  ],
+  "degrees": [
+   "1",
+   "2",
+   "5"
+  ],
+  "pcs": [
+   6,
+   8,
+   1
   ],
   "positions": [
    {
@@ -20607,6 +22472,8 @@
    {
     "label": "E-shape (fret 2)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -20643,6 +22510,8 @@
    {
     "label": "A-shape (fret 9)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -20785,11 +22654,6 @@
      }
     ],
     "baseFret": 6,
-    "barre": {
-     "fret": 6,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 3
    },
    {
@@ -20861,29 +22725,42 @@
      }
     ],
     "baseFret": 11,
-    "barre": {
-     "fret": 11,
-     "fromString": 5,
-     "toString": 3
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "Fsharp_sus4",
-  "name": "F#/Gb Suspended 4",
+  "typeKey": "sus4",
+  "name": "F# Suspended 4",
+  "altName": "Gb Suspended 4",
   "symbol": "F#sus4",
+  "altSymbol": "Gbsus4",
   "aliases": [
+   "F# Suspended 4",
+   "F# Suspenso 4",
+   "F#sus4",
    "Gb Suspended 4",
+   "Gb Suspenso 4",
    "Gbsus4"
   ],
   "note": "F#",
+  "rootName": "F#",
   "type": "Suspended 4",
   "notes": [
    "F#",
    "B",
    "C#"
+  ],
+  "degrees": [
+   "1",
+   "4",
+   "5"
+  ],
+  "pcs": [
+   6,
+   11,
+   1
   ],
   "positions": [
    {
@@ -20916,6 +22793,8 @@
    {
     "label": "E-shape (fret 2)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -20952,6 +22831,8 @@
    {
     "label": "A-shape (fret 9)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -21160,30 +23041,45 @@
      }
     ],
     "baseFret": 11,
-    "barre": {
-     "fret": 11,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "Fsharp_six",
-  "name": "F#/Gb Major 6",
+  "typeKey": "six",
+  "name": "F# Major 6",
+  "altName": "Gb Major 6",
   "symbol": "F#6",
+  "altSymbol": "Gb6",
   "aliases": [
+   "F# Major 6",
+   "F# Maior com 6",
+   "F#6",
    "Gb Major 6",
+   "Gb Maior com 6",
    "Gb6"
   ],
   "note": "F#",
+  "rootName": "F#",
   "type": "Major 6",
   "notes": [
    "F#",
    "A#",
    "C#",
    "D#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   6,
+   10,
+   1,
+   3
   ],
   "positions": [
    {
@@ -21216,6 +23112,8 @@
    {
     "label": "E-shape (fret 2)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -21252,6 +23150,8 @@
    {
     "label": "A-shape (fret 9)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -21351,11 +23251,6 @@
      }
     ],
     "baseFret": 4,
-    "barre": {
-     "fret": 4,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -21466,19 +23361,39 @@
  },
  {
   "id": "Fsharp_minor6",
-  "name": "F#/Gb Minor 6",
+  "typeKey": "minor6",
+  "name": "F# Minor 6",
+  "altName": "Gb Minor 6",
   "symbol": "F#m6",
+  "altSymbol": "Gbm6",
   "aliases": [
+   "F# Minor 6",
+   "F# Menor com 6",
+   "F#m6",
    "Gb Minor 6",
+   "Gb Menor com 6",
    "Gbm6"
   ],
   "note": "F#",
+  "rootName": "F#",
   "type": "Minor 6",
   "notes": [
    "F#",
    "A",
    "C#",
    "D#"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   6,
+   9,
+   1,
+   3
   ],
   "positions": [
    {
@@ -21511,6 +23426,8 @@
    {
     "label": "E-shape (fret 2)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -21547,6 +23464,8 @@
    {
     "label": "A-shape (fret 9)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -21646,11 +23565,6 @@
      }
     ],
     "baseFret": 4,
-    "barre": {
-     "fret": 4,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -21684,11 +23598,6 @@
      }
     ],
     "baseFret": 7,
-    "barre": {
-     "fret": 7,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 3
    },
    {
@@ -21766,19 +23675,39 @@
  },
  {
   "id": "Fsharp_dom7",
-  "name": "F#/Gb Dominant 7",
+  "typeKey": "dom7",
+  "name": "F# Dominant 7",
+  "altName": "Gb Dominant 7",
   "symbol": "F#7",
+  "altSymbol": "Gb7",
   "aliases": [
+   "F# Dominant 7",
+   "F# Dominante 7",
+   "F#7",
    "Gb Dominant 7",
+   "Gb Dominante 7",
    "Gb7"
   ],
   "note": "F#",
+  "rootName": "F#",
   "type": "Dominant 7",
   "notes": [
    "F#",
    "A#",
    "C#",
    "E"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   6,
+   10,
+   1,
+   4
   ],
   "positions": [
    {
@@ -21811,6 +23740,8 @@
    {
     "label": "E-shape (fret 2)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -21847,6 +23778,8 @@
    {
     "label": "A-shape (fret 9)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -22055,30 +23988,45 @@
      }
     ],
     "baseFret": 11,
-    "barre": {
-     "fret": 11,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "Fsharp_maj7",
-  "name": "F#/Gb Major 7",
-  "symbol": "F#maj7",
+  "typeKey": "maj7",
+  "name": "Gb Major 7",
+  "altName": "F# Major 7",
+  "symbol": "Gbmaj7",
+  "altSymbol": "F#maj7",
   "aliases": [
    "Gb Major 7",
-   "Gbmaj7"
+   "Gb Maior 7M",
+   "Gbmaj7",
+   "F# Major 7",
+   "F# Maior 7M",
+   "F#maj7"
   ],
   "note": "F#",
+  "rootName": "Gb",
   "type": "Major 7",
   "notes": [
-   "F#",
-   "A#",
-   "C#",
+   "Gb",
+   "Bb",
+   "Db",
    "F"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "7"
+  ],
+  "pcs": [
+   6,
+   10,
+   1,
+   5
   ],
   "positions": [
    {
@@ -22111,6 +24059,8 @@
    {
     "label": "E-shape (fret 2)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -22147,6 +24097,8 @@
    {
     "label": "A-shape (fret 9)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -22360,30 +24312,45 @@
      }
     ],
     "baseFret": 11,
-    "barre": {
-     "fret": 11,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "Fsharp_min7",
-  "name": "F#/Gb Minor 7",
+  "typeKey": "min7",
+  "name": "F# Minor 7",
+  "altName": "Gb Minor 7",
   "symbol": "F#m7",
+  "altSymbol": "Gbm7",
   "aliases": [
+   "F# Minor 7",
+   "F# Menor 7",
+   "F#m7",
    "Gb Minor 7",
+   "Gb Menor 7",
    "Gbm7"
   ],
   "note": "F#",
+  "rootName": "F#",
   "type": "Minor 7",
   "notes": [
    "F#",
    "A",
    "C#",
    "E"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   6,
+   9,
+   1,
+   4
   ],
   "positions": [
    {
@@ -22416,6 +24383,8 @@
    {
     "label": "E-shape (fret 2)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -22452,6 +24421,8 @@
    {
     "label": "A-shape (fret 9)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -22589,11 +24560,6 @@
      }
     ],
     "baseFret": 7,
-    "barre": {
-     "fret": 7,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 3
    },
    {
@@ -22671,19 +24637,39 @@
  },
  {
   "id": "Fsharp_dim7",
-  "name": "F#/Gb Diminished 7",
+  "typeKey": "dim7",
+  "name": "F# Diminished 7",
+  "altName": "Gb Diminished 7",
   "symbol": "F#dim7",
+  "altSymbol": "Gbdim7",
   "aliases": [
+   "F# Diminished 7",
+   "F# Diminuto 7",
+   "F#dim7",
    "Gb Diminished 7",
+   "Gb Diminuto 7",
    "Gbdim7"
   ],
   "note": "F#",
+  "rootName": "F#",
   "type": "Diminished 7",
   "notes": [
    "F#",
    "A",
    "C",
-   "D#"
+   "Eb"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭♭7"
+  ],
+  "pcs": [
+   6,
+   9,
+   0,
+   3
   ],
   "positions": [
    {
@@ -22716,6 +24702,8 @@
    {
     "label": "A-shape (fret 9)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -22749,19 +24737,39 @@
  },
  {
   "id": "Fsharp_halfdim",
-  "name": "F#/Gb Half-diminished (m7b5)",
+  "typeKey": "halfdim",
+  "name": "F# Half-diminished (m7b5)",
+  "altName": "Gb Half-diminished (m7b5)",
   "symbol": "F#m7b5",
+  "altSymbol": "Gbm7b5",
   "aliases": [
+   "F# Half-diminished (m7b5)",
+   "F# Meio-diminuto",
+   "F#m7b5",
    "Gb Half-diminished (m7b5)",
+   "Gb Meio-diminuto",
    "Gbm7b5"
   ],
   "note": "F#",
+  "rootName": "F#",
   "type": "Half-diminished (m7b5)",
   "notes": [
    "F#",
    "A",
    "C",
    "E"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭7"
+  ],
+  "pcs": [
+   6,
+   9,
+   0,
+   4
   ],
   "positions": [
    {
@@ -22794,6 +24802,8 @@
    {
     "label": "A-shape (fret 9)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -22820,31 +24830,46 @@
       "fret": null
      }
     ],
-    "baseFret": 9,
-    "barre": {
-     "fret": 9,
-     "fromString": 5,
-     "toString": 3
-    }
+    "baseFret": 9
    }
   ],
   "caged": []
  },
  {
   "id": "Fsharp_add9",
-  "name": "F#/Gb Add9",
+  "typeKey": "add9",
+  "name": "F# Add9",
+  "altName": "Gb Add9",
   "symbol": "F#add9",
+  "altSymbol": "Gbadd9",
   "aliases": [
+   "F# Add9",
+   "F# Add9",
+   "F#add9",
+   "Gb Add9",
    "Gb Add9",
    "Gbadd9"
   ],
   "note": "F#",
+  "rootName": "F#",
   "type": "Add9",
   "notes": [
    "F#",
-   "G#",
    "A#",
-   "C#"
+   "C#",
+   "G#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "9"
+  ],
+  "pcs": [
+   6,
+   10,
+   1,
+   8
   ],
   "positions": [
    {
@@ -22877,6 +24902,8 @@
    {
     "label": "A-shape (fret 9)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 9,
     "positions": [
      {
       "string": 6,
@@ -22915,15 +24942,33 @@
  },
  {
   "id": "G_major",
+  "typeKey": "major",
   "name": "G Major",
+  "altName": null,
   "symbol": "G",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "G Major",
+   "G Maior",
+   "G"
+  ],
   "note": "G",
+  "rootName": "G",
   "type": "Major",
   "notes": [
    "G",
    "B",
    "D"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5"
+  ],
+  "pcs": [
+   7,
+   11,
+   2
   ],
   "positions": [
    {
@@ -22956,6 +25001,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -22987,6 +25034,8 @@
    {
     "label": "E-shape (fret 3)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -23023,6 +25072,8 @@
    {
     "label": "A-shape (fret 10)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -23242,15 +25293,33 @@
  },
  {
   "id": "G_minor",
+  "typeKey": "minor",
   "name": "G Minor",
+  "altName": null,
   "symbol": "Gm",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "G Minor",
+   "G Menor",
+   "Gm"
+  ],
   "note": "G",
+  "rootName": "G",
   "type": "Minor",
   "notes": [
    "G",
-   "A#",
+   "Bb",
    "D"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5"
+  ],
+  "pcs": [
+   7,
+   10,
+   2
   ],
   "positions": [
    {
@@ -23283,6 +25352,8 @@
    {
     "label": "E-shape (fret 3)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -23319,6 +25390,8 @@
    {
     "label": "A-shape (fret 10)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -23533,14 +25606,30 @@
  },
  {
   "id": "G_power5",
+  "typeKey": "power5",
   "name": "G Power (5)",
+  "altName": null,
   "symbol": "G5",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "G Power (5)",
+   "G Power chord",
+   "G5"
+  ],
   "note": "G",
+  "rootName": "G",
   "type": "Power (5)",
   "notes": [
    "G",
    "D"
+  ],
+  "degrees": [
+   "1",
+   "5"
+  ],
+  "pcs": [
+   7,
+   2
   ],
   "positions": [
    {
@@ -23573,6 +25662,8 @@
    {
     "label": "E-shape (fret 3)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -23604,6 +25695,8 @@
    {
     "label": "A-shape (fret 10)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -23637,15 +25730,33 @@
  },
  {
   "id": "G_dim",
+  "typeKey": "dim",
   "name": "G Diminished",
+  "altName": null,
   "symbol": "Gdim",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "G Diminished",
+   "G Diminuto",
+   "Gdim"
+  ],
   "note": "G",
+  "rootName": "G",
   "type": "Diminished",
   "notes": [
    "G",
-   "A#",
-   "C#"
+   "Bb",
+   "Db"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5"
+  ],
+  "pcs": [
+   7,
+   10,
+   1
   ],
   "positions": [
    {
@@ -23678,6 +25789,8 @@
    {
     "label": "A-shape (fret 10)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -23711,15 +25824,33 @@
  },
  {
   "id": "G_aug",
+  "typeKey": "aug",
   "name": "G Augmented",
+  "altName": null,
   "symbol": "Gaug",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "G Augmented",
+   "G Aumentado",
+   "Gaug"
+  ],
   "note": "G",
+  "rootName": "G",
   "type": "Augmented",
   "notes": [
    "G",
    "B",
    "D#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "♯5"
+  ],
+  "pcs": [
+   7,
+   11,
+   3
   ],
   "positions": [
    {
@@ -23752,6 +25883,8 @@
    {
     "label": "E-shape (fret 3)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -23788,6 +25921,8 @@
    {
     "label": "A-shape (fret 10)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -23821,15 +25956,33 @@
  },
  {
   "id": "G_sus2",
+  "typeKey": "sus2",
   "name": "G Suspended 2",
+  "altName": null,
   "symbol": "Gsus2",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "G Suspended 2",
+   "G Suspenso 2",
+   "Gsus2"
+  ],
   "note": "G",
+  "rootName": "G",
   "type": "Suspended 2",
   "notes": [
    "G",
    "A",
    "D"
+  ],
+  "degrees": [
+   "1",
+   "2",
+   "5"
+  ],
+  "pcs": [
+   7,
+   9,
+   2
   ],
   "positions": [
    {
@@ -23862,6 +26015,8 @@
    {
     "label": "E-shape (fret 3)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -23898,6 +26053,8 @@
    {
     "label": "A-shape (fret 10)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -24073,11 +26230,6 @@
      }
     ],
     "baseFret": 7,
-    "barre": {
-     "fret": 7,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 4
    },
    {
@@ -24122,15 +26274,33 @@
  },
  {
   "id": "G_sus4",
+  "typeKey": "sus4",
   "name": "G Suspended 4",
+  "altName": null,
   "symbol": "Gsus4",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "G Suspended 4",
+   "G Suspenso 4",
+   "Gsus4"
+  ],
   "note": "G",
+  "rootName": "G",
   "type": "Suspended 4",
   "notes": [
    "G",
    "C",
    "D"
+  ],
+  "degrees": [
+   "1",
+   "4",
+   "5"
+  ],
+  "pcs": [
+   7,
+   0,
+   2
   ],
   "positions": [
    {
@@ -24163,6 +26333,8 @@
    {
     "label": "E-shape (fret 3)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -24199,6 +26371,8 @@
    {
     "label": "A-shape (fret 10)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -24413,16 +26587,36 @@
  },
  {
   "id": "G_six",
+  "typeKey": "six",
   "name": "G Major 6",
+  "altName": null,
   "symbol": "G6",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "G Major 6",
+   "G Maior com 6",
+   "G6"
+  ],
   "note": "G",
+  "rootName": "G",
   "type": "Major 6",
   "notes": [
    "G",
    "B",
    "D",
    "E"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   7,
+   11,
+   2,
+   4
   ],
   "positions": [
    {
@@ -24455,6 +26649,8 @@
    {
     "label": "E-shape (fret 3)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -24491,6 +26687,8 @@
    {
     "label": "A-shape (fret 10)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -24623,11 +26821,6 @@
      }
     ],
     "baseFret": 5,
-    "barre": {
-     "fret": 5,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 3
    },
    {
@@ -24700,16 +26893,36 @@
  },
  {
   "id": "G_minor6",
+  "typeKey": "minor6",
   "name": "G Minor 6",
+  "altName": null,
   "symbol": "Gm6",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "G Minor 6",
+   "G Menor com 6",
+   "Gm6"
+  ],
   "note": "G",
+  "rootName": "G",
   "type": "Minor 6",
   "notes": [
    "G",
-   "A#",
+   "Bb",
    "D",
    "E"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   7,
+   10,
+   2,
+   4
   ],
   "positions": [
    {
@@ -24742,6 +26955,8 @@
    {
     "label": "E-shape (fret 3)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -24778,6 +26993,8 @@
    {
     "label": "A-shape (fret 10)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -24910,11 +27127,6 @@
      }
     ],
     "baseFret": 5,
-    "barre": {
-     "fret": 5,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 3
    },
    {
@@ -24948,11 +27160,6 @@
      }
     ],
     "baseFret": 8,
-    "barre": {
-     "fret": 8,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 4
    },
    {
@@ -24992,16 +27199,36 @@
  },
  {
   "id": "G_dom7",
+  "typeKey": "dom7",
   "name": "G Dominant 7",
+  "altName": null,
   "symbol": "G7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "G Dominant 7",
+   "G Dominante 7",
+   "G7"
+  ],
   "note": "G",
+  "rootName": "G",
   "type": "Dominant 7",
   "notes": [
    "G",
    "B",
    "D",
    "F"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   7,
+   11,
+   2,
+   5
   ],
   "positions": [
    {
@@ -25034,6 +27261,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -25065,6 +27294,8 @@
    {
     "label": "E-shape (fret 3)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -25101,6 +27332,8 @@
    {
     "label": "A-shape (fret 10)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -25315,16 +27548,36 @@
  },
  {
   "id": "G_maj7",
+  "typeKey": "maj7",
   "name": "G Major 7",
+  "altName": null,
   "symbol": "Gmaj7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "G Major 7",
+   "G Maior 7M",
+   "Gmaj7"
+  ],
   "note": "G",
+  "rootName": "G",
   "type": "Major 7",
   "notes": [
    "G",
    "B",
    "D",
    "F#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "7"
+  ],
+  "pcs": [
+   7,
+   11,
+   2,
+   6
   ],
   "positions": [
    {
@@ -25357,6 +27610,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -25388,6 +27643,8 @@
    {
     "label": "E-shape (fret 3)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -25424,6 +27681,8 @@
    {
     "label": "A-shape (fret 10)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -25643,16 +27902,36 @@
  },
  {
   "id": "G_min7",
+  "typeKey": "min7",
   "name": "G Minor 7",
+  "altName": null,
   "symbol": "Gm7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "G Minor 7",
+   "G Menor 7",
+   "Gm7"
+  ],
   "note": "G",
+  "rootName": "G",
   "type": "Minor 7",
   "notes": [
    "G",
-   "A#",
+   "Bb",
    "D",
    "F"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   7,
+   10,
+   2,
+   5
   ],
   "positions": [
    {
@@ -25685,6 +27964,8 @@
    {
     "label": "E-shape (fret 3)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 3,
     "positions": [
      {
       "string": 6,
@@ -25721,6 +28002,8 @@
    {
     "label": "A-shape (fret 10)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -25891,11 +28174,6 @@
      }
     ],
     "baseFret": 8,
-    "barre": {
-     "fret": 8,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 4
    },
    {
@@ -25940,16 +28218,36 @@
  },
  {
   "id": "G_dim7",
+  "typeKey": "dim7",
   "name": "G Diminished 7",
+  "altName": null,
   "symbol": "Gdim7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "G Diminished 7",
+   "G Diminuto 7",
+   "Gdim7"
+  ],
   "note": "G",
+  "rootName": "G",
   "type": "Diminished 7",
   "notes": [
    "G",
-   "A#",
-   "C#",
-   "E"
+   "Bb",
+   "Db",
+   "Fb"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭♭7"
+  ],
+  "pcs": [
+   7,
+   10,
+   1,
+   4
   ],
   "positions": [
    {
@@ -25982,6 +28280,8 @@
    {
     "label": "A-shape (fret 10)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -26015,16 +28315,36 @@
  },
  {
   "id": "G_halfdim",
+  "typeKey": "halfdim",
   "name": "G Half-diminished (m7b5)",
+  "altName": null,
   "symbol": "Gm7b5",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "G Half-diminished (m7b5)",
+   "G Meio-diminuto",
+   "Gm7b5"
+  ],
   "note": "G",
+  "rootName": "G",
   "type": "Half-diminished (m7b5)",
   "notes": [
    "G",
-   "A#",
-   "C#",
+   "Bb",
+   "Db",
    "F"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭7"
+  ],
+  "pcs": [
+   7,
+   10,
+   1,
+   5
   ],
   "positions": [
    {
@@ -26057,6 +28377,8 @@
    {
     "label": "A-shape (fret 10)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -26083,28 +28405,43 @@
       "fret": null
      }
     ],
-    "baseFret": 10,
-    "barre": {
-     "fret": 10,
-     "fromString": 5,
-     "toString": 3
-    }
+    "baseFret": 10
    }
   ],
   "caged": []
  },
  {
   "id": "G_add9",
+  "typeKey": "add9",
   "name": "G Add9",
+  "altName": null,
   "symbol": "Gadd9",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "G Add9",
+   "G Add9",
+   "Gadd9"
+  ],
   "note": "G",
+  "rootName": "G",
   "type": "Add9",
   "notes": [
    "G",
-   "A",
    "B",
-   "D"
+   "D",
+   "A"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "9"
+  ],
+  "pcs": [
+   7,
+   11,
+   2,
+   9
   ],
   "positions": [
    {
@@ -26137,6 +28474,8 @@
    {
     "label": "A-shape (fret 10)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 10,
     "positions": [
      {
       "string": 6,
@@ -26175,18 +28514,36 @@
  },
  {
   "id": "Gsharp_major",
-  "name": "G#/Ab Major",
-  "symbol": "G#",
+  "typeKey": "major",
+  "name": "Ab Major",
+  "altName": "G# Major",
+  "symbol": "Ab",
+  "altSymbol": "G#",
   "aliases": [
    "Ab Major",
-   "Ab"
+   "Ab Maior",
+   "Ab",
+   "G# Major",
+   "G# Maior",
+   "G#"
   ],
   "note": "G#",
+  "rootName": "Ab",
   "type": "Major",
   "notes": [
-   "G#",
+   "Ab",
    "C",
-   "D#"
+   "Eb"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5"
+  ],
+  "pcs": [
+   8,
+   0,
+   3
   ],
   "positions": [
    {
@@ -26219,6 +28576,8 @@
    {
     "label": "E-shape (fret 4)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -26255,6 +28614,8 @@
    {
     "label": "A-shape (fret 11)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -26321,11 +28682,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 1,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 1
    },
    {
@@ -26479,18 +28835,36 @@
  },
  {
   "id": "Gsharp_minor",
-  "name": "G#/Ab Minor",
+  "typeKey": "minor",
+  "name": "G# Minor",
+  "altName": "Ab Minor",
   "symbol": "G#m",
+  "altSymbol": "Abm",
   "aliases": [
+   "G# Minor",
+   "G# Menor",
+   "G#m",
    "Ab Minor",
+   "Ab Menor",
    "Abm"
   ],
   "note": "G#",
+  "rootName": "G#",
   "type": "Minor",
   "notes": [
    "G#",
    "B",
    "D#"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5"
+  ],
+  "pcs": [
+   8,
+   11,
+   3
   ],
   "positions": [
    {
@@ -26523,6 +28897,8 @@
    {
     "label": "E-shape (fret 4)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -26559,6 +28935,8 @@
    {
     "label": "A-shape (fret 11)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -26625,11 +29003,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 1,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 1
    },
    {
@@ -26778,17 +29151,33 @@
  },
  {
   "id": "Gsharp_power5",
-  "name": "G#/Ab Power (5)",
+  "typeKey": "power5",
+  "name": "G# Power (5)",
+  "altName": "Ab Power (5)",
   "symbol": "G#5",
+  "altSymbol": "Ab5",
   "aliases": [
+   "G# Power (5)",
+   "G# Power chord",
+   "G#5",
    "Ab Power (5)",
+   "Ab Power chord",
    "Ab5"
   ],
   "note": "G#",
+  "rootName": "G#",
   "type": "Power (5)",
   "notes": [
    "G#",
    "D#"
+  ],
+  "degrees": [
+   "1",
+   "5"
+  ],
+  "pcs": [
+   8,
+   3
   ],
   "positions": [
    {
@@ -26821,6 +29210,8 @@
    {
     "label": "E-shape (fret 4)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -26852,6 +29243,8 @@
    {
     "label": "A-shape (fret 11)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -26885,18 +29278,36 @@
  },
  {
   "id": "Gsharp_dim",
-  "name": "G#/Ab Diminished",
+  "typeKey": "dim",
+  "name": "G# Diminished",
+  "altName": "Ab Diminished",
   "symbol": "G#dim",
+  "altSymbol": "Abdim",
   "aliases": [
+   "G# Diminished",
+   "G# Diminuto",
+   "G#dim",
    "Ab Diminished",
+   "Ab Diminuto",
    "Abdim"
   ],
   "note": "G#",
+  "rootName": "G#",
   "type": "Diminished",
   "notes": [
    "G#",
    "B",
    "D"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5"
+  ],
+  "pcs": [
+   8,
+   11,
+   2
   ],
   "positions": [
    {
@@ -26929,6 +29340,8 @@
    {
     "label": "A-shape (fret 11)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -26962,18 +29375,36 @@
  },
  {
   "id": "Gsharp_aug",
-  "name": "G#/Ab Augmented",
-  "symbol": "G#aug",
+  "typeKey": "aug",
+  "name": "Ab Augmented",
+  "altName": "G# Augmented",
+  "symbol": "Abaug",
+  "altSymbol": "G#aug",
   "aliases": [
    "Ab Augmented",
-   "Abaug"
+   "Ab Aumentado",
+   "Abaug",
+   "G# Augmented",
+   "G# Aumentado",
+   "G#aug"
   ],
   "note": "G#",
+  "rootName": "Ab",
   "type": "Augmented",
   "notes": [
-   "G#",
+   "Ab",
    "C",
    "E"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "♯5"
+  ],
+  "pcs": [
+   8,
+   0,
+   4
   ],
   "positions": [
    {
@@ -27006,6 +29437,8 @@
    {
     "label": "E-shape (fret 4)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -27042,6 +29475,8 @@
    {
     "label": "A-shape (fret 11)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -27075,18 +29510,36 @@
  },
  {
   "id": "Gsharp_sus2",
-  "name": "G#/Ab Suspended 2",
+  "typeKey": "sus2",
+  "name": "G# Suspended 2",
+  "altName": "Ab Suspended 2",
   "symbol": "G#sus2",
+  "altSymbol": "Absus2",
   "aliases": [
+   "G# Suspended 2",
+   "G# Suspenso 2",
+   "G#sus2",
    "Ab Suspended 2",
+   "Ab Suspenso 2",
    "Absus2"
   ],
   "note": "G#",
+  "rootName": "G#",
   "type": "Suspended 2",
   "notes": [
    "G#",
    "A#",
    "D#"
+  ],
+  "degrees": [
+   "1",
+   "2",
+   "5"
+  ],
+  "pcs": [
+   8,
+   10,
+   3
   ],
   "positions": [
    {
@@ -27119,6 +29572,8 @@
    {
     "label": "E-shape (fret 4)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -27155,6 +29610,8 @@
    {
     "label": "A-shape (fret 11)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -27221,11 +29678,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 1,
-     "fromString": 5,
-     "toString": 3
-    },
     "order": 1
    },
    {
@@ -27335,11 +29787,6 @@
      }
     ],
     "baseFret": 8,
-    "barre": {
-     "fret": 8,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 4
    },
    {
@@ -27384,18 +29831,36 @@
  },
  {
   "id": "Gsharp_sus4",
-  "name": "G#/Ab Suspended 4",
+  "typeKey": "sus4",
+  "name": "G# Suspended 4",
+  "altName": "Ab Suspended 4",
   "symbol": "G#sus4",
+  "altSymbol": "Absus4",
   "aliases": [
+   "G# Suspended 4",
+   "G# Suspenso 4",
+   "G#sus4",
    "Ab Suspended 4",
+   "Ab Suspenso 4",
    "Absus4"
   ],
   "note": "G#",
+  "rootName": "G#",
   "type": "Suspended 4",
   "notes": [
    "G#",
    "C#",
    "D#"
+  ],
+  "degrees": [
+   "1",
+   "4",
+   "5"
+  ],
+  "pcs": [
+   8,
+   1,
+   3
   ],
   "positions": [
    {
@@ -27428,6 +29893,8 @@
    {
     "label": "E-shape (fret 4)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -27464,6 +29931,8 @@
    {
     "label": "A-shape (fret 11)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -27530,11 +29999,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 1,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 1
    },
    {
@@ -27683,19 +30147,39 @@
  },
  {
   "id": "Gsharp_six",
-  "name": "G#/Ab Major 6",
-  "symbol": "G#6",
+  "typeKey": "six",
+  "name": "Ab Major 6",
+  "altName": "G# Major 6",
+  "symbol": "Ab6",
+  "altSymbol": "G#6",
   "aliases": [
    "Ab Major 6",
-   "Ab6"
+   "Ab Maior com 6",
+   "Ab6",
+   "G# Major 6",
+   "G# Maior com 6",
+   "G#6"
   ],
   "note": "G#",
+  "rootName": "Ab",
   "type": "Major 6",
   "notes": [
-   "G#",
+   "Ab",
    "C",
-   "D#",
+   "Eb",
    "F"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   8,
+   0,
+   3,
+   5
   ],
   "positions": [
    {
@@ -27728,6 +30212,8 @@
    {
     "label": "E-shape (fret 4)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -27764,6 +30250,8 @@
    {
     "label": "A-shape (fret 11)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -27901,11 +30389,6 @@
      }
     ],
     "baseFret": 6,
-    "barre": {
-     "fret": 6,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 3
    },
    {
@@ -27978,19 +30461,39 @@
  },
  {
   "id": "Gsharp_minor6",
-  "name": "G#/Ab Minor 6",
+  "typeKey": "minor6",
+  "name": "G# Minor 6",
+  "altName": "Ab Minor 6",
   "symbol": "G#m6",
+  "altSymbol": "Abm6",
   "aliases": [
+   "G# Minor 6",
+   "G# Menor com 6",
+   "G#m6",
    "Ab Minor 6",
+   "Ab Menor com 6",
    "Abm6"
   ],
   "note": "G#",
+  "rootName": "G#",
   "type": "Minor 6",
   "notes": [
    "G#",
    "B",
    "D#",
-   "F"
+   "E#"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   8,
+   11,
+   3,
+   5
   ],
   "positions": [
    {
@@ -28023,6 +30526,8 @@
    {
     "label": "E-shape (fret 4)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -28059,6 +30564,8 @@
    {
     "label": "A-shape (fret 11)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -28196,11 +30703,6 @@
      }
     ],
     "baseFret": 6,
-    "barre": {
-     "fret": 6,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 3
    },
    {
@@ -28234,11 +30736,6 @@
      }
     ],
     "baseFret": 9,
-    "barre": {
-     "fret": 9,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 4
    },
    {
@@ -28278,19 +30775,39 @@
  },
  {
   "id": "Gsharp_dom7",
-  "name": "G#/Ab Dominant 7",
-  "symbol": "G#7",
+  "typeKey": "dom7",
+  "name": "Ab Dominant 7",
+  "altName": "G# Dominant 7",
+  "symbol": "Ab7",
+  "altSymbol": "G#7",
   "aliases": [
    "Ab Dominant 7",
-   "Ab7"
+   "Ab Dominante 7",
+   "Ab7",
+   "G# Dominant 7",
+   "G# Dominante 7",
+   "G#7"
   ],
   "note": "G#",
+  "rootName": "Ab",
   "type": "Dominant 7",
   "notes": [
-   "G#",
+   "Ab",
    "C",
-   "D#",
-   "F#"
+   "Eb",
+   "Gb"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   8,
+   0,
+   3,
+   6
   ],
   "positions": [
    {
@@ -28323,6 +30840,8 @@
    {
     "label": "E-shape (fret 4)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -28359,6 +30878,8 @@
    {
     "label": "A-shape (fret 11)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -28425,11 +30946,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 1,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 1
    },
    {
@@ -28578,19 +31094,39 @@
  },
  {
   "id": "Gsharp_maj7",
-  "name": "G#/Ab Major 7",
-  "symbol": "G#maj7",
+  "typeKey": "maj7",
+  "name": "Ab Major 7",
+  "altName": "G# Major 7",
+  "symbol": "Abmaj7",
+  "altSymbol": "G#maj7",
   "aliases": [
    "Ab Major 7",
-   "Abmaj7"
+   "Ab Maior 7M",
+   "Abmaj7",
+   "G# Major 7",
+   "G# Maior 7M",
+   "G#maj7"
   ],
   "note": "G#",
+  "rootName": "Ab",
   "type": "Major 7",
   "notes": [
-   "G#",
+   "Ab",
    "C",
-   "D#",
+   "Eb",
    "G"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "7"
+  ],
+  "pcs": [
+   8,
+   0,
+   3,
+   7
   ],
   "positions": [
    {
@@ -28623,6 +31159,8 @@
    {
     "label": "E-shape (fret 4)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -28659,6 +31197,8 @@
    {
     "label": "A-shape (fret 11)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -28725,11 +31265,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 1,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 1
    },
    {
@@ -28883,19 +31418,39 @@
  },
  {
   "id": "Gsharp_min7",
-  "name": "G#/Ab Minor 7",
+  "typeKey": "min7",
+  "name": "G# Minor 7",
+  "altName": "Ab Minor 7",
   "symbol": "G#m7",
+  "altSymbol": "Abm7",
   "aliases": [
+   "G# Minor 7",
+   "G# Menor 7",
+   "G#m7",
    "Ab Minor 7",
+   "Ab Menor 7",
    "Abm7"
   ],
   "note": "G#",
+  "rootName": "G#",
   "type": "Minor 7",
   "notes": [
    "G#",
    "B",
    "D#",
    "F#"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   8,
+   11,
+   3,
+   6
   ],
   "positions": [
    {
@@ -28928,6 +31483,8 @@
    {
     "label": "E-shape (fret 4)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 4,
     "positions": [
      {
       "string": 6,
@@ -28964,6 +31521,8 @@
    {
     "label": "A-shape (fret 11)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -29134,11 +31693,6 @@
      }
     ],
     "baseFret": 9,
-    "barre": {
-     "fret": 9,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 4
    },
    {
@@ -29183,19 +31737,39 @@
  },
  {
   "id": "Gsharp_dim7",
-  "name": "G#/Ab Diminished 7",
+  "typeKey": "dim7",
+  "name": "G# Diminished 7",
+  "altName": "Ab Diminished 7",
   "symbol": "G#dim7",
+  "altSymbol": "Abdim7",
   "aliases": [
+   "G# Diminished 7",
+   "G# Diminuto 7",
+   "G#dim7",
    "Ab Diminished 7",
+   "Ab Diminuto 7",
    "Abdim7"
   ],
   "note": "G#",
+  "rootName": "G#",
   "type": "Diminished 7",
   "notes": [
    "G#",
    "B",
    "D",
    "F"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭♭7"
+  ],
+  "pcs": [
+   8,
+   11,
+   2,
+   5
   ],
   "positions": [
    {
@@ -29228,6 +31802,8 @@
    {
     "label": "A-shape (fret 11)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -29261,19 +31837,39 @@
  },
  {
   "id": "Gsharp_halfdim",
-  "name": "G#/Ab Half-diminished (m7b5)",
+  "typeKey": "halfdim",
+  "name": "G# Half-diminished (m7b5)",
+  "altName": "Ab Half-diminished (m7b5)",
   "symbol": "G#m7b5",
+  "altSymbol": "Abm7b5",
   "aliases": [
+   "G# Half-diminished (m7b5)",
+   "G# Meio-diminuto",
+   "G#m7b5",
    "Ab Half-diminished (m7b5)",
+   "Ab Meio-diminuto",
    "Abm7b5"
   ],
   "note": "G#",
+  "rootName": "G#",
   "type": "Half-diminished (m7b5)",
   "notes": [
    "G#",
    "B",
    "D",
    "F#"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭7"
+  ],
+  "pcs": [
+   8,
+   11,
+   2,
+   6
   ],
   "positions": [
    {
@@ -29306,6 +31902,8 @@
    {
     "label": "A-shape (fret 11)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -29332,31 +31930,46 @@
       "fret": null
      }
     ],
-    "baseFret": 11,
-    "barre": {
-     "fret": 11,
-     "fromString": 5,
-     "toString": 3
-    }
+    "baseFret": 11
    }
   ],
   "caged": []
  },
  {
   "id": "Gsharp_add9",
-  "name": "G#/Ab Add9",
-  "symbol": "G#add9",
+  "typeKey": "add9",
+  "name": "Ab Add9",
+  "altName": "G# Add9",
+  "symbol": "Abadd9",
+  "altSymbol": "G#add9",
   "aliases": [
    "Ab Add9",
-   "Abadd9"
+   "Ab Add9",
+   "Abadd9",
+   "G# Add9",
+   "G# Add9",
+   "G#add9"
   ],
   "note": "G#",
+  "rootName": "Ab",
   "type": "Add9",
   "notes": [
-   "G#",
-   "A#",
+   "Ab",
    "C",
-   "D#"
+   "Eb",
+   "Bb"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "9"
+  ],
+  "pcs": [
+   8,
+   0,
+   3,
+   10
   ],
   "positions": [
    {
@@ -29389,6 +32002,8 @@
    {
     "label": "A-shape (fret 11)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 11,
     "positions": [
      {
       "string": 6,
@@ -29427,15 +32042,33 @@
  },
  {
   "id": "A_major",
+  "typeKey": "major",
   "name": "A Major",
+  "altName": null,
   "symbol": "A",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "A Major",
+   "A Maior",
+   "A"
+  ],
   "note": "A",
+  "rootName": "A",
   "type": "Major",
   "notes": [
    "A",
    "C#",
    "E"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5"
+  ],
+  "pcs": [
+   9,
+   1,
+   4
   ],
   "positions": [
    {
@@ -29468,6 +32101,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -29499,6 +32134,8 @@
    {
     "label": "E-shape (fret 5)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -29598,11 +32235,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 2,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -29718,15 +32350,33 @@
  },
  {
   "id": "A_minor",
+  "typeKey": "minor",
   "name": "A Minor",
+  "altName": null,
   "symbol": "Am",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "A Minor",
+   "A Menor",
+   "Am"
+  ],
   "note": "A",
+  "rootName": "A",
   "type": "Minor",
   "notes": [
    "A",
    "C",
    "E"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5"
+  ],
+  "pcs": [
+   9,
+   0,
+   4
   ],
   "positions": [
    {
@@ -29759,6 +32409,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -29790,6 +32442,8 @@
    {
     "label": "E-shape (fret 5)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -29889,11 +32543,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 2,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 2
    },
    {
@@ -30004,14 +32653,30 @@
  },
  {
   "id": "A_power5",
+  "typeKey": "power5",
   "name": "A Power (5)",
+  "altName": null,
   "symbol": "A5",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "A Power (5)",
+   "A Power chord",
+   "A5"
+  ],
   "note": "A",
+  "rootName": "A",
   "type": "Power (5)",
   "notes": [
    "A",
    "E"
+  ],
+  "degrees": [
+   "1",
+   "5"
+  ],
+  "pcs": [
+   9,
+   4
   ],
   "positions": [
    {
@@ -30044,6 +32709,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -30075,6 +32742,8 @@
    {
     "label": "E-shape (fret 5)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -30108,15 +32777,33 @@
  },
  {
   "id": "A_dim",
+  "typeKey": "dim",
   "name": "A Diminished",
+  "altName": null,
   "symbol": "Adim",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "A Diminished",
+   "A Diminuto",
+   "Adim"
+  ],
   "note": "A",
+  "rootName": "A",
   "type": "Diminished",
   "notes": [
    "A",
    "C",
-   "D#"
+   "Eb"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5"
+  ],
+  "pcs": [
+   9,
+   0,
+   3
   ],
   "positions": [
    {
@@ -30149,6 +32836,8 @@
    {
     "label": "A-shape (open)",
     "kind": "open",
+    "shape": "A",
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -30182,15 +32871,33 @@
  },
  {
   "id": "A_aug",
+  "typeKey": "aug",
   "name": "A Augmented",
+  "altName": null,
   "symbol": "Aaug",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "A Augmented",
+   "A Aumentado",
+   "Aaug"
+  ],
   "note": "A",
+  "rootName": "A",
   "type": "Augmented",
   "notes": [
    "A",
    "C#",
-   "F"
+   "E#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "♯5"
+  ],
+  "pcs": [
+   9,
+   1,
+   5
   ],
   "positions": [
    {
@@ -30223,6 +32930,8 @@
    {
     "label": "A-shape (open)",
     "kind": "open",
+    "shape": "A",
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -30254,6 +32963,8 @@
    {
     "label": "E-shape (fret 5)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -30292,15 +33003,33 @@
  },
  {
   "id": "A_sus2",
+  "typeKey": "sus2",
   "name": "A Suspended 2",
+  "altName": null,
   "symbol": "Asus2",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "A Suspended 2",
+   "A Suspenso 2",
+   "Asus2"
+  ],
   "note": "A",
+  "rootName": "A",
   "type": "Suspended 2",
   "notes": [
    "A",
    "B",
    "E"
+  ],
+  "degrees": [
+   "1",
+   "2",
+   "5"
+  ],
+  "pcs": [
+   9,
+   11,
+   4
   ],
   "positions": [
    {
@@ -30333,6 +33062,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -30364,6 +33095,8 @@
    {
     "label": "E-shape (fret 5)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -30463,11 +33196,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 2,
-     "fromString": 5,
-     "toString": 3
-    },
     "order": 2
    },
    {
@@ -30577,26 +33305,39 @@
      }
     ],
     "baseFret": 9,
-    "barre": {
-     "fret": 9,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "A_sus4",
+  "typeKey": "sus4",
   "name": "A Suspended 4",
+  "altName": null,
   "symbol": "Asus4",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "A Suspended 4",
+   "A Suspenso 4",
+   "Asus4"
+  ],
   "note": "A",
+  "rootName": "A",
   "type": "Suspended 4",
   "notes": [
    "A",
    "D",
    "E"
+  ],
+  "degrees": [
+   "1",
+   "4",
+   "5"
+  ],
+  "pcs": [
+   9,
+   2,
+   4
   ],
   "positions": [
    {
@@ -30629,6 +33370,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -30660,6 +33403,8 @@
    {
     "label": "E-shape (fret 5)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -30759,11 +33504,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 2,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 2
    },
    {
@@ -30874,16 +33614,36 @@
  },
  {
   "id": "A_six",
+  "typeKey": "six",
   "name": "A Major 6",
+  "altName": null,
   "symbol": "A6",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "A Major 6",
+   "A Maior com 6",
+   "A6"
+  ],
   "note": "A",
+  "rootName": "A",
   "type": "Major 6",
   "notes": [
    "A",
    "C#",
    "E",
    "F#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   9,
+   1,
+   4,
+   6
   ],
   "positions": [
    {
@@ -30916,6 +33676,8 @@
    {
     "label": "A-shape (open)",
     "kind": "open",
+    "shape": "A",
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -30942,11 +33704,18 @@
       "fret": 2
      }
     ],
-    "baseFret": 1
+    "baseFret": 1,
+    "barre": {
+     "fret": 2,
+     "fromString": 4,
+     "toString": 1
+    }
    },
    {
     "label": "E-shape (fret 5)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -31013,6 +33782,11 @@
      }
     ],
     "baseFret": 1,
+    "barre": {
+     "fret": 2,
+     "fromString": 4,
+     "toString": 1
+    },
     "order": 1
    },
    {
@@ -31122,11 +33896,6 @@
      }
     ],
     "baseFret": 7,
-    "barre": {
-     "fret": 7,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 4
    },
    {
@@ -31166,16 +33935,36 @@
  },
  {
   "id": "A_minor6",
+  "typeKey": "minor6",
   "name": "A Minor 6",
+  "altName": null,
   "symbol": "Am6",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "A Minor 6",
+   "A Menor com 6",
+   "Am6"
+  ],
   "note": "A",
+  "rootName": "A",
   "type": "Minor 6",
   "notes": [
    "A",
    "C",
    "E",
    "F#"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   9,
+   0,
+   4,
+   6
   ],
   "positions": [
    {
@@ -31208,6 +33997,8 @@
    {
     "label": "A-shape (open)",
     "kind": "open",
+    "shape": "A",
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -31239,6 +34030,8 @@
    {
     "label": "E-shape (fret 5)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -31414,11 +34207,6 @@
      }
     ],
     "baseFret": 7,
-    "barre": {
-     "fret": 7,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 4
    },
    {
@@ -31452,27 +34240,42 @@
      }
     ],
     "baseFret": 10,
-    "barre": {
-     "fret": 10,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "A_dom7",
+  "typeKey": "dom7",
   "name": "A Dominant 7",
+  "altName": null,
   "symbol": "A7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "A Dominant 7",
+   "A Dominante 7",
+   "A7"
+  ],
   "note": "A",
+  "rootName": "A",
   "type": "Dominant 7",
   "notes": [
    "A",
    "C#",
    "E",
    "G"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   9,
+   1,
+   4,
+   7
   ],
   "positions": [
    {
@@ -31505,6 +34308,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -31536,6 +34341,8 @@
    {
     "label": "E-shape (fret 5)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -31635,11 +34442,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 2,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -31750,16 +34552,36 @@
  },
  {
   "id": "A_maj7",
+  "typeKey": "maj7",
   "name": "A Major 7",
+  "altName": null,
   "symbol": "Amaj7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "A Major 7",
+   "A Maior 7M",
+   "Amaj7"
+  ],
   "note": "A",
+  "rootName": "A",
   "type": "Major 7",
   "notes": [
    "A",
    "C#",
    "E",
    "G#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "7"
+  ],
+  "pcs": [
+   9,
+   1,
+   4,
+   8
   ],
   "positions": [
    {
@@ -31792,6 +34614,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -31823,6 +34647,8 @@
    {
     "label": "E-shape (fret 5)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -31922,11 +34748,6 @@
      }
     ],
     "baseFret": 1,
-    "barre": {
-     "fret": 2,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -32042,16 +34863,36 @@
  },
  {
   "id": "A_min7",
+  "typeKey": "min7",
   "name": "A Minor 7",
+  "altName": null,
   "symbol": "Am7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "A Minor 7",
+   "A Menor 7",
+   "Am7"
+  ],
   "note": "A",
+  "rootName": "A",
   "type": "Minor 7",
   "notes": [
    "A",
    "C",
    "E",
    "G"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   9,
+   0,
+   4,
+   7
   ],
   "positions": [
    {
@@ -32084,6 +34925,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -32115,6 +34958,8 @@
    {
     "label": "E-shape (fret 5)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 5,
     "positions": [
      {
       "string": 6,
@@ -32318,27 +35163,42 @@
      }
     ],
     "baseFret": 10,
-    "barre": {
-     "fret": 10,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "A_dim7",
+  "typeKey": "dim7",
   "name": "A Diminished 7",
+  "altName": null,
   "symbol": "Adim7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "A Diminished 7",
+   "A Diminuto 7",
+   "Adim7"
+  ],
   "note": "A",
+  "rootName": "A",
   "type": "Diminished 7",
   "notes": [
    "A",
    "C",
-   "D#",
-   "F#"
+   "Eb",
+   "Gb"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭♭7"
+  ],
+  "pcs": [
+   9,
+   0,
+   3,
+   6
   ],
   "positions": [
    {
@@ -32371,6 +35231,8 @@
    {
     "label": "A-shape (open)",
     "kind": "open",
+    "shape": "A",
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -32404,16 +35266,36 @@
  },
  {
   "id": "A_halfdim",
+  "typeKey": "halfdim",
   "name": "A Half-diminished (m7b5)",
+  "altName": null,
   "symbol": "Am7b5",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "A Half-diminished (m7b5)",
+   "A Meio-diminuto",
+   "Am7b5"
+  ],
   "note": "A",
+  "rootName": "A",
   "type": "Half-diminished (m7b5)",
   "notes": [
    "A",
    "C",
-   "D#",
+   "Eb",
    "G"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭7"
+  ],
+  "pcs": [
+   9,
+   0,
+   3,
+   7
   ],
   "positions": [
    {
@@ -32446,6 +35328,8 @@
    {
     "label": "A-shape (open)",
     "kind": "open",
+    "shape": "A",
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -32479,16 +35363,36 @@
  },
  {
   "id": "A_add9",
+  "typeKey": "add9",
   "name": "A Add9",
+  "altName": null,
   "symbol": "Aadd9",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "A Add9",
+   "A Add9",
+   "Aadd9"
+  ],
   "note": "A",
+  "rootName": "A",
   "type": "Add9",
   "notes": [
    "A",
-   "B",
    "C#",
-   "E"
+   "E",
+   "B"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "9"
+  ],
+  "pcs": [
+   9,
+   1,
+   4,
+   11
   ],
   "positions": [
    {
@@ -32521,6 +35425,8 @@
    {
     "label": "A-shape (open)",
     "kind": "open",
+    "shape": "A",
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -32554,18 +35460,36 @@
  },
  {
   "id": "Asharp_major",
-  "name": "A#/Bb Major",
-  "symbol": "A#",
+  "typeKey": "major",
+  "name": "Bb Major",
+  "altName": "A# Major",
+  "symbol": "Bb",
+  "altSymbol": "A#",
   "aliases": [
    "Bb Major",
-   "Bb"
+   "Bb Maior",
+   "Bb",
+   "A# Major",
+   "A# Maior",
+   "A#"
   ],
   "note": "A#",
+  "rootName": "Bb",
   "type": "Major",
   "notes": [
-   "A#",
+   "Bb",
    "D",
    "F"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5"
+  ],
+  "pcs": [
+   10,
+   2,
+   5
   ],
   "positions": [
    {
@@ -32598,6 +35522,8 @@
    {
     "label": "A-shape (fret 1)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -32634,6 +35560,8 @@
    {
     "label": "E-shape (fret 6)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -32738,11 +35666,6 @@
      }
     ],
     "baseFret": 3,
-    "barre": {
-     "fret": 3,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -32858,18 +35781,36 @@
  },
  {
   "id": "Asharp_minor",
-  "name": "A#/Bb Minor",
-  "symbol": "A#m",
+  "typeKey": "minor",
+  "name": "Bb Minor",
+  "altName": "A# Minor",
+  "symbol": "Bbm",
+  "altSymbol": "A#m",
   "aliases": [
    "Bb Minor",
-   "Bbm"
+   "Bb Menor",
+   "Bbm",
+   "A# Minor",
+   "A# Menor",
+   "A#m"
   ],
   "note": "A#",
+  "rootName": "Bb",
   "type": "Minor",
   "notes": [
-   "A#",
-   "C#",
+   "Bb",
+   "Db",
    "F"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5"
+  ],
+  "pcs": [
+   10,
+   1,
+   5
   ],
   "positions": [
    {
@@ -32902,6 +35843,8 @@
    {
     "label": "A-shape (fret 1)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -32938,6 +35881,8 @@
    {
     "label": "E-shape (fret 6)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -33042,11 +35987,6 @@
      }
     ],
     "baseFret": 3,
-    "barre": {
-     "fret": 3,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 2
    },
    {
@@ -33157,17 +36097,33 @@
  },
  {
   "id": "Asharp_power5",
-  "name": "A#/Bb Power (5)",
-  "symbol": "A#5",
+  "typeKey": "power5",
+  "name": "Bb Power (5)",
+  "altName": "A# Power (5)",
+  "symbol": "Bb5",
+  "altSymbol": "A#5",
   "aliases": [
    "Bb Power (5)",
-   "Bb5"
+   "Bb Power chord",
+   "Bb5",
+   "A# Power (5)",
+   "A# Power chord",
+   "A#5"
   ],
   "note": "A#",
+  "rootName": "Bb",
   "type": "Power (5)",
   "notes": [
-   "A#",
+   "Bb",
    "F"
+  ],
+  "degrees": [
+   "1",
+   "5"
+  ],
+  "pcs": [
+   10,
+   5
   ],
   "positions": [
    {
@@ -33200,6 +36156,8 @@
    {
     "label": "A-shape (fret 1)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -33231,6 +36189,8 @@
    {
     "label": "E-shape (fret 6)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -33264,18 +36224,36 @@
  },
  {
   "id": "Asharp_dim",
-  "name": "A#/Bb Diminished",
+  "typeKey": "dim",
+  "name": "A# Diminished",
+  "altName": "Bb Diminished",
   "symbol": "A#dim",
+  "altSymbol": "Bbdim",
   "aliases": [
+   "A# Diminished",
+   "A# Diminuto",
+   "A#dim",
    "Bb Diminished",
+   "Bb Diminuto",
    "Bbdim"
   ],
   "note": "A#",
+  "rootName": "A#",
   "type": "Diminished",
   "notes": [
    "A#",
    "C#",
    "E"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5"
+  ],
+  "pcs": [
+   10,
+   1,
+   4
   ],
   "positions": [
    {
@@ -33308,6 +36286,8 @@
    {
     "label": "A-shape (fret 1)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -33341,18 +36321,36 @@
  },
  {
   "id": "Asharp_aug",
-  "name": "A#/Bb Augmented",
-  "symbol": "A#aug",
+  "typeKey": "aug",
+  "name": "Bb Augmented",
+  "altName": "A# Augmented",
+  "symbol": "Bbaug",
+  "altSymbol": "A#aug",
   "aliases": [
    "Bb Augmented",
-   "Bbaug"
+   "Bb Aumentado",
+   "Bbaug",
+   "A# Augmented",
+   "A# Aumentado",
+   "A#aug"
   ],
   "note": "A#",
+  "rootName": "Bb",
   "type": "Augmented",
   "notes": [
-   "A#",
+   "Bb",
    "D",
    "F#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "♯5"
+  ],
+  "pcs": [
+   10,
+   2,
+   6
   ],
   "positions": [
    {
@@ -33385,6 +36383,8 @@
    {
     "label": "A-shape (fret 1)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -33416,6 +36416,8 @@
    {
     "label": "E-shape (fret 6)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -33454,18 +36456,36 @@
  },
  {
   "id": "Asharp_sus2",
-  "name": "A#/Bb Suspended 2",
-  "symbol": "A#sus2",
+  "typeKey": "sus2",
+  "name": "Bb Suspended 2",
+  "altName": "A# Suspended 2",
+  "symbol": "Bbsus2",
+  "altSymbol": "A#sus2",
   "aliases": [
    "Bb Suspended 2",
-   "Bbsus2"
+   "Bb Suspenso 2",
+   "Bbsus2",
+   "A# Suspended 2",
+   "A# Suspenso 2",
+   "A#sus2"
   ],
   "note": "A#",
+  "rootName": "Bb",
   "type": "Suspended 2",
   "notes": [
-   "A#",
+   "Bb",
    "C",
    "F"
+  ],
+  "degrees": [
+   "1",
+   "2",
+   "5"
+  ],
+  "pcs": [
+   10,
+   0,
+   5
   ],
   "positions": [
    {
@@ -33498,6 +36518,8 @@
    {
     "label": "A-shape (fret 1)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -33534,6 +36556,8 @@
    {
     "label": "E-shape (fret 6)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -33638,11 +36662,6 @@
      }
     ],
     "baseFret": 3,
-    "barre": {
-     "fret": 3,
-     "fromString": 5,
-     "toString": 3
-    },
     "order": 2
    },
    {
@@ -33752,29 +36771,42 @@
      }
     ],
     "baseFret": 10,
-    "barre": {
-     "fret": 10,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "Asharp_sus4",
-  "name": "A#/Bb Suspended 4",
-  "symbol": "A#sus4",
+  "typeKey": "sus4",
+  "name": "Bb Suspended 4",
+  "altName": "A# Suspended 4",
+  "symbol": "Bbsus4",
+  "altSymbol": "A#sus4",
   "aliases": [
    "Bb Suspended 4",
-   "Bbsus4"
+   "Bb Suspenso 4",
+   "Bbsus4",
+   "A# Suspended 4",
+   "A# Suspenso 4",
+   "A#sus4"
   ],
   "note": "A#",
+  "rootName": "Bb",
   "type": "Suspended 4",
   "notes": [
-   "A#",
-   "D#",
+   "Bb",
+   "Eb",
    "F"
+  ],
+  "degrees": [
+   "1",
+   "4",
+   "5"
+  ],
+  "pcs": [
+   10,
+   3,
+   5
   ],
   "positions": [
    {
@@ -33807,6 +36839,8 @@
    {
     "label": "A-shape (fret 1)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -33843,6 +36877,8 @@
    {
     "label": "E-shape (fret 6)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -33947,11 +36983,6 @@
      }
     ],
     "baseFret": 3,
-    "barre": {
-     "fret": 3,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 2
    },
    {
@@ -34062,19 +37093,39 @@
  },
  {
   "id": "Asharp_six",
-  "name": "A#/Bb Major 6",
-  "symbol": "A#6",
+  "typeKey": "six",
+  "name": "Bb Major 6",
+  "altName": "A# Major 6",
+  "symbol": "Bb6",
+  "altSymbol": "A#6",
   "aliases": [
    "Bb Major 6",
-   "Bb6"
+   "Bb Maior com 6",
+   "Bb6",
+   "A# Major 6",
+   "A# Maior com 6",
+   "A#6"
   ],
   "note": "A#",
+  "rootName": "Bb",
   "type": "Major 6",
   "notes": [
-   "A#",
+   "Bb",
    "D",
    "F",
    "G"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   10,
+   2,
+   5,
+   7
   ],
   "positions": [
    {
@@ -34107,6 +37158,8 @@
    {
     "label": "A-shape (fret 1)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -34138,6 +37191,8 @@
    {
     "label": "E-shape (fret 6)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -34313,11 +37368,6 @@
      }
     ],
     "baseFret": 8,
-    "barre": {
-     "fret": 8,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 4
    },
    {
@@ -34357,19 +37407,39 @@
  },
  {
   "id": "Asharp_minor6",
-  "name": "A#/Bb Minor 6",
-  "symbol": "A#m6",
+  "typeKey": "minor6",
+  "name": "Bb Minor 6",
+  "altName": "A# Minor 6",
+  "symbol": "Bbm6",
+  "altSymbol": "A#m6",
   "aliases": [
    "Bb Minor 6",
-   "Bbm6"
+   "Bb Menor com 6",
+   "Bbm6",
+   "A# Minor 6",
+   "A# Menor com 6",
+   "A#m6"
   ],
   "note": "A#",
+  "rootName": "Bb",
   "type": "Minor 6",
   "notes": [
-   "A#",
-   "C#",
+   "Bb",
+   "Db",
    "F",
    "G"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   10,
+   1,
+   5,
+   7
   ],
   "positions": [
    {
@@ -34402,6 +37472,8 @@
    {
     "label": "A-shape (fret 1)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -34433,6 +37505,8 @@
    {
     "label": "E-shape (fret 6)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -34608,11 +37682,6 @@
      }
     ],
     "baseFret": 8,
-    "barre": {
-     "fret": 8,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 4
    },
    {
@@ -34646,30 +37715,45 @@
      }
     ],
     "baseFret": 11,
-    "barre": {
-     "fret": 11,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "Asharp_dom7",
-  "name": "A#/Bb Dominant 7",
-  "symbol": "A#7",
+  "typeKey": "dom7",
+  "name": "Bb Dominant 7",
+  "altName": "A# Dominant 7",
+  "symbol": "Bb7",
+  "altSymbol": "A#7",
   "aliases": [
    "Bb Dominant 7",
-   "Bb7"
+   "Bb Dominante 7",
+   "Bb7",
+   "A# Dominant 7",
+   "A# Dominante 7",
+   "A#7"
   ],
   "note": "A#",
+  "rootName": "Bb",
   "type": "Dominant 7",
   "notes": [
-   "A#",
+   "Bb",
    "D",
    "F",
-   "G#"
+   "Ab"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   10,
+   2,
+   5,
+   8
   ],
   "positions": [
    {
@@ -34702,6 +37786,8 @@
    {
     "label": "A-shape (fret 1)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -34738,6 +37824,8 @@
    {
     "label": "E-shape (fret 6)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -34842,11 +37930,6 @@
      }
     ],
     "baseFret": 3,
-    "barre": {
-     "fret": 3,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -34957,19 +38040,39 @@
  },
  {
   "id": "Asharp_maj7",
-  "name": "A#/Bb Major 7",
-  "symbol": "A#maj7",
+  "typeKey": "maj7",
+  "name": "Bb Major 7",
+  "altName": "A# Major 7",
+  "symbol": "Bbmaj7",
+  "altSymbol": "A#maj7",
   "aliases": [
    "Bb Major 7",
-   "Bbmaj7"
+   "Bb Maior 7M",
+   "Bbmaj7",
+   "A# Major 7",
+   "A# Maior 7M",
+   "A#maj7"
   ],
   "note": "A#",
+  "rootName": "Bb",
   "type": "Major 7",
   "notes": [
-   "A#",
+   "Bb",
    "D",
    "F",
    "A"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "7"
+  ],
+  "pcs": [
+   10,
+   2,
+   5,
+   9
   ],
   "positions": [
    {
@@ -35002,6 +38105,8 @@
    {
     "label": "A-shape (fret 1)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -35038,6 +38143,8 @@
    {
     "label": "E-shape (fret 6)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -35142,11 +38249,6 @@
      }
     ],
     "baseFret": 3,
-    "barre": {
-     "fret": 3,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -35262,19 +38364,39 @@
  },
  {
   "id": "Asharp_min7",
-  "name": "A#/Bb Minor 7",
-  "symbol": "A#m7",
+  "typeKey": "min7",
+  "name": "Bb Minor 7",
+  "altName": "A# Minor 7",
+  "symbol": "Bbm7",
+  "altSymbol": "A#m7",
   "aliases": [
    "Bb Minor 7",
-   "Bbm7"
+   "Bb Menor 7",
+   "Bbm7",
+   "A# Minor 7",
+   "A# Menor 7",
+   "A#m7"
   ],
   "note": "A#",
+  "rootName": "Bb",
   "type": "Minor 7",
   "notes": [
-   "A#",
-   "C#",
+   "Bb",
+   "Db",
    "F",
-   "G#"
+   "Ab"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   10,
+   1,
+   5,
+   8
   ],
   "positions": [
    {
@@ -35307,6 +38429,8 @@
    {
     "label": "A-shape (fret 1)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -35343,6 +38467,8 @@
    {
     "label": "E-shape (fret 6)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 6,
     "positions": [
      {
       "string": 6,
@@ -35551,30 +38677,45 @@
      }
     ],
     "baseFret": 11,
-    "barre": {
-     "fret": 11,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "Asharp_dim7",
-  "name": "A#/Bb Diminished 7",
+  "typeKey": "dim7",
+  "name": "A# Diminished 7",
+  "altName": "Bb Diminished 7",
   "symbol": "A#dim7",
+  "altSymbol": "Bbdim7",
   "aliases": [
+   "A# Diminished 7",
+   "A# Diminuto 7",
+   "A#dim7",
    "Bb Diminished 7",
+   "Bb Diminuto 7",
    "Bbdim7"
   ],
   "note": "A#",
+  "rootName": "A#",
   "type": "Diminished 7",
   "notes": [
    "A#",
    "C#",
    "E",
    "G"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭♭7"
+  ],
+  "pcs": [
+   10,
+   1,
+   4,
+   7
   ],
   "positions": [
    {
@@ -35607,6 +38748,8 @@
    {
     "label": "A-shape (fret 1)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -35640,19 +38783,39 @@
  },
  {
   "id": "Asharp_halfdim",
-  "name": "A#/Bb Half-diminished (m7b5)",
+  "typeKey": "halfdim",
+  "name": "A# Half-diminished (m7b5)",
+  "altName": "Bb Half-diminished (m7b5)",
   "symbol": "A#m7b5",
+  "altSymbol": "Bbm7b5",
   "aliases": [
+   "A# Half-diminished (m7b5)",
+   "A# Meio-diminuto",
+   "A#m7b5",
    "Bb Half-diminished (m7b5)",
+   "Bb Meio-diminuto",
    "Bbm7b5"
   ],
   "note": "A#",
+  "rootName": "A#",
   "type": "Half-diminished (m7b5)",
   "notes": [
    "A#",
    "C#",
    "E",
    "G#"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭7"
+  ],
+  "pcs": [
+   10,
+   1,
+   4,
+   8
   ],
   "positions": [
    {
@@ -35685,6 +38848,8 @@
    {
     "label": "A-shape (fret 1)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -35711,31 +38876,46 @@
       "fret": null
      }
     ],
-    "baseFret": 1,
-    "barre": {
-     "fret": 1,
-     "fromString": 5,
-     "toString": 3
-    }
+    "baseFret": 1
    }
   ],
   "caged": []
  },
  {
   "id": "Asharp_add9",
-  "name": "A#/Bb Add9",
-  "symbol": "A#add9",
+  "typeKey": "add9",
+  "name": "Bb Add9",
+  "altName": "A# Add9",
+  "symbol": "Bbadd9",
+  "altSymbol": "A#add9",
   "aliases": [
    "Bb Add9",
-   "Bbadd9"
+   "Bb Add9",
+   "Bbadd9",
+   "A# Add9",
+   "A# Add9",
+   "A#add9"
   ],
   "note": "A#",
+  "rootName": "Bb",
   "type": "Add9",
   "notes": [
-   "A#",
-   "C",
+   "Bb",
    "D",
-   "F"
+   "F",
+   "C"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "9"
+  ],
+  "pcs": [
+   10,
+   2,
+   5,
+   0
   ],
   "positions": [
    {
@@ -35768,6 +38948,8 @@
    {
     "label": "A-shape (fret 1)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 1,
     "positions": [
      {
       "string": 6,
@@ -35806,15 +38988,33 @@
  },
  {
   "id": "B_major",
+  "typeKey": "major",
   "name": "B Major",
+  "altName": null,
   "symbol": "B",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "B Major",
+   "B Maior",
+   "B"
+  ],
   "note": "B",
+  "rootName": "B",
   "type": "Major",
   "notes": [
    "B",
    "D#",
    "F#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5"
+  ],
+  "pcs": [
+   11,
+   3,
+   6
   ],
   "positions": [
    {
@@ -35847,6 +39047,8 @@
    {
     "label": "A-shape (fret 2)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -35883,6 +39085,8 @@
    {
     "label": "E-shape (fret 7)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -35987,11 +39191,6 @@
      }
     ],
     "baseFret": 4,
-    "barre": {
-     "fret": 4,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -36107,15 +39306,33 @@
  },
  {
   "id": "B_minor",
+  "typeKey": "minor",
   "name": "B Minor",
+  "altName": null,
   "symbol": "Bm",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "B Minor",
+   "B Menor",
+   "Bm"
+  ],
   "note": "B",
+  "rootName": "B",
   "type": "Minor",
   "notes": [
    "B",
    "D",
    "F#"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5"
+  ],
+  "pcs": [
+   11,
+   2,
+   6
   ],
   "positions": [
    {
@@ -36148,6 +39365,8 @@
    {
     "label": "A-shape (fret 2)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -36184,6 +39403,8 @@
    {
     "label": "E-shape (fret 7)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -36288,11 +39509,6 @@
      }
     ],
     "baseFret": 4,
-    "barre": {
-     "fret": 4,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 2
    },
    {
@@ -36403,14 +39619,30 @@
  },
  {
   "id": "B_power5",
+  "typeKey": "power5",
   "name": "B Power (5)",
+  "altName": null,
   "symbol": "B5",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "B Power (5)",
+   "B Power chord",
+   "B5"
+  ],
   "note": "B",
+  "rootName": "B",
   "type": "Power (5)",
   "notes": [
    "B",
    "F#"
+  ],
+  "degrees": [
+   "1",
+   "5"
+  ],
+  "pcs": [
+   11,
+   6
   ],
   "positions": [
    {
@@ -36443,6 +39675,8 @@
    {
     "label": "A-shape (fret 2)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -36474,6 +39708,8 @@
    {
     "label": "E-shape (fret 7)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -36507,15 +39743,33 @@
  },
  {
   "id": "B_dim",
+  "typeKey": "dim",
   "name": "B Diminished",
+  "altName": null,
   "symbol": "Bdim",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "B Diminished",
+   "B Diminuto",
+   "Bdim"
+  ],
   "note": "B",
+  "rootName": "B",
   "type": "Diminished",
   "notes": [
    "B",
    "D",
    "F"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5"
+  ],
+  "pcs": [
+   11,
+   2,
+   5
   ],
   "positions": [
    {
@@ -36548,6 +39802,8 @@
    {
     "label": "A-shape (fret 2)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -36581,15 +39837,33 @@
  },
  {
   "id": "B_aug",
+  "typeKey": "aug",
   "name": "B Augmented",
+  "altName": null,
   "symbol": "Baug",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "B Augmented",
+   "B Aumentado",
+   "Baug"
+  ],
   "note": "B",
+  "rootName": "B",
   "type": "Augmented",
   "notes": [
    "B",
    "D#",
-   "G"
+   "F##"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "♯5"
+  ],
+  "pcs": [
+   11,
+   3,
+   7
   ],
   "positions": [
    {
@@ -36622,6 +39896,8 @@
    {
     "label": "A-shape (fret 2)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -36653,6 +39929,8 @@
    {
     "label": "E-shape (fret 7)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -36691,15 +39969,33 @@
  },
  {
   "id": "B_sus2",
+  "typeKey": "sus2",
   "name": "B Suspended 2",
+  "altName": null,
   "symbol": "Bsus2",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "B Suspended 2",
+   "B Suspenso 2",
+   "Bsus2"
+  ],
   "note": "B",
+  "rootName": "B",
   "type": "Suspended 2",
   "notes": [
    "B",
    "C#",
    "F#"
+  ],
+  "degrees": [
+   "1",
+   "2",
+   "5"
+  ],
+  "pcs": [
+   11,
+   1,
+   6
   ],
   "positions": [
    {
@@ -36732,6 +40028,8 @@
    {
     "label": "A-shape (fret 2)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -36768,6 +40066,8 @@
    {
     "label": "E-shape (fret 7)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -36872,11 +40172,6 @@
      }
     ],
     "baseFret": 4,
-    "barre": {
-     "fret": 4,
-     "fromString": 5,
-     "toString": 3
-    },
     "order": 2
    },
    {
@@ -36986,26 +40281,39 @@
      }
     ],
     "baseFret": 11,
-    "barre": {
-     "fret": 11,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "B_sus4",
+  "typeKey": "sus4",
   "name": "B Suspended 4",
+  "altName": null,
   "symbol": "Bsus4",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "B Suspended 4",
+   "B Suspenso 4",
+   "Bsus4"
+  ],
   "note": "B",
+  "rootName": "B",
   "type": "Suspended 4",
   "notes": [
    "B",
    "E",
    "F#"
+  ],
+  "degrees": [
+   "1",
+   "4",
+   "5"
+  ],
+  "pcs": [
+   11,
+   4,
+   6
   ],
   "positions": [
    {
@@ -37038,6 +40346,8 @@
    {
     "label": "A-shape (fret 2)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -37074,6 +40384,8 @@
    {
     "label": "E-shape (fret 7)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -37178,11 +40490,6 @@
      }
     ],
     "baseFret": 4,
-    "barre": {
-     "fret": 4,
-     "fromString": 4,
-     "toString": 3
-    },
     "order": 2
    },
    {
@@ -37293,16 +40600,36 @@
  },
  {
   "id": "B_six",
+  "typeKey": "six",
   "name": "B Major 6",
+  "altName": null,
   "symbol": "B6",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "B Major 6",
+   "B Maior com 6",
+   "B6"
+  ],
   "note": "B",
+  "rootName": "B",
   "type": "Major 6",
   "notes": [
    "B",
    "D#",
    "F#",
    "G#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   11,
+   3,
+   6,
+   8
   ],
   "positions": [
    {
@@ -37335,6 +40662,8 @@
    {
     "label": "A-shape (fret 2)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -37366,6 +40695,8 @@
    {
     "label": "E-shape (fret 7)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -37541,11 +40872,6 @@
      }
     ],
     "baseFret": 9,
-    "barre": {
-     "fret": 9,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 4
    },
    {
@@ -37585,16 +40911,36 @@
  },
  {
   "id": "B_minor6",
+  "typeKey": "minor6",
   "name": "B Minor 6",
+  "altName": null,
   "symbol": "Bm6",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "B Minor 6",
+   "B Menor com 6",
+   "Bm6"
+  ],
   "note": "B",
+  "rootName": "B",
   "type": "Minor 6",
   "notes": [
    "B",
    "D",
    "F#",
    "G#"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "6"
+  ],
+  "pcs": [
+   11,
+   2,
+   6,
+   8
   ],
   "positions": [
    {
@@ -37627,6 +40973,8 @@
    {
     "label": "A-shape (fret 2)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -37658,6 +41006,8 @@
    {
     "label": "E-shape (fret 7)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -37833,11 +41183,6 @@
      }
     ],
     "baseFret": 9,
-    "barre": {
-     "fret": 9,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 4
    },
    {
@@ -37871,27 +41216,42 @@
      }
     ],
     "baseFret": 12,
-    "barre": {
-     "fret": 12,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "B_dom7",
+  "typeKey": "dom7",
   "name": "B Dominant 7",
+  "altName": null,
   "symbol": "B7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "B Dominant 7",
+   "B Dominante 7",
+   "B7"
+  ],
   "note": "B",
+  "rootName": "B",
   "type": "Dominant 7",
   "notes": [
    "B",
    "D#",
    "F#",
    "A"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   11,
+   3,
+   6,
+   9
   ],
   "positions": [
    {
@@ -37924,6 +41284,8 @@
    {
     "label": "Open position",
     "kind": "open",
+    "shape": null,
+    "fret": 0,
     "positions": [
      {
       "string": 6,
@@ -37955,6 +41317,8 @@
    {
     "label": "A-shape (fret 2)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -37991,6 +41355,8 @@
    {
     "label": "E-shape (fret 7)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -38095,11 +41461,6 @@
      }
     ],
     "baseFret": 4,
-    "barre": {
-     "fret": 4,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -38210,16 +41571,36 @@
  },
  {
   "id": "B_maj7",
+  "typeKey": "maj7",
   "name": "B Major 7",
+  "altName": null,
   "symbol": "Bmaj7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "B Major 7",
+   "B Maior 7M",
+   "Bmaj7"
+  ],
   "note": "B",
+  "rootName": "B",
   "type": "Major 7",
   "notes": [
    "B",
    "D#",
    "F#",
    "A#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "7"
+  ],
+  "pcs": [
+   11,
+   3,
+   6,
+   10
   ],
   "positions": [
    {
@@ -38252,6 +41633,8 @@
    {
     "label": "A-shape (fret 2)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -38288,6 +41671,8 @@
    {
     "label": "E-shape (fret 7)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -38392,11 +41777,6 @@
      }
     ],
     "baseFret": 4,
-    "barre": {
-     "fret": 4,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 2
    },
    {
@@ -38512,16 +41892,36 @@
  },
  {
   "id": "B_min7",
+  "typeKey": "min7",
   "name": "B Minor 7",
+  "altName": null,
   "symbol": "Bm7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "B Minor 7",
+   "B Menor 7",
+   "Bm7"
+  ],
   "note": "B",
+  "rootName": "B",
   "type": "Minor 7",
   "notes": [
    "B",
    "D",
    "F#",
    "A"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "5",
+   "♭7"
+  ],
+  "pcs": [
+   11,
+   2,
+   6,
+   9
   ],
   "positions": [
    {
@@ -38554,6 +41954,8 @@
    {
     "label": "A-shape (fret 2)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -38590,6 +41992,8 @@
    {
     "label": "E-shape (fret 7)",
     "kind": "barre",
+    "shape": "E",
+    "fret": 7,
     "positions": [
      {
       "string": 6,
@@ -38798,27 +42202,42 @@
      }
     ],
     "baseFret": 12,
-    "barre": {
-     "fret": 12,
-     "fromString": 4,
-     "toString": 2
-    },
     "order": 5
    }
   ]
  },
  {
   "id": "B_dim7",
+  "typeKey": "dim7",
   "name": "B Diminished 7",
+  "altName": null,
   "symbol": "Bdim7",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "B Diminished 7",
+   "B Diminuto 7",
+   "Bdim7"
+  ],
   "note": "B",
+  "rootName": "B",
   "type": "Diminished 7",
   "notes": [
    "B",
    "D",
    "F",
-   "G#"
+   "Ab"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭♭7"
+  ],
+  "pcs": [
+   11,
+   2,
+   5,
+   8
   ],
   "positions": [
    {
@@ -38851,6 +42270,8 @@
    {
     "label": "A-shape (fret 2)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -38884,16 +42305,36 @@
  },
  {
   "id": "B_halfdim",
+  "typeKey": "halfdim",
   "name": "B Half-diminished (m7b5)",
+  "altName": null,
   "symbol": "Bm7b5",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "B Half-diminished (m7b5)",
+   "B Meio-diminuto",
+   "Bm7b5"
+  ],
   "note": "B",
+  "rootName": "B",
   "type": "Half-diminished (m7b5)",
   "notes": [
    "B",
    "D",
    "F",
    "A"
+  ],
+  "degrees": [
+   "1",
+   "♭3",
+   "♭5",
+   "♭7"
+  ],
+  "pcs": [
+   11,
+   2,
+   5,
+   9
   ],
   "positions": [
    {
@@ -38926,6 +42367,8 @@
    {
     "label": "A-shape (fret 2)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 2,
     "positions": [
      {
       "string": 6,
@@ -38952,28 +42395,43 @@
       "fret": null
      }
     ],
-    "baseFret": 1,
-    "barre": {
-     "fret": 2,
-     "fromString": 5,
-     "toString": 3
-    }
+    "baseFret": 1
    }
   ],
   "caged": []
  },
  {
   "id": "B_add9",
+  "typeKey": "add9",
   "name": "B Add9",
+  "altName": null,
   "symbol": "Badd9",
-  "aliases": [],
+  "altSymbol": null,
+  "aliases": [
+   "B Add9",
+   "B Add9",
+   "Badd9"
+  ],
   "note": "B",
+  "rootName": "B",
   "type": "Add9",
   "notes": [
    "B",
-   "C#",
    "D#",
-   "F#"
+   "F#",
+   "C#"
+  ],
+  "degrees": [
+   "1",
+   "3",
+   "5",
+   "9"
+  ],
+  "pcs": [
+   11,
+   3,
+   6,
+   1
   ],
   "positions": [
    {
@@ -39006,6 +42464,8 @@
    {
     "label": "A-shape (fret 2)",
     "kind": "barre",
+    "shape": "A",
+    "fret": 2,
     "positions": [
      {
       "string": 6,

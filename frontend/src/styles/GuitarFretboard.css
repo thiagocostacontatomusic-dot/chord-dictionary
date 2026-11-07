@@ -1,62 +1,22 @@
-.guitar-fretboard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
+.neck { margin: 0; }
+.neck svg { display: block; width: 100%; height: auto; }
+.inlay { fill: var(--pearl); opacity: 0.22; }
+.fret-wire { stroke: #c9ccd6; stroke-width: 2.2; }
+.fret-shadow { stroke: rgba(0, 0, 0, 0.45); stroke-width: 2; }
+.string-wound { stroke: #d2a86a; }
+.string-plain { stroke: #e6e8ef; }
+.base-label { font: 700 14px var(--font-display); fill: var(--ink); }
+.mark-open { fill: none; stroke: var(--ink); stroke-width: 2.2; }
+.mark-muted line { stroke: var(--ink-soft); stroke-width: 2.4; stroke-linecap: round; }
+.barre-shadow { fill: rgba(0, 0, 0, 0.35); }
+.barre-bar { stroke: #fff; stroke-width: 1.5; }
+.finger-shadow { fill: rgba(0, 0, 0, 0.35); }
+.finger { stroke: #fff; stroke-width: 1.5; }
 
-.chord-diagram {
-  width: 100%;
-  max-width: 280px;
-  height: auto;
-}
-
-.nut { fill: #222; }
-.fret-line { stroke: #888; stroke-width: 1.5; }
-.string-line { stroke: #555; stroke-width: 1.4; }
-.dot { fill: #667eea; }
-.barre { fill: #667eea; opacity: 0.9; }
-.open-mark { fill: none; stroke: #2e9e4f; stroke-width: 2; }
-.muted-mark { fill: #999; font-size: 20px; font-weight: 700; }
-.base-fret-label { fill: #555; font-size: 14px; font-weight: 700; }
-
-.fretboard-legend {
-  display: flex;
-  gap: 1.25rem;
-  font-size: 0.85rem;
-  color: #666;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.fretboard-legend span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.legend-dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #667eea;
-  display: inline-block;
-}
-
-.legend-open {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid #2e9e4f;
-  display: inline-block;
-}
-
-.legend-x {
-  color: #999;
-  font-size: 1.1rem;
-  line-height: 1;
-}
-
-.guitar-fretboard.compact .chord-diagram {
-  max-width: 150px;
-}
+.neck-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 10px; font-size: 0.8rem; color: var(--ink-soft); }
+.neck-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.lg { display: inline-block; }
+.lg-finger { width: 12px; height: 12px; border-radius: 50%; background: var(--violet); }
+.lg-barre { width: 24px; height: 10px; border-radius: 5px; background: var(--violet); }
+.lg-open { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--ink); }
+.lg-muted { font-style: normal; font-weight: 700; width: 12px; text-align: center; }

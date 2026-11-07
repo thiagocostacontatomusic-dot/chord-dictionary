@@ -1,29 +1,41 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useI18n, pretty } from '../i18n';
 import '../styles/ChordList.css';
 
 function ChordList({ chords, selectedChord, onSelectChord }) {
+  const { t, typeLabel } = useI18n();
+  const activeRef = useRef(null);
+
+  useEffect(() => {
+    if (activeRef.current && activeRef.current.scrollIntoView) {
+      activeRef.current.scrollIntoView({ block: 'nearest' });
+    }
+  }, [selectedChord]);
+
   if (chords.length === 0) {
-    return <div className="no-results">No chords found</div>;
+    return <p className="list-empty">{t('noResults')}</p>;
   }
 
   return (
-    <div className="chord-list">
-      <div className="chord-count">
-        {chords.length} chord{chords.length !== 1 ? 's' : ''} found
-      </div>
-      <ul>
-        {chords.map((chord) => (
-          <li
-            key={chord.id}
-            className={`chord-item ${selectedChord?.id === chord.id ? 'active' : ''}`}
-            onClick={() => onSelectChord(chord)}
-          >
-            <div className="chord-item-name">{chord.name}</div>
-            <div className="chord-item-type">{chord.type}</div>
+    <ul className="list" aria-label={t('skip')}>
+      {chords.map((chord) => {
+        const active = selectedChord && selectedChord.id === chord.id;
+        return (
+          <li key={chord.id}>
+            <button
+              type="button"
+              ref={active ? activeRef : null}
+              className={`row ${active ? 'is-active' : ''}`}
+              aria-current={active ? 'true' : undefined}
+              onClick={() => onSelectChord(chord)}
+            >
+              <span className="row-symbol">{pretty(chord.symbol)}</span>
+              <span className="row-type">{typeLabel(chord.typeKey, chord.type)}</span>
+            </button>
           </li>
-        ))}
-      </ul>
-    </div>
+        );
+      })}
+    </ul>
   );
 }
 

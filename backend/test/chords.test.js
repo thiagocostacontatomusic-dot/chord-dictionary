@@ -3,7 +3,7 @@
 const test = require('node:test');
 const assert = require('node:assert');
 const chords = require('../chords-db');
-const { TYPES, SHARP, validateVoicing } = require('../scripts/chord-theory');
+const { TYPES, SHARP, TONES, validateVoicing, mod12 } = require('../scripts/chord-theory');
 
 test('database covers 12 roots x every chord type', () => {
   assert.strictEqual(chords.length, 12 * TYPES.length);
@@ -78,4 +78,43 @@ test('CAGED forms match the textbook fret numbers', () => {
   assert.deepStrictEqual(cagedFrets('C_minor'), {
     C: [N, 3, 1, 0, 1, N], A: [N, 3, 5, 5, 4, 3], G: [8, 6, 5, 5, 8, 8], E: [8, 10, 10, 8, 8, 8], D: [N, N, 10, 12, 13, 11],
   });
+});
+
+// ---------------------------------------------------------------------------
+// Note spelling and barres
+// ---------------------------------------------------------------------------
+test('notes are spelled with the right letters (Db major is Db F Ab, not Db E# Ab)', () => {
+  const notes = (id) => chords.find((c) => c.id === id).notes;
+  assert.deepStrictEqual(notes('Csharp_major'), ['Db', 'F', 'Ab']);
+  assert.deepStrictEqual(notes('Csharp_minor'), ['C#', 'E', 'G#']);
+  assert.deepStrictEqual(notes('Dsharp_major'), ['Eb', 'G', 'Bb']);
+  assert.deepStrictEqual(notes('Fsharp_major'), ['F#', 'A#', 'C#']);
+  assert.deepStrictEqual(notes('Asharp_min7'), ['Bb', 'Db', 'F', 'Ab']);
+  assert.deepStrictEqual(notes('Asharp_dom7'), ['Bb', 'D', 'F', 'Ab']);
+  assert.deepStrictEqual(notes('C_dim7'), ['C', 'Eb', 'Gb', 'Bbb']);
+  assert.deepStrictEqual(notes('G_add9'), ['G', 'B', 'D', 'A']);
+});
+
+test('every chord uses each letter once and its pitch classes match the formula', () => {
+  for (const c of chords) {
+    const tones = TONES[c.typeKey];
+    const rootPc = SHARP.indexOf(c.note);
+    assert.deepStrictEqual(c.pcs, tones.map((t) => mod12(rootPc + t[0])), c.id);
+    assert.strictEqual(new Set(c.notes.map((n) => n[0])).size, c.notes.length, `${c.id} repeats a letter`);
+  }
+});
+
+test('barres are marked where one finger covers several strings', () => {
+  const v = (id, i = 0) => chords.find((c) => c.id === id).voicings[i];
+  assert.deepStrictEqual(v('F_major', 1).barre, { fret: 1, fromString: 6, toString: 1 }, 'E-shape F');
+  assert.deepStrictEqual(v('D_min7').barre, { fret: 1, fromString: 2, toString: 1 }, 'open Dm7');
+  assert.strictEqual(v('A_major').barre, undefined, 'open A has no barre');
+  assert.strictEqual(v('C_major').barre, undefined, 'open C has no barre');
+  for (const c of chords) {
+    for (const x of [...c.voicings, ...c.caged]) {
+      if (!x.barre) continue;
+      const at = x.positions.filter((p) => p.fret === x.barre.fret).map((p) => p.string);
+      assert.ok(at.length >= 2, `${c.id} barre needs 2+ strings`);
+    }
+  }
 });
