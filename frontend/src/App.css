@@ -40,18 +40,18 @@
   .zone-list .list { max-height: 46vh; }
 }
 
-.install { border: 0; border-radius: 999px; padding: 7px 16px; background: var(--violet); color: var(--on-violet); font-weight: 600; font-size: 0.85rem; }
-.install:hover { background: var(--violet-dark); }
+.install { border: 0; border-radius: 999px; padding: 7px 16px; background: var(--accent); color: var(--on-accent); font-weight: 600; font-size: 0.85rem; }
+.install:hover { background: var(--accent-dark); }
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .top-side { flex-wrap: wrap; }
 
 .foot { margin: 40px 0 24px; padding-top: 20px; border-top: 1px solid var(--line, rgba(127,127,127,.25)); text-align: center; color: var(--ink-soft); font-size: 0.85rem; }
 .foot p { margin: 4px 0; }
-.foot a { color: var(--violet-dark); text-underline-offset: 3px; }
+.foot a { color: var(--accent-dark); text-underline-offset: 3px; }
 
-.lefty.is-on { background: var(--violet-dark); color: var(--on-ink); }
+.lefty.is-on { background: var(--accent-dark); color: var(--on-ink); }
 
-.lefty { background: transparent; color: var(--violet-dark); border: 1px solid var(--violet-dark); }
-.lefty:hover { background: var(--violet-tint); }
-.lefty.is-on, .lefty.is-on:hover { background: var(--violet-dark); color: var(--on-ink); }
+.lefty { background: transparent; color: var(--accent-dark); border: 1px solid var(--accent-dark); }
+.lefty:hover { background: var(--accent-tint); }
+.lefty.is-on, .lefty.is-on:hover { background: var(--accent-dark); color: var(--on-ink); }

@@ -6,11 +6,11 @@
 .pt-help { margin: 0 0 12px; color: var(--ink-soft); font-size: 0.9rem; max-width: 70ch; line-height: 1.5; }
 .pt-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 10px; }
 .pt-btn { padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font: inherit; font-size: 0.88rem; font-weight: 600; cursor: pointer; color: var(--ink); }
-.pt-btn:hover { border-color: var(--violet); }
+.pt-btn:hover { border-color: var(--accent); }
 .pt-btn.is-active { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
-.pt-primary { background: var(--violet-dark); border-color: var(--violet-dark); color: var(--on-ink); }
+.pt-primary { background: var(--accent-dark); border-color: var(--accent-dark); color: var(--on-ink); }
 .pt-field { display: flex; flex-direction: column; gap: 2px; font-size: 0.88rem; min-width: 200px; }
-.pt-field input { accent-color: var(--violet-dark); }
+.pt-field input { accent-color: var(--accent-dark); }
 .pt-check { display: flex; align-items: center; gap: 6px; font-size: 0.88rem; }
 .pt-score { margin-left: auto; font-weight: 600; font-size: 0.9rem; }
 .pt-quiz { display: grid; grid-template-columns: minmax(180px, 220px) 1fr; gap: 18px; align-items: start; }
@@ -18,12 +18,12 @@
 .pt-hear { margin: 40px 0; color: var(--ink-soft); text-align: center; }
 .pt-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; align-content: start; }
 .pt-opt { padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; cursor: pointer; color: var(--ink); }
-.pt-opt:hover { border-color: var(--violet); }
+.pt-opt:hover { border-color: var(--accent); }
 .pt-opt.is-right { background: #1f7a4a; border-color: #1f7a4a; color: #fff; }
 .pt-opt.is-wrong { background: #a1323f; border-color: #a1323f; color: #fff; }
 .pt-result { grid-column: 1 / -1; margin: 4px 0 0; font-weight: 600; }
-.pt button:focus-visible, .pt input:focus-visible { outline: 3px solid var(--violet-dark); outline-offset: 2px; }
+.pt button:focus-visible, .pt input:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 2px; }
 @media (max-width: 600px) { .pt { padding: 16px; } .pt-quiz { grid-template-columns: 1fr; } }
 
 .pt.pt-inline { margin-top: 14px; padding: 0; border: 0; background: transparent; }
-.pt-inline .pt-card { background: var(--violet-tint); }
+.pt-inline .pt-card { background: var(--accent-tint); }

@@ -1,4 +1,4 @@
 .family { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
 .chip { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; }
-.chip:hover { border-color: var(--violet); }
-.chip.is-active { background: var(--violet); border-color: var(--violet); color: var(--on-violet); }
+.chip:hover { border-color: var(--accent); }
+.chip.is-active { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }

@@ -9,14 +9,14 @@
 .mark-open { fill: none; stroke: var(--ink); stroke-width: 2.2; }
 .mark-muted line { stroke: var(--ink-soft); stroke-width: 2.4; stroke-linecap: round; }
 .barre-shadow { fill: rgba(0, 0, 0, 0.35); }
-.barre-bar { stroke: #fff; stroke-width: 1.5; }
+.barre-bar { stroke: var(--finger-line); stroke-width: 1.5; }
 .finger-shadow { fill: rgba(0, 0, 0, 0.35); }
-.finger { stroke: #fff; stroke-width: 1.5; }
+.finger { stroke: var(--finger-line); stroke-width: 1.5; }
 
 .neck-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 10px; font-size: 0.8rem; color: var(--ink-soft); }
 .neck-legend span { display: inline-flex; align-items: center; gap: 6px; }
 .lg { display: inline-block; }
-.lg-finger { width: 12px; height: 12px; border-radius: 50%; background: var(--violet); }
-.lg-barre { width: 24px; height: 10px; border-radius: 5px; background: var(--violet); }
+.lg-finger { width: 12px; height: 12px; border-radius: 50%; background: var(--finger-b); border: 1.5px solid var(--ink); }
+.lg-barre { width: 24px; height: 10px; border-radius: 5px; background: var(--finger-b); border: 1.5px solid var(--ink); }
 .lg-open { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--ink); }
 .lg-muted { font-style: normal; font-weight: 700; width: 12px; text-align: center; }

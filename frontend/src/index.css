@@ -1,51 +1,60 @@
 :root {
   color-scheme: light;
-  --paper: #f3f1fa;
+  --paper: #ecebe8;
   --surface: #ffffff;
-  --ink: #1b1633;
+  --ink: #101010;
   --on-ink: #ffffff;
-  --ink-soft: #5d587a;
-  --ink-2: #3a3560;
-  --ink-3: #6a6590;
-  --line: #d9d4ec;
-  --violet: #4a2fbd;
-  --violet-dark: #34208f;
-  --violet-tint: #e6e0f7;
-  --on-violet: #ffffff;
+  --ink-soft: #55534f;
+  --ink-2: #2b2a28;
+  --ink-3: #5c5a56;
+  --line: #d3d1cc;
+  --accent: #111111;
+  --accent-dark: #000000;
+  --accent-tint: #e4e2dd;
+  --on-accent: #ffffff;
   --error-bg: #fff0f0;
   --error-line: #f1b8b8;
   --error-ink: #8a1f1f;
-  --wheel-s2: 70%; --wheel-l2: 90%;
-  --wheel-s1: 55%; --wheel-l1: 94%;
-  --wheel-s0: 35%; --wheel-l0: 96%;
+  --wheel-s2: 4%; --wheel-l2: 84%;
+  --wheel-s1: 3%; --wheel-l1: 90%;
+  --wheel-s0: 2%; --wheel-l0: 95%;
   --wheel-stroke: #ffffff;
-  --wheel-dot: #b9b4d6;
+  --wheel-dot: #b4b2ad;
+  --board: #151517;
+  --finger-a: #fbf8ef;
+  --finger-b: #cfc9b8;
+  --finger-line: #0c0c0c;
+  --dot: #cfcdc6;
+  --dot-root: #e3a93a;
+  --dot-ring: #ffffff;
   --font-display: 'Bricolage Grotesque', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
   --font-body: 'Instrument Sans', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
 }
 
+/* Dark: matte black faceplate, warm white type, amber for the one thing that is active. */
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --paper: #131020;
-  --surface: #1d1930;
-  --ink: #f1edff;
-  --on-ink: #131020;
-  --ink-soft: #aaa4c9;
-  --ink-2: #d6d0f2;
-  --ink-3: #aaa4c9;
-  --line: #322d4e;
-  --violet: #6a4de0;
-  --violet-dark: #b3a2ff;
-  --violet-tint: #2b2554;
-  --on-violet: #ffffff;
-  --error-bg: #3a1620;
-  --error-line: #7a2b3b;
+  --paper: #09090a;
+  --surface: #141415;
+  --ink: #ecebe7;
+  --on-ink: #09090a;
+  --ink-soft: #a09e98;
+  --ink-2: #d4d2cc;
+  --ink-3: #a09e98;
+  --line: #2a2a2c;
+  --accent: #d9a23c;
+  --accent-dark: #ecbb5a;
+  --accent-tint: #232322;
+  --on-accent: #0b0b0c;
+  --error-bg: #2b1518;
+  --error-line: #6b2b33;
   --error-ink: #ffc2cc;
-  --wheel-s2: 38%; --wheel-l2: 25%;
-  --wheel-s1: 30%; --wheel-l1: 20%;
-  --wheel-s0: 22%; --wheel-l0: 16%;
-  --wheel-stroke: #131020;
-  --wheel-dot: #5b5580;
+  --wheel-s2: 3%; --wheel-l2: 22%;
+  --wheel-s1: 3%; --wheel-l1: 17%;
+  --wheel-s0: 2%; --wheel-l0: 13%;
+  --wheel-stroke: #09090a;
+  --wheel-dot: #4a4946;
+  --board: #0d0d0e;
 }
 
 * { box-sizing: border-box; }
@@ -66,7 +75,7 @@ button, input, select { font: inherit; color: inherit; }
 button { cursor: pointer; }
 
 :focus-visible {
-  outline: 3px solid var(--violet);
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
 }
 

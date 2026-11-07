@@ -65,7 +65,7 @@ function App() {
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', theme === 'dark' ? '#131020' : '#1b1633');
+    if (meta) meta.setAttribute('content', theme === 'dark' ? '#09090a' : '#101010');
     saveTheme(theme);
   }, [theme]);
 

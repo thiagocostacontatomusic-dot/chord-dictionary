@@ -1,5 +1,5 @@
 // Offline support: the app shell and the chord data are cached the first time the site loads.
-const CACHE = 'chord-dictionary-v2';
+const CACHE = 'chord-dictionary-v3';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((c) => c.addAll(['./', 'index.html', 'manifest.json', 'icon-192.png'])));

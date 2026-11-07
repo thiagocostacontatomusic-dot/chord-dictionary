@@ -3,7 +3,7 @@
 .study-help { margin: 4px 0 14px; color: var(--ink-soft); font-size: 0.92rem; }
 .study-tabs { display: flex; flex-wrap: wrap; gap: 6px; }
 .study-tabs button { padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-size: 0.85rem; font-weight: 500; cursor: pointer; }
-.study-tabs button:hover { border-color: var(--violet); }
+.study-tabs button:hover { border-color: var(--accent); }
 .study-tabs button.is-active { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
 .study-body { margin-top: 18px; max-width: 72ch; }
 .study-body h4 { margin: 0 0 8px; font-family: var(--font-display); font-size: 1.1rem; }
@@ -12,13 +12,13 @@
 .study-examples > li { padding: 12px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); }
 .ex-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 8px; }
 .ex-name { font-weight: 600; font-size: 0.92rem; }
-.ex-std { display: inline-block; margin-right: 8px; padding: 1px 10px; border-radius: 999px; background: var(--violet-tint); color: var(--violet-dark); font-weight: 700; font-size: 0.82rem; }
+.ex-std { display: inline-block; margin-right: 8px; padding: 1px 10px; border-radius: 999px; background: var(--accent-tint); color: var(--accent-dark); font-weight: 700; font-size: 0.82rem; }
 .ex-key { margin-left: auto; color: var(--ink-soft); font-size: 0.85rem; }
-.ex-play { padding: 4px 12px; border: 1px solid var(--violet-dark); border-radius: 999px; background: transparent; color: var(--violet-dark); font: inherit; font-weight: 600; font-size: 0.82rem; cursor: pointer; }
-.ex-play:hover { background: var(--violet-tint); }
+.ex-play { padding: 4px 12px; border: 1px solid var(--accent-dark); border-radius: 999px; background: transparent; color: var(--accent-dark); font: inherit; font-weight: 600; font-size: 0.82rem; cursor: pointer; }
+.ex-play:hover { background: var(--accent-tint); }
 .ex-chords { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
 .ex-chords button { padding: 6px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); font-family: var(--font-display); font-weight: 700; font-size: 1rem; cursor: pointer; }
-.ex-chords button:hover { border-color: var(--violet); }
-.ex-chords button.is-selected { background: var(--violet); border-color: var(--violet); color: var(--on-violet); }
-.study button:focus-visible { outline: 3px solid var(--violet-dark); outline-offset: 2px; }
+.ex-chords button:hover { border-color: var(--accent); }
+.ex-chords button.is-selected { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.study button:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 2px; }
 @media (max-width: 600px) { .study { padding: 16px; } .ex-key { margin-left: 0; } }

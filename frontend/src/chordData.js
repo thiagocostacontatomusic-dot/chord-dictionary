@@ -16,7 +16,7 @@ export const notes = SHARP.filter((n) => chords.some((c) => c.note === n)).map((
 
 export const stats = {
   totalChords: chords.length,
-  totalVoicings: chords.reduce((n, c) => n + c.voicings.length + (c.inversions ? c.inversions.length : 0), 0),
+  totalVoicings: chords.reduce((n, c) => n + c.voicings.length + (c.inversionCount || 0), 0),
 };
 
 export function searchChords({ search = '', note = '', type = '' }) {

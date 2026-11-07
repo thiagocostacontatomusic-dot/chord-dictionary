@@ -131,7 +131,7 @@ function Quiz() {
   );
 }
 
-// Practice helpers: a metronome with the subdivisions used in the Toolbox sheets, and a chord quiz.
+// Practice helpers: a metronome with subdivisions, and a chord quiz.
 function PracticeTools() {
   const { t } = useI18n();
   return (

@@ -1,10 +1,10 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import GuitarFretboard from './GuitarFretboard';
 import CagedSection from './CagedSection';
 import { useI18n, pretty } from '../i18n';
 import { strum, audioSupported } from '../audio';
 import { chordFor } from '../chordData';
-import { GROUPS, parseInversions } from '../inversions';
+import { GROUPS, parseInversions, loadInversions, loadedInversions } from '../inversions';
 import '../styles/ChordDetail.css';
 
 const TUNING = { 6: 4, 5: 9, 4: 2, 3: 7, 2: 11, 1: 4 };
@@ -14,19 +14,39 @@ function ChordDetail({ chord, onSelect }) {
   const [index, setIndex] = useState(0);
   const [group, setGroup] = useState('shapes');
 
-  // Inversions and compact voicings, grouped by kind and filtered by the note in the bass.
-  const inversions = useMemo(() => parseInversions(chord), [chord]);
+  // Inversions and compact voicings, grouped by kind and filtered by bass note and strings.
+  // They live in their own file, downloaded the first time the view is opened.
+  const [invRaw, setInvRaw] = useState(loadedInversions);
+  const [invState, setInvState] = useState('idle');
+  useEffect(() => {
+    if (group !== 'inversions' || invRaw) return undefined;
+    let alive = true;
+    setInvState('loading');
+    loadInversions()
+      .then((all) => { if (alive) { setInvRaw(all); setInvState('ready'); } })
+      .catch(() => { if (alive) setInvState('error'); });
+    return () => { alive = false; };
+  }, [group, invRaw]);
+  const inversions = useMemo(() => parseInversions(invRaw ? invRaw[chord.id] : []), [invRaw, chord.id]);
   const groups = GROUPS.filter((g) => inversions.some((v) => v.group === g));
   const defaultGroup = groups.includes('drop2') ? 'drop2' : groups[0];
-  const [cat, setCat] = useState(defaultGroup);
+  const [catPick, setCat] = useState(null);
+  const cat = catPick && groups.includes(catPick) ? catPick : defaultGroup;
   const [bass, setBass] = useState('all');
+  const [strSet, setStrSet] = useState('all');
+  const inCat = useMemo(() => inversions.filter((v) => v.group === cat), [inversions, cat]);
   const shown = useMemo(
-    () => (group === 'inversions' ? inversions.filter((v) => v.group === cat && (bass === 'all' || v.bassIndex === bass)).sort((a, b) => a.lowest - b.lowest || b.strings[0] - a.strings[0] || a.bassIndex - b.bassIndex) : []),
-    [group, inversions, cat, bass]
+    () => (group === 'inversions'
+      ? inCat
+        .filter((v) => (bass === 'all' || v.bassIndex === bass) && (strSet === 'all' || v.set === strSet))
+        .sort((a, b) => a.lowest - b.lowest || b.strings[0] - a.strings[0] || a.bassIndex - b.bassIndex)
+      : []),
+    [group, inCat, bass, strSet]
   );
-  const bassOptions = useMemo(
-    () => [...new Set(inversions.filter((v) => v.group === cat).map((v) => v.bassIndex))].sort((a, b) => a - b),
-    [inversions, cat]
+  const bassOptions = useMemo(() => [...new Set(inCat.map((v) => v.bassIndex))].sort((a, b) => a - b), [inCat]);
+  const setOptions = useMemo(
+    () => [...new Set(inCat.filter((v) => bass === 'all' || v.bassIndex === bass).map((v) => v.set))].sort((a, b) => b.localeCompare(a)),
+    [inCat, bass]
   );
   const list = group === 'inversions' && shown.length ? shown : chord.voicings;
   const voicing = list[index] || list[0];
@@ -37,10 +57,12 @@ function ChordDetail({ chord, onSelect }) {
   const pickCat = (g) => {
     setCat(g);
     setBass('all');
+    setStrSet('all');
     setIndex(0);
   };
   const pickBass = (b) => {
     setBass(b);
+    setStrSet('all');
     setIndex(0);
   };
 
@@ -120,17 +142,19 @@ function ChordDetail({ chord, onSelect }) {
         ))}
       </ul>
 
-      {inversions.length > 0 && (
+      {chord.inversionCount > 0 && (
         <div className="seg group-switch" role="group" aria-label={t('voicings')}>
           <button type="button" className={group === 'shapes' ? 'is-active' : ''} aria-pressed={group === 'shapes'} onClick={() => switchGroup('shapes')}>
             {t('groupShapes')}
           </button>
           <button type="button" className={group === 'inversions' ? 'is-active' : ''} aria-pressed={group === 'inversions'} onClick={() => switchGroup('inversions')}>
-            {t('groupInversions', inversions.length)}
+            {t('groupInversions', chord.inversionCount)}
           </button>
         </div>
       )}
 
+      {group === 'inversions' && invState === 'loading' && !invRaw && <p className="inv-note" role="status">{t('invLoading')}</p>}
+      {group === 'inversions' && invState === 'error' && <p className="inv-note" role="alert">{t('invError')}</p>}
       {group === 'inversions' && groups.length > 0 && (
         <div className="inv-panel">
           <div className="seg" role="group" aria-label={t('invKind')}>
@@ -151,6 +175,15 @@ function ChordDetail({ chord, onSelect }) {
               </button>
             ))}
           </div>
+          <label className="inv-set">
+            <span>{t('invStrings')}</span>
+            <select value={strSet} onChange={(e) => { setStrSet(e.target.value); setIndex(0); }}>
+              <option value="all">{t('invAll')}</option>
+              {setOptions.map((o) => (
+                <option key={o} value={o}>{o.split('-').join(' · ')}</option>
+              ))}
+            </select>
+          </label>
           {voicing.cat && (
             <p className="inv-note inv-now">
               {voicing.bassIndex === 0
@@ -162,7 +195,16 @@ function ChordDetail({ chord, onSelect }) {
         </div>
       )}
 
-      {list.length > 1 && (
+      {group === 'inversions' && shown.length > 0 && (
+        <div className="stepper">
+          <button type="button" className="step" aria-label={t('invPrev')} disabled={index === 0} onClick={() => setIndex(Math.max(0, index - 1))}>‹</button>
+          <span className="step-count" aria-live="polite">{t('invCount', Math.min(index, shown.length - 1) + 1, shown.length)} · {voicingLabel(voicing)}</span>
+          <button type="button" className="step" aria-label={t('invNext')} disabled={index >= shown.length - 1} onClick={() => setIndex(Math.min(shown.length - 1, index + 1))}>›</button>
+        </div>
+      )}
+      {group === 'inversions' && invRaw && shown.length === 0 && <p className="inv-note">{t('invNone')}</p>}
+
+      {list.length > 1 && !(group === 'inversions' && shown.length) && (
         <div className="tabs" role="tablist" aria-label={t('voicings')}>
           {list.map((v, i) => (
             <button

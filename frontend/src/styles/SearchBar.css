@@ -3,9 +3,9 @@
   width: 100%; padding: 12px 40px 12px 42px; border: 1px solid var(--line);
   border-radius: 12px; background: var(--surface); font-size: 1rem;
 }
-.search input:focus { border-color: var(--violet); }
+.search input:focus { border-color: var(--accent); }
 .search-icon { position: absolute; left: 14px; top: 50%; width: 18px; height: 18px; transform: translateY(-50%); color: var(--ink-soft); }
 .search-clear {
   position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
-  width: 28px; height: 28px; border: 0; border-radius: 50%; background: var(--violet-tint); font-size: 1.1rem; line-height: 1;
+  width: 28px; height: 28px; border: 0; border-radius: 50%; background: var(--accent-tint); font-size: 1.1rem; line-height: 1;
 }

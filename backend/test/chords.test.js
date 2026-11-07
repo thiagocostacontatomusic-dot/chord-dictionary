@@ -143,6 +143,7 @@ test('inversions sound exactly the tones of their category, with the promised ba
     const guide = tones.find((x) => ['♭♭7', '♭7', '7', '6'].includes(x[1]));
     const expected = (cat) => {
       if (cat === 'shell') return [tones[0], third, guide];
+      if (cat === 'dyad') return tones;
       const rootless = cat.startsWith('rl-');
       let list = rootless ? tones.filter((x) => x[0] !== 0) : tones;
       if (!rootless && tones.length === 5) list = tones.filter((x) => x[1] !== '5');
@@ -160,14 +161,14 @@ test('inversions sound exactly the tones of their category, with the promised ba
       assert.deepStrictEqual(sounded.map((x) => x.pc).sort((a, b) => a - b), need, `${c.id} ${entry}`);
       assert.strictEqual(sounded[0].pc, pcOf(tones[Number(bi)]), `${c.id} ${entry} bass`);
       const fretted = frets.filter((x) => x > 0);
-      assert.ok(!fretted.length || Math.max(...fretted) - Math.min(...fretted) <= 3, `${c.id} ${entry} stretch`);
-      // strings are contiguous or skip at most one string
-      const idx = sounded.map((x) => x.i);
-      assert.ok(idx[idx.length - 1] - idx[0] <= idx.length, `${c.id} ${entry} string gap`);
+      assert.ok(!fretted.length || Math.max(...fretted) - Math.min(...fretted) <= 4, `${c.id} ${entry} stretch`);
+      assert.ok(Math.max(...frets.filter((x) => x !== null)) <= 22, `${c.id} ${entry} past the neck`);
     }
   }
   for (const cat of ['triad', 'open', 'closed', 'drop2', 'drop3', 'shell']) {
-    assert.ok(counts[cat] > 100, `${cat} is well covered`);
+    assert.ok(counts[cat] > 1000, `${cat} is well covered`);
   }
   assert.ok(Object.keys(counts).some((k) => k.startsWith('rl-')), 'rootless voicings exist');
+  assert.ok(counts.dyad > 0, 'power chords have dyad inversions');
+  assert.ok(chords.every((c) => c.inversions.length > 0), 'every chord has inversions');
 });

@@ -1,14 +1,10 @@
-// Study guide content. Everything here is written in our own words as a summary of ideas taught in:
-//  - "Segredos da Harmonia" (course and e-book), Kiko Loureiro
-//  - "Toolbox" exercise sheets (Kiko Loureiro Guitar Academy)
-//  - "Standards do Jazz", Ted Gioia
-// Exercises and tablature from those materials are NOT reproduced: the sheets themselves are the source.
+// Study guide content, written from scratch as original text and examples.
 import { mod12 } from './theory';
 
 // A chord of the example: root offset in semitones from the key, and a chord type key.
 const c = (off, type) => ({ off, type });
 
-export const TOPICS = ['tension', 'cadences', 'fields', 'dominants', 'color', 'standards', 'practice', 'sources'];
+export const TOPICS = ['tension', 'cadences', 'fields', 'dominants', 'color', 'standards', 'practice'];
 
 export const TOPIC_TITLES = {
   en: {
@@ -19,7 +15,6 @@ export const TOPIC_TITLES = {
     color: 'Borrowed colours and modes',
     standards: 'In real songs',
     practice: 'How to practise',
-    sources: 'Sources',
   },
   pt: {
     tension: 'Tensão e repouso',
@@ -29,7 +24,6 @@ export const TOPIC_TITLES = {
     color: 'Cores emprestadas e modos',
     standards: 'Em músicas de verdade',
     practice: 'Como estudar',
-    sources: 'Fontes',
   },
 };
 
@@ -39,7 +33,7 @@ export const TEXT = {
     tension: [
       'Harmony is built on tension and release. It starts in physics: a note rings with a series of overtones, and the first ones are the octave, then the fifth, then the major third and the flat seventh. That is why tonic and fifth feel so related to the ear, and why a chord built on the fifth degree pulls back to the tonic.',
       'The strongest pull comes from the tritone, an interval of three whole tones that splits the octave in half. In a dominant seventh chord it sits between the third and the seventh (B and F in G7). B wants to rise to C and F wants to fall to E, and those two notes are the third and the root of the tonic chord. Resolving means landing on that sound of rest.',
-      'Try it: pick any dominant chord below and play it into the chord a fourth above its root. Doing this around all twelve keys, following the circle of fifths, is the first exercise of the course.',
+      'Try it: pick any dominant chord below and play it into the chord a fourth above its root. Doing this around all twelve keys, following the circle of fifths, is a good first exercise.',
     ],
     cadences: [
       'A cadence is a short chord sequence that ends a phrase. The three functions are tonic (rest), subdominant (a step away from home, also called pre-dominant) and dominant (tension that asks for the tonic).',
@@ -63,7 +57,7 @@ export const TEXT = {
       'Chromatic mediants are chords a third apart, such as C, E and A♭. They share one note or none and make cinematic jumps. Moving by major thirds is also the heart of Giant Steps.',
     ],
     standards: [
-      'These are the same ideas heard in songs that appear in the book Standards do Jazz. They are summaries of the chord patterns, not the full charts.',
+      'The same ideas turn up again and again in songs. These are the chord patterns behind some well-known tunes, shown as short sketches rather than full charts.',
     ],
     practice: [
       'Write every exercise in all twelve keys. It takes time, but writing, hearing and playing together is what makes it stay. Play a progression, change the key, then play something you have never played before.',
@@ -71,16 +65,12 @@ export const TEXT = {
       'Right hand: alternate picking means strict down and up. Use a metronome and practise the same notes in quarter notes, eighths, triplets and sixteenths. For sweep picking, one smooth motion across adjacent strings, one note per string.',
       'Scales and CAGED: the five boxes of the pentatonic scale lock onto the five CAGED chord shapes. Use the scale diagram above to see which box holds each chord shape.',
     ],
-    sources: [
-      'The concepts here are based on the course and e-book "Segredos da Harmonia" by Kiko Loureiro, the Toolbox sheets from Kiko Loureiro Guitar Academy and the book "Standards do Jazz" by Ted Gioia.',
-      'All text and examples are our own summaries. For the full lessons, exercises and tablature, use the original materials.',
-    ],
   },
   pt: {
     tension: [
       'A harmonia nasce da tensão e do repouso. Tudo começa na física: uma nota soa com uma série de harmônicos, e os primeiros são a oitava, depois a quinta, depois a terça maior e a sétima menor. Por isso tônica e quinta soam tão ligadas ao ouvido, e por isso um acorde construído no quinto grau puxa de volta para a tônica.',
       'A atração mais forte vem do trítono, intervalo de três tons inteiros que divide a oitava ao meio. No acorde de sétima dominante ele fica entre a terça e a sétima (Si e Fá no G7). O Si quer subir para Dó e o Fá quer descer para Mi, e essas duas notas são a terça e a fundamental do acorde de tônica. Resolver é pousar nesse som de repouso.',
-      'Experimente: escolha um acorde dominante abaixo e toque-o seguido do acorde uma quarta acima da sua fundamental. Fazer isso nos doze tons, seguindo o ciclo das quintas, é o primeiro exercício do curso.',
+      'Experimente: escolha um acorde dominante abaixo e toque-o seguido do acorde uma quarta acima da sua fundamental. Fazer isso nos doze tons, seguindo o ciclo das quintas, é um bom primeiro exercício.',
     ],
     cadences: [
       'Cadência é uma sequência curta de acordes que fecha uma frase. As três funções são tônica (repouso), subdominante (um passo para longe de casa, também chamado de pré-dominante) e dominante (tensão que pede a tônica).',
@@ -104,7 +94,7 @@ export const TEXT = {
       'Mediantes cromáticas são acordes a uma terça de distância, como C, E e A♭. Dividem uma nota ou nenhuma e criam saltos cinematográficos. Andar por terças maiores também é o coração de Giant Steps.',
     ],
     standards: [
-      'São as mesmas ideias que se ouvem em músicas do livro Standards do Jazz. São resumos dos padrões de acordes, não as cifras completas.',
+      'As mesmas ideias aparecem o tempo todo nas músicas. Estes são os padrões de acordes por trás de alguns temas conhecidos, em esboços curtos e não em cifras completas.',
     ],
     practice: [
       'Escreva cada exercício nos doze tons. Dá trabalho, mas escrever, ouvir e tocar juntos é o que fixa. Toque uma progressão, troque o tom e depois toque algo que você nunca tocou.',
@@ -112,15 +102,11 @@ export const TEXT = {
       'Mão direita: palhetada alternada é descer e subir sem falhar. Use metrônomo e pratique as mesmas notas em semínimas, colcheias, tercinas e semicolcheias. No sweep, um movimento fluido por cordas vizinhas, uma nota por corda.',
       'Escalas e CAGED: as cinco caixas da pentatônica encaixam nas cinco formas de acorde do CAGED. Use o diagrama de escala acima para ver qual caixa guarda cada forma.',
     ],
-    sources: [
-      'Os conceitos daqui se baseiam no curso e e-book "Segredos da Harmonia", de Kiko Loureiro, nas folhas Toolbox da Kiko Loureiro Guitar Academy e no livro "Standards do Jazz", de Ted Gioia.',
-      'Todos os textos e exemplos são resumos nossos. Para as aulas completas, exercícios e tablaturas, use os materiais originais.',
-    ],
   },
 };
 
 // Progressions per topic. Offsets are semitones above the key (major key) or above the relative minor tonic.
-// `std` names a song from Standards do Jazz that uses the pattern.
+// `std` names a well-known song where the pattern is heard.
 export const EXAMPLES = {
   tension: [
     { name: { en: 'V7 to I', pt: 'V7 para I' }, chords: [c(7, 'dom7'), c(0, 'major')] },

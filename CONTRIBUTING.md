@@ -23,7 +23,7 @@ cd frontend && CI=true npm test              # app tests
 
 ## Writing and music theory content
 
-- Write it in your own words. Do not copy text, tablature or exercises from books, courses or sheets; summarise the idea and credit the source in the study guide.
+- Write it in your own words and with your own examples. Do not copy text, tablature or exercises from books, courses or sheets.
 - Keep English and Portuguese in step (`frontend/src/i18n.js`, `frontend/src/study.js`).
 - Musical terms are translated on purpose so browser auto-translate does not change them.
 

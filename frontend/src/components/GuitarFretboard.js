@@ -61,17 +61,17 @@ function GuitarFretboard({ positions, baseFret = 1, barre, compact = false, show
       <svg viewBox={`0 ${Y0 - 38} ${VIEW_W} ${VIEW_H - Y0 + 38}`} role="img" aria-label={t('diagram', summary)}>
         <defs>
           <linearGradient id={`wood${uid}`} x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0" stopColor="#2b1a12" />
-            <stop offset="0.5" stopColor="#3d2519" />
-            <stop offset="1" stopColor="#2b1a12" />
+            <stop offset="0" stopColor="#0d0d0f" />
+            <stop offset="0.5" stopColor="#1c1c1f" />
+            <stop offset="1" stopColor="#0d0d0f" />
           </linearGradient>
           <linearGradient id={`bone${uid}`} x1="0" x2="0" y1="0" y2="1">
             <stop offset="0" stopColor="#f6f1e3" />
             <stop offset="1" stopColor="#d9d1bb" />
           </linearGradient>
           <linearGradient id={`finger${uid}`} x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0" stopColor="#8266f0" />
-            <stop offset="1" stopColor="#4a2fbd" />
+            <stop offset="0" stopColor="var(--finger-a)" />
+            <stop offset="1" stopColor="var(--finger-b)" />
           </linearGradient>
         </defs>
 

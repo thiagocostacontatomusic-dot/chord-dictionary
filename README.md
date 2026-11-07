@@ -10,7 +10,7 @@ An open-source, interactive **guitar chord dictionary**. Search any chord, see i
 
 - **312 chords**: all 12 keys x 26 chord types, from triads to 9ths, 11ths and 13ths
 - **559 voicings**: open-position shapes where they exist, plus E-shape and A-shape barre chords
-- **Inversions and compact voicings**: over 12,000 voicings, every one machine-checked. Closed and open triads, closed, drop 2 and drop 3 four-note chords, shells (root, third, seventh) and rootless voicings, each in every inversion on several string sets and positions, with a filter by kind and by note in the bass
+- **Inversions and compact voicings**: nearly 35,000 voicings, every one machine-checked. Every placement on the neck up to fret 22 and every group of strings, loaded on demand. Power-chord dyads, closed and open triads, closed, drop 2 and drop 3 four-note chords, shells (root, third, seventh) and rootless voicings, each in every inversion on several string sets and positions, with a filter by kind and by note in the bass
 - **Arpeggios**: the notes of the chord on screen across the neck, in five positions tied to the CAGED shapes
 - **Progression builder**: build a sequence, hear it, move it to another key and see the Roman numerals
 - **Practice tools**: metronome with quarter, eighth, triplet and sixteenth subdivisions, a chord quiz (by sight or by ear) and a left-handed mirror mode
@@ -40,9 +40,9 @@ Major, Minor, Power (5), Diminished, Augmented, Suspended 2, Suspended 4, Major 
 
 Each chord is spelled the way a musician would write it (Bb major is Bb D F, not A# D F). Both spellings work in search (`Db` or `C#`).
 
-## Sources of the study material
+## Study material
 
-The concepts in the study guide are summaries, in our own words, of ideas taught in *Segredos da Harmonia* (course and e-book) and the *Toolbox* sheets by Kiko Loureiro, and *Standards do Jazz* by Ted Gioia. Exercises and tablature from those materials are not reproduced; use the originals for the full lessons.
+The study guide texts and examples are original and were written for this project.
 
 ## Contributing
 
