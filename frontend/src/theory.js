@@ -108,7 +108,7 @@ export function spellScale(rootName, rootPc, scale) {
 
 // Standard tuning, string 6 (low E) to string 1.
 export const TUNING = { 6: 4, 5: 9, 4: 2, 3: 7, 2: 11, 1: 4 };
-export const MAX_FRET = 17;
+export const MAX_FRET = 22;
 
 // Fret windows ("positions") for a scale: position p starts on the p-th scale note of the low E
 // string and spans five frets, one fret before and three after that note. Windows repeat an octave up.

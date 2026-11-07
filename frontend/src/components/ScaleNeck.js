@@ -3,6 +3,7 @@ import { useI18n, pretty } from '../i18n';
 import { SCALES, SCALE_GROUPS, scaleByKey, spellScale, positionWindows, TUNING, MAX_FRET, mod12 } from '../theory';
 import { playNotes, audioSupported } from '../audio';
 import { chordFor } from '../chordData';
+import { Metronome } from './PracticeTools';
 
 import '../styles/ScaleNeck.css';
 // Which chord quality each scale sits on, so its CAGED shapes can be matched to the positions.
@@ -16,7 +17,7 @@ const Y0 = 22;
 const STRING_GAP = 30;
 const W = X0 + MAX_FRET * FRET_W + 14;
 const H = Y0 + STRING_GAP * 5 + 44;
-const MARKS = [3, 5, 7, 9, 15, 17];
+const MARKS = [3, 5, 7, 9, 15, 17, 19, 21];
 const STRINGS = [1, 2, 3, 4, 5, 6]; // top to bottom: high e ... low E
 
 const fretX = (f) => (f === 0 ? X0 - 24 : X0 + (f - 0.5) * FRET_W);
@@ -228,6 +229,12 @@ function ScaleNeck({ scaleKey, onScaleChange, rootPc: keyPc, rootName: keyName, 
         <span><i className="lg-dot" />{t('legendScale')}</span>
         <span><i className="lg-dot is-chord" />{t('legendChord')}</span>
       </p>
+
+      {audioSupported() && (
+        <div className="pt pt-inline">
+          <Metronome />
+        </div>
+      )}
     </section>
   );
 }

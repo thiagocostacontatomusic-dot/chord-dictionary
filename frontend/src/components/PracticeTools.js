@@ -8,7 +8,7 @@ import '../styles/PracticeTools.css';
 const SUBS = [1, 2, 3, 4];
 const BASIC = ['major', 'minor', 'dom7', 'maj7', 'min7', 'sus2', 'sus4', 'dim', 'six', 'minor6'];
 
-function Metronome() {
+export function Metronome() {
   const { t } = useI18n();
   const metro = useRef(null);
   const [bpm, setBpm] = useState(80);
@@ -138,7 +138,6 @@ function PracticeTools() {
     <section className="pt" aria-labelledby="pt-title">
       <h3 id="pt-title">{t('practiceTitle')}</h3>
       <div className="pt-grid">
-        {audioSupported() && <Metronome />}
         <Quiz />
       </div>
     </section>

@@ -10,7 +10,7 @@
 .scales-notes li.is-root { background: var(--violet); color: #fff; }
 .scales-notes b { font-family: var(--font-display); font-size: 1.05rem; }
 .scales-notes span { font-size: 0.8rem; color: var(--ink-soft); }
-.scales-notes li.is-root span { color: #e4defe; }
+.scales-notes li.is-root span { color: #fff; }
 
 .scales-controls { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin-bottom: 14px; }
 .seg, .positions { display: inline-flex; flex-wrap: wrap; gap: 6px; }
@@ -19,7 +19,7 @@
 .seg button.is-active, .positions button.is-active { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
 
 .neck-scroll { overflow-x: auto; padding-bottom: 6px; }
-.neck-h { display: block; width: 100%; min-width: 640px; height: auto; }
+.neck-h { display: block; width: 100%; min-width: 820px; height: auto; }
 .nh-board { fill: #3a2218; }
 .nh-inlay { fill: #e9e2d0; opacity: 0.2; }
 .nh-fret { stroke: #c9ccd6; stroke-width: 2; }
@@ -29,17 +29,17 @@
 .nh-fretnum { font: 600 12px var(--font-body); fill: var(--ink-soft); }
 .nh-dot circle { fill: #efe7d2; stroke: #1b1633; stroke-width: 1.2; transition: opacity 0.2s; }
 .nh-dot text { font: 700 11.5px var(--font-display); fill: #1b1633; pointer-events: none; }
-.nh-dot.is-root circle { fill: #7b5cff; stroke: #fff; stroke-width: 1.6; }
+.nh-dot.is-root circle { fill: #5b3fd6; stroke: #fff; stroke-width: 1.6; }
 .nh-dot.is-root text { fill: #fff; }
-.nh-dot.is-chord circle { stroke: #7b5cff; stroke-width: 3.4; }
+.nh-dot.is-chord circle { stroke: #a58fff; stroke-width: 3.4; }
 .nh-dot.is-chord.is-root circle { stroke: #fff; stroke-width: 3.4; }
 .nh-dot.is-off { opacity: 0.16; }
 
 .scales-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 10px 0 0; font-size: 0.8rem; color: var(--ink-soft); }
 .scales-legend span { display: inline-flex; align-items: center; gap: 6px; }
 .lg-dot { width: 14px; height: 14px; border-radius: 50%; background: #efe7d2; border: 1.5px solid #1b1633; display: inline-block; }
-.lg-dot.is-root { background: #7b5cff; border-color: #7b5cff; }
-.lg-dot.is-chord { border: 3px solid #7b5cff; }
+.lg-dot.is-root { background: #5b3fd6; border-color: #5b3fd6; }
+.lg-dot.is-chord { border: 3px solid #a58fff; }
 
 @media (max-width: 700px) { .scales { padding: 18px; border-radius: 16px; } }
 .scales .act { font: inherit; font-weight: 600; font-size: 0.85rem; padding: 6px 14px; border-radius: 999px; cursor: pointer; border: 1px solid var(--violet-dark); background: transparent; color: var(--violet-dark); }

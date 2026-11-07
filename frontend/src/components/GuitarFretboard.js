@@ -70,8 +70,8 @@ function GuitarFretboard({ positions, baseFret = 1, barre, compact = false, show
             <stop offset="1" stopColor="#d9d1bb" />
           </linearGradient>
           <linearGradient id={`finger${uid}`} x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0" stopColor="#a08bff" />
-            <stop offset="1" stopColor="#6b4eff" />
+            <stop offset="0" stopColor="#8266f0" />
+            <stop offset="1" stopColor="#4a2fbd" />
           </linearGradient>
         </defs>
 

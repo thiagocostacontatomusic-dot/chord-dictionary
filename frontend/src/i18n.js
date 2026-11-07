@@ -57,7 +57,7 @@ const SCALE_NAMES = {
 
 const where = (fret, open, word) => (fret === 0 ? open : `${word} ${fret}`);
 
-const DICT = {
+export const DICT = {
   en: {
     tagline: 'Every guitar chord, drawn on the neck',
     stats: (c, v) => `${c} chords, ${v} voicings`,

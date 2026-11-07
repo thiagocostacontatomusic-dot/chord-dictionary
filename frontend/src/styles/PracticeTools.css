@@ -24,3 +24,6 @@
 .pt-result { grid-column: 1 / -1; margin: 4px 0 0; font-weight: 600; }
 .pt button:focus-visible, .pt input:focus-visible { outline: 3px solid var(--violet-dark); outline-offset: 2px; }
 @media (max-width: 600px) { .pt { padding: 16px; } .pt-quiz { grid-template-columns: 1fr; } }
+
+.pt.pt-inline { margin-top: 14px; padding: 0; border: 0; background: transparent; }
+.pt-inline .pt-card { background: var(--violet-tint); }

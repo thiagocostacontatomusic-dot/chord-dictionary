@@ -1,4 +1,4 @@
-.app { max-width: 1280px; margin: 0 auto; padding: 24px 24px 48px; }
+.app { max-width: 1440px; margin: 0 auto; padding: 24px 24px 48px; }
 
 .top {
   display: flex; justify-content: space-between; align-items: flex-end;
@@ -21,13 +21,14 @@
 .lang button.is-active { background: var(--ink); color: var(--on-ink); }
 
 .layout {
-  display: grid; grid-template-columns: minmax(320px, 440px) minmax(0, 1fr); gap: 24px 36px; align-items: start;
+  display: grid; grid-template-columns: minmax(320px, 380px) minmax(0, 1fr); gap: 24px 36px; align-items: start;
   grid-template-areas: "wheel detail" "list detail";
   grid-template-rows: auto 1fr;
 }
 .zone-wheel { grid-area: wheel; align-self: start; }
 .zone-detail { grid-area: detail; min-width: 0; }
-.zone-list { grid-area: list; align-self: start; display: flex; flex-direction: column; gap: 12px; }
+.zone-list { grid-area: list; align-self: start; display: flex; flex-direction: column; gap: 12px; position: sticky; top: 12px; }
+.zone-list .list { max-height: calc(100vh - 190px); min-height: 220px; }
 .zone-title { margin: 0; font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; }
 .zone-help { margin: 4px 0 12px; color: var(--ink-soft); font-size: 0.9rem; max-width: 52ch; }
 .count { display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: var(--ink-soft); }
@@ -35,6 +36,8 @@
 @media (max-width: 900px) {
   .app { padding: 16px 16px 40px; }
   .layout { grid-template-columns: 1fr; grid-template-areas: "wheel" "detail" "list"; grid-template-rows: none; gap: 24px; }
+  .zone-list { position: static; }
+  .zone-list .list { max-height: 46vh; }
 }
 
 .install { border: 0; border-radius: 999px; padding: 7px 16px; background: var(--violet); color: var(--on-violet); font-weight: 600; font-size: 0.85rem; }

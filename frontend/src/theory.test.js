@@ -55,3 +55,15 @@ test('inversions are available and countable', () => {
   expect(getChord('C_maj7').inversions.length).toBeGreaterThanOrEqual(10);
   expect(stats.totalVoicings).toBeGreaterThan(2500);
 });
+
+test('English and Portuguese dictionaries have the same keys', () => {
+  const { DICT } = require('./i18n');
+  const en = Object.keys(DICT.en).sort();
+  const pt = Object.keys(DICT.pt).sort();
+  expect(pt.filter((k) => !en.includes(k))).toEqual([]);
+  expect(en.filter((k) => !pt.includes(k))).toEqual([]);
+});
+
+test('the neck runs to fret 22', () => {
+  expect(require('./theory').MAX_FRET).toBe(22);
+});
