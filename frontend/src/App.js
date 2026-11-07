@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import axios from 'axios';
 import './App.css';
 import ChordList from './components/ChordList';
 import ChordDetail from './components/ChordDetail';
 import SearchBar from './components/SearchBar';
 import FilterBar from './components/FilterBar';
+import { searchChords, notes, types, stats } from './chordData';
 import { I18nContext, makeI18n, readLang, saveLang } from './i18n';
-
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
 
 function useDebounced(value, ms) {
   const [v, setV] = useState(value);
@@ -23,16 +21,10 @@ function App() {
   const i18n = useMemo(() => makeI18n(lang), [lang]);
   const { t } = i18n;
 
-  const [chords, setChords] = useState([]);
   const [selectedId, setSelectedId] = useState(() => window.location.hash.slice(1) || '');
   const [searchTerm, setSearchTerm] = useState('');
-  const [notes, setNotes] = useState([]);
-  const [types, setTypes] = useState([]);
-  const [stats, setStats] = useState(null);
   const [selectedNote, setSelectedNote] = useState('');
   const [selectedType, setSelectedType] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
 
   const search = useDebounced(searchTerm.trim(), 150);
 
@@ -41,36 +33,10 @@ function App() {
     saveLang(lang);
   }, [lang]);
 
-  useEffect(() => {
-    Promise.all([
-      axios.get(`${API_URL}/notes`),
-      axios.get(`${API_URL}/types`),
-      axios.get(`${API_URL}/stats`),
-    ])
-      .then(([n, ty, s]) => {
-        setNotes(n.data);
-        setTypes(ty.data);
-        setStats(s.data);
-      })
-      .catch(() => setError(true));
-  }, []);
-
-  useEffect(() => {
-    let cancelled = false;
-    setLoading(true);
-    axios
-      .get(`${API_URL}/chords`, { params: { search, note: selectedNote, type: selectedType } })
-      .then((res) => {
-        if (cancelled) return;
-        setChords(res.data);
-        setError(false);
-      })
-      .catch(() => !cancelled && setError(true))
-      .finally(() => !cancelled && setLoading(false));
-    return () => {
-      cancelled = true;
-    };
-  }, [search, selectedNote, selectedType]);
+  const chords = useMemo(
+    () => searchChords({ search, note: selectedNote, type: selectedType }),
+    [search, selectedNote, selectedType]
+  );
 
   const selectedChord = useMemo(
     () => chords.find((c) => c.id === selectedId) || chords[0] || null,
@@ -110,7 +76,7 @@ function App() {
             <p>{t('tagline')}</p>
           </div>
           <div className="top-side">
-            {stats && <p className="stats">{t('stats', stats.totalChords, stats.totalVoicings)}</p>}
+            <p className="stats">{t('stats', stats.totalChords, stats.totalVoicings)}</p>
             <div className="lang" role="group" aria-label={t('language')}>
               {['en', 'pt'].map((l) => (
                 <button
@@ -139,20 +105,16 @@ function App() {
               onTypeChange={setSelectedType}
             />
             <div className="count" aria-live="polite">
-              <span>{loading ? t('loading') : t('found', chords.length)}</span>
+              <span>{t('found', chords.length)}</span>
               {filtered && (
                 <button type="button" onClick={clearAll}>{t('clearFilters')}</button>
               )}
             </div>
-            {error ? (
-              <p className="error" role="alert">{t('loadError')}</p>
-            ) : (
-              <ChordList chords={chords} selectedChord={selectedChord} onSelectChord={select} />
-            )}
+            <ChordList chords={chords} selectedChord={selectedChord} onSelectChord={select} />
           </aside>
 
           <section className="panel">
-            {selectedChord && !error && <ChordDetail key={selectedChord.id} chord={selectedChord} />}
+            {selectedChord && <ChordDetail key={selectedChord.id} chord={selectedChord} />}
           </section>
         </main>
       </div>

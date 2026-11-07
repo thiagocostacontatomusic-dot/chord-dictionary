@@ -1,5 +1,7 @@
 # Chord Dictionary
 
+**Live site:** https://thiagocostacontatomusic-dot.github.io/chord-dictionary/ (English and Portuguese, works on phones, nothing to install)
+
 An open-source, interactive **guitar chord dictionary**. Search any chord, see it drawn on the fretboard, and switch between voicings (open shapes and movable barre shapes up the neck).
 
 - **180 chords**: all 12 keys x 15 chord types
@@ -19,30 +21,43 @@ The data is in the `caged` array of each chord (`form`, `order`, `lowestFret`, `
 
 Major, Minor, Power (5), Diminished, Augmented, Suspended 2, Suspended 4, Major 6, Minor 6, Dominant 7, Major 7, Minor 7, Diminished 7, Half-diminished (m7b5), Add9.
 
-Roots are spelled with sharps (C#, D#, F#, G#, A#). Flat names work in search (`Db`, `Eb`, `Gb`, `Ab`, `Bb`).
+Each chord is spelled the way a musician would write it (Bb major is Bb D F, not A# D F). Both spellings work in search (`Db` or `C#`).
 
 ## Getting started
 
-Requires Node.js 18+.
+Requires Node.js 18+. The website needs no server: the chord data is bundled into the app and searched in the browser.
 
 ```bash
 git clone https://github.com/thiagocostacontatomusic-dot/chord-dictionary.git
-cd chord-dictionary
-
-# terminal 1 - API on http://localhost:8000
-cd backend
+cd chord-dictionary/frontend
 npm install
-npm start
-
-# terminal 2 - web app on http://localhost:3000
-cd frontend
-npm install
-npm start
+npm start          # http://localhost:3000
 ```
 
-To point the frontend at another API, set `REACT_APP_API_URL` (default `http://localhost:8000/api`).
+`npm start` and `npm run build` first copy `backend/chords.json` into `frontend/src/`, so regenerating the data (below) updates the site too.
 
-## API
+## Regenerating and testing the data
+
+```bash
+cd backend
+npm install
+npm run generate   # rebuilds chords.json from scripts/chord-theory.js
+npm test           # checks every voicing note by note
+```
+
+## Publishing your own copy
+
+Fork the repository, then in **Settings > Pages** set the source to **GitHub Actions**. Every push to `main` builds `frontend/` and publishes it.
+
+## Optional API
+
+The same data is also available as a small REST API for other apps:
+
+```bash
+cd backend && npm install && npm start   # http://localhost:8000
+```
+
+### Endpoints
 
 | Endpoint | Description |
 | --- | --- |
