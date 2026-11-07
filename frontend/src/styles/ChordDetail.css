@@ -12,14 +12,14 @@
 .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
 .tab { padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-weight: 500; }
 .tab:hover { border-color: var(--violet); }
-.tab.is-active { background: var(--ink); border-color: var(--ink); color: #fff; }
+.tab.is-active { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
 
 .stage { display: grid; grid-template-columns: minmax(240px, 300px) minmax(0, 1fr); gap: 32px; align-items: start; }
 .how h3 { margin: 0 0 8px; font-family: var(--font-display); font-size: 1.1rem; }
 .how table { width: 100%; border-collapse: collapse; }
 .how th, .how td { padding: 8px 6px; border-bottom: 1px solid var(--line); text-align: left; font-weight: 400; }
 .how th { display: flex; align-items: center; gap: 10px; font-weight: 500; }
-.how-num { width: 22px; height: 22px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 0.75rem; display: inline-grid; place-items: center; }
+.how-num { width: 22px; height: 22px; border-radius: 50%; background: var(--ink); color: var(--on-ink); font-size: 0.75rem; display: inline-grid; place-items: center; }
 .how-fret { color: var(--ink-soft); }
 .how-note b { margin-right: 6px; font-family: var(--font-display); }
 .how-note span { font-size: 0.8rem; color: var(--ink-soft); }

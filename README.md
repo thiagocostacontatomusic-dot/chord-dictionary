@@ -11,6 +11,10 @@ An open-source, interactive **guitar chord dictionary**. Search any chord, see i
 - **CAGED system**: 108 chords (9 chord types x 12 keys) with all five CAGED shapes, ordered from the nut up the neck
 - **Every voicing is machine-checked**: tests compute the notes each string actually sounds in standard tuning (E A D G B E) and fail if a shape does not spell its chord
 - Search by name or symbol (`Am`, `C#m7`, `Bb`, `sus4`), filter by key and type
+- **Circle of fifths wheel** with a fixed window: turn the wheel (drag, arrow keys or the side buttons) and the window always frames the seven chords of that key, with Roman numerals
+- **Modes**: Ionian to Locrian on the same wheel (D Dorian turns the wheel to C major and relabels the degrees)
+- **20 scales on a full neck**: the seven modes, major and minor pentatonic, blues, harmonic and melodic minor, Phrygian dominant, Lydian dominant, altered, double harmonic, whole tone and both diminished scales. Notes are spelled correctly (F# major has E#), shown as names or degrees, with five-fret positions and the tones of the chord you are viewing ringed
+- Light and dark themes (follows your system, switchable), English and Portuguese
 - Responsive React UI with SVG chord diagrams (nut, fret position, barres, open and muted strings)
 
 ## CAGED system

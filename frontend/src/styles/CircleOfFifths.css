@@ -3,12 +3,15 @@
 .wheel-svg { width: 100%; max-width: 440px; height: auto; touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab; border-radius: 50%; }
 .wheel-svg:active { cursor: grabbing; }
 .wheel-svg:focus-visible { outline: 3px solid var(--violet); outline-offset: 4px; }
-.wheel-seg { stroke: #fff; stroke-width: 1; cursor: pointer; }
+.wheel-seg { stroke: var(--wheel-stroke); stroke-width: 1; cursor: pointer; }
+.wheel-seg-2 { fill: hsl(var(--h) var(--wheel-s2) var(--wheel-l2)); }
+.wheel-seg-1 { fill: hsl(var(--h) var(--wheel-s1) var(--wheel-l1)); }
+.wheel-seg-0 { fill: hsl(var(--h) var(--wheel-s0) var(--wheel-l0)); }
 .wheel-seg:hover { filter: brightness(0.96); }
 .wheel-tonic { fill: var(--violet); pointer-events: none; }
 .wheel-label { font-family: var(--font-display); font-weight: 700; fill: var(--ink); pointer-events: none; }
-.wheel-label-1 { font-weight: 600; fill: #3a3560; }
-.wheel-label-0 { font-weight: 600; fill: #6a6590; }
+.wheel-label-1 { font-weight: 600; fill: var(--ink-2); }
+.wheel-label-0 { font-weight: 600; fill: var(--ink-3); }
 .wheel-label.is-tonic { fill: #fff; }
 .wheel-veil { fill: var(--paper); opacity: 0.52; pointer-events: none; }
 .wheel-cell { fill: transparent; stroke: var(--ink); stroke-width: 2.4; cursor: pointer; }
@@ -16,7 +19,7 @@
 .wheel-cell.is-selected { stroke: var(--violet); stroke-width: 5; }
 .wheel-core { fill: var(--surface); stroke: var(--line); }
 .wheel-poly { fill: none; stroke: var(--line); stroke-width: 1; }
-.wheel-dot { fill: #b9b4d6; }
+.wheel-dot { fill: var(--wheel-dot); }
 .wheel-dot.is-parent { fill: var(--violet); }
 .wheel-center-key { font: 800 30px var(--font-display); fill: var(--violet-dark); pointer-events: none; }
 .wheel-center-mode { font: 500 13px var(--font-body); fill: var(--ink-soft); pointer-events: none; }

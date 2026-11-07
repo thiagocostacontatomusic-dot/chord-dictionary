@@ -6,9 +6,10 @@ import SearchBar from './components/SearchBar';
 import CircleOfFifths from './components/CircleOfFifths';
 import KeyChords from './components/KeyChords';
 import FamilyChips from './components/FamilyChips';
+import ScaleNeck from './components/ScaleNeck';
 import { searchChords, stats, getChord, chordFor, chordsOfRoot } from './chordData';
-import { DEGREES, MODES, FAMILY, familyOf, mod12, fifthsIndex } from './theory';
-import { I18nContext, makeI18n, readLang, saveLang } from './i18n';
+import { DEGREES, MODES, FAMILY, familyOf, mod12, fifthsIndex, keyNames } from './theory';
+import { I18nContext, makeI18n, readLang, saveLang, readTheme, saveTheme } from './i18n';
 
 function useDebounced(value, ms) {
   const [v, setV] = useState(value);
@@ -24,6 +25,7 @@ function App() {
   const i18n = useMemo(() => makeI18n(lang), [lang]);
   const { t } = i18n;
 
+  const [theme, setTheme] = useState(readTheme);
   const [searchTerm, setSearchTerm] = useState('');
   // The wheel: a tonic and a mode. The wheel itself always shows the parent major key.
   const initial = getChord(window.location.hash.slice(1));
@@ -31,6 +33,7 @@ function App() {
   const [tonicPc, setTonicPc] = useState(initial ? initial.pcs[0] : 0);
   const [modeIdx, setModeIdx] = useState(initialMode);
   const [selectedId, setSelectedId] = useState(initial ? initial.id : 'C_major');
+  const [scaleKey, setScaleKey] = useState(MODES[initialMode].key);
 
   const [installEvent, setInstallEvent] = useState(null);
   useEffect(() => {
@@ -55,6 +58,13 @@ function App() {
   const search = useDebounced(searchTerm.trim(), 150);
 
   useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', theme === 'dark' ? '#131020' : '#1b1633');
+    saveTheme(theme);
+  }, [theme]);
+
+  useEffect(() => {
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
     saveLang(lang);
   }, [lang]);
@@ -75,10 +85,11 @@ function App() {
     (pc, m) => {
       setTonicPc(pc);
       setModeIdx(m);
+      if (m !== modeIdx) setScaleKey(MODES[m].key);
       const chord = chordFor(pc, MODES[m].qual);
       if (chord) choose(chord);
     },
-    [choose]
+    [choose, modeIdx]
   );
 
   const rotate = (idx) => pickKey(mod12(7 * idx + MODES[modeIdx].off), modeIdx);
@@ -96,19 +107,21 @@ function App() {
         (deg) => mod12(parentPc + deg.off) === chord.pcs[0] && FAMILY[deg.q].includes(chord.typeKey)
       );
       if (!inKey) {
+        const m = { major: 0, minor: 5, dim: 6 }[fam] || 0;
         setTonicPc(chord.pcs[0]);
-        setModeIdx({ major: 0, minor: 5, dim: 6 }[fam] || 0);
+        setModeIdx(m);
+        if (m !== modeIdx) setScaleKey(MODES[m].key);
       }
       choose(chord);
     },
-    [parentPc, choose]
+    [parentPc, modeIdx, choose]
   );
 
   const onKeyDown = (e) => {
-    if (e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT') {
-      if (!(e.target.tagName === 'INPUT' && (e.key === 'ArrowDown' || e.key === 'ArrowUp'))) return;
-    }
+    // Up/Down move through the chord list only while the list or its search box has focus,
+    // so the arrow keys still scroll the page everywhere else.
     if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    if (!e.target.closest || !e.target.closest('.zone-list')) return;
     if (!chords.length) return;
     e.preventDefault();
     const i = chords.findIndex((c) => selectedChord && c.id === selectedChord.id);
@@ -130,6 +143,14 @@ function App() {
             {installEvent && (
               <button type="button" className="install" onClick={install}>{t('install')}</button>
             )}
+            <div className="lang" role="group" aria-label={t('themeLabel')}>
+              {['light', 'dark'].map((th) => (
+                <button key={th} type="button" className={theme === th ? 'is-active' : ''} aria-pressed={theme === th} onClick={() => setTheme(th)}>
+                  {th === 'light' ? '☀' : '☾'}
+                  <span className="sr-only">{t(th === 'light' ? 'themeLight' : 'themeDark')}</span>
+                </button>
+              ))}
+            </div>
             <div className="lang" role="group" aria-label={t('language')}>
               {['en', 'pt'].map((l) => (
                 <button
@@ -173,6 +194,13 @@ function App() {
               <>
                 <FamilyChips chords={family} selectedId={selectedChord.id} onSelect={selectChord} />
                 <ChordDetail key={selectedChord.id} chord={selectedChord} />
+                <ScaleNeck
+                  scaleKey={scaleKey}
+                  onScaleChange={setScaleKey}
+                  rootPc={tonicPc}
+                  rootName={keyNames(parentPc)[modeIdx]}
+                  chord={selectedChord}
+                />
               </>
             )}
           </section>

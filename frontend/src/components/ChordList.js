@@ -5,11 +5,18 @@ import '../styles/ChordList.css';
 function ChordList({ chords, selectedChord, onSelectChord }) {
   const { t, typeLabel } = useI18n();
   const activeRef = useRef(null);
+  const listRef = useRef(null);
 
   useEffect(() => {
-    if (activeRef.current && activeRef.current.scrollIntoView) {
-      activeRef.current.scrollIntoView({ block: 'nearest' });
-    }
+    // Keep the active row visible by scrolling the list itself. scrollIntoView would also scroll
+    // the whole page, which made the page jump while turning the wheel.
+    const list = listRef.current;
+    const row = activeRef.current;
+    if (!list || !row) return;
+    const l = list.getBoundingClientRect();
+    const r = row.getBoundingClientRect();
+    if (r.top < l.top) list.scrollTop -= l.top - r.top;
+    else if (r.bottom > l.bottom) list.scrollTop += r.bottom - l.bottom;
   }, [selectedChord]);
 
   if (chords.length === 0) {
@@ -17,7 +24,7 @@ function ChordList({ chords, selectedChord, onSelectChord }) {
   }
 
   return (
-    <ul className="list" aria-label={t('skip')}>
+    <ul className="list" ref={listRef} aria-label={t('skip')}>
       {chords.map((chord) => {
         const active = selectedChord && selectedChord.id === chord.id;
         return (

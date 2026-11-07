@@ -25,6 +25,25 @@ export const STRING_NAMES = {
   pt: { 6: 'E grave', 5: 'A', 4: 'D', 3: 'G', 2: 'B', 1: 'E agudo' },
 };
 
+const SCALE_NAMES = {
+  en: {
+    ionian: 'Major (Ionian)', dorian: 'Dorian', phrygian: 'Phrygian', lydian: 'Lydian', mixolydian: 'Mixolydian',
+    aeolian: 'Natural minor (Aeolian)', locrian: 'Locrian', majorPent: 'Major pentatonic', minorPent: 'Minor pentatonic',
+    blues: 'Blues', majorBlues: 'Major blues', harmonicMinor: 'Harmonic minor', melodicMinor: 'Melodic minor',
+    phrygianDominant: 'Phrygian dominant', lydianDominant: 'Lydian dominant', altered: 'Altered', doubleHarmonic: 'Double harmonic',
+    wholeTone: 'Whole tone', dimWH: 'Diminished (whole-half)', dimHW: 'Diminished (half-whole)',
+    modes: 'Modes of the major scale', pentatonic: 'Pentatonic and blues', minorVariants: 'Minor variants and colours', symmetric: 'Symmetric scales',
+  },
+  pt: {
+    ionian: 'Maior (Jônio)', dorian: 'Dórico', phrygian: 'Frígio', lydian: 'Lídio', mixolydian: 'Mixolídio',
+    aeolian: 'Menor natural (Eólio)', locrian: 'Lócrio', majorPent: 'Pentatônica maior', minorPent: 'Pentatônica menor',
+    blues: 'Blues', majorBlues: 'Blues maior', harmonicMinor: 'Menor harmônica', melodicMinor: 'Menor melódica',
+    phrygianDominant: 'Frígio dominante', lydianDominant: 'Lídio dominante', altered: 'Alterada', doubleHarmonic: 'Dupla harmônica',
+    wholeTone: 'Tons inteiros', dimWH: 'Diminuta (tom-semitom)', dimHW: 'Diminuta (semitom-tom)',
+    modes: 'Modos da escala maior', pentatonic: 'Pentatônicas e blues', minorVariants: 'Variações menores e cores', symmetric: 'Escalas simétricas',
+  },
+};
+
 const where = (fret, open, word) => (fret === 0 ? open : `${word} ${fret}`);
 
 const DICT = {
@@ -79,6 +98,22 @@ const DICT = {
     modeNames: ['Ionian', 'Dorian', 'Phrygian', 'Lydian', 'Mixolydian', 'Aeolian', 'Locrian'],
     modeMoods: ['friendly, stable, happy', 'curious, whimsical', 'intimidating, exotic', 'ethereal, magical', 'open, relaxed, cool', 'solemn, serious, sad', 'unsettled, disconcerting'],
     modeShort: ['Major', 'Dorian', 'Phrygian', 'Lydian', 'Mixolydian', 'Minor', 'Locrian'],
+    scaleTitle: 'Scales on the neck',
+    scaleHelp: 'Pick a scale and a position. Notes of the chord you are viewing are ringed.',
+    scaleSelect: 'Scale',
+    scaleIn: (root, scale) => `${root} ${scale}`,
+    showNames: 'Notes',
+    showDegrees: 'Degrees',
+    allPositions: 'Whole neck',
+    positionN: (n) => `Position ${n}`,
+    scaleNotes: 'Notes of the scale',
+    legendRoot: 'Root',
+    legendScale: 'Scale note',
+    legendChord: 'Chord tone',
+    neckLabel: (s) => `Guitar neck showing ${s}`,
+    themeLabel: 'Theme',
+    themeLight: 'Light',
+    themeDark: 'Dark',
     install: 'Install app',
     language: 'Language',
     skip: 'Chord list',
@@ -134,6 +169,22 @@ const DICT = {
     modeNames: ['Jônio', 'Dórico', 'Frígio', 'Lídio', 'Mixolídio', 'Eólio', 'Lócrio'],
     modeMoods: ['amigável, estável, alegre', 'curioso, divertido', 'intimidador, exótico', 'etéreo, mágico', 'aberto, relaxado, descolado', 'solene, sério, triste', 'instável, perturbador'],
     modeShort: ['Maior', 'Dórico', 'Frígio', 'Lídio', 'Mixolídio', 'Menor', 'Lócrio'],
+    scaleTitle: 'Escalas no braço',
+    scaleHelp: 'Escolha uma escala e uma posição. As notas do acorde que você está vendo ficam circuladas.',
+    scaleSelect: 'Escala',
+    scaleIn: (root, scale) => `${root} ${scale}`,
+    showNames: 'Notas',
+    showDegrees: 'Graus',
+    allPositions: 'Braço todo',
+    positionN: (n) => `Posição ${n}`,
+    scaleNotes: 'Notas da escala',
+    legendRoot: 'Fundamental',
+    legendScale: 'Nota da escala',
+    legendChord: 'Nota do acorde',
+    neckLabel: (s) => `Braço do violão mostrando ${s}`,
+    themeLabel: 'Tema',
+    themeLight: 'Claro',
+    themeDark: 'Escuro',
     install: 'Instalar app',
     language: 'Idioma',
     skip: 'Lista de acordes',
@@ -149,6 +200,7 @@ export function makeI18n(lang) {
       const v = d[key];
       return typeof v === 'function' ? v(...args) : v;
     },
+    scaleName: (key) => SCALE_NAMES[l][key] || key,
     typeLabel: (typeKey, fallback) => (TYPE_LABELS[typeKey] || {})[l] || fallback,
     stringName: (n) => STRING_NAMES[l][n],
   };
@@ -181,4 +233,22 @@ export function pretty(text) {
     .replace(/([A-G])(bb|b)/g, (m, letter, flats) => letter + (flats === 'bb' ? '♭♭' : '♭'))
     .replace(/(\d)b(\d)/g, '$1♭$2')
     .replace(/#/g, '♯');
+}
+
+export function readTheme() {
+  try {
+    const saved = window.localStorage.getItem('chord-dictionary-theme');
+    if (saved === 'light' || saved === 'dark') return saved;
+  } catch (e) {
+    /* storage can be blocked */
+  }
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+export function saveTheme(theme) {
+  try {
+    window.localStorage.setItem('chord-dictionary-theme', theme);
+  } catch (e) {
+    /* storage can be blocked */
+  }
 }

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useI18n, pretty } from '../i18n';
 import { chordFor } from '../chordData';
-import { DEGREES, MODES, keySignature, pcAtIndex, mod12 } from '../theory';
+import { DEGREES, MODES, keySignature, pcAtIndex, mod12, keyNames, QUAL_SUFFIX } from '../theory';
 import '../styles/CircleOfFifths.css';
 
 // A rotating circle of fifths. The wheel turns underneath a fixed window: the window always
@@ -141,16 +141,9 @@ function CircleOfFifths({ parentIdx, modeIdx, parentPc, selectedId, onPickKey, o
   };
 
   const mode = MODES[modeIdx];
-  const tonicPc = mod12(parentPc + mode.off);
-  const tonicChord = chordFor(tonicPc, mode.qual);
   const hi = WINDOW.find((w) => w.d === modeIdx);
   const sig = keySignature(parentIdx);
   const veil = [circle(R[3]), circle(R[0]), ...WINDOW.map((w) => sector(R[w.ring], R[w.ring + 1], w.a - 15, w.a + 15))].join('');
-
-  const fill = (ring, i) => {
-    const h = i * 30;
-    return ring === 2 ? `hsl(${h} 70% 90%)` : ring === 1 ? `hsl(${h} 55% 94%)` : `hsl(${h} 35% 96%)`;
-  };
 
   return (
     <div className="wheel">
@@ -175,8 +168,8 @@ function CircleOfFifths({ parentIdx, modeIdx, parentPc, selectedId, onPickKey, o
               <path
                 key={`s${ring}${i}`}
                 d={sector(R[ring], R[ring + 1], a - 14.7, a + 14.7)}
-                fill={fill(ring, i)}
-                className="wheel-seg"
+                style={{ '--h': i * 30 }}
+                className={`wheel-seg wheel-seg-${ring}`}
                 onClick={() => clickSegment(ring, i)}
               />
             ));
@@ -242,7 +235,7 @@ function CircleOfFifths({ parentIdx, modeIdx, parentPc, selectedId, onPickKey, o
             return <circle key={i} cx={x} cy={y} r={i === parentIdx ? 3.2 : 1.8} className={i === parentIdx ? 'wheel-dot is-parent' : 'wheel-dot'} />;
           })}
           <text x={CX} y={CY - 2} textAnchor="middle" className="wheel-center-key">
-            {tonicChord ? pretty(tonicChord.symbol) : ''}
+            {pretty(keyNames(parentPc)[modeIdx] + QUAL_SUFFIX[mode.qual])}
           </text>
           <text x={CX} y={CY + 15} textAnchor="middle" className="wheel-center-mode">
             {t('modeShort')[modeIdx]}

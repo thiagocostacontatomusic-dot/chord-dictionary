@@ -1,16 +1,14 @@
 import React from 'react';
 import { useI18n, pretty } from '../i18n';
 import { chordFor } from '../chordData';
-import { DEGREES, MODES, romanFor, mod12 } from '../theory';
+import { DEGREES, MODES, romanFor, mod12, keyNames, QUAL_SUFFIX } from '../theory';
 import '../styles/KeyChords.css';
 
 // The seven chords of the key as a plain row of buttons, with their Roman numerals.
 function KeyChords({ parentPc, modeIdx, selectedId, onPickDegree, onPickMode }) {
   const { t } = useI18n();
-  const mode = MODES[modeIdx];
-  const tonic = chordFor(mod12(parentPc + mode.off), mode.qual);
-  const parent = chordFor(parentPc, 'major');
-  const title = tonic ? `${pretty(tonic.rootName)} ${t('modeNames')[modeIdx]}` : '';
+  const names = keyNames(parentPc);
+  const title = `${pretty(names[modeIdx])} ${t('modeNames')[modeIdx]}`;
 
   return (
     <section className="keychords" aria-label={t('chordsInKey', title)}>
@@ -30,7 +28,7 @@ function KeyChords({ parentPc, modeIdx, selectedId, onPickDegree, onPickMode }) 
       <h3 className="keychords-title">{t('chordsInKey', title)}</h3>
       <p className="keychords-sub">
         {t('modeMoods')[modeIdx]}
-        {modeIdx !== 0 && parent ? ` · ${t('sameNotes', pretty(parent.rootName))}` : ''}
+        {modeIdx !== 0 ? ` · ${t('sameNotes', pretty(names[0]))}` : ''}
       </p>
       <ol className="degrees">
         {DEGREES.map((deg, d) => {
@@ -44,7 +42,7 @@ function KeyChords({ parentPc, modeIdx, selectedId, onPickDegree, onPickMode }) 
                 onClick={() => onPickDegree(d)}
               >
                 <span className="degree-roman">{romanFor(d, modeIdx)}</span>
-                <span className="degree-name">{pretty(chord.symbol)}</span>
+                <span className="degree-name">{pretty(names[d] + QUAL_SUFFIX[deg.q])}</span>
               </button>
             </li>
           );

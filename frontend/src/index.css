@@ -1,21 +1,55 @@
 :root {
+  color-scheme: light;
   --paper: #f4f3fa;
   --surface: #ffffff;
   --ink: #1b1633;
+  --on-ink: #ffffff;
   --ink-soft: #5d587a;
+  --ink-2: #3a3560;
+  --ink-3: #6a6590;
   --line: #dedbee;
   --violet: #6b4eff;
   --violet-dark: #4b32d6;
   --violet-tint: #ebe7ff;
-  --wood: #3a2218;
-  --pearl: #e9e2d0;
+  --error-bg: #fff0f0;
+  --error-line: #f1b8b8;
+  --error-ink: #8a1f1f;
+  --wheel-s2: 70%; --wheel-l2: 90%;
+  --wheel-s1: 55%; --wheel-l1: 94%;
+  --wheel-s0: 35%; --wheel-l0: 96%;
+  --wheel-stroke: #ffffff;
+  --wheel-dot: #b9b4d6;
   --font-display: 'Bricolage Grotesque', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
   --font-body: 'Instrument Sans', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #131020;
+  --surface: #1d1930;
+  --ink: #f1edff;
+  --on-ink: #131020;
+  --ink-soft: #aaa4c9;
+  --ink-2: #d6d0f2;
+  --ink-3: #aaa4c9;
+  --line: #322d4e;
+  --violet: #8a73ff;
+  --violet-dark: #b8a9ff;
+  --violet-tint: #2b2554;
+  --error-bg: #3a1620;
+  --error-line: #7a2b3b;
+  --error-ink: #ffc2cc;
+  --wheel-s2: 38%; --wheel-l2: 25%;
+  --wheel-s1: 30%; --wheel-l1: 20%;
+  --wheel-s0: 22%; --wheel-l0: 16%;
+  --wheel-stroke: #131020;
+  --wheel-dot: #5b5580;
 }
 
 * { box-sizing: border-box; }
 
 html, body { margin: 0; }
+body, .layout { overflow-anchor: none; }
 
 body {
   background: var(--paper);
