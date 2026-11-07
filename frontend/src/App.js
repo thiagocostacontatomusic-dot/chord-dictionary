@@ -3,8 +3,11 @@ import './App.css';
 import ChordList from './components/ChordList';
 import ChordDetail from './components/ChordDetail';
 import SearchBar from './components/SearchBar';
-import FilterBar from './components/FilterBar';
-import { searchChords, notes, types, stats } from './chordData';
+import CircleOfFifths from './components/CircleOfFifths';
+import KeyChords from './components/KeyChords';
+import FamilyChips from './components/FamilyChips';
+import { searchChords, stats, getChord, chordFor, chordsOfRoot } from './chordData';
+import { DEGREES, MODES, FAMILY, familyOf, mod12, fifthsIndex } from './theory';
 import { I18nContext, makeI18n, readLang, saveLang } from './i18n';
 
 function useDebounced(value, ms) {
@@ -21,10 +24,13 @@ function App() {
   const i18n = useMemo(() => makeI18n(lang), [lang]);
   const { t } = i18n;
 
-  const [selectedId, setSelectedId] = useState(() => window.location.hash.slice(1) || '');
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedNote, setSelectedNote] = useState('');
-  const [selectedType, setSelectedType] = useState('');
+  // The wheel: a tonic and a mode. The wheel itself always shows the parent major key.
+  const initial = getChord(window.location.hash.slice(1));
+  const initialMode = initial ? { major: 0, minor: 5, dim: 6 }[familyOf(initial.typeKey)] || 0 : 0;
+  const [tonicPc, setTonicPc] = useState(initial ? initial.pcs[0] : 0);
+  const [modeIdx, setModeIdx] = useState(initialMode);
+  const [selectedId, setSelectedId] = useState(initial ? initial.id : 'C_major');
 
   const [installEvent, setInstallEvent] = useState(null);
   useEffect(() => {
@@ -53,20 +59,50 @@ function App() {
     saveLang(lang);
   }, [lang]);
 
-  const chords = useMemo(
-    () => searchChords({ search, note: selectedNote, type: selectedType }),
-    [search, selectedNote, selectedType]
-  );
+  const chords = useMemo(() => searchChords({ search }), [search]);
 
-  const selectedChord = useMemo(
-    () => chords.find((c) => c.id === selectedId) || chords[0] || null,
-    [chords, selectedId]
-  );
+  const parentPc = mod12(tonicPc - MODES[modeIdx].off);
+  const parentIdx = fifthsIndex(parentPc);
+  const selectedChord = getChord(selectedId) || chords[0] || null;
+  const family = useMemo(() => (selectedChord ? chordsOfRoot(selectedChord.pcs[0]) : []), [selectedChord]);
 
-  const select = useCallback((chord) => {
+  const choose = useCallback((chord) => {
     setSelectedId(chord.id);
     window.history.replaceState(null, '', `#${chord.id}`);
   }, []);
+
+  const pickKey = useCallback(
+    (pc, m) => {
+      setTonicPc(pc);
+      setModeIdx(m);
+      const chord = chordFor(pc, MODES[m].qual);
+      if (chord) choose(chord);
+    },
+    [choose]
+  );
+
+  const rotate = (idx) => pickKey(mod12(7 * idx + MODES[modeIdx].off), modeIdx);
+
+  const pickDegree = (d) => {
+    const chord = chordFor(mod12(parentPc + DEGREES[d].off), DEGREES[d].q);
+    if (chord) choose(chord);
+  };
+
+  // Choosing a chord from the list or the chips: the wheel only turns if the chord is not in the current key.
+  const selectChord = useCallback(
+    (chord) => {
+      const fam = familyOf(chord.typeKey);
+      const inKey = DEGREES.some(
+        (deg) => mod12(parentPc + deg.off) === chord.pcs[0] && FAMILY[deg.q].includes(chord.typeKey)
+      );
+      if (!inKey) {
+        setTonicPc(chord.pcs[0]);
+        setModeIdx({ major: 0, minor: 5, dim: 6 }[fam] || 0);
+      }
+      choose(chord);
+    },
+    [parentPc, choose]
+  );
 
   const onKeyDown = (e) => {
     if (e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT') {
@@ -77,15 +113,9 @@ function App() {
     e.preventDefault();
     const i = chords.findIndex((c) => selectedChord && c.id === selectedChord.id);
     const next = chords[Math.min(chords.length - 1, Math.max(0, i + (e.key === 'ArrowDown' ? 1 : -1)))];
-    select(next);
+    selectChord(next);
   };
 
-  const filtered = Boolean(searchTerm || selectedNote || selectedType);
-  const clearAll = () => {
-    setSearchTerm('');
-    setSelectedNote('');
-    setSelectedType('');
-  };
 
   return (
     <I18nContext.Provider value={i18n}>
@@ -117,28 +147,44 @@ function App() {
         </header>
 
         <main className="layout">
-          <aside className="browser">
-            <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
-            <FilterBar
-              notes={notes}
-              types={types}
-              selectedNote={selectedNote}
-              selectedType={selectedType}
-              onNoteChange={setSelectedNote}
-              onTypeChange={setSelectedType}
+          <section className="zone-wheel">
+            <h2 className="zone-title">{t('wheelTitle')}</h2>
+            <p className="zone-help">{t('wheelHelp')}</p>
+            <CircleOfFifths
+              parentIdx={parentIdx}
+              modeIdx={modeIdx}
+              parentPc={parentPc}
+              selectedId={selectedChord ? selectedChord.id : ''}
+              onPickKey={pickKey}
+              onRotate={rotate}
+              onPickDegree={pickDegree}
             />
+            <KeyChords
+              parentPc={parentPc}
+              modeIdx={modeIdx}
+              selectedId={selectedChord ? selectedChord.id : ''}
+              onPickDegree={pickDegree}
+              onPickMode={(m) => pickKey(tonicPc, m)}
+            />
+          </section>
+
+          <section className="zone-detail">
+            {selectedChord && (
+              <>
+                <FamilyChips chords={family} selectedId={selectedChord.id} onSelect={selectChord} />
+                <ChordDetail key={selectedChord.id} chord={selectedChord} />
+              </>
+            )}
+          </section>
+
+          <aside className="zone-list">
+            <h2 className="zone-title">{t('allChords')}</h2>
+            <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
             <div className="count" aria-live="polite">
               <span>{t('found', chords.length)}</span>
-              {filtered && (
-                <button type="button" onClick={clearAll}>{t('clearFilters')}</button>
-              )}
             </div>
-            <ChordList chords={chords} selectedChord={selectedChord} onSelectChord={select} />
+            <ChordList chords={chords} selectedChord={selectedChord} onSelectChord={selectChord} />
           </aside>
-
-          <section className="panel">
-            {selectedChord && <ChordDetail key={selectedChord.id} chord={selectedChord} />}
-          </section>
         </main>
       </div>
     </I18nContext.Provider>

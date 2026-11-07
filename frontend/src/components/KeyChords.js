@@ -1,0 +1,57 @@
+import React from 'react';
+import { useI18n, pretty } from '../i18n';
+import { chordFor } from '../chordData';
+import { DEGREES, MODES, romanFor, mod12 } from '../theory';
+import '../styles/KeyChords.css';
+
+// The seven chords of the key as a plain row of buttons, with their Roman numerals.
+function KeyChords({ parentPc, modeIdx, selectedId, onPickDegree, onPickMode }) {
+  const { t } = useI18n();
+  const mode = MODES[modeIdx];
+  const tonic = chordFor(mod12(parentPc + mode.off), mode.qual);
+  const parent = chordFor(parentPc, 'major');
+  const title = tonic ? `${pretty(tonic.rootName)} ${t('modeNames')[modeIdx]}` : '';
+
+  return (
+    <section className="keychords" aria-label={t('chordsInKey', title)}>
+      <div className="modes" role="group" aria-label={t('modeLabel')}>
+        {MODES.map((m, i) => (
+          <button
+            key={m.key}
+            type="button"
+            className={`mode ${i === modeIdx ? 'is-active' : ''}`}
+            aria-pressed={i === modeIdx}
+            onClick={() => onPickMode(i)}
+          >
+            {t('modeNames')[i]}
+          </button>
+        ))}
+      </div>
+      <h3 className="keychords-title">{t('chordsInKey', title)}</h3>
+      <p className="keychords-sub">
+        {t('modeMoods')[modeIdx]}
+        {modeIdx !== 0 && parent ? ` · ${t('sameNotes', pretty(parent.rootName))}` : ''}
+      </p>
+      <ol className="degrees">
+        {DEGREES.map((deg, d) => {
+          const chord = chordFor(mod12(parentPc + deg.off), deg.q);
+          if (!chord) return null;
+          return (
+            <li key={d}>
+              <button
+                type="button"
+                className={`degree ${chord.id === selectedId ? 'is-selected' : ''} ${d === modeIdx ? 'is-tonic' : ''}`}
+                onClick={() => onPickDegree(d)}
+              >
+                <span className="degree-roman">{romanFor(d, modeIdx)}</span>
+                <span className="degree-name">{pretty(chord.symbol)}</span>
+              </button>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+  );
+}
+
+export default KeyChords;

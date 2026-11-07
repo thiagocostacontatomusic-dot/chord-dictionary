@@ -1,0 +1,16 @@
+.keychords { margin-top: 14px; }
+.modes { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.mode { padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-size: 0.85rem; font-weight: 500; }
+.mode:hover { border-color: var(--violet); }
+.mode.is-active { background: var(--ink); border-color: var(--ink); color: #fff; }
+.keychords-title { margin: 16px 0 0; font-family: var(--font-display); font-size: 1.15rem; text-align: center; }
+.keychords-sub { margin: 2px 0 12px; text-align: center; color: var(--ink-soft); font-size: 0.9rem; }
+.degrees { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.degree { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 2px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.degree:hover { border-color: var(--violet); }
+.degree.is-tonic { background: var(--violet-tint); }
+.degree.is-selected { background: var(--violet); border-color: var(--violet); color: #fff; }
+.degree-roman { font-size: 0.75rem; color: var(--ink-soft); }
+.degree-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; }
+.degree.is-selected .degree-roman { color: #e4defe; }
+@media (max-width: 420px) { .degree-name { font-size: 0.85rem; } .degrees { gap: 4px; } }

@@ -20,19 +20,20 @@
 }
 .lang button.is-active { background: var(--ink); color: #fff; }
 
-.layout { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 32px; align-items: start; }
-
-.browser { position: sticky; top: 16px; display: flex; flex-direction: column; gap: 14px; max-height: calc(100vh - 32px); }
+.layout {
+  display: grid; grid-template-columns: minmax(320px, 440px) minmax(0, 1fr); gap: 24px 36px; align-items: start;
+  grid-template-areas: "wheel detail" "list detail";
+}
+.zone-wheel { grid-area: wheel; }
+.zone-detail { grid-area: detail; min-width: 0; }
+.zone-list { grid-area: list; display: flex; flex-direction: column; gap: 12px; }
+.zone-title { margin: 0; font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; }
+.zone-help { margin: 4px 0 12px; color: var(--ink-soft); font-size: 0.9rem; max-width: 52ch; }
 .count { display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: var(--ink-soft); }
-.count button { border: 0; background: none; color: var(--violet-dark); text-decoration: underline; padding: 0; }
 .error { background: #fff0f0; border: 1px solid #f1b8b8; color: #8a1f1f; padding: 12px 14px; border-radius: 10px; margin: 0; }
-
-.panel { min-width: 0; }
-
 @media (max-width: 900px) {
   .app { padding: 16px 16px 40px; }
-  .layout { grid-template-columns: 1fr; gap: 24px; }
-  .browser { position: static; max-height: none; }
+  .layout { grid-template-columns: 1fr; grid-template-areas: "wheel" "detail" "list"; gap: 24px; }
 }
 
 .install { border: 0; border-radius: 999px; padding: 7px 16px; background: var(--violet); color: #fff; font-weight: 600; font-size: 0.85rem; }

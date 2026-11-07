@@ -39,3 +39,12 @@ export function searchChords({ search = '', note = '', type = '' }) {
   }
   return result;
 }
+
+const byId = Object.fromEntries(chords.map((c) => [c.id, c]));
+const byRootType = {};
+chords.forEach((c) => {
+  byRootType[`${c.pcs[0]}|${c.typeKey}`] = c;
+});
+export const getChord = (id) => byId[id] || null;
+export const chordFor = (pc, typeKey) => byRootType[`${pc}|${typeKey}`] || null;
+export const chordsOfRoot = (pc) => chords.filter((c) => c.pcs[0] === pc);
