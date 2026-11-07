@@ -3915,6 +3915,40 @@
      "toString": 2
     },
     "order": 4
+   },
+   {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 10,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 10
+     },
+     {
+      "string": 3,
+      "fret": 15
+     },
+     {
+      "string": 2,
+      "fret": 15
+     },
+     {
+      "string": 1,
+      "fret": 12
+     }
+    ],
+    "baseFret": 10,
+    "stretch": 5,
+    "order": 5
    }
   ]
  },
@@ -4191,6 +4225,40 @@
      "toString": 2
     },
     "order": 4
+   },
+   {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 10,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 10
+     },
+     {
+      "string": 3,
+      "fret": 16
+     },
+     {
+      "string": 2,
+      "fret": 15
+     },
+     {
+      "string": 1,
+      "fret": 12
+     }
+    ],
+    "baseFret": 10,
+    "stretch": 6,
+    "order": 5
    }
   ]
  },
@@ -4467,6 +4535,40 @@
      "toString": 2
     },
     "order": 4
+   },
+   {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 10,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 10
+     },
+     {
+      "string": 3,
+      "fret": 15
+     },
+     {
+      "string": 2,
+      "fret": 15
+     },
+     {
+      "string": 1,
+      "fret": 11
+     }
+    ],
+    "baseFret": 10,
+    "stretch": 5,
+    "order": 5
    }
   ]
  },
@@ -4894,6 +4996,39 @@
   ],
   "caged": [
    {
+    "form": "C",
+    "label": "C form",
+    "lowestFret": 1,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 3
+     },
+     {
+      "string": 4,
+      "fret": 2
+     },
+     {
+      "string": 3,
+      "fret": 3
+     },
+     {
+      "string": 2,
+      "fret": 1
+     },
+     {
+      "string": 1,
+      "fret": 5
+     }
+    ],
+    "baseFret": 1,
+    "order": 1
+   },
+   {
     "form": "A",
     "label": "A form",
     "lowestFret": 3,
@@ -4924,7 +5059,7 @@
      }
     ],
     "baseFret": 1,
-    "order": 1
+    "order": 2
    },
    {
     "form": "G",
@@ -4957,7 +5092,7 @@
      }
     ],
     "baseFret": 5,
-    "order": 2
+    "order": 3
    },
    {
     "form": "E",
@@ -4995,7 +5130,7 @@
      "fromString": 6,
      "toString": 1
     },
-    "order": 3
+    "order": 4
    },
    {
     "form": "D",
@@ -5028,7 +5163,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -5626,6 +5761,40 @@
      "toString": 2
     },
     "order": 4
+   },
+   {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 10,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 10
+     },
+     {
+      "string": 3,
+      "fret": 15
+     },
+     {
+      "string": 2,
+      "fret": 14
+     },
+     {
+      "string": 1,
+      "fret": 12
+     }
+    ],
+    "baseFret": 10,
+    "stretch": 5,
+    "order": 5
    }
   ]
  },
@@ -5767,6 +5936,40 @@
     "order": 1
    },
    {
+    "form": "A",
+    "label": "A form",
+    "lowestFret": 3,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 3
+     },
+     {
+      "string": 4,
+      "fret": 5
+     },
+     {
+      "string": 3,
+      "fret": 8
+     },
+     {
+      "string": 2,
+      "fret": 5
+     },
+     {
+      "string": 1,
+      "fret": 6
+     }
+    ],
+    "baseFret": 3,
+    "stretch": 5,
+    "order": 2
+   },
+   {
     "form": "G",
     "label": "G form",
     "lowestFret": 5,
@@ -5797,7 +6000,7 @@
      }
     ],
     "baseFret": 5,
-    "order": 2
+    "order": 3
    },
    {
     "form": "E",
@@ -5835,7 +6038,41 @@
      "fromString": 6,
      "toString": 2
     },
-    "order": 3
+    "order": 4
+   },
+   {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 10,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 10
+     },
+     {
+      "string": 3,
+      "fret": 15
+     },
+     {
+      "string": 2,
+      "fret": 16
+     },
+     {
+      "string": 1,
+      "fret": 12
+     }
+    ],
+    "baseFret": 10,
+    "stretch": 6,
+    "order": 5
    }
   ]
  },
@@ -6696,6 +6933,40 @@
     ],
     "baseFret": 8,
     "order": 4
+   },
+   {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 10,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 10
+     },
+     {
+      "string": 3,
+      "fret": 14
+     },
+     {
+      "string": 2,
+      "fret": 15
+     },
+     {
+      "string": 1,
+      "fret": 12
+     }
+    ],
+    "baseFret": 10,
+    "stretch": 5,
+    "order": 5
    }
   ]
  },
@@ -10508,6 +10779,40 @@
      "toString": 2
     },
     "order": 4
+   },
+   {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 11,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 11
+     },
+     {
+      "string": 3,
+      "fret": 16
+     },
+     {
+      "string": 2,
+      "fret": 16
+     },
+     {
+      "string": 1,
+      "fret": 13
+     }
+    ],
+    "baseFret": 11,
+    "stretch": 5,
+    "order": 5
    }
   ]
  },
@@ -10792,6 +11097,40 @@
      "toString": 2
     },
     "order": 4
+   },
+   {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 11,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 11
+     },
+     {
+      "string": 3,
+      "fret": 17
+     },
+     {
+      "string": 2,
+      "fret": 16
+     },
+     {
+      "string": 1,
+      "fret": 13
+     }
+    ],
+    "baseFret": 11,
+    "stretch": 6,
+    "order": 5
    }
   ]
  },
@@ -11071,6 +11410,40 @@
      "toString": 2
     },
     "order": 4
+   },
+   {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 11,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 11
+     },
+     {
+      "string": 3,
+      "fret": 16
+     },
+     {
+      "string": 2,
+      "fret": 16
+     },
+     {
+      "string": 1,
+      "fret": 12
+     }
+    ],
+    "baseFret": 11,
+    "stretch": 5,
+    "order": 5
    }
   ]
  },
@@ -11504,6 +11877,39 @@
   ],
   "caged": [
    {
+    "form": "C",
+    "label": "C form",
+    "lowestFret": 2,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 4
+     },
+     {
+      "string": 4,
+      "fret": 3
+     },
+     {
+      "string": 3,
+      "fret": 4
+     },
+     {
+      "string": 2,
+      "fret": 2
+     },
+     {
+      "string": 1,
+      "fret": 6
+     }
+    ],
+    "baseFret": 2,
+    "order": 1
+   },
+   {
     "form": "A",
     "label": "A form",
     "lowestFret": 4,
@@ -11534,7 +11940,7 @@
      }
     ],
     "baseFret": 4,
-    "order": 1
+    "order": 2
    },
    {
     "form": "G",
@@ -11567,7 +11973,7 @@
      }
     ],
     "baseFret": 6,
-    "order": 2
+    "order": 3
    },
    {
     "form": "E",
@@ -11605,7 +12011,7 @@
      "fromString": 6,
      "toString": 1
     },
-    "order": 3
+    "order": 4
    },
    {
     "form": "D",
@@ -11638,7 +12044,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -12242,6 +12648,40 @@
      "toString": 2
     },
     "order": 4
+   },
+   {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 11,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 11
+     },
+     {
+      "string": 3,
+      "fret": 16
+     },
+     {
+      "string": 2,
+      "fret": 15
+     },
+     {
+      "string": 1,
+      "fret": 13
+     }
+    ],
+    "baseFret": 11,
+    "stretch": 5,
+    "order": 5
    }
   ]
  },
@@ -12386,6 +12826,40 @@
     "order": 1
    },
    {
+    "form": "A",
+    "label": "A form",
+    "lowestFret": 4,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 4
+     },
+     {
+      "string": 4,
+      "fret": 6
+     },
+     {
+      "string": 3,
+      "fret": 9
+     },
+     {
+      "string": 2,
+      "fret": 6
+     },
+     {
+      "string": 1,
+      "fret": 7
+     }
+    ],
+    "baseFret": 4,
+    "stretch": 5,
+    "order": 2
+   },
+   {
     "form": "G",
     "label": "G form",
     "lowestFret": 6,
@@ -12416,7 +12890,7 @@
      }
     ],
     "baseFret": 6,
-    "order": 2
+    "order": 3
    },
    {
     "form": "E",
@@ -12454,7 +12928,41 @@
      "fromString": 6,
      "toString": 2
     },
-    "order": 3
+    "order": 4
+   },
+   {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 11,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 11
+     },
+     {
+      "string": 3,
+      "fret": 16
+     },
+     {
+      "string": 2,
+      "fret": 17
+     },
+     {
+      "string": 1,
+      "fret": 13
+     }
+    ],
+    "baseFret": 11,
+    "stretch": 6,
+    "order": 5
    }
   ]
  },
@@ -13329,6 +13837,40 @@
     ],
     "baseFret": 9,
     "order": 4
+   },
+   {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 11,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 11
+     },
+     {
+      "string": 3,
+      "fret": 15
+     },
+     {
+      "string": 2,
+      "fret": 16
+     },
+     {
+      "string": 1,
+      "fret": 13
+     }
+    ],
+    "baseFret": 11,
+    "stretch": 5,
+    "order": 5
    }
   ]
  },
@@ -17242,6 +17784,40 @@
   ],
   "caged": [
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 0,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 0
+     },
+     {
+      "string": 3,
+      "fret": 5
+     },
+     {
+      "string": 2,
+      "fret": 5
+     },
+     {
+      "string": 1,
+      "fret": 2
+     }
+    ],
+    "baseFret": 1,
+    "stretch": 5,
+    "order": 1
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 2,
@@ -17277,7 +17853,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 1
+    "order": 2
    },
    {
     "form": "A",
@@ -17310,7 +17886,7 @@
      }
     ],
     "baseFret": 5,
-    "order": 2
+    "order": 3
    },
    {
     "form": "G",
@@ -17343,7 +17919,7 @@
      }
     ],
     "baseFret": 7,
-    "order": 3
+    "order": 4
    },
    {
     "form": "E",
@@ -17381,7 +17957,7 @@
      "fromString": 6,
      "toString": 2
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -17523,6 +18099,40 @@
   ],
   "caged": [
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 0,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 0
+     },
+     {
+      "string": 3,
+      "fret": 6
+     },
+     {
+      "string": 2,
+      "fret": 5
+     },
+     {
+      "string": 1,
+      "fret": 2
+     }
+    ],
+    "baseFret": 2,
+    "stretch": 6,
+    "order": 1
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 2,
@@ -17558,7 +18168,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 1
+    "order": 2
    },
    {
     "form": "A",
@@ -17591,7 +18201,7 @@
      }
     ],
     "baseFret": 5,
-    "order": 2
+    "order": 3
    },
    {
     "form": "G",
@@ -17624,7 +18234,7 @@
      }
     ],
     "baseFret": 7,
-    "order": 3
+    "order": 4
    },
    {
     "form": "E",
@@ -17662,7 +18272,7 @@
      "fromString": 6,
      "toString": 2
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -17804,6 +18414,40 @@
   ],
   "caged": [
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 0,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 0
+     },
+     {
+      "string": 3,
+      "fret": 5
+     },
+     {
+      "string": 2,
+      "fret": 5
+     },
+     {
+      "string": 1,
+      "fret": 1
+     }
+    ],
+    "baseFret": 1,
+    "stretch": 5,
+    "order": 1
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 2,
@@ -17834,7 +18478,7 @@
      }
     ],
     "baseFret": 2,
-    "order": 1
+    "order": 2
    },
    {
     "form": "A",
@@ -17867,7 +18511,7 @@
      }
     ],
     "baseFret": 5,
-    "order": 2
+    "order": 3
    },
    {
     "form": "G",
@@ -17900,7 +18544,7 @@
      }
     ],
     "baseFret": 7,
-    "order": 3
+    "order": 4
    },
    {
     "form": "E",
@@ -17938,7 +18582,7 @@
      "fromString": 6,
      "toString": 2
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -18404,6 +19048,39 @@
     "order": 1
    },
    {
+    "form": "C",
+    "label": "C form",
+    "lowestFret": 3,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 5
+     },
+     {
+      "string": 4,
+      "fret": 4
+     },
+     {
+      "string": 3,
+      "fret": 5
+     },
+     {
+      "string": 2,
+      "fret": 3
+     },
+     {
+      "string": 1,
+      "fret": 7
+     }
+    ],
+    "baseFret": 3,
+    "order": 2
+   },
+   {
     "form": "A",
     "label": "A form",
     "lowestFret": 5,
@@ -18434,7 +19111,7 @@
      }
     ],
     "baseFret": 5,
-    "order": 2
+    "order": 3
    },
    {
     "form": "G",
@@ -18467,7 +19144,7 @@
      }
     ],
     "baseFret": 7,
-    "order": 3
+    "order": 4
    },
    {
     "form": "E",
@@ -18505,7 +19182,7 @@
      "fromString": 6,
      "toString": 1
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -18968,6 +19645,40 @@
   ],
   "caged": [
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 0,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 0
+     },
+     {
+      "string": 3,
+      "fret": 5
+     },
+     {
+      "string": 2,
+      "fret": 4
+     },
+     {
+      "string": 1,
+      "fret": 2
+     }
+    ],
+    "baseFret": 1,
+    "stretch": 5,
+    "order": 1
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 2,
@@ -18998,7 +19709,7 @@
      }
     ],
     "baseFret": 1,
-    "order": 1
+    "order": 2
    },
    {
     "form": "A",
@@ -19031,7 +19742,7 @@
      }
     ],
     "baseFret": 5,
-    "order": 2
+    "order": 3
    },
    {
     "form": "G",
@@ -19064,7 +19775,7 @@
      }
     ],
     "baseFret": 7,
-    "order": 3
+    "order": 4
    },
    {
     "form": "E",
@@ -19102,7 +19813,7 @@
      "fromString": 6,
      "toString": 2
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -19211,6 +19922,40 @@
   ],
   "caged": [
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 0,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 0
+     },
+     {
+      "string": 3,
+      "fret": 5
+     },
+     {
+      "string": 2,
+      "fret": 6
+     },
+     {
+      "string": 1,
+      "fret": 2
+     }
+    ],
+    "baseFret": 2,
+    "stretch": 6,
+    "order": 1
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 2,
@@ -19241,7 +19986,41 @@
      }
     ],
     "baseFret": 1,
-    "order": 1
+    "order": 2
+   },
+   {
+    "form": "A",
+    "label": "A form",
+    "lowestFret": 5,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 5
+     },
+     {
+      "string": 4,
+      "fret": 7
+     },
+     {
+      "string": 3,
+      "fret": 10
+     },
+     {
+      "string": 2,
+      "fret": 7
+     },
+     {
+      "string": 1,
+      "fret": 8
+     }
+    ],
+    "baseFret": 5,
+    "stretch": 5,
+    "order": 3
    },
    {
     "form": "G",
@@ -19274,7 +20053,7 @@
      }
     ],
     "baseFret": 7,
-    "order": 2
+    "order": 4
    },
    {
     "form": "E",
@@ -19312,7 +20091,7 @@
      "fromString": 6,
      "toString": 2
     },
-    "order": 3
+    "order": 5
    }
   ]
  },
@@ -20038,6 +20817,40 @@
   ],
   "caged": [
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 0,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 0
+     },
+     {
+      "string": 3,
+      "fret": 4
+     },
+     {
+      "string": 2,
+      "fret": 5
+     },
+     {
+      "string": 1,
+      "fret": 2
+     }
+    ],
+    "baseFret": 1,
+    "stretch": 5,
+    "order": 1
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 2,
@@ -20073,7 +20886,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 1
+    "order": 2
    },
    {
     "form": "A",
@@ -20106,7 +20919,7 @@
      }
     ],
     "baseFret": 5,
-    "order": 2
+    "order": 3
    },
    {
     "form": "G",
@@ -20144,7 +20957,7 @@
      "fromString": 5,
      "toString": 1
     },
-    "order": 3
+    "order": 4
    },
    {
     "form": "E",
@@ -20177,7 +20990,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -23850,6 +24663,40 @@
   ],
   "caged": [
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 1,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 1
+     },
+     {
+      "string": 3,
+      "fret": 6
+     },
+     {
+      "string": 2,
+      "fret": 6
+     },
+     {
+      "string": 1,
+      "fret": 3
+     }
+    ],
+    "baseFret": 1,
+    "stretch": 5,
+    "order": 1
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 3,
@@ -23885,7 +24732,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 1
+    "order": 2
    },
    {
     "form": "A",
@@ -23918,7 +24765,7 @@
      }
     ],
     "baseFret": 6,
-    "order": 2
+    "order": 3
    },
    {
     "form": "G",
@@ -23951,7 +24798,7 @@
      }
     ],
     "baseFret": 8,
-    "order": 3
+    "order": 4
    },
    {
     "form": "E",
@@ -23989,7 +24836,7 @@
      "fromString": 6,
      "toString": 2
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -24134,6 +24981,40 @@
   ],
   "caged": [
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 1,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 1
+     },
+     {
+      "string": 3,
+      "fret": 7
+     },
+     {
+      "string": 2,
+      "fret": 6
+     },
+     {
+      "string": 1,
+      "fret": 3
+     }
+    ],
+    "baseFret": 1,
+    "stretch": 6,
+    "order": 1
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 3,
@@ -24169,7 +25050,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 1
+    "order": 2
    },
    {
     "form": "A",
@@ -24202,7 +25083,7 @@
      }
     ],
     "baseFret": 6,
-    "order": 2
+    "order": 3
    },
    {
     "form": "G",
@@ -24235,7 +25116,7 @@
      }
     ],
     "baseFret": 8,
-    "order": 3
+    "order": 4
    },
    {
     "form": "E",
@@ -24273,7 +25154,7 @@
      "fromString": 6,
      "toString": 2
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -24418,6 +25299,40 @@
   ],
   "caged": [
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 1,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 1
+     },
+     {
+      "string": 3,
+      "fret": 6
+     },
+     {
+      "string": 2,
+      "fret": 6
+     },
+     {
+      "string": 1,
+      "fret": 2
+     }
+    ],
+    "baseFret": 1,
+    "stretch": 5,
+    "order": 1
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 3,
@@ -24448,7 +25363,7 @@
      }
     ],
     "baseFret": 3,
-    "order": 1
+    "order": 2
    },
    {
     "form": "A",
@@ -24481,7 +25396,7 @@
      }
     ],
     "baseFret": 6,
-    "order": 2
+    "order": 3
    },
    {
     "form": "G",
@@ -24514,7 +25429,7 @@
      }
     ],
     "baseFret": 8,
-    "order": 3
+    "order": 4
    },
    {
     "form": "E",
@@ -24552,7 +25467,7 @@
      "fromString": 6,
      "toString": 2
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -25019,6 +25934,39 @@
     "order": 1
    },
    {
+    "form": "C",
+    "label": "C form",
+    "lowestFret": 4,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 6
+     },
+     {
+      "string": 4,
+      "fret": 5
+     },
+     {
+      "string": 3,
+      "fret": 6
+     },
+     {
+      "string": 2,
+      "fret": 4
+     },
+     {
+      "string": 1,
+      "fret": 8
+     }
+    ],
+    "baseFret": 4,
+    "order": 2
+   },
+   {
     "form": "A",
     "label": "A form",
     "lowestFret": 6,
@@ -25049,7 +25997,7 @@
      }
     ],
     "baseFret": 6,
-    "order": 2
+    "order": 3
    },
    {
     "form": "G",
@@ -25082,7 +26030,7 @@
      }
     ],
     "baseFret": 8,
-    "order": 3
+    "order": 4
    },
    {
     "form": "E",
@@ -25120,7 +26068,7 @@
      "fromString": 6,
      "toString": 1
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -25589,6 +26537,40 @@
   ],
   "caged": [
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 1,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 1
+     },
+     {
+      "string": 3,
+      "fret": 6
+     },
+     {
+      "string": 2,
+      "fret": 5
+     },
+     {
+      "string": 1,
+      "fret": 3
+     }
+    ],
+    "baseFret": 1,
+    "stretch": 5,
+    "order": 1
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 3,
@@ -25619,7 +26601,7 @@
      }
     ],
     "baseFret": 3,
-    "order": 1
+    "order": 2
    },
    {
     "form": "A",
@@ -25652,7 +26634,7 @@
      }
     ],
     "baseFret": 6,
-    "order": 2
+    "order": 3
    },
    {
     "form": "G",
@@ -25685,7 +26667,7 @@
      }
     ],
     "baseFret": 8,
-    "order": 3
+    "order": 4
    },
    {
     "form": "E",
@@ -25723,7 +26705,7 @@
      "fromString": 6,
      "toString": 2
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -25835,6 +26817,40 @@
   ],
   "caged": [
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 1,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 1
+     },
+     {
+      "string": 3,
+      "fret": 6
+     },
+     {
+      "string": 2,
+      "fret": 7
+     },
+     {
+      "string": 1,
+      "fret": 3
+     }
+    ],
+    "baseFret": 1,
+    "stretch": 6,
+    "order": 1
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 3,
@@ -25865,7 +26881,41 @@
      }
     ],
     "baseFret": 3,
-    "order": 1
+    "order": 2
+   },
+   {
+    "form": "A",
+    "label": "A form",
+    "lowestFret": 6,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 6
+     },
+     {
+      "string": 4,
+      "fret": 8
+     },
+     {
+      "string": 3,
+      "fret": 11
+     },
+     {
+      "string": 2,
+      "fret": 8
+     },
+     {
+      "string": 1,
+      "fret": 9
+     }
+    ],
+    "baseFret": 6,
+    "stretch": 5,
+    "order": 3
    },
    {
     "form": "G",
@@ -25898,7 +26948,7 @@
      }
     ],
     "baseFret": 8,
-    "order": 2
+    "order": 4
    },
    {
     "form": "E",
@@ -25936,7 +26986,7 @@
      "fromString": 6,
      "toString": 2
     },
-    "order": 3
+    "order": 5
    }
   ]
  },
@@ -26671,6 +27721,40 @@
   ],
   "caged": [
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 1,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 1
+     },
+     {
+      "string": 3,
+      "fret": 5
+     },
+     {
+      "string": 2,
+      "fret": 6
+     },
+     {
+      "string": 1,
+      "fret": 3
+     }
+    ],
+    "baseFret": 1,
+    "stretch": 5,
+    "order": 1
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 3,
@@ -26706,7 +27790,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 1
+    "order": 2
    },
    {
     "form": "A",
@@ -26739,7 +27823,7 @@
      }
     ],
     "baseFret": 6,
-    "order": 2
+    "order": 3
    },
    {
     "form": "G",
@@ -26777,7 +27861,7 @@
      "fromString": 5,
      "toString": 1
     },
-    "order": 3
+    "order": 4
    },
    {
     "form": "E",
@@ -26810,7 +27894,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -30368,6 +31452,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 2,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 2
+     },
+     {
+      "string": 3,
+      "fret": 7
+     },
+     {
+      "string": 2,
+      "fret": 7
+     },
+     {
+      "string": 1,
+      "fret": 4
+     }
+    ],
+    "baseFret": 2,
+    "stretch": 5,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 4,
@@ -30403,7 +31521,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 2
+    "order": 3
    },
    {
     "form": "A",
@@ -30436,7 +31554,7 @@
      }
     ],
     "baseFret": 7,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -30469,7 +31587,7 @@
      }
     ],
     "baseFret": 9,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -30639,6 +31757,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 2,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 2
+     },
+     {
+      "string": 3,
+      "fret": 8
+     },
+     {
+      "string": 2,
+      "fret": 7
+     },
+     {
+      "string": 1,
+      "fret": 4
+     }
+    ],
+    "baseFret": 2,
+    "stretch": 6,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 4,
@@ -30674,7 +31826,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 2
+    "order": 3
    },
    {
     "form": "A",
@@ -30707,7 +31859,7 @@
      }
     ],
     "baseFret": 7,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -30740,7 +31892,7 @@
      }
     ],
     "baseFret": 9,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -30910,6 +32062,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 2,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 2
+     },
+     {
+      "string": 3,
+      "fret": 7
+     },
+     {
+      "string": 2,
+      "fret": 7
+     },
+     {
+      "string": 1,
+      "fret": 3
+     }
+    ],
+    "baseFret": 2,
+    "stretch": 5,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 4,
@@ -30940,7 +32126,7 @@
      }
     ],
     "baseFret": 4,
-    "order": 2
+    "order": 3
    },
    {
     "form": "A",
@@ -30973,7 +32159,7 @@
      }
     ],
     "baseFret": 7,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -31006,7 +32192,7 @@
      }
     ],
     "baseFret": 9,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -31490,6 +32676,39 @@
     "order": 2
    },
    {
+    "form": "C",
+    "label": "C form",
+    "lowestFret": 5,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 7
+     },
+     {
+      "string": 4,
+      "fret": 6
+     },
+     {
+      "string": 3,
+      "fret": 7
+     },
+     {
+      "string": 2,
+      "fret": 5
+     },
+     {
+      "string": 1,
+      "fret": 9
+     }
+    ],
+    "baseFret": 5,
+    "order": 3
+   },
+   {
     "form": "A",
     "label": "A form",
     "lowestFret": 7,
@@ -31520,7 +32739,7 @@
      }
     ],
     "baseFret": 7,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -31553,7 +32772,7 @@
      }
     ],
     "baseFret": 9,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -32034,6 +33253,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 2,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 2
+     },
+     {
+      "string": 3,
+      "fret": 7
+     },
+     {
+      "string": 2,
+      "fret": 6
+     },
+     {
+      "string": 1,
+      "fret": 4
+     }
+    ],
+    "baseFret": 2,
+    "stretch": 5,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 4,
@@ -32064,7 +33317,7 @@
      }
     ],
     "baseFret": 4,
-    "order": 2
+    "order": 3
    },
    {
     "form": "A",
@@ -32097,7 +33350,7 @@
      }
     ],
     "baseFret": 7,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -32130,7 +33383,7 @@
      }
     ],
     "baseFret": 9,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -32267,6 +33520,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 2,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 2
+     },
+     {
+      "string": 3,
+      "fret": 7
+     },
+     {
+      "string": 2,
+      "fret": 8
+     },
+     {
+      "string": 1,
+      "fret": 4
+     }
+    ],
+    "baseFret": 2,
+    "stretch": 6,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 4,
@@ -32297,7 +33584,41 @@
      }
     ],
     "baseFret": 4,
-    "order": 2
+    "order": 3
+   },
+   {
+    "form": "A",
+    "label": "A form",
+    "lowestFret": 7,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 7
+     },
+     {
+      "string": 4,
+      "fret": 9
+     },
+     {
+      "string": 3,
+      "fret": 12
+     },
+     {
+      "string": 2,
+      "fret": 9
+     },
+     {
+      "string": 1,
+      "fret": 10
+     }
+    ],
+    "baseFret": 7,
+    "stretch": 5,
+    "order": 4
    },
    {
     "form": "G",
@@ -32330,7 +33651,7 @@
      }
     ],
     "baseFret": 9,
-    "order": 3
+    "order": 5
    }
   ]
  },
@@ -33069,6 +34390,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 2,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 2
+     },
+     {
+      "string": 3,
+      "fret": 6
+     },
+     {
+      "string": 2,
+      "fret": 7
+     },
+     {
+      "string": 1,
+      "fret": 4
+     }
+    ],
+    "baseFret": 2,
+    "stretch": 5,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 4,
@@ -33104,7 +34459,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 2
+    "order": 3
    },
    {
     "form": "A",
@@ -33137,7 +34492,7 @@
      }
     ],
     "baseFret": 7,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -33175,7 +34530,7 @@
      "fromString": 5,
      "toString": 1
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -36909,6 +38264,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 3,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 3
+     },
+     {
+      "string": 3,
+      "fret": 8
+     },
+     {
+      "string": 2,
+      "fret": 8
+     },
+     {
+      "string": 1,
+      "fret": 5
+     }
+    ],
+    "baseFret": 3,
+    "stretch": 5,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 5,
@@ -36944,7 +38333,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 2
+    "order": 3
    },
    {
     "form": "A",
@@ -36977,7 +38366,7 @@
      }
     ],
     "baseFret": 8,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -37010,7 +38399,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -37190,6 +38579,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 3,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 3
+     },
+     {
+      "string": 3,
+      "fret": 9
+     },
+     {
+      "string": 2,
+      "fret": 8
+     },
+     {
+      "string": 1,
+      "fret": 5
+     }
+    ],
+    "baseFret": 3,
+    "stretch": 6,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 5,
@@ -37225,7 +38648,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 2
+    "order": 3
    },
    {
     "form": "A",
@@ -37258,7 +38681,7 @@
      }
     ],
     "baseFret": 8,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -37291,7 +38714,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -37471,6 +38894,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 3,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 3
+     },
+     {
+      "string": 3,
+      "fret": 8
+     },
+     {
+      "string": 2,
+      "fret": 8
+     },
+     {
+      "string": 1,
+      "fret": 4
+     }
+    ],
+    "baseFret": 3,
+    "stretch": 5,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 5,
@@ -37501,7 +38958,7 @@
      }
     ],
     "baseFret": 5,
-    "order": 2
+    "order": 3
    },
    {
     "form": "A",
@@ -37534,7 +38991,7 @@
      }
     ],
     "baseFret": 8,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -37567,7 +39024,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -38066,6 +39523,39 @@
     "order": 2
    },
    {
+    "form": "C",
+    "label": "C form",
+    "lowestFret": 6,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 8
+     },
+     {
+      "string": 4,
+      "fret": 7
+     },
+     {
+      "string": 3,
+      "fret": 8
+     },
+     {
+      "string": 2,
+      "fret": 6
+     },
+     {
+      "string": 1,
+      "fret": 10
+     }
+    ],
+    "baseFret": 6,
+    "order": 3
+   },
+   {
     "form": "A",
     "label": "A form",
     "lowestFret": 8,
@@ -38096,7 +39586,7 @@
      }
     ],
     "baseFret": 8,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -38129,7 +39619,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -38630,6 +40120,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 3,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 3
+     },
+     {
+      "string": 3,
+      "fret": 8
+     },
+     {
+      "string": 2,
+      "fret": 7
+     },
+     {
+      "string": 1,
+      "fret": 5
+     }
+    ],
+    "baseFret": 3,
+    "stretch": 5,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 5,
@@ -38660,7 +40184,7 @@
      }
     ],
     "baseFret": 5,
-    "order": 2
+    "order": 3
    },
    {
     "form": "A",
@@ -38693,7 +40217,7 @@
      }
     ],
     "baseFret": 8,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -38726,7 +40250,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -38873,6 +40397,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 3,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 3
+     },
+     {
+      "string": 3,
+      "fret": 8
+     },
+     {
+      "string": 2,
+      "fret": 9
+     },
+     {
+      "string": 1,
+      "fret": 5
+     }
+    ],
+    "baseFret": 3,
+    "stretch": 6,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 5,
@@ -38903,7 +40461,41 @@
      }
     ],
     "baseFret": 5,
-    "order": 2
+    "order": 3
+   },
+   {
+    "form": "A",
+    "label": "A form",
+    "lowestFret": 8,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 8
+     },
+     {
+      "string": 4,
+      "fret": 10
+     },
+     {
+      "string": 3,
+      "fret": 13
+     },
+     {
+      "string": 2,
+      "fret": 10
+     },
+     {
+      "string": 1,
+      "fret": 11
+     }
+    ],
+    "baseFret": 8,
+    "stretch": 5,
+    "order": 4
    },
    {
     "form": "G",
@@ -38936,7 +40528,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 3
+    "order": 5
    }
   ]
  },
@@ -39695,6 +41287,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 3,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 3
+     },
+     {
+      "string": 3,
+      "fret": 7
+     },
+     {
+      "string": 2,
+      "fret": 8
+     },
+     {
+      "string": 1,
+      "fret": 5
+     }
+    ],
+    "baseFret": 3,
+    "stretch": 5,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 5,
@@ -39730,7 +41356,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 2
+    "order": 3
    },
    {
     "form": "A",
@@ -39763,7 +41389,7 @@
      }
     ],
     "baseFret": 8,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -39801,7 +41427,7 @@
      "fromString": 5,
      "toString": 1
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -43512,6 +45138,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 4,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 4
+     },
+     {
+      "string": 3,
+      "fret": 9
+     },
+     {
+      "string": 2,
+      "fret": 9
+     },
+     {
+      "string": 1,
+      "fret": 6
+     }
+    ],
+    "baseFret": 4,
+    "stretch": 5,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 6,
@@ -43547,7 +45207,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 2
+    "order": 3
    },
    {
     "form": "A",
@@ -43580,7 +45240,7 @@
      }
     ],
     "baseFret": 9,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -43613,7 +45273,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -43796,6 +45456,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 4,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 4
+     },
+     {
+      "string": 3,
+      "fret": 10
+     },
+     {
+      "string": 2,
+      "fret": 9
+     },
+     {
+      "string": 1,
+      "fret": 6
+     }
+    ],
+    "baseFret": 4,
+    "stretch": 6,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 6,
@@ -43831,7 +45525,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 2
+    "order": 3
    },
    {
     "form": "A",
@@ -43864,7 +45558,7 @@
      }
     ],
     "baseFret": 9,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -43897,7 +45591,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -44080,6 +45774,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 4,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 4
+     },
+     {
+      "string": 3,
+      "fret": 9
+     },
+     {
+      "string": 2,
+      "fret": 9
+     },
+     {
+      "string": 1,
+      "fret": 5
+     }
+    ],
+    "baseFret": 4,
+    "stretch": 5,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 6,
@@ -44110,7 +45838,7 @@
      }
     ],
     "baseFret": 6,
-    "order": 2
+    "order": 3
    },
    {
     "form": "A",
@@ -44143,7 +45871,7 @@
      }
     ],
     "baseFret": 9,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -44176,7 +45904,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -44681,6 +46409,39 @@
     "order": 2
    },
    {
+    "form": "C",
+    "label": "C form",
+    "lowestFret": 7,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 9
+     },
+     {
+      "string": 4,
+      "fret": 8
+     },
+     {
+      "string": 3,
+      "fret": 9
+     },
+     {
+      "string": 2,
+      "fret": 7
+     },
+     {
+      "string": 1,
+      "fret": 11
+     }
+    ],
+    "baseFret": 7,
+    "order": 3
+   },
+   {
     "form": "A",
     "label": "A form",
     "lowestFret": 9,
@@ -44711,7 +46472,7 @@
      }
     ],
     "baseFret": 9,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -44744,7 +46505,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -45251,6 +47012,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 4,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 4
+     },
+     {
+      "string": 3,
+      "fret": 9
+     },
+     {
+      "string": 2,
+      "fret": 8
+     },
+     {
+      "string": 1,
+      "fret": 6
+     }
+    ],
+    "baseFret": 4,
+    "stretch": 5,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 6,
@@ -45281,7 +47076,7 @@
      }
     ],
     "baseFret": 6,
-    "order": 2
+    "order": 3
    },
    {
     "form": "A",
@@ -45314,7 +47109,7 @@
      }
     ],
     "baseFret": 9,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -45347,7 +47142,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -45497,6 +47292,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 4,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 4
+     },
+     {
+      "string": 3,
+      "fret": 9
+     },
+     {
+      "string": 2,
+      "fret": 10
+     },
+     {
+      "string": 1,
+      "fret": 6
+     }
+    ],
+    "baseFret": 4,
+    "stretch": 6,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 6,
@@ -45527,7 +47356,41 @@
      }
     ],
     "baseFret": 6,
-    "order": 2
+    "order": 3
+   },
+   {
+    "form": "A",
+    "label": "A form",
+    "lowestFret": 9,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 9
+     },
+     {
+      "string": 4,
+      "fret": 11
+     },
+     {
+      "string": 3,
+      "fret": 14
+     },
+     {
+      "string": 2,
+      "fret": 11
+     },
+     {
+      "string": 1,
+      "fret": 12
+     }
+    ],
+    "baseFret": 9,
+    "stretch": 5,
+    "order": 4
    },
    {
     "form": "G",
@@ -45560,7 +47423,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 3
+    "order": 5
    }
   ]
  },
@@ -46328,6 +48191,40 @@
     "order": 1
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 4,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 4
+     },
+     {
+      "string": 3,
+      "fret": 8
+     },
+     {
+      "string": 2,
+      "fret": 9
+     },
+     {
+      "string": 1,
+      "fret": 6
+     }
+    ],
+    "baseFret": 4,
+    "stretch": 5,
+    "order": 2
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 6,
@@ -46363,7 +48260,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 2
+    "order": 3
    },
    {
     "form": "A",
@@ -46396,7 +48293,7 @@
      }
     ],
     "baseFret": 9,
-    "order": 3
+    "order": 4
    },
    {
     "form": "G",
@@ -46434,7 +48331,7 @@
      "fromString": 5,
      "toString": 1
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -50219,6 +52116,40 @@
     "order": 2
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 5,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 5
+     },
+     {
+      "string": 3,
+      "fret": 10
+     },
+     {
+      "string": 2,
+      "fret": 10
+     },
+     {
+      "string": 1,
+      "fret": 7
+     }
+    ],
+    "baseFret": 5,
+    "stretch": 5,
+    "order": 3
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 7,
@@ -50254,7 +52185,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 3
+    "order": 4
    },
    {
     "form": "A",
@@ -50287,7 +52218,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -50500,6 +52431,40 @@
     "order": 2
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 5,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 5
+     },
+     {
+      "string": 3,
+      "fret": 11
+     },
+     {
+      "string": 2,
+      "fret": 10
+     },
+     {
+      "string": 1,
+      "fret": 7
+     }
+    ],
+    "baseFret": 5,
+    "stretch": 6,
+    "order": 3
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 7,
@@ -50535,7 +52500,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 3
+    "order": 4
    },
    {
     "form": "A",
@@ -50568,7 +52533,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -50781,6 +52746,40 @@
     "order": 2
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 5,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 5
+     },
+     {
+      "string": 3,
+      "fret": 10
+     },
+     {
+      "string": 2,
+      "fret": 10
+     },
+     {
+      "string": 1,
+      "fret": 6
+     }
+    ],
+    "baseFret": 5,
+    "stretch": 5,
+    "order": 3
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 7,
@@ -50811,7 +52810,7 @@
      }
     ],
     "baseFret": 7,
-    "order": 3
+    "order": 4
    },
    {
     "form": "A",
@@ -50844,7 +52843,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -51376,6 +53375,39 @@
     "order": 3
    },
    {
+    "form": "C",
+    "label": "C form",
+    "lowestFret": 8,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 10
+     },
+     {
+      "string": 4,
+      "fret": 9
+     },
+     {
+      "string": 3,
+      "fret": 10
+     },
+     {
+      "string": 2,
+      "fret": 8
+     },
+     {
+      "string": 1,
+      "fret": 12
+     }
+    ],
+    "baseFret": 8,
+    "order": 4
+   },
+   {
     "form": "A",
     "label": "A form",
     "lowestFret": 10,
@@ -51406,7 +53438,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -51945,6 +53977,40 @@
     "order": 2
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 5,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 5
+     },
+     {
+      "string": 3,
+      "fret": 10
+     },
+     {
+      "string": 2,
+      "fret": 9
+     },
+     {
+      "string": 1,
+      "fret": 7
+     }
+    ],
+    "baseFret": 5,
+    "stretch": 5,
+    "order": 3
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 7,
@@ -51975,7 +54041,7 @@
      }
     ],
     "baseFret": 7,
-    "order": 3
+    "order": 4
    },
    {
     "form": "A",
@@ -52008,7 +54074,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -52188,6 +54254,40 @@
     "order": 2
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 5,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 5
+     },
+     {
+      "string": 3,
+      "fret": 10
+     },
+     {
+      "string": 2,
+      "fret": 11
+     },
+     {
+      "string": 1,
+      "fret": 7
+     }
+    ],
+    "baseFret": 5,
+    "stretch": 6,
+    "order": 3
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 7,
@@ -52218,7 +54318,41 @@
      }
     ],
     "baseFret": 7,
-    "order": 3
+    "order": 4
+   },
+   {
+    "form": "A",
+    "label": "A form",
+    "lowestFret": 10,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 10
+     },
+     {
+      "string": 4,
+      "fret": 12
+     },
+     {
+      "string": 3,
+      "fret": 15
+     },
+     {
+      "string": 2,
+      "fret": 12
+     },
+     {
+      "string": 1,
+      "fret": 13
+     }
+    ],
+    "baseFret": 10,
+    "stretch": 5,
+    "order": 5
    }
   ]
  },
@@ -53010,6 +55144,40 @@
     "order": 2
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 5,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 5
+     },
+     {
+      "string": 3,
+      "fret": 9
+     },
+     {
+      "string": 2,
+      "fret": 10
+     },
+     {
+      "string": 1,
+      "fret": 7
+     }
+    ],
+    "baseFret": 5,
+    "stretch": 5,
+    "order": 3
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 7,
@@ -53045,7 +55213,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 3
+    "order": 4
    },
    {
     "form": "A",
@@ -53078,7 +55246,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -56822,6 +58990,40 @@
     "order": 2
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 6,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 6
+     },
+     {
+      "string": 3,
+      "fret": 11
+     },
+     {
+      "string": 2,
+      "fret": 11
+     },
+     {
+      "string": 1,
+      "fret": 8
+     }
+    ],
+    "baseFret": 6,
+    "stretch": 5,
+    "order": 3
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 8,
@@ -56857,7 +59059,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 3
+    "order": 4
    },
    {
     "form": "A",
@@ -56890,7 +59092,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -57106,6 +59308,40 @@
     "order": 2
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 6,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 6
+     },
+     {
+      "string": 3,
+      "fret": 12
+     },
+     {
+      "string": 2,
+      "fret": 11
+     },
+     {
+      "string": 1,
+      "fret": 8
+     }
+    ],
+    "baseFret": 6,
+    "stretch": 6,
+    "order": 3
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 8,
@@ -57141,7 +59377,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 3
+    "order": 4
    },
    {
     "form": "A",
@@ -57174,7 +59410,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -57390,6 +59626,40 @@
     "order": 2
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 6,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 6
+     },
+     {
+      "string": 3,
+      "fret": 11
+     },
+     {
+      "string": 2,
+      "fret": 11
+     },
+     {
+      "string": 1,
+      "fret": 7
+     }
+    ],
+    "baseFret": 6,
+    "stretch": 5,
+    "order": 3
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 8,
@@ -57420,7 +59690,7 @@
      }
     ],
     "baseFret": 8,
-    "order": 3
+    "order": 4
    },
    {
     "form": "A",
@@ -57453,7 +59723,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -57991,6 +60261,39 @@
     "order": 3
    },
    {
+    "form": "C",
+    "label": "C form",
+    "lowestFret": 9,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 11
+     },
+     {
+      "string": 4,
+      "fret": 10
+     },
+     {
+      "string": 3,
+      "fret": 11
+     },
+     {
+      "string": 2,
+      "fret": 9
+     },
+     {
+      "string": 1,
+      "fret": 13
+     }
+    ],
+    "baseFret": 9,
+    "order": 4
+   },
+   {
     "form": "A",
     "label": "A form",
     "lowestFret": 11,
@@ -58021,7 +60324,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -58561,6 +60864,40 @@
     "order": 2
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 6,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 6
+     },
+     {
+      "string": 3,
+      "fret": 11
+     },
+     {
+      "string": 2,
+      "fret": 10
+     },
+     {
+      "string": 1,
+      "fret": 8
+     }
+    ],
+    "baseFret": 6,
+    "stretch": 5,
+    "order": 3
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 8,
@@ -58591,7 +60928,7 @@
      }
     ],
     "baseFret": 8,
-    "order": 3
+    "order": 4
    },
    {
     "form": "A",
@@ -58624,7 +60961,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -58807,6 +61144,40 @@
     "order": 2
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 6,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 6
+     },
+     {
+      "string": 3,
+      "fret": 11
+     },
+     {
+      "string": 2,
+      "fret": 12
+     },
+     {
+      "string": 1,
+      "fret": 8
+     }
+    ],
+    "baseFret": 6,
+    "stretch": 6,
+    "order": 3
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 8,
@@ -58837,7 +61208,41 @@
      }
     ],
     "baseFret": 8,
-    "order": 3
+    "order": 4
+   },
+   {
+    "form": "A",
+    "label": "A form",
+    "lowestFret": 11,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 11
+     },
+     {
+      "string": 4,
+      "fret": 13
+     },
+     {
+      "string": 3,
+      "fret": 16
+     },
+     {
+      "string": 2,
+      "fret": 13
+     },
+     {
+      "string": 1,
+      "fret": 14
+     }
+    ],
+    "baseFret": 11,
+    "stretch": 5,
+    "order": 5
    }
   ]
  },
@@ -59643,6 +62048,40 @@
     "order": 2
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 6,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 6
+     },
+     {
+      "string": 3,
+      "fret": 10
+     },
+     {
+      "string": 2,
+      "fret": 11
+     },
+     {
+      "string": 1,
+      "fret": 8
+     }
+    ],
+    "baseFret": 6,
+    "stretch": 5,
+    "order": 3
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 8,
@@ -59678,7 +62117,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 3
+    "order": 4
    },
    {
     "form": "A",
@@ -59711,7 +62150,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -63375,6 +65814,40 @@
     "order": 3
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 7,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 7
+     },
+     {
+      "string": 3,
+      "fret": 12
+     },
+     {
+      "string": 2,
+      "fret": 12
+     },
+     {
+      "string": 1,
+      "fret": 9
+     }
+    ],
+    "baseFret": 7,
+    "stretch": 5,
+    "order": 4
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 9,
@@ -63410,7 +65883,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -63656,6 +66129,40 @@
     "order": 3
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 7,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 7
+     },
+     {
+      "string": 3,
+      "fret": 13
+     },
+     {
+      "string": 2,
+      "fret": 12
+     },
+     {
+      "string": 1,
+      "fret": 9
+     }
+    ],
+    "baseFret": 7,
+    "stretch": 6,
+    "order": 4
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 9,
@@ -63691,7 +66198,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -63937,6 +66444,40 @@
     "order": 3
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 7,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 7
+     },
+     {
+      "string": 3,
+      "fret": 12
+     },
+     {
+      "string": 2,
+      "fret": 12
+     },
+     {
+      "string": 1,
+      "fret": 8
+     }
+    ],
+    "baseFret": 7,
+    "stretch": 5,
+    "order": 4
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 9,
@@ -63967,7 +66508,7 @@
      }
     ],
     "baseFret": 9,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -64520,6 +67061,39 @@
     ],
     "baseFret": 7,
     "order": 4
+   },
+   {
+    "form": "C",
+    "label": "C form",
+    "lowestFret": 10,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 12
+     },
+     {
+      "string": 4,
+      "fret": 11
+     },
+     {
+      "string": 3,
+      "fret": 12
+     },
+     {
+      "string": 2,
+      "fret": 10
+     },
+     {
+      "string": 1,
+      "fret": 14
+     }
+    ],
+    "baseFret": 10,
+    "order": 5
    }
   ]
  },
@@ -65076,6 +67650,40 @@
     "order": 3
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 7,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 7
+     },
+     {
+      "string": 3,
+      "fret": 12
+     },
+     {
+      "string": 2,
+      "fret": 11
+     },
+     {
+      "string": 1,
+      "fret": 9
+     }
+    ],
+    "baseFret": 7,
+    "stretch": 5,
+    "order": 4
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 9,
@@ -65106,7 +67714,7 @@
      }
     ],
     "baseFret": 9,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -65215,6 +67823,40 @@
   ],
   "caged": [
    {
+    "form": "A",
+    "label": "A form",
+    "lowestFret": 0,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 0
+     },
+     {
+      "string": 4,
+      "fret": 2
+     },
+     {
+      "string": 3,
+      "fret": 5
+     },
+     {
+      "string": 2,
+      "fret": 2
+     },
+     {
+      "string": 1,
+      "fret": 3
+     }
+    ],
+    "baseFret": 1,
+    "stretch": 5,
+    "order": 1
+   },
+   {
     "form": "G",
     "label": "G form",
     "lowestFret": 2,
@@ -65245,7 +67887,7 @@
      }
     ],
     "baseFret": 1,
-    "order": 1
+    "order": 2
    },
    {
     "form": "E",
@@ -65283,7 +67925,41 @@
      "fromString": 6,
      "toString": 2
     },
-    "order": 2
+    "order": 3
+   },
+   {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 7,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 7
+     },
+     {
+      "string": 3,
+      "fret": 12
+     },
+     {
+      "string": 2,
+      "fret": 13
+     },
+     {
+      "string": 1,
+      "fret": 9
+     }
+    ],
+    "baseFret": 7,
+    "stretch": 6,
+    "order": 4
    },
    {
     "form": "C",
@@ -65316,7 +67992,7 @@
      }
     ],
     "baseFret": 9,
-    "order": 3
+    "order": 5
    }
   ]
  },
@@ -66146,6 +68822,40 @@
     "order": 3
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 7,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 7
+     },
+     {
+      "string": 3,
+      "fret": 11
+     },
+     {
+      "string": 2,
+      "fret": 12
+     },
+     {
+      "string": 1,
+      "fret": 9
+     }
+    ],
+    "baseFret": 7,
+    "stretch": 5,
+    "order": 4
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 9,
@@ -66181,7 +68891,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -69958,6 +72668,40 @@
     "order": 3
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 8,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 8
+     },
+     {
+      "string": 3,
+      "fret": 13
+     },
+     {
+      "string": 2,
+      "fret": 13
+     },
+     {
+      "string": 1,
+      "fret": 10
+     }
+    ],
+    "baseFret": 8,
+    "stretch": 5,
+    "order": 4
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 10,
@@ -69993,7 +72737,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -70242,6 +72986,40 @@
     "order": 3
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 8,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 8
+     },
+     {
+      "string": 3,
+      "fret": 14
+     },
+     {
+      "string": 2,
+      "fret": 13
+     },
+     {
+      "string": 1,
+      "fret": 10
+     }
+    ],
+    "baseFret": 8,
+    "stretch": 6,
+    "order": 4
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 10,
@@ -70277,7 +73055,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -70526,6 +73304,40 @@
     "order": 3
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 8,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 8
+     },
+     {
+      "string": 3,
+      "fret": 13
+     },
+     {
+      "string": 2,
+      "fret": 13
+     },
+     {
+      "string": 1,
+      "fret": 9
+     }
+    ],
+    "baseFret": 8,
+    "stretch": 5,
+    "order": 4
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 10,
@@ -70556,7 +73368,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -71125,6 +73937,39 @@
     ],
     "baseFret": 8,
     "order": 4
+   },
+   {
+    "form": "C",
+    "label": "C form",
+    "lowestFret": 11,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 13
+     },
+     {
+      "string": 4,
+      "fret": 12
+     },
+     {
+      "string": 3,
+      "fret": 13
+     },
+     {
+      "string": 2,
+      "fret": 11
+     },
+     {
+      "string": 1,
+      "fret": 15
+     }
+    ],
+    "baseFret": 11,
+    "order": 5
    }
   ]
  },
@@ -71697,6 +74542,40 @@
     "order": 3
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 8,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 8
+     },
+     {
+      "string": 3,
+      "fret": 13
+     },
+     {
+      "string": 2,
+      "fret": 12
+     },
+     {
+      "string": 1,
+      "fret": 10
+     }
+    ],
+    "baseFret": 8,
+    "stretch": 5,
+    "order": 4
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 10,
@@ -71727,7 +74606,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -71839,6 +74718,40 @@
   ],
   "caged": [
    {
+    "form": "A",
+    "label": "A form",
+    "lowestFret": 1,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 1
+     },
+     {
+      "string": 4,
+      "fret": 3
+     },
+     {
+      "string": 3,
+      "fret": 6
+     },
+     {
+      "string": 2,
+      "fret": 3
+     },
+     {
+      "string": 1,
+      "fret": 4
+     }
+    ],
+    "baseFret": 1,
+    "stretch": 5,
+    "order": 1
+   },
+   {
     "form": "G",
     "label": "G form",
     "lowestFret": 3,
@@ -71869,7 +74782,7 @@
      }
     ],
     "baseFret": 3,
-    "order": 1
+    "order": 2
    },
    {
     "form": "E",
@@ -71907,7 +74820,41 @@
      "fromString": 6,
      "toString": 2
     },
-    "order": 2
+    "order": 3
+   },
+   {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 8,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 8
+     },
+     {
+      "string": 3,
+      "fret": 13
+     },
+     {
+      "string": 2,
+      "fret": 14
+     },
+     {
+      "string": 1,
+      "fret": 10
+     }
+    ],
+    "baseFret": 8,
+    "stretch": 6,
+    "order": 4
    },
    {
     "form": "C",
@@ -71940,7 +74887,7 @@
      }
     ],
     "baseFret": 10,
-    "order": 3
+    "order": 5
    }
   ]
  },
@@ -72779,6 +75726,40 @@
     "order": 3
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 8,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 8
+     },
+     {
+      "string": 3,
+      "fret": 12
+     },
+     {
+      "string": 2,
+      "fret": 13
+     },
+     {
+      "string": 1,
+      "fret": 10
+     }
+    ],
+    "baseFret": 8,
+    "stretch": 5,
+    "order": 4
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 10,
@@ -72814,7 +75795,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -76576,6 +79557,40 @@
     "order": 3
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 9,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 9
+     },
+     {
+      "string": 3,
+      "fret": 14
+     },
+     {
+      "string": 2,
+      "fret": 14
+     },
+     {
+      "string": 1,
+      "fret": 11
+     }
+    ],
+    "baseFret": 9,
+    "stretch": 5,
+    "order": 4
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 11,
@@ -76611,7 +79626,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -76857,6 +79872,40 @@
     "order": 3
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 9,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 9
+     },
+     {
+      "string": 3,
+      "fret": 15
+     },
+     {
+      "string": 2,
+      "fret": 14
+     },
+     {
+      "string": 1,
+      "fret": 11
+     }
+    ],
+    "baseFret": 9,
+    "stretch": 6,
+    "order": 4
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 11,
@@ -76892,7 +79941,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -77138,6 +80187,40 @@
     "order": 3
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 9,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 9
+     },
+     {
+      "string": 3,
+      "fret": 14
+     },
+     {
+      "string": 2,
+      "fret": 14
+     },
+     {
+      "string": 1,
+      "fret": 10
+     }
+    ],
+    "baseFret": 9,
+    "stretch": 5,
+    "order": 4
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 11,
@@ -77168,7 +80251,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -77731,6 +80814,39 @@
     ],
     "baseFret": 9,
     "order": 4
+   },
+   {
+    "form": "C",
+    "label": "C form",
+    "lowestFret": 12,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 14
+     },
+     {
+      "string": 4,
+      "fret": 13
+     },
+     {
+      "string": 3,
+      "fret": 14
+     },
+     {
+      "string": 2,
+      "fret": 12
+     },
+     {
+      "string": 1,
+      "fret": 16
+     }
+    ],
+    "baseFret": 12,
+    "order": 5
    }
   ]
  },
@@ -78297,6 +81413,40 @@
     "order": 3
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 9,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 9
+     },
+     {
+      "string": 3,
+      "fret": 14
+     },
+     {
+      "string": 2,
+      "fret": 13
+     },
+     {
+      "string": 1,
+      "fret": 11
+     }
+    ],
+    "baseFret": 9,
+    "stretch": 5,
+    "order": 4
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 11,
@@ -78327,7 +81477,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 4
+    "order": 5
    }
   ]
  },
@@ -78436,6 +81586,40 @@
   ],
   "caged": [
    {
+    "form": "A",
+    "label": "A form",
+    "lowestFret": 2,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": 2
+     },
+     {
+      "string": 4,
+      "fret": 4
+     },
+     {
+      "string": 3,
+      "fret": 7
+     },
+     {
+      "string": 2,
+      "fret": 4
+     },
+     {
+      "string": 1,
+      "fret": 5
+     }
+    ],
+    "baseFret": 2,
+    "stretch": 5,
+    "order": 1
+   },
+   {
     "form": "G",
     "label": "G form",
     "lowestFret": 4,
@@ -78466,7 +81650,7 @@
      }
     ],
     "baseFret": 4,
-    "order": 1
+    "order": 2
    },
    {
     "form": "E",
@@ -78504,7 +81688,41 @@
      "fromString": 6,
      "toString": 2
     },
-    "order": 2
+    "order": 3
+   },
+   {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 9,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 9
+     },
+     {
+      "string": 3,
+      "fret": 14
+     },
+     {
+      "string": 2,
+      "fret": 15
+     },
+     {
+      "string": 1,
+      "fret": 11
+     }
+    ],
+    "baseFret": 9,
+    "stretch": 6,
+    "order": 4
    },
    {
     "form": "C",
@@ -78537,7 +81755,7 @@
      }
     ],
     "baseFret": 11,
-    "order": 3
+    "order": 5
    }
   ]
  },
@@ -79367,6 +82585,40 @@
     "order": 3
    },
    {
+    "form": "D",
+    "label": "D form",
+    "lowestFret": 9,
+    "positions": [
+     {
+      "string": 6,
+      "fret": null
+     },
+     {
+      "string": 5,
+      "fret": null
+     },
+     {
+      "string": 4,
+      "fret": 9
+     },
+     {
+      "string": 3,
+      "fret": 13
+     },
+     {
+      "string": 2,
+      "fret": 14
+     },
+     {
+      "string": 1,
+      "fret": 11
+     }
+    ],
+    "baseFret": 9,
+    "stretch": 5,
+    "order": 4
+   },
+   {
     "form": "C",
     "label": "C form",
     "lowestFret": 11,
@@ -79402,7 +82654,7 @@
      "fromString": 4,
      "toString": 1
     },
-    "order": 4
+    "order": 5
    }
   ]
  }

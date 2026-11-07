@@ -6,3 +6,9 @@
 .caged-head { display: flex; flex-direction: column; gap: 0; line-height: 1.25; margin-bottom: 4px; }
 .caged-letter { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--violet-dark); }
 .caged-where { font-size: 0.85rem; color: var(--ink-soft); }
+
+
+.caged-item { min-width: 0; }
+
+.caged-wide { font-weight: 600; color: var(--violet-dark); }
+.caged-row + .caged-intro { margin-top: 16px; }

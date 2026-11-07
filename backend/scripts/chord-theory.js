@@ -76,7 +76,7 @@ function soundedPitchClasses(frets) {
 // A voicing is valid when: the lowest sounded note is the root (or the chord has
 // no inversion requirement for power/sus shapes we ship - we require root in bass),
 // it contains every chord tone, and the fifth may be omitted only in 4-note chords.
-function validateVoicing(rootPc, intervals, frets) {
+function validateVoicing(rootPc, intervals, frets, maxStretch = 4) {
   if (frets.length !== 6) return 'voicing must have 6 entries';
   const sounded = frets
     .map((f, i) => (f === null ? null : { s: i, pc: mod12(TUNING[i] + f) }))
@@ -92,7 +92,7 @@ function validateVoicing(rootPc, intervals, frets) {
     if (!omittableFifth) return `missing interval ${iv}`;
   }
   const fretted = frets.filter((f) => f !== null && f > 0);
-  if (fretted.length && Math.max(...fretted) - Math.min(...fretted) > 4) return 'stretch too wide';
+  if (fretted.length && Math.max(...fretted) - Math.min(...fretted) > maxStretch) return 'stretch too wide';
   return null;
 }
 
@@ -200,20 +200,28 @@ const CAGED_SHAPES = {
   six:    { C: [null, 3, 2, 2, 1, 0], A: [null, 0, 2, 2, 2, 2], G: [3, 2, 0, 0, 0, 0], E: [0, 2, 2, 1, 2, 0], D: [null, null, 0, 2, 0, 2] },
   minor6: { C: [null, 3, 1, 2, 1, null], A: [null, 0, 2, 2, 1, 2], G: [3, 1, 2, 0, 3, 0], E: [0, 2, 2, 0, 2, 0], D: [null, null, 0, 2, 0, 1] },
   // Extended chords: derived from each parent triad shape by adding/altering notes (validated per key).
-  // Where a form cannot hold the chord within a 5-fret box with the root in the bass, it is left out.
-  dom9  : { C: [null, 3, 0, 3, 1, 0], A: [null, 0, 2, 4, 2, 3], G: [3, 0, 0, 0, 0, 1], E: [0, 2, 0, 1, 0, 2] },
-  maj9  : { C: [null, 3, 0, 0, 0, 0], A: [null, 0, 2, 4, 2, 4], G: [3, 0, 0, 0, 0, 2], E: [0, 2, 1, 1, 0, 2] },
-  min9  : { C: [null, 3, 0, 3, 4, 3], A: [null, 0, 2, 4, 1, 3], G: [3, 0, 0, 3, 3, 1], E: [0, 2, 0, 0, 0, 2] },
+  // All five forms keep the root in the bass; a few reach fret 5 or 6 above the root fret to fit the extension.
+  dom9  : { C: [null, 3, 0, 3, 1, 0], A: [null, 0, 2, 4, 2, 3], G: [3, 0, 0, 0, 0, 1], E: [0, 2, 0, 1, 0, 2], D: [null, null, 0, 5, 5, 2] },
+  maj9  : { C: [null, 3, 0, 0, 0, 0], A: [null, 0, 2, 4, 2, 4], G: [3, 0, 0, 0, 0, 2], E: [0, 2, 1, 1, 0, 2], D: [null, null, 0, 6, 5, 2] },
+  min9  : { C: [null, 3, 0, 3, 4, 3], A: [null, 0, 2, 4, 1, 3], G: [3, 0, 0, 3, 3, 1], E: [0, 2, 0, 0, 0, 2], D: [null, null, 0, 5, 5, 1] },
   min11 : { C: [null, 3, 1, 3, 1, 1], A: [null, 0, 0, 0, 1, 0], G: [3, 1, 0, 0, 1, 1], E: [0, 0, 0, 0, 0, 0], D: [null, null, 0, 0, 1, 1] },
-  dom13 : { A: [null, 0, 2, 0, 2, 2], G: [3, 2, 2, 0, 0, 1], E: [0, 2, 0, 1, 2, 0], D: [null, null, 0, 4, 1, 2] },
+  dom13 : { C: [null, 3, 2, 3, 1, 5], A: [null, 0, 2, 0, 2, 2], G: [3, 2, 2, 0, 0, 1], E: [0, 2, 0, 1, 2, 0], D: [null, null, 0, 4, 1, 2] },
   sus7  : { C: [null, 3, 3, 3, 1, 1], A: [null, 0, 2, 0, 3, 0], G: [3, 3, 0, 0, 1, 1], E: [0, 2, 0, 2, 0, 0], D: [null, null, 0, 2, 1, 3] },
-  dom7b9: { C: [null, 3, 2, 3, 2, 0], A: [null, 0, 2, 3, 2, 3], G: [3, 2, 0, 1, 0, 1], E: [0, 2, 0, 1, 0, 1] },
-  dom7s9: { C: [null, 3, 1, 3, 1, 0], G: [3, 1, 0, 0, 0, 1], E: [0, 2, 0, 1, 0, 3] },
+  dom7b9: { C: [null, 3, 2, 3, 2, 0], A: [null, 0, 2, 3, 2, 3], G: [3, 2, 0, 1, 0, 1], E: [0, 2, 0, 1, 0, 1], D: [null, null, 0, 5, 4, 2] },
+  dom7s9: { C: [null, 3, 1, 3, 1, 0], A: [null, 0, 2, 5, 2, 3], G: [3, 1, 0, 0, 0, 1], E: [0, 2, 0, 1, 0, 3], D: [null, null, 0, 5, 6, 2] },
   mmaj7 : { C: [null, 3, 1, 0, 0, 3], A: [null, 0, 2, 1, 1, 0], G: [3, 1, 0, 0, 3, 2], E: [0, 2, 1, 0, 0, 0], D: [null, null, 0, 2, 2, 1] },
   aug7  : { C: [null, 3, 2, 3, 1, 4], A: [null, 0, 3, 2, 2, 3], G: [3, 2, 1, 0, 0, 1], E: [0, 3, 2, 1, 3, 0], D: [null, null, 0, 3, 1, 2] },
-  six9  : { C: [null, 3, 0, 2, 1, 0], A: [null, 0, 2, 4, 2, 2], G: [3, 0, 0, 0, 0, 0], E: [0, 2, 2, 1, 2, 2] },
+  six9  : { C: [null, 3, 0, 2, 1, 0], A: [null, 0, 2, 4, 2, 2], G: [3, 0, 0, 0, 0, 0], E: [0, 2, 2, 1, 2, 2], D: [null, null, 0, 4, 5, 2] },
 };
 
+// Reach of a CAGED shape in frets (highest minus lowest fret, open strings of the parent shape counted as the
+// root fret). Most shapes fit in 4; a few extended forms need a wider reach and are flagged in the app.
+function shapeSpan(shape) {
+  const f = shape.filter((x) => x !== null);
+  return Math.max(...f) - Math.min(...f);
+}
+
 module.exports = {
+  shapeSpan,
   TONES, spellChord, LETTERS,
   CAGED_FORMS, CAGED_ROOT_PC, CAGED_SHAPES, SHARP, FLAT_ALIAS, TUNING, TYPES, mod12, soundedPitchClasses, validateVoicing };

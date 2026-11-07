@@ -85,7 +85,10 @@ const DICT = {
     noBarre: 'No barre: one finger per note',
     caged: 'CAGED system',
     cagedIntro: (name, n = 5) =>
-      `${name} in ${['', '', '', 'three', 'four', 'five'][n]} places on the neck. Each shape is the open C, A, G, E or D chord moved up to this key, with the extra notes added to the triad, so all of them play the same notes.`,
+      `${name} in ${['', '', '', 'three', 'four', 'five'][n]} places on the neck. Each shape is the open C, A, G, E or D chord moved up to this key, with the extra notes added to the triad, so all of them play the same notes. Every form keeps the root in the bass.`,
+    cagedWide: (n) => `Wide reach: ${n} frets between the lowest and highest note`,
+    cagedWideShort: 'wide reach',
+    cagedWideNote: 'Forms marked wide reach stretch across more frets because the extra notes sit far from the triad. Roll the hand, or leave out the highest note if it is too much.',
     cagedPartial: 'The missing forms do not fit this chord in a five-fret box with the root in the bass, so they are left out instead of forced.',
     cagedShape: (l) => `${l} shape`,
     cagedWhere: (f) => (f === 0 ? 'open' : `fret ${f}`),
@@ -172,7 +175,10 @@ const DICT = {
     noBarre: 'Sem pestana: um dedo por nota',
     caged: 'Sistema CAGED',
     cagedIntro: (name, n = 5) =>
-      `${name} em ${['', '', '', 'três', 'quatro', 'cinco'][n]} lugares do braço. Cada forma é o acorde aberto de C, A, G, E ou D levado até este tom, com as notas extras acrescentadas à tríade, então todas tocam as mesmas notas.`,
+      `${name} em ${['', '', '', 'três', 'quatro', 'cinco'][n]} lugares do braço. Cada forma é o acorde aberto de C, A, G, E ou D levado até este tom, com as notas extras acrescentadas à tríade, então todas tocam as mesmas notas. Todas as formas mantêm a fundamental no baixo.`,
+    cagedWide: (n) => `Pegada aberta: ${n} casas entre a nota mais grave e a mais aguda`,
+    cagedWideShort: 'pegada aberta',
+    cagedWideNote: 'As formas marcadas com pegada aberta se esticam por mais casas porque as notas extras ficam longe da tríade. Gire a mão, ou deixe de fora a nota mais aguda se ficar pesado.',
     cagedPartial: 'As formas que faltam não cabem neste acorde numa caixa de cinco casas com a fundamental no baixo, então foram deixadas de fora em vez de forçadas.',
     cagedShape: (l) => `Forma de ${l}`,
     cagedWhere: (f) => (f === 0 ? 'solta' : `casa ${f}`),

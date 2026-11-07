@@ -19,7 +19,10 @@ function CagedSection({ chord }) {
           <li className="caged-item" key={form.form}>
             <div className="caged-head">
               <span className="caged-letter">{t('cagedShape', form.form)}</span>
-              <span className="caged-where">{t('cagedWhere', form.lowestFret)}</span>
+              <span className="caged-where">
+                {t('cagedWhere', form.lowestFret)}
+                {form.stretch && <b className="caged-wide" title={t('cagedWide', form.stretch)}> · {t('cagedWideShort')}</b>}
+              </span>
             </div>
             <GuitarFretboard
               compact
@@ -30,6 +33,7 @@ function CagedSection({ chord }) {
           </li>
         ))}
       </ol>
+      {chord.caged.some((f) => f.stretch) && <p className="caged-intro">{t('cagedWideNote')}</p>}
       {chord.caged.length < 5 && <p className="caged-intro">{t('cagedPartial')}</p>}
     </section>
   );

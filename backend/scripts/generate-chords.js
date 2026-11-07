@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const {
   SHARP, TYPES, mod12, validateVoicing, spellChord,
-  CAGED_FORMS, CAGED_ROOT_PC, CAGED_SHAPES,
+  CAGED_FORMS, CAGED_ROOT_PC, CAGED_SHAPES, shapeSpan,
 } = require('./chord-theory');
 
 // Hand-written open-position shapes (string 6 -> string 1, null = muted).
@@ -130,7 +130,8 @@ for (const rootPc of SHARP.map((_, i) => i)) {
       caged = CAGED_FORMS.filter((form) => cagedShapes[form]).map((form) => {
         const shift = mod12(rootPc - CAGED_ROOT_PC[form]);
         const frets = cagedShapes[form].map((f) => (f === null ? null : f + shift));
-        const err = validateVoicing(rootPc, t.intervals, frets);
+        const span = shapeSpan(cagedShapes[form]);
+        const err = validateVoicing(rootPc, t.intervals, frets, Math.max(4, span));
         if (err) errors.push(`${root} ${t.key} CAGED ${form}-form ${JSON.stringify(frets)}: ${err}`);
         const sounded = frets.filter((f) => f !== null);
         const lowest = Math.min(...sounded);
@@ -141,6 +142,7 @@ for (const rootPc of SHARP.map((_, i) => i)) {
           positions: toPositions(frets),
           baseFret: baseFretOf(frets),
         };
+        if (span > 4) entry.stretch = span;
         const b = barreOf(frets);
         if (b) entry.barre = b;
         return entry;

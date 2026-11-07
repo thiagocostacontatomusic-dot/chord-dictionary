@@ -13,7 +13,7 @@ An open-source, interactive **guitar chord dictionary**. Search any chord, see i
 - **Listen**: play any voicing as a strum, or any scale up and down (Web Audio, no files)
 - **Share**: copy a link that opens straight on the chord
 - **Circle of fifths, modes and 20 scales**, light and dark themes, installable and offline
-- **CAGED system**: 240 chords. The 9 core types have all five shapes; the extended chords (9ths, 11th, 13th, 7sus4, 7b9, 7#9, mMaj7, aug7, 6/9) have the three to five shapes that fit, each derived from its parent triad and machine-checked
+- **CAGED system**: 240 chords (20 types x 12 keys), every one with all five shapes (C, A, G, E, D), derived from the parent triad shapes and machine-checked, including 9ths, 11th, 13th, 7sus4, 7b9, 7#9, mMaj7, aug7 and 6/9
 - **Study guide**: tension and rest, cadences, chords of a key, dominants and tritone substitution, borrowed chords and modes, jazz-standard patterns and practice tips, with every example shown in the key you are in and playable
 - **Scales meet CAGED**: for major, minor and pentatonic scales, each position shows which CAGED shape of the tonic chord it holds
 - **Every voicing is machine-checked**: tests compute the notes each string actually sounds in standard tuning (E A D G B E) and fail if a shape does not spell its chord

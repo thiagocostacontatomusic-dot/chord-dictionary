@@ -42,12 +42,12 @@ const cagedFrets = (id) => {
   );
 };
 
-test('CAGED chords: the 9 core types have five forms, extended types three to five, ordered up the neck', () => {
+test('CAGED chords: every chord with CAGED has all five forms, ordered up the neck', () => {
   const withCaged = chords.filter((c) => c.caged.length);
   const full = withCaged.filter((c) => c.caged.length === 5);
-  assert.ok(full.length >= 12 * 9, 'at least the 9 core types x 12 keys have all five forms');
+  assert.strictEqual(full.length, 12 * 20, '20 chord types x 12 keys');
   for (const c of withCaged) {
-    assert.ok(c.caged.length >= 3, `${c.id} has too few CAGED forms`);
+    assert.strictEqual(c.caged.length, 5, `${c.id} must have five CAGED forms`);
     const forms = c.caged.map((f) => f.form);
     assert.strictEqual(new Set(forms).size, forms.length, `${c.id} repeats a form`);
     const lows = c.caged.map((f) => f.lowestFret);
@@ -67,7 +67,8 @@ test('every CAGED form spells its chord', () => {
     const rootPc = SHARP.indexOf(c.note);
     for (const f of c.caged) {
       const frets = [6, 5, 4, 3, 2, 1].map((s) => f.positions.find((p) => p.string === s).fret);
-      assert.strictEqual(validateVoicing(rootPc, t.intervals, frets), null, `${c.id} ${f.label} ${JSON.stringify(frets)}`);
+      assert.ok(!f.stretch || f.stretch <= 6, `${c.id} ${f.label} stretch too big`);
+      assert.strictEqual(validateVoicing(rootPc, t.intervals, frets, Math.max(4, f.stretch || 0)), null, `${c.id} ${f.label} ${JSON.stringify(frets)}`);
     }
   }
 });

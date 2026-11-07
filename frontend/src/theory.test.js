@@ -46,6 +46,6 @@ test('study examples resolve to real chords in any key', () => {
 
 test('extended chords carry CAGED forms', () => {
   const { getChord } = require('./chordData');
-  expect(getChord('C_dom9').caged.length).toBeGreaterThanOrEqual(3);
+  expect(getChord('C_dom9').caged.length).toBe(5);
   expect(getChord('F_min11').caged.length).toBe(5);
 });
